@@ -1,5 +1,6 @@
 import os
-basedir=os.path.abspath(os.path.dirname(__file__))
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 
 class Config(object):
     HOST = '127.0.0.1'
@@ -15,4 +16,37 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = DB_URI
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = True
+    SQLALCHEMY_COMMIT_ON_TERADOWN = True
+    FLASK_ADMIN = os.environ.get('FLASK_ADMIN')
+
+    @staticmethod
+    def init_app(app):
+        pass
+
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
+                              'sqlite:///' + os.path.join(basedir, 'data-dev.db')
+    # the path for the sqlite database
+
+
+class ProductConfig(Config):
+    """Generate the setting for production"""
+    DEBUG = False
+
+
+class TestConfig(Config):
+    """generate the setting for test"""
+    DEBUG = True
+    TESTING = True
+
+
+config = {
+    'development': DevelopmentConfig,
+    "production": ProductConfig,
+    'default': DevelopmentConfig,
+    "testing": TestConfig,
+}
+
 
