@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  {% block head %}
 <!-- Required meta tags -->
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -16,20 +17,31 @@
 <!-- custom styles(optional) -->
 <link href="../static/style/plugins.css" rel="stylesheet"/>
 <link href="../static/style/style.css" rel="stylesheet"/>
+  {% endblock %}
 </head>
+
 <!--classic-menu-->
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax classic-menu ">
+
+{% block preload %}
+<!--加载页面-->
 <div class="preloader">
   <div class="preloader-bar">
     <div class="preloader-progress"></div>
   </div>
   <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">DARO</span><span class="text-fill">DARO</span></h1>
 </div>
+{% endblock %}
+
+{% block navi %}
+<!--导航栏-->
 <div class="site-header">
   <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+
     <div class="inner-header p-relative">
-      <div class="main-logo"><a href="index.html" data-dsn="parallax"><img class="dark-logo" src="../static/image/img/logo-dark.png" alt=""/><img class="light-logo" src="../static/image/img/logo.png" alt=""/></a></div>
+      <div class="main-logo"><a href="#" data-dsn="parallax"><img class="dark-logo" src="../static/image/img/logo-dark.png" alt=""/><img class="light-logo" src="../static/image/img/logo.png" alt=""/></a></div>
     </div>
+
     <div class="menu-icon d-flex align-items-baseline">
       <div class="text-menu p-relative  font-heading text-transform-upper">
         <div class="p-absolute text-button">Menu</div>
@@ -38,13 +50,14 @@
       </div>
       <div class="icon-m " data-dsn="parallax"><span class="menu-icon-line p-relative d-inline-block icon-top"></span><span class="menu-icon-line p-relative d-inline-block icon-center"></span><span class="menu-icon-line p-relative d-block icon-bottom"></span></div>
     </div>
+
     <nav class="accent-menu main-navigation p-absolute  w-100  d-flex align-items-baseline ">
       <div class="menu-cover-title">Menu</div>
       <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
         <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Home</span><span class="dsn-meta-menu">01</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="../static/image/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Home</span></li>
-            <li><a href="index.html"><span class="dsn-title-menu">One Page 1</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a href="#"><span class="dsn-title-menu">One Page 1</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="#"><span class="dsn-title-menu">One Page 2</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="#"><span class="dsn-title-menu">One Page 3</span><span class="dsn-meta-menu">03</span></a></li>
             <li><a href="#"><span class="dsn-title-menu">One Page 4</span><span class="dsn-meta-menu">04</span></a></li>
@@ -132,8 +145,11 @@
     </nav>
   </div>
 </div>
+{% endblock %}
+
 <main class="main-root">
   <div id="dsn-scrollbar">
+
     <div class="main-slider demo-2 p-relative w-100 h-100-v over-hidden " data-dsn-header="parallax">
       <div class="bg-container" id="dsn-hero-parallax-img">
         <div class="slide-inner h-100">
@@ -349,6 +365,7 @@
         <div class="content-slider margin-lr-100 p-relative w-100 h-100"></div>
       </div>
     </div>
+
     <div class="wrapper">
       <section class="intro-about  section-margin have-dsn-animate-number" data-dsn-animate="section">
         <div class="container">
@@ -1086,6 +1103,7 @@
         </div>
       </section>
     </div>
+
     <section class="next-up next-project p-relative section-padding">
       <div class="bg-section p-absolute w-100 h-100 over-hidden">
         <div class="h-100 before-z-index" data-dsn-grid="move-up" data-overlay="5"> <img class="cover-bg-img has-top-bottom" src="../static/image/img/bg-2.jpg" alt=""> </div>
@@ -1109,6 +1127,9 @@
         </div>
       </div>
     </section>
+
+    {% block footer %}
+    <!--页脚-->
     <footer class="footer-1 p-relative background-section">
       <div class="container">
         <div class="footer-links p-relative">
@@ -1177,14 +1198,20 @@
         </div>
       </div>
     </footer>
+    {% endblock %}
+
   </div>
 </main>
+
 <div class="scroll-to-top"> <img src="../static/image/img/scroll_top.svg" alt="">
   <div class="box-numper"> <span>0%</span> </div>
 </div>
+
 <div class="cursor">
   <div class="cursor-helper"> <span class="cursor-drag">Drag</span> <span class="cursor-view">View</span> <span class="cursor-open"><i class="fas fa-plus"></i></span> <span class="cursor-close">Close</span> <span class="cursor-play">play</span> <span class="cursor-next"><i class="fas fa-chevron-right"></i></span> <span class="cursor-prev"><i class="fas fa-chevron-left"></i></span> </div>
 </div>
+
+<!--白天黑夜模式-->
 <div class="day-night">
   <div class="night active" data-dsn-theme="dark">
     <svg width="48" height="48" viewBox="0 0 48 48">
@@ -1212,10 +1239,12 @@
   </div>
 </div>
 
+{% block script %}
 <!-- Optional JavaScript --> 
 <script src="../static/script/jquery-3.1.1.min.js"></script>
 <script src="../static/script/plugins.js"></script>
 <script src="../static/script/dsn-grid.js"></script>
 <script src="../static/script/custom.js"></script>
+{% endblock %}
 </body>
 </html>
