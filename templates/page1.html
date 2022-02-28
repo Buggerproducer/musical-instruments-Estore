@@ -1,6 +1,19 @@
 {% extends "base.html" %}
 
 {% block head %}
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Photographer</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/icon/favicon.png">
+
+<!-- CSS here -->
+<link rel="stylesheet" href="../static/style/main_css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/style/main_css/slicknav.css">
+<link rel="stylesheet" href="../static/style/main_css/fontawesome-all.min.css">
+<link rel="stylesheet" href="../static/style/main_css/slick.css">
+<link rel="stylesheet" href="../static/style/main_css/style.css">
   {{ super() }}
 {% endblock %}
 
@@ -11,7 +24,110 @@
 {% block navi %}
   {{ super() }}
 {% endblock %}
+<header>
+  <div class="header-area header-transparent">
+    <div class="main-header header-sticky">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Mobile Menu -->
+          <div class="col-12">
+            <div class="mobile_menu d-block d-lg-none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <!--? slider Area Start-->
+  <div class="slider-area">
+    <div class="slider-active dot-style">
+      <!-- Single Slider -->
+      <div class="single-slider slider-height hero-overly slider-bg1 d-flex align-items-end">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-12">
+              <div class="hero-caption text-center mb-100">
+                <span>Nature Beauty</span>
+                <h1 data-animation="pulse" data-delay=".4s">Miami Lake</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Single Slider -->
+      <div class="single-slider slider-height hero-overly slider-bg2 d-flex align-items-end">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-12">
+              <div class="hero-caption text-center mb-100">
+                <span>Travel Shot</span>
+                <h1 data-animation="pulse" data-delay=".4s">Kayaking on Lakee</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Single Slider -->
+      <div class="single-slider slider-height hero-overly slider-bg3 d-flex align-items-end">
+        <div class="container">
+          <div class="row">
+            <div class="col-xxl-12">
+              <div class="hero-caption text-center mb-100">
+                <span>Action Shot</span>
+                <h1 data-animation="pulse" data-delay=".4s">Electricity</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- slider Area End-->
+  <!-- Scroll Up -->
+  <div id="back-top">
+    <a class="wrapper" title="Go to Top" href="#">
+      <div class="arrows-container">
+        <div class="arrow arrow-one">
+        </div>
+        <div class="arrow arrow-two">
+        </div>
+      </div>
+    </a>
+  </div>
 
+  <!-- JS here -->
+  <!-- Jquery, Popper, Bootstrap -->
+  <script src="../static/js/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="../static/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="../static/js/popper.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+
+  <!-- Slick-slider , Owl-Carousel ,slick-nav -->
+  <script src="../static/js/owl.carousel.min.js"></script>
+  <script src="../static/js/slick.min.js"></script>
+  <script src="../static/js/jquery.slicknav.min.js"></script>
+  <script src="../static/js/hover-direction-snake.min.js"></script>
+
+
+  <!--wow , counter , waypoint, Nice-select -->
+  <script src="../static/js/wow.min.js"></script>
+  <script src="../static/js/jquery.magnific-popup.js"></script>
+  <script src="../static/js/jquery.nice-select.min.js"></script>
+  <script src="../static/js/jquery.counterup.min.js"></script>
+  <script src="../static/js/waypoints.min.js"></script>
+
+  <!-- contact js -->
+  <script src="../static/js/contact.js"></script>
+  <script src="../static/js/jquery.form.js"></script>
+  <script src="../static/js/jquery.validate.min.js"></script>
+  <script src="../static/js/mail-script.js"></script>
+  <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+
+  <!--  Plugins, main-Jquery -->
+  <script src="../static/js/plugins.js"></script>
+  <script src="../static/js/main.js"></script>
+</main>
 {% block footer %}
   {{ super() }}
 {% endblock %}
