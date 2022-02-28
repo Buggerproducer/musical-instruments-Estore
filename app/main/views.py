@@ -22,3 +22,4 @@ def join():
 @main.route('/test')
 def test():
     return render_template("test_io.html", async_mode=socketio.async_mode)
+
