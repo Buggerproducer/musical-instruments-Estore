@@ -39,5 +39,15 @@ def my_ping():
     emit('my_pong')
 
 
+@socketio.event
+def join():
+    emit("id",{'data':'test'})
+    emit("notify",{'data':"someone join"},broadcast=True)
+
+@app.route('/test')
+def test():
+    return render_template("test_io.html",async_mode=socketio.async_mode)
+
+
 if __name__ == '__main__':
     socketio.run(app, debug=False, host="0.0.0.0", port=80)
