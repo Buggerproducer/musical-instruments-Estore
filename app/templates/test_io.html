@@ -5,6 +5,8 @@
     <title>Title</title>
     <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/login.js') }}"></script>
     <script>
         var socket=io()
         socket.on('id',function (data) {
@@ -18,12 +20,11 @@
 
         $(document).ready(function () {
             $("#join").click(function () {
-                console.log("click")
-                socket.emit("join")
+                {#console.log("click")#}
+                {#socket.emit("join")#}
+                testConnect()
             })
         })
-
-
     </script>
 </head>
 <body>
