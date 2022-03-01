@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+    ADD YOUR OWN STYLING HERE AVOID TO USE STYLE.CSS AND MAIN.CSS
+	
+	IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES
+-------------------------------------------------------------------*/
+.margin-reduce-20{
+    margin-bottom: -20px;
+}
+
+.navajowhitewhite-font{
+    color: navajowhite;
+}
+
+.antiquewhite-font{
+    color: antiquewhite;
+}
+
+.lightgrey{
+    color: lightgrey;
+}
+
+.background-antiquewhite{
+    background-color: antiquewhite !important;
+}
+
+.background-transparent{
+    background-color: transparent !important;
+}
+
+.background-boarder{
+    border-radius: 2px !important;
+    border: 1px antiquewhite !important;
+}
