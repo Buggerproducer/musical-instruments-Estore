@@ -1,6 +1,9 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+import leancloud
+leancloud.init("gyg9pml06JYzbcyfiW9f0tUp-gzGzoHsz", "OiLNbwn0ivp1toeAJiHRAvhN")
+
 
 class Config(object):
     HOST = '127.0.0.1'
