@@ -58,6 +58,10 @@ async function signInWithEmail(email,password, onSuccess, onFail){
     });
 }
 
+async function logout() {
+    AV.User.logOut()
+}
+
 function getLoginState(){
   return AV.User.current()
 }
