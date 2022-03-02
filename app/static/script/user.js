@@ -99,7 +99,7 @@ function changeInfo(username,phone,email){
   document.getElementById('result').innerText='successfully change';
 }, (error) => {
   // 异常处理
-            ocument.getElementById('result').innerText='fail to change';
+            document.getElementById('result').innerText='fail to change';
             console.log(`保存失败。objectId：${currentUser.id}`);
 });
     }
