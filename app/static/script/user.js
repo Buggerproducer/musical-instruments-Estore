@@ -59,7 +59,17 @@ async function signInWithEmail(email,password, onSuccess, onFail){
 }
 
 async function logout() {
-    AV.User.logOut()
+    console.log(getLoginState());
+    if(getLoginState()!=null){
+        AV.User.logOut();
+        document.getElementById('result').innerText='logout successfully';
+    }
+    else{
+            document.getElementById('result').innerText='not already login';
+    }
+    //console.log('logout successfully');
+
+
 }
 
 function getLoginState(){
@@ -69,3 +79,4 @@ function getLoginState(){
 function checkLoginState(){
   return !!AV.User.current();
 }
+

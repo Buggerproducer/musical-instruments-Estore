@@ -23,6 +23,12 @@ def join():
 def test():
     return render_template("test_io.html", async_mode=socketio.async_mode)
 
+
 @main.route('/testlogin')
 def testlogin():
     return render_template("test_login.html", async_mode=socketio.async_mode)
+
+
+@main.route('/')
+def index():
+    return render_template("jQuerybootstrapsCyzhmoban/index.html", async_mode=socketio.async_mode)
