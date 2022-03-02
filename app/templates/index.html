@@ -117,7 +117,8 @@
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Setting</span><span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
-            <li><a href="javascript:void(0);" onclick="window.open()"><span class="dsn-title-menu" >Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
+            <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
+            <li><a href="{{ url_for('main.testlogin') }}"><span class="dsn-title-menu" >Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="contact-2.html"><span class="dsn-title-menu">Sign In</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="contact-2.html"><span class="dsn-title-menu">Sign Out</span><span class="dsn-meta-menu">03</span></a></li>
           </ul>
@@ -525,7 +526,7 @@
       <section class="skills-personal background-section p-relative section-padding section-margin" data-dsn-animate="sections">
 
         <!-- Our Skills 部分封装上下块的容器 -->
-        <div class="skills-inner container p-relative ">
+        <div class="skills-inner container p-relative">
 
           <!-- Our Skills 标题部分上块 -->
           <div class="container no-padding section-title-2">
