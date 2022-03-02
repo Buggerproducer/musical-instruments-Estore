@@ -16,6 +16,27 @@
 <!-- custom styles(optional) -->
 <link href="{{ url_for('static', filename='css/plugins.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet"/>
+<!--  #####################################  -->
+  <style type="text/css">
+            #msg{
+    height: 2rem;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    margin-top: -1rem;
+    line-height: 2rem;
+    width: 100%;
+}
+#msg span{
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    height: 2rem;
+    display: inline-block;
+    padding: 0 3rem;
+    border-radius: 5px;
+}
+        </style>
+  <!--  #####################################  -->
 </head>
 <!--classic-menu-->
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax classic-menu ">
@@ -116,7 +137,7 @@
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Setting</span><span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
-            <li><a href="contact.html"><span class="dsn-title-menu">Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a href="javascript:void(0);" onclick="alert()"><span class="dsn-title-menu" >Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="contact-2.html"><span class="dsn-title-menu">Sign In</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="contact-2.html"><span class="dsn-title-menu">Sign Out</span><span class="dsn-meta-menu">03</span></a></li>
           </ul>
@@ -322,7 +343,7 @@
               <div class="image-bg cover-bg w-100 h-100">
                 <div data-dsn="video" data-overlay="6">
                   <video class="bg-image cover-bg dsn-video"
-                                           poster="assets/img/project/project7/1.jpg') }}" autoplay loop muted>
+                                           poster="../static/img/project/project7/1.jpg" autoplay loop muted>
                     <source src="http://theme.dsngrid.com/video/Equator.mp4" type="video/mp4">
                   </video>
                 </div>
@@ -1345,9 +1366,26 @@
 </div>
 
 <!-- Optional JavaScript --> 
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/plugins.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/dsn-grid.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/jquery-3.1.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/plugins.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/dsn-grid.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/custom.js') }}"></script>
+<!-- test_login.html里面的js -->
+<script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+<script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+<script src="{{ url_for('static',filename='script/user.js') }}"></script>
+<script>
+  function alert(){
+    $("body").append("<div id='msg'><span>"+"Hello"+"</span></div>");
+    clearmsg();
+}
+function clearmsg(){
+    var t = setTimeout(function(){
+        $("#msg").remove();
+    },2000)
+};
+
+</script>
 </body>
 </html>
