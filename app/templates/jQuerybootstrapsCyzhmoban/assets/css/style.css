@@ -4306,8 +4306,8 @@ a:active, a:hover {
 }
 
 .service .services-item span {
-    font-size: 55px;
-    font-weight: 100;
+    font-size: 30px;
+    font-weight: bold;
     font-family: "Roboto";
     line-height: 95px;
     height: 60px;
@@ -8734,7 +8734,7 @@ header .header-master.header-half .social-network-box {
 }
 
 .work-inner .work-item .item-info h4 {
-    font-size: 25px;
+    font-size: 30px;
     -webkit-transition: margin-bottom 0.5s ease;
     -o-transition: margin-bottom 0.5s ease;
     transition: margin-bottom 0.5s ease;
