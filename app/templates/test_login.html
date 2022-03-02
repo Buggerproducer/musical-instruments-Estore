@@ -17,6 +17,14 @@
     password:
     <input type="password" id="password">
 </label>
+<label>
+    email:
+    <input type="email" id="email">
+</label>
+<label>
+    phone:
+    <input type="text" id="phone">
+</label>
 <hr>
 <button onclick="
   signInWithUsername($('#username').val(),$('#password').val(),function(user) {
@@ -36,8 +44,7 @@
   console.log(error)
 })">register</button>
 
-<button onclick="logout();
-document.getElementById('result').innerText='not already login'">logout</button>
+<button onclick="logout();">logout</button>
 
 <button onclick="let user=getLoginState();
    result= document.getElementById('result');
@@ -47,6 +54,10 @@ if(user){
     result.innerText='not already login';
 }
 ">check state</button>
+
+<button onclick="changeInfo($('#username').val(),$('#phone').val(),$('#email').val());">submit</button>
+
+<button onclick="reset($('#password').val(),$('#email').val())">Reset Password</button>
 
 <hr>
 <p id="result"></p>

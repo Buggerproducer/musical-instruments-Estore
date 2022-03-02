@@ -59,7 +59,17 @@ async function signInWithEmail(email,password, onSuccess, onFail){
 }
 
 async function logout() {
-    AV.User.logOut()
+    console.log(getLoginState());
+    if(getLoginState()!=null){
+        AV.User.logOut();
+        document.getElementById('result').innerText='logout successfully';
+    }
+    else{
+            document.getElementById('result').innerText='not already login';
+    }
+    //console.log('logout successfully');
+
+
 }
 
 function getLoginState(){
@@ -68,4 +78,36 @@ function getLoginState(){
 
 function checkLoginState(){
   return !!AV.User.current();
+}
+
+
+function changeInfo(username,phone,email){
+    if(getLoginState()!=null){
+        const currentUser = AV.User.current();
+        if(username!==''){
+            currentUser.setUsername(username);
+        }
+        if(phone!==''){
+            currentUser.setMobilePhoneNumber(phone);
+        }
+        if(email!==''){
+            currentUser.setEmail(email);
+        }
+        currentUser.save().then((currentUser) => {
+  // 成功保存之后，执行其他逻辑
+  console.log(`保存成功。objectId：${currentUser.id}`);
+  document.getElementById('result').innerText='successfully change';
+}, (error) => {
+  // 异常处理
+            document.getElementById('result').innerText='fail to change';
+            console.log(`保存失败。objectId：${currentUser.id}`);
+});
+    }
+    else{
+          document.getElementById('result').innerText='not already login';
+    }
+}
+
+function reset(email) {
+    AV.User.requestPasswordReset(email);
 }
