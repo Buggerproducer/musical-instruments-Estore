@@ -31,4 +31,4 @@ def testlogin():
 
 @main.route('/')
 def index():
-    return render_template("jQuerybootstrapsCyzhmoban/index.html", async_mode=socketio.async_mode)
+    return render_template("index.html", async_mode=socketio.async_mode)
