@@ -2001,12 +2001,7 @@
                         })
                             .addTo(controller);
 
-                        parallaxIt.on("enter", function () {
-                            body.toggleClass("v-light");
-                        });
-                        parallaxIt.on("leave", function () {
-                            body.toggleClass("v-light");
-                        });
+
 
                         if (parallaxIt)
                             scene.push(parallaxIt);
