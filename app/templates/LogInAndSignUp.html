@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!---->
+<head>
+    <meta charset="utf-8">
+    <title>Log In & Sign Up - </title>
+    <link rel="stylesheet" href="../static/style/LogInAndSignUp.css">
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="form-container sign-up-container">
+            <!-- sign up form -->
+            <form>
+                <h1>Sign Up</h1>
+                <!-- sign up input -->
+                <!-- username -->
+                <input type="username" placeholder="Username" id="signUpUsername">
+                <!-- email -->
+                <input type="email" placeholder="Email Address" id="signUpEmail">
+                <!-- password -->
+                <input type="password" placeholder="Password" id="signUpPassword">
+                <!-- password confirm -->
+                <input type="confirm password" placeholder="Confirm Password" id="signUpRepassword">
+                <br>
+                <!-- sign up -->
+                <button id="signUpbtn">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <!-- login form -->
+            <form>
+                <h1>Log In</h1>
+                <!-- login input -->
+                <!-- username -->
+                <input type="username" placeholder="Username" id="signInUsername">
+                <!-- password -->
+                <input type="password" placeholder="Password" id="signInPsssword">
+                <br>
+                <!-- sign in button -->
+                <button id="signInbtn">Confirm</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Has an account?</h1>
+                    <p>Log in with your account</p>
+                    <!-- jump to login part -->
+                    <button class="ghost" id="signInPage">Log In</button>
+                    <!-- link to index page -->
+                    <p><a href="{{ url_for('main.index') }}">Back To Index</a></p>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Doesn't has an account?</h1>
+                    <p>Join Us</p>
+                    <!-- jump to sign up page -->
+                    <button class="ghost" id="signUpPage">Sign Up</button>
+                    <!-- link to index page -->
+                    <p><a href="{{ url_for('main.index') }}">Back To Index</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- import JavaScript module -->
+    <script src="../static/script/jquery-3.1.1.min.js"></script>
+    <script src="../static/script/LoginAnimation.js"></script>
+</body>
+</html>
