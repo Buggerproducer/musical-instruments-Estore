@@ -19,8 +19,8 @@ def join():
     emit("notify", {'data':"someone join"}, broadcast=True)
 
 
-@main.route('/test')
-def test():
+@main.route('/testio')
+def testio():
     return render_template("test_io.html", async_mode=socketio.async_mode)
 
 

@@ -9,7 +9,7 @@ app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)
 
 
-manager.add_command('run', socketio.run(app, debug=False, host="0.0.0.0", port=80))
+manager.add_command('run', socketio.run(app, debug=True, host="0.0.0.0", port=80))
 
 
 def make_shell_context():
