@@ -11,12 +11,11 @@
 <!-- Font Google -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon"/>
-<link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon"/>
+<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
 <!-- custom styles(optional) -->
-<link href="{{ url_for('static', filename='style/css/plugins.css') }}" rel="stylesheet" type="text/css"/>
-<link href="{{ url_for('static', filename='style/css/style.css') }}" type="text/css" rel="stylesheet"/>
-<link href="{{ url_for('static', filename='style/index.css') }}" type="text/css" rel="stylesheet"/>
+<link href="assets/css/plugins.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 <!--classic-menu-->
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax classic-menu ">
@@ -26,17 +25,11 @@
   </div>
   <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">DARO</span><span class="text-fill">DARO</span></h1>
 </div>
-<!-- 导航栏 -->
 <div class="site-header">
   <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
-
-    <!-- 导航栏左边的logo -->
     <div class="inner-header p-relative">
-      <div class="main-logo"><a href="index.html" data-dsn="parallax"><img class="dark-logo" src="{{ url_for('static', filename='img/logo-dark.png') }}" alt=""/><img class="light-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""/></a></div>
+      <div class="main-logo"><a href="index.html" data-dsn="parallax"><img class="dark-logo" src="assets/img/logo-dark.png" alt=""/><img class="light-logo" src="assets/img/logo.png" alt=""/></a></div>
     </div>
-    <!-- 导航栏左边的logo结束 -->
-
-    <!-- 导航栏在其他页面 非当前页面 的效果 -->
     <div class="menu-icon d-flex align-items-baseline">
       <div class="text-menu p-relative  font-heading text-transform-upper">
         <div class="p-absolute text-button">Menu</div>
@@ -45,39 +38,30 @@
       </div>
       <div class="icon-m " data-dsn="parallax"><span class="menu-icon-line p-relative d-inline-block icon-top"></span><span class="menu-icon-line p-relative d-inline-block icon-center"></span><span class="menu-icon-line p-relative d-block icon-bottom"></span></div>
     </div>
-    <!-- 导航栏在其他页面的效果结束 -->
-
-    <!-- 导航栏右边的内容 -->
     <nav class="accent-menu main-navigation p-absolute  w-100  d-flex align-items-baseline ">
-      <!-- 不知道这行干嘛用的 -->
       <div class="menu-cover-title">Menu</div>
-
-      <!-- 导航栏右边的内容的ul -->
       <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
-        <!-- li 1: Home -->
         <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Home</span><span class="dsn-meta-menu">01</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Home</span></li>
+            <li class="dsn-back-menu"><img src="assets/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Home</span></li>
             <li><a href="index.html"><span class="dsn-title-menu">One Page 1</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="demo2.html"><span class="dsn-title-menu">One Page 2</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="demo3.html"><span class="dsn-title-menu">One Page 3</span><span class="dsn-meta-menu">03</span></a></li>
             <li><a href="demo-video.html"><span class="dsn-title-menu">One Page 4</span><span class="dsn-meta-menu">04</span></a></li>
           </ul>
         </li>
-        <!-- li 2: Sliders -->
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Sliders</span><span class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Sliders</span></li>
+            <li class="dsn-back-menu"><img src="assets/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Sliders</span></li>
             <li><a href="slider2.html"><span class="dsn-title-menu">Slider Vertical</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="slider3.html"><span class="dsn-title-menu">Slider 3 Column</span><span class="dsn-meta-menu">03</span></a></li>
             <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>
           </ul>
         </li>
-        <!-- li 3: Portfolio -->
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Portfolio</span><span class="dsn-meta-menu">03</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Portfolio</span></li>
+            <li class="dsn-back-menu"><img src="assets/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Portfolio</span></li>
             <li><a href="work.html"><span class="dsn-title-menu">Work 3 columns</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="work-2.html"><span class="dsn-title-menu">Work V2</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="gallery.html"><span class="dsn-title-menu">gallery</span><span class="dsn-meta-menu">03</span></a></li>
@@ -88,64 +72,42 @@
             <li><a href="work-3.html"><span class="dsn-title-menu">Work carousel</span><span class="dsn-meta-menu">08</span></a></li>
           </ul>
         </li>
-        <!-- li 4: About -->
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">About</span><span class="dsn-meta-menu">04</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">About</span></li>
+            <li class="dsn-back-menu"><img src="assets/img/left-chevron.svg" alt=""><span class="dsn-title-menu">About</span></li>
             <li><a href="about.html"><span class="dsn-title-menu">About Us</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="about-2.html"><span class="dsn-title-menu">About Us V2</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
         </li>
-        <!-- li 5: Stories -->
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">05</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Stories</span></li>
+            <li class="dsn-back-menu"><img src="assets/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Stories</span></li>
             <li><a href="blog.html"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="blog-grid.html"><span class="dsn-title-menu">Stories Grid</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="post.html"><span class="dsn-title-menu">Single Post</span><span class="dsn-meta-menu">03</span></a></li>
           </ul>
         </li>
-        <!-- li 6: Contact -->
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">06</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Contact</span></li>
+            <li class="dsn-back-menu"><img src="assets/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Contact</span></li>
             <li><a href="contact.html"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">01</span></a></li>
             <li><a href="contact-2.html"><span class="dsn-title-menu">Contact V2</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
         </li>
-        <!-- li 7: Setting -->
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Setting</span><span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
-          <ul>
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
-            <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
-            <li><a href="{{ url_for('main.testlogin') }}"><span class="dsn-title-menu" >Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="contact-2.html"><span class="dsn-title-menu">Sign In</span><span class="dsn-meta-menu">02</span></a></li>
-            <li><a href="contact-2.html"><span class="dsn-title-menu">Sign Out</span><span class="dsn-meta-menu">03</span></a></li>
-          </ul>
-        </li>
       </ul>
-      <!-- 导航栏右边的内容的ul结束 -->
-
-      <!-- 导航栏在其他页面 非当前页面 的效果 -->
       <div class="container-content  d-flex flex-column justify-content-end">
-
-        <!-- Studio和Contact -->
         <div class="nav__info">
-          <!-- Studio -->
           <div class="nav-content">
             <p class="title-line">Studio</p>
             <p>26-30 New Damietta<br>
               El-Mahalla El-Kubra,SK1 66LM</p>
           </div>
-          <!-- Contact -->
           <div class="nav-content">
             <p class="title-line">Contact</p>
             <p class="links over-hidden"><a href="#" data-hover-text="+00 (2)012 3321" class="link-hover">+00(2)012 3321</a></p>
             <p class="links  over-hidden"><a href="#" data-hover-text="info@dsngrid.com" class="link-hover">info@dsngrid.com</a></p>
           </div>
         </div>
-
-        <!-- Follow US -->
         <div class="nav-social">
           <div class="nav-social-inner p-relative">
             <p class="title-line">Follow us</p>
@@ -165,19 +127,11 @@
             </ul>
           </div>
         </div>
-
       </div>
-      <!-- 导航栏在其他页面的效果结束 -->
-
-      <!-- 导航栏右边的内容的鼠标悬停下划线效果 -->
       <div class="nav-border-bottom"></div>
-
     </nav>
-    <!-- 导航栏右边的内容结束 -->
-
   </div>
 </div>
-<!-- 导航栏结束 -->
 <main class="main-root">
   <div id="dsn-scrollbar">
     <div class="main-slider demo-2 p-relative w-100 h-100-v over-hidden " data-dsn-header="parallax">
@@ -185,7 +139,7 @@
         <div class="slide-inner h-100">
           <div class="swiper-wrapper">
             <div class="slide-item swiper-slide">
-              <div class="image-bg cover-bg w-100 h-100 " data-image-src="{{ url_for('static', filename='img/project/project1/1.jpg') }}" data-overlay="2"></div>
+              <div class="image-bg cover-bg w-100 h-100 " data-image-src="assets/img/project/project1/1.jpg" data-overlay="2"></div>
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
@@ -203,7 +157,7 @@
               </div>
             </div>
             <div class="slide-item swiper-slide">
-              <div class="image-bg cover-bg w-100 h-100" data-image-src="{{ url_for('static', filename='img/project/project6/1.jpg') }}" data-overlay="5" data-dsn-position="57%"></div>
+              <div class="image-bg cover-bg w-100 h-100" data-image-src="assets/img/project/project6/1.jpg" data-overlay="5" data-dsn-position="57%"></div>
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
@@ -223,7 +177,7 @@
             </div>
             <div class="slide-item swiper-slide">
               <div class="image-bg cover-bg w-100 h-100"
-                                 data-image-src="{{ url_for('static', filename='img/project/project2/1.jpg') }}" data-overlay="5"
+                                 data-image-src="assets/img/project/project2/1.jpg" data-overlay="5"
                                  data-dsn-position="38%"> </div>
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
@@ -250,7 +204,7 @@
             </div>
             <div class="slide-item swiper-slide">
               <div class="image-bg cover-bg w-100 h-100"
-                                 data-image-src="{{ url_for('static', filename='img/project/project5/1.jpg') }}" data-overlay="5"
+                                 data-image-src="assets/img/project/project5/1.jpg" data-overlay="5"
                                  data-dsn-position="58%"> </div>
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
@@ -273,7 +227,7 @@
             </div>
             <div class="slide-item swiper-slide">
               <div class="image-bg cover-bg w-100 h-100"
-                                 data-image-src="{{ url_for('static', filename='img/project/project3/1.jpg') }}" data-overlay="6"> </div>
+                                 data-image-src="assets/img/project/project3/1.jpg" data-overlay="6"> </div>
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
@@ -297,7 +251,7 @@
             </div>
             <div class="slide-item swiper-slide">
               <div class="image-bg cover-bg w-100 h-100"
-                                 data-image-src="{{ url_for('static', filename='img/project/project4/1.jpg') }}" data-overlay="5"> </div>
+                                 data-image-src="assets/img/project/project4/1.jpg" data-overlay="5"> </div>
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
@@ -320,11 +274,11 @@
             </div>
             <div class="slide-item swiper-slide">
               <div class="cover-bg h-100 w-100 p-absolute hidden"
-                                 data-image-src="{{ url_for('static', filename='img/project/project7/1.jpg') }}" data-overlay="7"> </div>
+                                 data-image-src="assets/img/project/project7/1.jpg" data-overlay="7"> </div>
               <div class="image-bg cover-bg w-100 h-100">
                 <div data-dsn="video" data-overlay="6">
                   <video class="bg-image cover-bg dsn-video"
-                                           poster="../static/img/project/project7/1.jpg" autoplay loop muted>
+                                           poster="assets/img/project/project7/1.jpg" autoplay loop muted>
                     <source src="http://theme.dsngrid.com/video/Equator.mp4" type="video/mp4">
                   </video>
                 </div>
@@ -347,7 +301,7 @@
             </div>
             <div class="slide-item swiper-slide">
               <div class="image-bg cover-bg w-100 h-100"
-                                 data-image-src="{{ url_for('static', filename='img/project/project8/1.jpg') }}" data-overlay="7"
+                                 data-image-src="assets/img/project/project8/1.jpg" data-overlay="7"
                                  data-dsn-position="34%"> </div>
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
@@ -396,17 +350,9 @@
       </div>
     </div>
     <div class="wrapper">
-
-      <!-- about us what we do 那部分 section1-->
       <section class="intro-about  section-margin have-dsn-animate-number" data-dsn-animate="section">
-
-        <!-- 第2部分的行部分的容器 -->
         <div class="container">
-
-          <!-- 第2部分的行部分 -->
           <div class="row">
-
-            <!-- 第二部分的左边部分 第1列部分 -->
             <div class="col-lg-6">
               <div class="intro-about-info">
                 <div class="section-title-2">
@@ -414,502 +360,412 @@
                   <p>what we do</p>
                 </div>
                 <div class="intro-about-info-bottom">
-                  <h2 class="title-h2 dsn-up">"There was no choice but Steinway."</h2>
-                  <p class="dsn-text">The century-old hand-made piano technology ensures that the quality of each piano is impeccable, presenting an incomparable musical performance. </p>
+                  <h2 class="title-h2 dsn-up">We have been doing projects since 2008.</h2>
+                  <p class="dsn-text">Founded in 2000, Dsn Grid has become one of the best
+                    Digital
+                    Agency in
+                    ThemeForest.
+                    Blue money going forward, but deploy to production. </p>
                   <div class="accordion mt-30">
-
-                    <!-- Our Vision & Our goals & Our Mission部分 -->
                     <div class="accordion__wrapper">
-
-                      <!-- Our Vision部分的div -->
                       <div class="accordion__item dsn-up">
-
-                        <!-- Our Vision的标题和图标 -->
-                        <div class="accordion__question expanded d-flex align-items-center p-relative">
-                          <span class="icon"> <img src="{{ url_for('static', filename='img/vision.svg') }}" alt=""> </span>
-                          <h4 class="sm-title-block">Our Heritage</h4>
+                        <div
+                                                        class="accordion__question expanded d-flex align-items-center p-relative"> <span class="icon"> <img src="assets/img/vision.svg" alt=""> </span>
+                          <h4 class="sm-title-block">Our Vision</h4>
                         </div>
-
-                        <!-- Our Vision下的文字介绍 -->
                         <div class="accordion__answer active">
-                          <p>Generations of Steinway craftsmen have been creating excellent pianos for decades, through their hands, time imparts character to the piano.</p>
+                          <p>Cepteur sint occaecat cupidatat proident, taken possession of
+                            my
+                            entire soul, like these sweet mornings of spring which I
+                            enjoy with
+                            my whole.</p>
                         </div>
-
                       </div>
-                      <!-- Our Vision部分结束 -->
-
-                      <!-- Our goals部分 -->
                       <div class="accordion__item dsn-up">
-
-                        <div class="accordion__question d-flex align-items-center p-relative"> <span class="icon"> <img src="{{ url_for('static', filename='img/target.svg') }}" alt=""> </span>
-                          <h4 class="sm-title-block">Our Departures</h4>
+                        <div
+                                                        class="accordion__question d-flex align-items-center p-relative"> <span class="icon"> <img src="assets/img/target.svg" alt=""> </span>
+                          <h4 class="sm-title-block">Our goals</h4>
                         </div>
-
                         <div class="accordion__answer">
-                          <p>
-                            Steinway allows listeners to listen, share and experience live performance in close contact
-                            with top music and piano masters.
-                          </p>
+                          <p>Cepteur sint occaecat cupidatat proident, taken possession of
+                            my
+                            entire soul, like these sweet mornings of spring which I
+                            enjoy with
+                            my whole.</p>
                         </div>
-
                       </div>
-
-                      <!-- Our Mission部分 -->
                       <div class="accordion__item dsn-up">
-
-                        <div class="accordion__question d-flex align-items-center p-relative"> <span class="icon"> <img src="{{ url_for('static', filename='img/mission.svg') }}" alt=""> </span>
-                          <h4 class="sm-title-block">Our History</h4>
+                        <div
+                                                        class="accordion__question d-flex align-items-center p-relative"> <span class="icon"> <img src="assets/img/mission.svg" alt=""> </span>
+                          <h4 class="sm-title-block">Our Mission</h4>
                         </div>
-
                         <div class="accordion__answer">
-                          <p>
-                            In 1853, Henry Engelhard Steinway founded Steinway & Sons in a loft, and wrote a new chapter in piano manufacturing over the next 30 years.
-                          </p>
+                          <p>Cepteur sint occaecat cupidatat proident, taken possession of
+                            my
+                            entire soul, like these sweet mornings of spring which I
+                            enjoy with
+                            my whole.</p>
                         </div>
-
                       </div>
-
                     </div>
-                    <!-- Our Vision & Our goals & Our Mission部分结束 -->
                   </div>
                 </div>
               </div>
             </div>
-            <!-- 第二部分的左边部分结束 -->
-
-            <!-- 第二部分的右边部分 第2列部分 -->
             <div class="col-lg-6">
               <div class="box-img p-relative  over-hidden">
-
-                <!-- 右边背景图片 -->
                 <div class="bg-section p-absolute w-100 h-100">
-                  <div class="h-100" data-dsn-grid="move-up">
-                    <img class="cover-bg-img has-top-bottom" src="{{ url_for('static', filename='img/about-intro.jpg') }}" alt="">
-                  </div>
+                  <div class="h-100" data-dsn-grid="move-up"> <img class="cover-bg-img has-top-bottom" src="assets/img/about-intro.jpg"
+                                             alt=""> </div>
                 </div>
-
-                <!-- 右边背景图片 多余的代码？？？ -->
-<!--                <img src="{{ url_for('static', filename='img/about-intro.jpg') }}" alt="">-->
-
-                <!-- 橙棕色背景白字大块 -->
+                <img src="assets/img/about-intro.jpg" alt="">
                 <div class="exper background-theme p-absolute">
-
-                  <!-- 169白色大数字 -->
-                  <div class="numb-ex"> <span class="word-text has-animate-number">169</span> </div>
-
-                  <!-- 169白色大数字下面的小字 -->
-                  <h4 class="sm-title-block dsn-up">
-                    YEARS OF <br>
-                    PIANO EXPERIENCE
-                  </h4>
-
-                  <!-- 白色浅纹理图案 -->
-                  <div class="shap-section"> <img src="{{ url_for('static', filename='img/arr.svg') }}" alt=""> </div>
-
+                  <div class="numb-ex"> <span class="word-text has-animate-number">25</span> </div>
+                  <h4 class="sm-title-block dsn-up">YEARS OF <br>
+                    DIGITAL EXPERIENCE</h4>
+                  <div class="shap-section"> <img src="assets/img/arr.svg" alt=""> </div>
                 </div>
-                <!-- 橙棕色背景白字大块结束 -->
-
               </div>
             </div>
-            <!-- 第二部分的右边部分结束 -->
-
           </div>
-          <!-- 第2部分的行部分结束 -->
-
         </div>
-        <!-- 第2部分的行部分的容器结束 -->
-
       </section>
-      <!-- section1结束 -->
-
-      <!-- Our Pianos 部分 section2 -->
-      <section class="skills-personal background-section p-relative section-padding section-margin section2" style="background-image: url('../static/img/piano2.jpg'); background-repeat: no-repeat; background-position-x: center; background-position-y: center" data-dsn-animate="sections">
-
-        <!-- Our Skills 部分封装上下块的容器 -->
-        <div class="skills-inner container p-relative">
-
-          <!-- Our Skills 标题部分上块 -->
+      <section class="skills-personal  background-section p-relative section-padding section-margin"
+                     data-dsn-animate="sections">
+        <div class="skills-inner container p-relative ">
           <div class="container no-padding section-title-2">
-            <h2>Our Pianos</h2>
+            <h2>Our Skills</h2>
             <p>What we Best At</p>
           </div>
-          <!-- Our Skills 标题部分上块结束 -->
-
-          <!-- Our Skills 内容部分下块 包含左右2列 -->
           <div class="row">
-
-            <!-- 左边部分 第1列 -->
             <div class="col-lg-6">
-
-              <!-- 封装上下部分 -->
               <div class="box-text">
-
-                <!-- 上面大字部分 -->
-                <h3 class="title-h2 dsn-text">We provide pure and dynamic performance </h3>
-
-                <!-- 下面列表部分 -->
+                <h3 class="title-h2 dsn-text">We provide smart and flexible digital services </h3>
                 <div class="accordion">
-                  <!-- 下面列表部分的封装 -->
                   <div class="accordion__wrapper">
-
-                    <!-- 下面列表item1 -->
-                    <div class="accordion__item dsn-up">
-
-                      <!-- item1标题 -->
-                      <div class="accordion__question p-relative">
-                        <h4 class="sm-title-block ">From Grand to Upright Pianos</h4>
-                      </div>
-
-                      <!-- item1内容 -->
-                      <div class="accordion__answer">
-                        <p>From grand to upright, there is always one of the different styles to meet your needs.</p>
-                      </div>
-
-                    </div>
-
-                    <!-- item2 -->
                     <div class="accordion__item dsn-up">
                       <div class="accordion__question p-relative">
-                        <h4 class="sm-title-block">From Styles to Piano Finishes</h4>
+                        <h4 class="sm-title-block ">Website & Mobile App Design</h4>
                       </div>
                       <div class="accordion__answer">
-                        <p>From styles to piano finishes, personalized customization can always achieve your personalized.</p>
+                        <p>Cepteur sint occaecat cupidatat proident, taken
+                          possession of
+                          my
+                          entire soul, like these sweet mornings of spring which I
+                          enjoy
+                          with
+                          my whole.</p>
                       </div>
                     </div>
-
-                    <!-- item3 -->
                     <div class="accordion__item dsn-up">
                       <div class="accordion__question p-relative">
-                        <h4 class="sm-title-block">From Sensitivity to Touch</h4>
+                        <h4 class="sm-title-block">Motion Graphics & Animation</h4>
                       </div>
                       <div class="accordion__answer">
-                        <p>From sensitivity to touch, we will consider all aspects of your steinway journey with ease./p>
+                        <p>Cepteur sint occaecat cupidatat proident, taken
+                          possession of
+                          my
+                          entire soul, like these sweet mornings of spring which I
+                          enjoy
+                          with
+                          my whole.</p>
                       </div>
                     </div>
-
+                    <div class="accordion__item dsn-up">
+                      <div class="accordion__question p-relative">
+                        <h4 class="sm-title-block">User Experience</h4>
+                      </div>
+                      <div class="accordion__answer">
+                        <p>Cepteur sint occaecat cupidatat proident, taken
+                          possession of
+                          my
+                          entire soul, like these sweet mornings of spring which I
+                          enjoy
+                          with
+                          my whole.</p>
+                      </div>
+                    </div>
                   </div>
-                  <!-- 下面列表部分的封装结束 -->
                 </div>
-
               </div>
-              <!-- 封装上下部分结束 -->
-
             </div>
-            <!-- 左边部分 第1列结束 -->
-
-            <!-- 右边部分 第2列 -->
             <div class="col-lg-6">
-
-              <!-- divs封装 -->
               <div class="skills-wapper">
-
-                <!-- div1 -->
                 <div class="skills-item">
-                  <h4 class="sm-title-block">customization</h4>
+                  <h4 class="sm-title-block">Web Design</h4>
                   <div class="bar"> <span class="fill" data-width="88%"> <span class="number">88%</span> </span> </div>
                   <div class="tip"></div>
                 </div>
-
-                <!-- div2 -->
                 <div class="skills-item">
                   <h4 class="sm-title-block">branding</h4>
                   <div class="bar"> <span class="fill" data-width="92%"> <span class="number">92%</span> </span> </div>
                   <div class="tip"></div>
                 </div>
-
-                <!-- div3 -->
                 <div class="skills-item">
-                  <h4 class="sm-title-block">cost-effective</h4>
+                  <h4 class="sm-title-block">animation / motion</h4>
                   <div class="bar"> <span class="fill" data-width="80%"> <span class="number">80%</span> </span> </div>
                   <div class="tip"></div>
                 </div>
-
               </div>
-              <!-- divs封装结束 -->
-
             </div>
-            <!-- 右边部分 第2列结束 -->
-
           </div>
-
         </div>
-        <!-- Our Skills 部分封装上下块的容器结束 -->
-
       </section>
-      <!-- section2结束 -->
-
-      <!-- Our Services 部分 section3 -->
       <section class="service service-3 section-margin dsn-animate" data-dsn-animate="section">
-
-        <!-- Our Services上面标题部分封装 -->
         <div class="container section-title-2">
           <h2>Our Services</h2>
           <p>what we do</p>
         </div>
-        <!-- Our Services上面标题部分封装结束 -->
-
-        <!-- Our Services下面行罗列 -->
         <div class="container" data-dsn-animate="section">
-
-          <!-- Our Services下面行封装 -->
           <div class="row">
-            <!-- item1 -->
-            <div class="col-md-4 col-sm-6 service-content dsn-up">
-              <!-- item1背景和内容的封装 -->
-              <div class="services-item p-relative text-center background-section no-shadow">
-                <!-- item1的背景 -->
-                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden" style="background-image: url(../static/img/services/aboutUs.jpeg)"></div>
-                <!-- item1的内容封装 -->
-                <div class="box-content p-relative d-flex align-items-center h-100">
-                  <div class="content-inner">
-                    <!-- item1的图标 -->
-                    <div class="icon"> <img src="{{ url_for('static', filename='img/services/graph.svg') }}" alt=""> </div>
-                    <!-- item1的内容文字 -->
-                    <div class="content">
-                      <h4 class="title-block ">About Us</h4>
-                      <p class="p-absolute">To learn information more about us.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- item1的内容封装结束 -->
-              </div>
-              <!-- item1背景和内容的封装结束 -->
-            </div>
-            <!-- item2 -->
             <div class="col-md-4 col-sm-6 service-content dsn-up">
               <div class="services-item p-relative text-center background-section no-shadow">
-                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"  style="background-image: url(../static/img/services/newYue.jpeg)"></div>
+                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"></div>
                 <div class="box-content p-relative d-flex align-items-center h-100">
                   <div class="content-inner">
-                    <div class="icon"> <img src="{{ url_for('static', filename='img/services/layout.svg') }}" alt=""> </div>
+                    <div class="icon"> <img src="assets/img/services/graph.svg" alt=""> </div>
                     <div class="content">
-                      <h4 class="title-block ">SPIRIO | R new yue</h4>
-                      <p class="p-absolute">
-                        Steinway introduced latest SPIRIO | R
-                        new yue and recording, playing the piano
-                        SPIRIO | R able to accurately capture
-                        the live performance of every detail,
-                        and high-resolution playback.</p>
+                      <h4 class="title-block ">Media Planing</h4>
+                      <p class="p-absolute">Te qui alii inermis vivendum, an decore libris
+                        eum. Te mel dico
+                        alia wisi, cu
+                        vitae
+                        noluisse phaedrum.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- item3 -->
             <div class="col-md-4 col-sm-6 service-content dsn-up">
               <div class="services-item p-relative text-center background-section no-shadow">
-                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"  style="background-image: url(../static/img/services/musicArtist.jpeg)"></div>
+                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"></div>
                 <div class="box-content p-relative d-flex align-items-center h-100">
                   <div class="content-inner">
-                    <div class="icon"> <img src="{{ url_for('static', filename='img/services/idea.svg') }}" alt=""> </div>
+                    <div class="icon"> <img src="assets/img/services/layout.svg" alt=""> </div>
                     <div class="content">
-                      <h4 class="title-block ">Music and Artists</h4>
-                      <p class="p-absolute">
-                        Without the artist's interpretation, the Steinway is silent.
-                        Great music requires both an artist and a piano,
-                        and 97% of top artists choose steinway pianos.</p>
+                      <h4 class="title-block ">UX Design</h4>
+                      <p class="p-absolute">Te qui alii inermis vivendum, an decore libris
+                        eum. Te mel dico
+                        alia wisi, cu
+                        vitae
+                        noluisse phaedrum.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- item4 -->
             <div class="col-md-4 col-sm-6 service-content dsn-up">
               <div class="services-item p-relative text-center background-section no-shadow">
-                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"  style="background-image: url(../static/img/services/buyGuide.jpeg)"></div>
+                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"></div>
                 <div class="box-content p-relative d-flex align-items-center h-100">
                   <div class="content-inner">
-                    <div class="icon"> <img src="{{ url_for('static', filename='img/services/graph.svg') }}" alt=""> </div>
+                    <div class="icon"> <img src="assets/img/services/idea.svg" alt=""> </div>
                     <div class="content">
-                      <h4 class="title-block ">Buying Guide</h4>
-                      <p class="p-absolute">
-                        Our professional staff will
-                        give you a comprehensive consideration,
-                        easily complete the whole process of choosing
-                        Steinway.</p>
+                      <h4 class="title-block ">Branding</h4>
+                      <p class="p-absolute">Te qui alii inermis vivendum, an decore libris
+                        eum. Te mel dico
+                        alia wisi, cu
+                        vitae
+                        noluisse phaedrum.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- item5 -->
             <div class="col-md-4 col-sm-6 service-content dsn-up">
               <div class="services-item p-relative text-center background-section no-shadow">
-                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"  style="background-image: url(../static/img/services/series.jpeg)"></div>
+                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"></div>
                 <div class="box-content p-relative d-flex align-items-center h-100">
                   <div class="content-inner">
-                    <div class="icon"> <img src="{{ url_for('static', filename='img/services/layout.svg') }}" alt=""> </div>
+                    <div class="icon"> <img src="assets/img/services/graph.svg" alt=""> </div>
                     <div class="content">
-                      <h4 class="title-block ">Huanze Series</h4>
-                      <p class="p-absolute">
-                        Steinway Huanze series can be
-                        customized to your own colorful colors,
-                        can be called the ideal choice to express
-                        your personality and style.</p>
+                      <h4 class="title-block ">Media Planing</h4>
+                      <p class="p-absolute">Te qui alii inermis vivendum, an decore libris
+                        eum. Te mel dico
+                        alia wisi, cu
+                        vitae
+                        noluisse phaedrum.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- item6 -->
             <div class="col-md-4 col-sm-6 service-content dsn-up">
               <div class="services-item p-relative text-center background-section no-shadow">
-                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"  style="background-image: url(../static/img/services/education.jpeg)"></div>
+                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"></div>
                 <div class="box-content p-relative d-flex align-items-center h-100">
                   <div class="content-inner">
-                    <div class="icon"> <img src="{{ url_for('static', filename='img/services/idea.svg') }}" alt=""> </div>
+                    <div class="icon"> <img src="assets/img/services/layout.svg" alt=""> </div>
                     <div class="content">
-                      <h4 class="title-block ">Education project</h4>
-                      <p class="p-absolute">
-                        "We hope to build a platform
-                        to share the excellent performance and teaching methods
-                        and concepts of Steinway artists and steinway honorary
-                        professors with the teachers who participate in the
-                        program, so as to benefit piano learners."</p>
+                      <h4 class="title-block ">UX Design</h4>
+                      <p class="p-absolute">Te qui alii inermis vivendum, an decore libris
+                        eum. Te mel dico
+                        alia wisi, cu
+                        vitae
+                        noluisse phaedrum.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 service-content dsn-up">
+              <div class="services-item p-relative text-center background-section no-shadow">
+                <div class="bg-section background-section p-absolute w-100 h-100 over-hidden"></div>
+                <div class="box-content p-relative d-flex align-items-center h-100">
+                  <div class="content-inner">
+                    <div class="icon"> <img src="assets/img/services/idea.svg" alt=""> </div>
+                    <div class="content">
+                      <h4 class="title-block ">Branding</h4>
+                      <p class="p-absolute">Te qui alii inermis vivendum, an decore libris
+                        eum. Te mel dico
+                        alia wisi, cu
+                        vitae
+                        noluisse phaedrum.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Our Services下面2行封装 -->
-
         </div>
-        <!-- Our Services下面2行罗列结束 -->
-
       </section>
-      <!-- section3结束 -->
-
-      <!-- Awesome Portfolio 部分 section4 -->
       <section class="our-work pt-section background-section section-margin dsn-arrow" data-dsn-col="3">
         <div class="container section-title-2">
-          <h2>Steinway family products</h2>
-          <p>Since 1853, the piano manufacturer Steinway & Sons has been the standard of excellence in sound, touch, aesthetics and investment value, and it takes a full year to handcraft a Steinway & Sons piano of exceptional quality and worldwide renown</p>
+          <h2>Awesome Portfolio</h2>
+          <p>Looking for quality features</p>
         </div>
         <div class="container-fluid">
           <div class="work-container over-hidden">
             <div class="slick-slider">
               <div class="work-item slick-slide p-relative over-hidden">
-                <div class="img-next-box p-absolute w-100 h-100" data-overlay="6"> <img class="cover-bg-img" src="{{ url_for('static', filename='img/project/project3/1.jpg') }}" alt=""> </div>
+                <div class="img-next-box p-absolute w-100 h-100" data-overlay="6"> <img class="cover-bg-img" src="assets/img/project/project3/1.jpg" alt=""> </div>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute"> <a href="project3.html" class="effect-ajax" data-dsn-ajax="work">
-                  <h5 class="cat">Preferred by over 97% of solo artists worldwide</h5>
-                  <h4>Grand Piano</h4>
-                  <p> The gold standard for pianos,
-                    a symbol of Steinway's 167 years of dedication to fine craftsmanship and uncompromising musical expression </p>
-                  <span><span>Get more information</span></span> </a> </div>
+                  <h5 class="cat">Architecture</h5>
+                  <h4>Black Apartment</h4>
+                  <p> Used softwares: 3ds max, corona
+                    render,quixel mixer and Photoshop
+                    Overall lighting HDRI, corona skylight
+                    and
+                    materials created by megascans & quixel
+                    Mixer. </p>
+                  <span><span>Veiw Project</span></span> </a> </div>
               </div>
               <div class="work-item slick-slide p-relative over-hidden">
-                <div class="img-next-box p-absolute w-100 h-100" data-overlay="2"> <img class="cover-bg-img" src="{{ url_for('static', filename='img/project/project1/1.jpg') }}" alt=""> </div>
+                <div class="img-next-box p-absolute w-100 h-100" data-overlay="2"> <img class="cover-bg-img" src="assets/img/project/project1/1.jpg" alt=""> </div>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute"> <a href="project1.html" data-dsn-grid="move-up" class="effect-ajax"
-                                                      data-dsn-ajax="work">
-                  <h5 class="cat">Discover the special range of Steinway that best suits your home and style</h5>
-                  <h4>Special Collector's Edition Piano</h4>
-                  <p>Perfectly conveying your unique personality and taste. Whether it's a delicate nuance or a more striking presentation.</p>
-                  <span><span>Get more information</span></span> </a> </div>
+                                       data-dsn-ajax="work">
+                  <h5 class="cat">Product</h5>
+                  <h4>Diesel Watch</h4>
+                  <p>Vin tries to reflect Diesel’s vision
+                    and combines the universe of the rock
+                    of the 80’s with a clear and essential
+                    design to be more </p>
+                  <span><span>Veiw Project</span></span> </a> </div>
               </div>
               <div class="work-item slick-slide p-relative over-hidden">
-                <div class="img-next-box p-absolute w-100 h-100" data-overlay="5"> <img class="cover-bg-img" src="{{ url_for('static', filename='img/project/project4/1.jpg') }}" alt=""> </div>
+                <div class="img-next-box p-absolute w-100 h-100" data-overlay="5"> <img class="cover-bg-img" src="assets/img/project/project4/1.jpg" alt=""> </div>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute"> <a href="project4.html" data-dsn-grid="move-up" class="effect-ajax"
-                                                      data-dsn-ajax="work">
-                  <h5 class="cat">The Steinway reputation is evident everywhere</h5>
-                  <h4>Upright pianos</h4>
-                  <p>Made in the same factory as the grand pianos,
-                    they meet high quality standards and are made by skilled craftsmen using the same techniques and rigorous processes. The only difference is that they are made according to the "vertical sector",
-                    which is vertically oriented using the same processes.</p>
-                  <span><span>Get more information</span></span> </a> </div>
+                                       data-dsn-ajax="work">
+                  <h5 class="cat">Digital Art</h5>
+                  <h4>Intentional</h4>
+                  <p>Personal conceptual project.
+                    Reflecting on my personal style of paint illustration,
+                    on what were my initial ideas on it,</p>
+                  <span><span>Veiw Project</span></span> </a> </div>
               </div>
               <div class="work-item slick-slide p-relative over-hidden">
-                <div class="img-next-box p-absolute w-100 h-100" data-overlay="5"> <img class="cover-bg-img" src="{{ url_for('static', filename='img/project/project5/1.jpg') }}" alt=""
-                                                                                        data-dsn-position="85%"> </div>
+                <div class="img-next-box p-absolute w-100 h-100" data-overlay="5"> <img class="cover-bg-img" src="assets/img/project/project5/1.jpg" alt=""
+                                         data-dsn-position="85%"> </div>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute"> <a href="project5.html" data-dsn-grid="move-up" class="effect-ajax"
-                                                      data-dsn-ajax="work">
-                  <h5 class="cat">Commemorating special events and influential artists with original piano masterpieces</h5>
-                  <h4>Limited Edition Piano</h4>
-                  <p>Once a limited edition piano has been sold out, it will never be replicated in its entirety.
-                    The limited edition pianos combine classical Steinway craftsmanship with inspired and expressive design,
-                    each Steinway Limited Edition piano is both a magnificent instrument and a unique work of art.</p>
-                  <span><span>Get more information</span></span> </a> </div>
+                                       data-dsn-ajax="work">
+                  <h5 class="cat">Fashion , Photography</h5>
+                  <h4>Blue Edition</h4>
+                  <p>Pink Tint Photosession for popular
+                    Model in Ukraine .</p>
+                  <span><span>Veiw Project</span></span> </a> </div>
               </div>
               <div class="work-item slick-slide p-relative over-hidden">
-                <div class="img-next-box p-absolute w-100 h-100" data-overlay="5"> <img class="cover-bg-img" src="{{ url_for('static', filename='img/project/project2/1.jpg') }}" alt=""
-                                                                                        data-dsn-position="38%"> </div>
+                <div class="img-next-box p-absolute w-100 h-100" data-overlay="5"> <img class="cover-bg-img" src="assets/img/project/project2/1.jpg" alt=""
+                                         data-dsn-position="38%"> </div>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute"> <a href="project2.html" data-dsn-grid="move-up" class="effect-ajax"
-                                                      data-dsn-ajax="work">
-                  <h5 class="cat">Reflects the artistic taste and aesthetic sensibilities of the designer and owner</h5>
-                  <h4>Art Shell Pianos</h4>
-                  <p>Each bespoke Steinway Art Shell piano will bear the mark of love and a family legend,
-                    a rare treasure that will be passed down from generation to generation in many families.</p>
-                  <span><span>Get more information</span></span> </a> </div>
+                                       data-dsn-ajax="work">
+                  <h5 class="cat">Photography</h5>
+                  <h4>Zero Untitled</h4>
+                  <p>A beautifully designed bike from
+                    Zero Motorcycles SR/S. Huggo Eccles
+                    from Untitled Motorcycles has created
+                    something spectacular to the eye.</p>
+                  <span><span>Veiw Project</span></span> </a> </div>
               </div>
               <div class="work-item slick-slide p-relative over-hidden">
-                <div class="img-next-box p-absolute w-100 h-100" data-overlay="5"> <img class="cover-bg-img" src="{{ url_for('static', filename='img/project/project6/1.jpg') }}" alt=""
-                                                                                        data-dsn-position="57%"> </div>
+                <div class="img-next-box p-absolute w-100 h-100" data-overlay="5"> <img class="cover-bg-img" src="assets/img/project/project6/1.jpg" alt=""
+                                         data-dsn-position="57%"> </div>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute"> <a href="project6.html" data-dsn-grid="move-up" class="effect-ajax"
-                                                      data-dsn-ajax="work">
-                  <h5 class="cat">highly superior in terms of materials, specifications and performance.</h5>
-                  <h4>Boston Series Pianos</h4>
-                  <p>The Steinway-designed Boston pianos, which have long been invincible in terms of class and value, have been made even stronger by the introduction of the new Performance Edition.
-                  </p>
-                  <span><span>Get more information</span></span></a></div>
+                                       data-dsn-ajax="work">
+                  <h5 class="cat">Photography , Photography</h5>
+                  <h4>NFL Combine</h4>
+                  <p>Series of images used for Under Armour's NFL combine authentic apparel.</p>
+                  <span><span>Veiw Project</span></span></a></div>
               </div>
               <div class="work-item slick-slide p-relative over-hidden">
-                <div class="img-next-box p-absolute w-100 h-100" data-overlay="7"><img class="cover-bg-img" src="{{ url_for('static', filename='img/project/project7/1.jpg') }}" alt="" data-dsn-position="57%"></div>
+                <div class="img-next-box p-absolute w-100 h-100" data-overlay="7"><img class="cover-bg-img" src="assets/img/project/project7/1.jpg" alt="" data-dsn-position="57%"></div>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute"><a href="project7.html" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">
-                  <h5 class="cat">For the first time in history, a piano has been named after an internationally renowned musician.</h5>
-                  <h4>Lang Lang Piano Series</h4>
-                  <p>In 2006, Steinway & Sons collaborated with the world-famous pianist Lang Lang to launch five new upright and grand pianos from the Lang Lang Collection.
-                    All five pianos in the Lang Lang Collection are inspired by Lang Lang's designs and are designed and produced with Steinway & Sons' expertise.
-                  </p>
-                  <span><span>Get more information</span></span> </a> </div>
+                  <h5 class="cat">Video,Architecture</h5>
+                  <h4>EQUATOR CGI</h4>
+                  <p>Series of images used for Under Armour's NFL combine authentic
+                    apparel.</p>
+                  <span><span>Veiw Project</span></span> </a> </div>
               </div>
               <div class="work-item slick-slide p-relative over-hidden">
-                <div class="img-next-box p-absolute w-100 h-100" data-overlay="7"> <img class="cover-bg-img" src="{{ url_for('static', filename='img/project/project8/1.jpg') }}" alt=""
-                                                                                        data-dsn-position="34%"> </div>
+                <div class="img-next-box p-absolute w-100 h-100" data-overlay="7"> <img class="cover-bg-img" src="assets/img/project/project8/1.jpg" alt=""
+                                         data-dsn-position="34%"> </div>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute"> <a href="project8.html" data-dsn-grid="move-up" class="effect-ajax"
-                                                      data-dsn-ajax="work">
-                  <h5 class="cat">The ideal introduction for beginner piano learners</h5>
-                  <h4>Essex Collection Pianos</h4>
-                  <p>Every Essex piano is rigorously inspected by Steinway & Sons' team of experienced technicians before it leaves the factory.</p>
-                  <span><span>Get more information</span></span> </a> </div>
+                                       data-dsn-ajax="work">
+                  <h5 class="cat">Photography</h5>
+                  <h4>NATIVE UNION</h4>
+                  <p>Product Photography | NATIVE UNION Rose Collection .</p>
+                  <span><span>Veiw Project</span></span> </a> </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <!--      说明-->
       <div class="box-gallery-vertical box-gallery-content  section-margin" data-dsn-animate="section"
-           data-dsn-duration="100%" data-dsn="color">
+                 data-dsn-duration="100%" data-dsn="color">
         <div class="mask-bg"></div>
         <div class="container">
           <div class="row align-items-center h-100 dsn-z-index-2">
             <div class="col-lg-6  dsn-z-index-2">
-              <div class="box-im" data-dsn-grid="move-up"> <img class="has-top-bottom" src="{{ url_for('static', filename='img/project/project6/1.jpg') }}" alt=""
-                                                                data-dsn-move="20%"> </div>
+              <div class="box-im" data-dsn-grid="move-up"> <img class="has-top-bottom" src="assets/img/project/project1/1.jpg" alt=""
+                                     data-dsn-move="20%"> </div>
             </div>
             <div class="col-lg-6">
               <div class="box-info">
                 <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1"
-                     data-dsn-duration="170%" data-dsn-move="0%"> Steinway </div>
+                                     data-dsn-duration="170%" data-dsn-move="0%"> Diesel </div>
                 <div class="vertical-title ">
-                  <h2 class="dsn-text">Steinway Piano</h2>
+                  <h2 class="dsn-text">Diesel Watch</h2>
                 </div>
                 <div class="bg-mask-content dsn-up">
                   <div class="mask-bg-2 background-section"></div>
-                  <h6 class="dsn-up">
-                    Concert artists, pianists,
-                    composers and performers all over the world prefer Steinway pianos for their performances or shows.</h6>
-                  <p class="dsn-up">Since 1853, the piano maker Steinway has become the standard of excellence in piano tone, touch,
-                    aesthetics and investment value,
-                    and it takes a full year to handcraft a Steinway piano of exceptional quality and worldwide renown.</p>
+                  <h6 class="dsn-up">Sometimes, we need to check the time, wondering when our
+                    work
+                    or meeting will finish, without getting caught by others.</h6>
+                  <p class="dsn-up">Vin tries to reflect Diesel’s vision and combines the universe
+                    of
+                    the rock of
+                    the 80’s with a clear and essential design to be more confident
+                    with its
+                    customers who need strong symbols through which express
+                    themselves</p>
                 </div>
                 <div class="d-inline-block dsn-up"> <a href="#" class="link-custom d-flex a-item-center p-relative"> <span class="link-text">Load More</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
               </div>
@@ -917,7 +773,6 @@
           </div>
         </div>
       </div>
-      <!--      客户评价-->
       <section class="testimonials-2 testimonials-3 testimonials-new section-margin">
         <div class="container h-100 testimonials-inner background-section p-relative">
           <div class="section-title-2" data-dsn-grid="move-section" data-dsn-move="-60" data-dsn-duration="100%" data-dsn-opacity="1" data-dsn-responsive="tablet">
@@ -929,38 +784,45 @@
               <div class="nav-container">
                 <div class="testimonials-nav">
                   <div class="testimonials-nav-item">
-                    <div class="testimonials-nav-item-inner"> <img src="{{ url_for('static', filename='img/avatar/1.jpg') }}" alt="">
+                    <div class="testimonials-nav-item-inner"> <img src="assets/img/avatar/1.jpg" alt="">
                       <div class="info">
-                        <h5>from Fortune</h5>
-                        <h6>Magazine, December 1934</h6>
+                        <h5>Vikinglivet</h5>
+                        <h6>Founder & CEO, ABC</h6>
                       </div>
                     </div>
                   </div>
                   <div class="testimonials-nav-item">
-                    <div class="testimonials-nav-item-inner"> <img src="{{ url_for('static', filename='img/avatar/2.jpg') }}" alt="">
+                    <div class="testimonials-nav-item-inner"> <img src="assets/img/avatar/2.jpg" alt="">
                       <div class="info">
-                        <h5>Marta Argerich</h5>
-                        <h6>piano virtuoso</h6>
+                        <h5>Muhammad Khedr</h5>
+                        <h6>Motion Designer</h6>
                       </div>
                     </div>
                   </div>
                   <div class="testimonials-nav-item">
-                    <div class="testimonials-nav-item-inner"> <img src="{{ url_for('static', filename='img/avatar/3.jpg') }}" alt="">
+                    <div class="testimonials-nav-item-inner"> <img src="assets/img/avatar/3.jpg" alt="">
                       <div class="info">
-                        <h5>Lang lang</h5>
-                        <h6>Famous Piano player</h6>
+                        <h5>Caeleth</h5>
+                        <h6>Web Designer</h6>
                       </div>
                     </div>
                   </div>
                   <div class="testimonials-nav-item">
-                    <div class="testimonials-nav-item-inner"> <img src="{{ url_for('static', filename='img/avatar/4.jpg') }}" alt="">
+                    <div class="testimonials-nav-item-inner"> <img src="assets/img/avatar/4.jpg" alt="">
                       <div class="info">
-                        <h5>Vlamir Ashkenazy</h5>
-                        <h6>Famous Piano playerC</h6>
+                        <h5>w0anerges</h5>
+                        <h6>Founder & CEO, ABC</h6>
                       </div>
                     </div>
                   </div>
-
+                  <div class="testimonials-nav-item">
+                    <div class="testimonials-nav-item-inner"> <img src="assets/img/avatar/1.jpg" alt="">
+                      <div class="info">
+                        <h5>yancyv8</h5>
+                        <h6>Project Management </h6>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -968,29 +830,50 @@
               <div class="testimonials-main-content dsn-is-not-fade">
                 <div class="testimonials-item">
                   <div class="top-box">
-                    <h5 class="sm-title-block">Social Support</h5>
-                    <p class="p-larg">"Around 500 craftsmen in Astoriave - hand-jointing the 17-ply hard maple frame in place for the production of pianos, each using eight types of wood ...... The great sound of Steinway pianos is due to a total of 12 technical patents and innovations."</p>
+                    <h5 class="sm-title-block">Customer Support</h5>
+                    <p class="p-larg">"I love the design, really reach details. It inspired me to
+                      learn more about web design. The code quality looks great as well. Can't wait to launch my site. Thanks design_grid for such an awesome one. Keep it up."</p>
                   </div>
                 </div>
                 <div class="testimonials-item">
                   <div class="top-box">
-                    <h5 class="sm-title-block">Artist Support</h5>
-                    <p class="p-larg">"Sometimes a Steinway piano plays better than a pianist"</p>
+                    <h5 class="sm-title-block">Design Quality</h5>
+                    <p class="p-larg">I love the design, really reach details. It inspired me to
+                      learn more about web design. The code quality looks great as well. Can't
+                      wait to launch my site. Thanks design_grid for such an awesome one. Keep
+                      it up.</p>
                   </div>
                 </div>
                 <div class="testimonials-item">
                   <div class="top-box">
-                    <h5 class="sm-title-block">Artist Support</h5>
-                    <p class="p-larg">"If I want to play at my best, there is no other choice but a Steinway"</p>
+                    <h5 class="sm-title-block">Design Quality</h5>
+                    <p class="p-larg">Absolutely happy with the slick design and customer
+                      support!
+                      Suggestion: the theme could do with a little more customization, like
+                      different font types for instance and social sharing options under each
+                      post for easy sharing</p>
                   </div>
                 </div>
                 <div class="testimonials-item">
                   <div class="top-box">
-                    <h5 class="sm-title-block">Artist Support</h5>
-                    <p class="p-larg">"Steinway is the only piano that allows the pianist to play to his heart's content and piano to fulfil his dreams" </p>
+                    <h5 class="sm-title-block">Customer Support</h5>
+                    <p class="p-larg">This is not only a cool theme, that helped me quickly
+                      create a website that looks much more expensive than what it costs, but
+                      also technical support.
+                      
+                      When I encountered some difficulties in setting up a theme, the guys
+                      supported me and did everything so that I could solve my problems.</p>
                   </div>
                 </div>
-
+                <div class="testimonials-item">
+                  <div class="top-box">
+                    <h5 class="sm-title-block">Customer Support</h5>
+                    <p class="p-larg">I browse Themeforest looking for new ways to revamp my
+                      site all the time. I came across this one for its looks and purchased it
+                      right away. I had a few issues early but the support team made sure to
+                      help in a very timely manner and now I'm more than satisfied.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1006,47 +889,48 @@
             <div class="col-md-4 col-sm-6 dsn-up blog-classic-item">
               <div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
                 <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                     data-image-src="{{ url_for('static', filename='img/pattern.png') }}"> <img src="{{ url_for('static', filename='img/blog/1.jpg') }}" alt="" class="cover-bg-img"> </div>
+                                     data-image-src="assets/img/pattern.png"> <img src="assets/img/blog/1.jpg" alt="" class="cover-bg-img"> </div>
                 <div class="box-content p-relative">
                   <div class="box-content-body">
-                    <div class="entry-date"> <a href="#">Saturday 5 March 15:00</a> </div>
-                    <h4 class="title-block"><a href="#">MOVIE & JAZZ - Piano Chamber Music Concert</a></h4>
-                    <p>Lorem, Will you be attending Affiliate Summit
-                      Europe?ipsum dolor sit amet consectetur adipisicing elit. Nulla
+                    <div class="entry-date"> <a href="#">March - 17th 2020</a> </div>
+                    <h4 class="title-block"><a href="#">Will you be attending Affiliate Summit
+                      Europe?</a></h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla
                       soluta
                       pariatur
                       ducimus quas eaque error sunt natus.</p>
                     <a href="#" class="link-vist p-relative"> <span class="link-vist-text">Load More</span>
-                      <div class="link-vist-arrow">
-                        <svg viewBox="0 0 80 80">
-                          <polyline points="19.89 15.25 64.03 15.25 64.03 59.33"> </polyline>
-                          <line x1="64.03" y1="15.25" x2="14.03" y2="65.18"></line>
-                        </svg>
-                      </div>
+                    <div class="link-vist-arrow">
+                      <svg viewBox="0 0 80 80">
+                        <polyline points="19.89 15.25 64.03 15.25 64.03 59.33"> </polyline>
+                        <line x1="64.03" y1="15.25" x2="14.03" y2="65.18"></line>
+                      </svg>
+                    </div>
                     </a> </div>
                 </div>
               </div>
             </div>
             <div class="col-md-4 col-sm-6 dsn-up blog-classic-item">
               <div
-                      class="blog-item p-relative blog-item-active d-flex align-items-center h-100 w-100">
+                                    class="blog-item p-relative blog-item-active d-flex align-items-center h-100 w-100">
                 <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                     data-image-src="{{ url_for('static', filename='img/pattern.png') }}"> <img src="{{ url_for('static', filename='img/blog/2.jpg') }}" alt="" class="cover-bg-img"> </div>
+                                     data-image-src="assets/img/pattern.png"> <img src="assets/img/blog/2.jpg" alt="" class="cover-bg-img"> </div>
                 <div class="box-content p-relative">
                   <div class="box-content-body">
-                    <div class="entry-date"> <a href="#">Sunday 6 March 15:00</a> </div>
-                    <h4 class="title-block"><a href="#">ALL ABOUT LOVE - Piano and violin duet</a></h4>
+                    <div class="entry-date"> <a href="#">March - 17th 2020</a> </div>
+                    <h4 class="title-block"><a href="#">Will you be attending Affiliate Summit
+                      Europe?</a></h4>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla
                       soluta
                       pariatur
                       ducimus quas eaque error sunt natus.</p>
                     <a href="#" class="link-vist p-relative"> <span class="link-vist-text">Load More</span>
-                      <div class="link-vist-arrow">
-                        <svg viewBox="0 0 80 80">
-                          <polyline points="19.89 15.25 64.03 15.25 64.03 59.33"> </polyline>
-                          <line x1="64.03" y1="15.25" x2="14.03" y2="65.18"></line>
-                        </svg>
-                      </div>
+                    <div class="link-vist-arrow">
+                      <svg viewBox="0 0 80 80">
+                        <polyline points="19.89 15.25 64.03 15.25 64.03 59.33"> </polyline>
+                        <line x1="64.03" y1="15.25" x2="14.03" y2="65.18"></line>
+                      </svg>
+                    </div>
                     </a> </div>
                 </div>
               </div>
@@ -1054,22 +938,23 @@
             <div class="col-md-4 col-sm-6 dsn-up blog-classic-item">
               <div class=" blog-item p-relative d-flex align-items-center h-100 w-100">
                 <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                     data-image-src="{{ url_for('static', filename='img/pattern.png') }}"> <img src="{{ url_for('static', filename='img/blog/3.jpg') }}" alt="" class="cover-bg-img"> </div>
+                                     data-image-src="assets/img/pattern.png"> <img src="assets/img/blog/3.jpg" alt="" class="cover-bg-img"> </div>
                 <div class="box-content p-relative">
                   <div class="box-content-body">
-                    <div class="entry-date"> <a href="#">Saturday 12 March, 15:00</a> </div>
-                    <h4 class="title-block"><a href="#">Vedanwen Guided Concert</a></h4>
+                    <div class="entry-date"> <a href="#">March - 17th 2020</a> </div>
+                    <h4 class="title-block"><a href="#">Will you be attending Affiliate Summit
+                      Europe?</a></h4>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla
                       soluta
                       pariatur
                       ducimus quas eaque error sunt natus.</p>
                     <a href="#" class="link-vist p-relative"> <span class="link-vist-text">Load More</span>
-                      <div class="link-vist-arrow">
-                        <svg viewBox="0 0 80 80">
-                          <polyline points="19.89 15.25 64.03 15.25 64.03 59.33"> </polyline>
-                          <line x1="64.03" y1="15.25" x2="14.03" y2="65.18"></line>
-                        </svg>
-                      </div>
+                    <div class="link-vist-arrow">
+                      <svg viewBox="0 0 80 80">
+                        <polyline points="19.89 15.25 64.03 15.25 64.03 59.33"> </polyline>
+                        <line x1="64.03" y1="15.25" x2="14.03" y2="65.18"></line>
+                      </svg>
+                    </div>
                     </a> </div>
                 </div>
               </div>
@@ -1081,110 +966,118 @@
         <div class="container section-title-2">
           <h2>Your successful, <br>
             our reputation</h2>
-          <p>ARTISTS</p>
+          <p>OUR CLIENTS</p>
         </div>
         <div class="container">
           <div class="wapper-client">
             <div class="logo-box">
               <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                   data-image-src="{{ url_for('static', filename='img/pattern.png') }}"></div>
-              <img src="{{ url_for('static', filename='img/logo/1.png') }}" alt="">
+                                 data-image-src="assets/img/pattern.png"></div>
+              <img src="assets/img/logo/1.png" alt="">
               <div class="info">
                 <div class="content">
                   <div class="entry">
                     <div>
-                      <a href="#">Christian Blackshaw</a> </div>
+                      <h5>Google</h5>
+                      <a href="#">www.google.com</a> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="logo-box">
               <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                   data-image-src="{{ url_for('static', filename='img/pattern.png') }}"></div>
-              <img src="{{ url_for('static', filename='img/logo/2.png') }}" alt="">
+                                 data-image-src="assets/img/pattern.png"></div>
+              <img src="assets/img/logo/2.png" alt="">
               <div class="info">
                 <div class="content">
                   <div class="entry">
                     <div>
-                      <a href="#">Jefe Bronfman</a> </div>
+                      <h5>Google</h5>
+                      <a href="#">www.google.com</a> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="logo-box">
               <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                   data-image-src="{{ url_for('static', filename='img/pattern.png') }}"></div>
-              <img src="{{ url_for('static', filename='img/logo/3.png') }}" alt="">
+                                 data-image-src="assets/img/pattern.png"></div>
+              <img src="assets/img/logo/3.png" alt="">
               <div class="info">
                 <div class="content">
                   <div class="entry">
                     <div>
-                      <a href="#">Boris Bellman</a> </div>
+                      <h5>Google</h5>
+                      <a href="#">www.google.com</a> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="logo-box">
               <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                   data-image-src="{{ url_for('static', filename='img/pattern.png') }}"></div>
-              <img src="{{ url_for('static', filename='img/logo/4.png') }}" alt="">
+                                 data-image-src="assets/img/pattern.png"></div>
+              <img src="assets/img/logo/4.png" alt="">
               <div class="info">
                 <div class="content">
                   <div class="entry">
                     <div>
-                      <a href="#">Hélène Grimaud</a> </div>
+                      <h5>Google</h5>
+                      <a href="#">www.google.com</a> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="logo-box">
               <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                   data-image-src="{{ url_for('static', filename='img/pattern.png') }}"></div>
-              <img src="{{ url_for('static', filename='img/logo/5.png') }}" alt="">
+                                 data-image-src="assets/img/pattern.png"></div>
+              <img src="assets/img/logo/5.png" alt="">
               <div class="info">
                 <div class="content">
                   <div class="entry">
                     <div>
-                      <a href="#">Lang lang</a> </div>
+                      <h5>Google</h5>
+                      <a href="#">www.google.com</a> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="logo-box">
               <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                   data-image-src="{{ url_for('static', filename='img/pattern.png') }}"></div>
-              <img src="{{ url_for('static', filename='img/logo/6.png') }}" alt="">
+                                 data-image-src="assets/img/pattern.png"></div>
+              <img src="assets/img/logo/6.png" alt="">
               <div class="info">
                 <div class="content">
                   <div class="entry">
                     <div>
-                      <a href="#">GINA ALICE</a> </div>
+                      <h5>Google</h5>
+                      <a href="#">www.google.com</a> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="logo-box">
               <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                   data-image-src="{{ url_for('static', filename='img/pattern.png') }}"></div>
-              <img src="{{ url_for('static', filename='img/logo/7.png') }}" alt="">
+                                 data-image-src="assets/img/pattern.png"></div>
+              <img src="assets/img/logo/1.png" alt="">
               <div class="info">
                 <div class="content">
                   <div class="entry">
                     <div>
-                      <a href="#">Marta Agrizzi</a> </div>
+                      <h5>Google</h5>
+                      <a href="#">www.google.com</a> </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="logo-box">
               <div class="after-bg p-absolute w-100 h-100 cover-bg"
-                   data-image-src="{{ url_for('static', filename='img/pattern.png') }}"></div>
-              <img src="{{ url_for('static', filename='img/logo/8.png') }}" alt="">
+                                 data-image-src="assets/img/pattern.png"></div>
+              <img src="assets/img/logo/3.png" alt="">
               <div class="info">
                 <div class="content">
                   <div class="entry">
                     <div>
-                      <a href="#">Vladimir Ashkenazy</a> </div>
+                      <h5>Google</h5>
+                      <a href="#">www.google.com</a> </div>
                   </div>
                 </div>
               </div>
@@ -1192,63 +1085,37 @@
           </div>
         </div>
       </section>
-
-    <!-- 新加的div结尾 -->
     </div>
-
-      <!-- 这2啥情况？-->
-<!--      <div class="col-lg-3 col-md-6 footer-block-inner">-->
-<!--              <div class="footer-block col-contact">-->
-<!--                <h4 class="footer-title">Contact</h4>-->
-<!--                <p><strong>T</strong> <span>:</span> +001 225 3351</p>-->
-<!--                <p><strong>F</strong> <span>:</span>+001 225 3351</p>-->
-<!--                <p class="over-hidden"><strong>E</strong> <span>:</span><a class="link-hover"-->
-<!--                                                                                           data-hover-text="info@dsngrid.com"-->
-<!--                                                                                           href="#">info@dsngrid.com</a> </p>-->
-<!--              </div>-->
-<!--            </div>-->
-
-<!--      <div class="col-lg-3 col-md-6 footer-block-inner">-->
-<!--        <div class="col-address">-->
-<!--                <h4 class="footer-title">Address</h4>-->
-<!--                <p>El-Mahalla El-Kubra 37<br>-->
-<!--                  1776 Damietta<br>-->
-<!--                  Egypt</p>-->
-<!--              </div>-->
-<!--            </div>-->
-
-<!--    &lt;!&ndash; 下面是丢失的section &ndash;&gt;-->
-<!--    <section class="next-up next-project p-relative section-padding">-->
-<!--      <div class="bg-section p-absolute w-100 h-100 over-hidden">-->
-<!--        <div class="h-100 before-z-index" data-dsn-grid="move-up" data-overlay="5"> <img class="cover-bg-img has-top-bottom" src="{{ url_for('static', filename='img/bg-2.jpg') }}" alt=""> </div>-->
-<!--      </div>-->
-<!--      <div class="container-fluid p-relative dsn-z-index-2">-->
-<!--        <div class="row margin-lr-100">-->
-<!--          <div class="col-lg-6 col-md-7 offset-lg-6 offset-md-5">-->
-<!--            <div class="next-up-inner p-relative background-section">-->
-<!--              <h2 class="title">We <br>-->
-<!--                are <br>-->
-<!--                hiring!</h2>-->
-<!--              <a href="contact-2.html" class="btn background-theme p-relative effect-ajax"-->
-<!--                               data-dsn="parallax"><span>Contact us</span></a>-->
-<!--              <div class="infos d-flex a-item-center bd-highlight">-->
-<!--                <div class="infos_content mr-auto"> See More <br>-->
-<!--                  Works!</div>-->
-<!--                <div class="infos_button "> <a href="work.html" class="effect-ajax image-zoom " data-dsn="parallax"> portfolio </a> </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </section>-->
-    <!-- 下面是新加的footer头部 -->
+    <section class="next-up next-project p-relative section-padding">
+      <div class="bg-section p-absolute w-100 h-100 over-hidden">
+        <div class="h-100 before-z-index" data-dsn-grid="move-up" data-overlay="5"> <img class="cover-bg-img has-top-bottom" src="assets/img/bg-2.jpg" alt=""> </div>
+      </div>
+      <div class="container-fluid p-relative dsn-z-index-2">
+        <div class="row margin-lr-100">
+          <div class="col-lg-6 col-md-7 offset-lg-6 offset-md-5">
+            <div class="next-up-inner p-relative background-section">
+              <h2 class="title">We <br>
+                are <br>
+                hiring!</h2>
+              <a href="contact-2.html" class="btn background-theme p-relative effect-ajax"
+                               data-dsn="parallax"><span>Contact us</span></a>
+              <div class="infos d-flex a-item-center bd-highlight">
+                <div class="infos_content mr-auto"> See More <br>
+                  Works!</div>
+                <div class="infos_button "> <a href="work.html" class="effect-ajax image-zoom " data-dsn="parallax"> portfolio </a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="footer-1 p-relative background-section">
       <div class="container">
         <div class="footer-links p-relative">
           <div class="row">
             <div class="col-lg-3 col-md-6 footer-block-inner">
               <div class="footer-block">
-                <div class="footer-logo"> <a href=""> <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="logo-dark"> <img src="{{ url_for('static', filename='img/logo-dark.png') }}" alt="" class="logo-light"> </a> </div>
+                <div class="footer-logo"> <a href=""> <img src="assets/img/logo.png" alt="" class="logo-dark"> <img src="assets/img/logo-dark.png" alt="" class="logo-light"> </a> </div>
                 <div class="textwidget">
                   <p>We support programs that create advancement opportunities for people.</p>
                 </div>
@@ -1290,7 +1157,6 @@
           </div>
         </div>
       </div>
-      <!-- 上面是新加的footer头部 -->
       <div class="footer-nav">
         <div class="container">
           <ul>
@@ -1313,12 +1179,12 @@
     </footer>
   </div>
 </main>
-<div class="scroll-to-top"> <img src="{{ url_for('static', filename='img/scroll_top.svg') }}" alt="">
+<div class="scroll-to-top"> <img src="assets/img/scroll_top.svg" alt="">
   <div class="box-numper"> <span>0%</span> </div>
 </div>
-<!--<div class="cursor">-->
-<!--  <div class="cursor-helper"> <span class="cursor-drag">Drag</span> <span class="cursor-view">View</span> <span class="cursor-open"><i class="fas fa-plus"></i></span> <span class="cursor-close">Close</span> <span class="cursor-play">play</span> <span class="cursor-next"><i class="fas fa-chevron-right"></i></span> <span class="cursor-prev"><i class="fas fa-chevron-left"></i></span> </div>-->
-<!--</div>-->
+<div class="cursor">
+  <div class="cursor-helper"> <span class="cursor-drag">Drag</span> <span class="cursor-view">View</span> <span class="cursor-open"><i class="fas fa-plus"></i></span> <span class="cursor-close">Close</span> <span class="cursor-play">play</span> <span class="cursor-next"><i class="fas fa-chevron-right"></i></span> <span class="cursor-prev"><i class="fas fa-chevron-left"></i></span> </div>
+</div>
 <div class="day-night">
   <div class="night active" data-dsn-theme="dark">
     <svg width="48" height="48" viewBox="0 0 48 48">
@@ -1347,11 +1213,9 @@
 </div>
 
 <!-- Optional JavaScript --> 
-<script type="text/javascript" src="{{ url_for('static', filename='script/jquery-3.1.1.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='script/plugins.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='script/dsn-grid.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='script/custom.js') }}"></script>
-<!-- 登录弹窗 -->
-<script src="{{ url_for('static',filename='script/signup.js') }}"></script>
+<script src="assets/js/jquery-3.1.1.min.js"></script> 
+<script src="assets/js/plugins.js"></script> 
+<script src="assets/js/dsn-grid.js"></script> 
+<script src="assets/js/custom.js"></script>
 </body>
 </html>
