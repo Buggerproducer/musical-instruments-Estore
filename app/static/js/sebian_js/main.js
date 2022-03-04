@@ -26,16 +26,7 @@ wow.init();
 /*-----------------------------------------------------------------------------------*/
 /* 	PRODUCTS SLIDER
 /*-----------------------------------------------------------------------------------*/
-$(".product-slides").owlCarousel({ 
-    items : 1,
-	autoplay:false,
-	autoplayHoverPause:true,
-	singleItem	: true,
-	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-	lazyLoad:true,
-	nav: true,
-	animateOut: 'fadeOut'	
-});
+
 /*-----------------------------------------------------------------------------------*/
 /* 	ABOUT CLIENT SLIDER
 /*-----------------------------------------------------------------------------------*/

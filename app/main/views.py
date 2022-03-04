@@ -32,3 +32,8 @@ def testlogin():
 @main.route('/')
 def index():
     return render_template("index.html", async_mode=socketio.async_mode)
+
+@main.route('/testbase')
+def testbase():
+    return render_template("MusiCrashTemplates/userInfo.html",async_mode=socketio.async_mode)
+
