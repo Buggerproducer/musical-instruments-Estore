@@ -68,8 +68,6 @@ async function logout() {
             document.getElementById('result').innerText='not already login';
     }
     //console.log('logout successfully');
-
-
 }
 
 function getLoginState(){

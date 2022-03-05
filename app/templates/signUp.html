@@ -12,9 +12,8 @@
 </head>
 <body>
 <p id="result"></p>
-<div class="box right-panel-active" id="box">
+<div class="box" id="box">
     <div class="form-container sign-up-container">
-
         <!-- sign up form -->
         <form>
             <h1>Sign Up</h1>
@@ -37,13 +36,15 @@
                 <input type="text" id="phone">
             </label>
             <!-- sign up -->
-            <button onclick="signUp($('#username').val(),null,null,$('#password').val(),function(user) {
-  document.getElementById('result').innerText='register success!'
-  console.log(user)
-},function(error) {
-  document.getElementById('result').innerText=error
-  console.log(error)
-})">register</button>
+            <button onclick="
+                signUp($('#username').val(),null,null,$('#password').val(),function(user) {
+                document.getElementById('result').innerText='register success!'
+                console.log(user)
+                },function(error) {
+                document.getElementById('result').innerText=error
+                console.log(error)
+                })"
+            >register</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
@@ -60,6 +61,7 @@
                 password:
                 <input type="password" id="password2">
             </label>
+            <p><a href="#" style="color: black">Forget password?</a></p>
             <br>
             <!-- sign in button -->
             <button onclick="
@@ -94,6 +96,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>
