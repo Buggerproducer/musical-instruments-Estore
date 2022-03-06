@@ -41,10 +41,13 @@ async function signUp(username, email, phone, password, onSuccess, onFail){
 async function signInWithUsername(username,password, onSuccess, onFail){
   AV.User.logIn(username, password).then((user) => {
       // 登录成功
-    onSuccess(user)
+      window.location.href = "http://127.0.0.1:5000/";
+      alert('login successfully');
+      onSuccess(user);
   }, (error) => {
       // 登录失败（可能是密码错误）
-    onFail(error)
+      alert('login fail');
+      onFail(error)
   });
 }
 
@@ -62,10 +65,12 @@ async function logout() {
     console.log(getLoginState());
     if(getLoginState()!=null){
         AV.User.logOut();
-        document.getElementById('result').innerText='logout successfully';
+        alert('logout successfully');
+        // document.getElementById('result').innerText='logout successfully';
     }
     else{
-            document.getElementById('result').innerText='not already login';
+            // document.getElementById('result').innerText='not already login';
+        alert('not already login');
     }
     //console.log('logout successfully');
 }
