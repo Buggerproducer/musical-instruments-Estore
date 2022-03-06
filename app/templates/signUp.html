@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/user.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/LoginAnimation.js') }}"></script>
     <link rel="stylesheet" href="../static/style/LogInAndSignUp.css">
 </head>
 <body>
@@ -10,7 +15,6 @@
 <div class="box" id="box">
     <div class="form-container sign-up-container">
         <!-- sign up form -->
-        <form>
             <h1>Sign Up</h1>
             <!-- sign up input -->
             <!-- username -->
@@ -33,20 +37,17 @@
             <!-- sign up -->
             <button onclick="
                 signUp($('#username').val(),null,null,$('#password').val(),function(user) {
-                    alert('register success!');
-                // document.getElementById('result').innerText='register success!'
-                console.log(user);
+                document.getElementById('result').innerText='register success!'
+                console.log(user)
                 },function(error) {
-                    alert('Fail to register.');
-                // document.getElementById('result').innerText=error
-                console.log(error);
+                document.getElementById('result').innerText=error
+                console.log(error)
                 })"
             >register</button>
-        </form>
     </div>
     <div class="form-container sign-in-container">
         <!-- login form -->
-        <form>
+
             <h1 style="margin-bottom: 30px">Log In</h1>
             <!-- login input -->
             <!-- username -->
@@ -64,15 +65,16 @@
             <button onclick="
                 signInWithUsername($('#username2').val(),$('#password2').val(),function(user) {
                     alert('login success!');
-                    // document.getElementById('result').innerText='login success!'
+                    window.location.href = 'http://127.0.0.1:5000/';
+                    document.getElementById('result').innerText='login success!'
                     console.log(user);
                 },function(error) {
                     alert('Fail to login.');
-                    // document.getElementById('result').innerText=error
+                    document.getElementById('result').innerText=error
                     console.log(error);
                 })
             ">login</button>
-        </form>
+
     </div>
     <div class="overlay-container">
         <div class="overlay">
@@ -95,10 +97,5 @@
         </div>
     </div>
 </div>
-<script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
-<script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
-<script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
-<script src="{{ url_for('static',filename='script/user.js') }}"></script>
-<script src="{{ url_for('static',filename='script/LoginAnimation.js') }}"></script>
 </body>
 </html>

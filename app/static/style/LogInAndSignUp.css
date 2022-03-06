@@ -54,7 +54,7 @@ a:hover {
     min-height: 480px;
 }
 /* define the style of the form */
-.form-container form {
+.form-container {
     background: #fff;
     display: flex;
     flex-direction: column;
