@@ -119,7 +119,7 @@
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
             <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
             <li><a href="{{ url_for('main.signUp') }}"><span class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="javascript:void(0);" onclick="logout();"><span class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>
+            <li><a href="javascript:logout();"><span class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="{{ url_for('main.testlogin') }}"><span class="dsn-title-menu">Test Login</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
@@ -1353,6 +1353,9 @@
 <script type="text/javascript" src="{{ url_for('static', filename='script/dsn-grid.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='script/custom.js') }}"></script>
 <!-- test_login -->
+<script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+<script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
 <script src="{{ url_for('static',filename='script/user.js') }}"></script>
 </body>
 </html>
