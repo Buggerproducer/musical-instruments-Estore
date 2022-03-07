@@ -6,12 +6,12 @@ Modify Information
 
 {% block content %}
 <div class="container section-margin b">
-        <div class="row ackground-f2f2f2">
+    <div class="row ackground-f2f2f2">
           <div class="col-lg-12">
             <div class="form-box">
               <div class="section-title text-center">
-                <p class="d-inline-block">Get in Touch</p>
-                <h2 class="background-transparent">Contact Us</h2>
+                <p class="d-inline-block">Welcome to MusiCrash</p>
+                <h2 class="background-transparent">Modify Your Information</h2>
               </div>
                 <div class="messages"></div>
                 <div class="input__wrap controls">
@@ -19,7 +19,7 @@ Modify Information
                     <div class="col-lg-6">
                       <div class="form-group">
                         <div class="entry">
-                          <label>Your name *</label>
+                          <label>Name</label>
                           <input id="form_name" type="text" class="darkgary-font" name="name" placeholder="Type your name" required="required" data-error="name is required.">
                         </div>
                         <div class="help-block with-errors"></div>
@@ -28,7 +28,25 @@ Modify Information
                     <div class="col-lg-6">
                       <div class="form-group">
                         <div class="entry">
-                          <label>Your E-Mail *</label>
+                          <label>E-Mail</label>
+                          <input id="form_email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <div class="entry">
+                          <label>Phone</label>
+                          <input id="form_email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <div class="entry">
+                          <label>Birthday</label>
                           <input id="form_email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
                         </div>
                         <div class="help-block with-errors"></div>
@@ -37,23 +55,32 @@ Modify Information
                     <div class="col-lg-12">
                       <div class="form-group">
                         <div class="entry">
-                          <label>What's up?</label>
+                          <label>Address</label>
                           <textarea id="form_message" class="form-control" name="message" placeholder="Tell us about you and the world" required="required" data-error="Please,leave us a message."></textarea>
                         </div>
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
-                    <div class="col-12">
+
+                    <div class="col-6">
                       <div class="text-center">
                         <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-                          <button class="btn-form"><span class="label">Send Message</span><span class="icon-c"></span></button>
+                          <button class="btn-form darkgary-font"><span class="label">Send Message</span><span class="icon-c"></span></button>
                         </div>
                       </div>
                     </div>
+                    <div class="col-6">
+                      <div class="text-center">
+                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
+                          <button class="btn-form darkgary-font"><span class="label">Reset Password</span><span class="icon-c"></span></button>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
             </div>
           </div>
         </div>
-      </div>
+</div>
 {% endblock %}

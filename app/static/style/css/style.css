@@ -2293,7 +2293,7 @@ input[type=search]::-webkit-search-decoration {
     align-items: center;
     min-height: 48px;
     border-radius: 50px;
-    color: #fff;
+    color: darkgray;
     font-size: 14px;
     letter-spacing: 1.2px;
     border: 1.5px solid #a56433;
