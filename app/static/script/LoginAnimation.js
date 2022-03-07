@@ -9,15 +9,15 @@ $(document).ready(function (){
         // switch to login page
         $('#box').removeClass('right-panel-active');
     });
-    // input invalidations
-    $("#signUpbtn").on('click', signUp);
-    $("#signInbtn").on('click', signIn);
-    // $("#signInUsername").on('change', checkUsername);
-    // $("#signInPsssword").on('change', checkPassword);
-    $("#signUpUsername").on('change', checkUsername);
-    $("#signUpEmail").on('change', checkEmail);
-    $("#signUpPsssword").on('change', checkPassword);
-    $("#signUpRepassword").on('change', checkPasswordConfirm);
+    // // input invalidations
+    // $("#signUpbtn").on('click', signUp);
+    // $("#signInbtn").on('click', signIn);
+    // // $("#signInUsername").on('change', checkUsername);
+    // // $("#signInPsssword").on('change', checkPassword);
+    // $("#signUpUsername").on('change', checkUsername);
+    // $("#signUpEmail").on('change', checkEmail);
+    // $("#signUpPsssword").on('change', checkPassword);
+    // $("#signUpRepassword").on('change', checkPasswordConfirm);
 })
 
 // email validation
@@ -101,61 +101,61 @@ function checkPassword(){
         $(this).val('');
     }
 }
+//
+// // sign up function
+// function signUp(){
+//     // get the input value
+//     let username = $("#signUpUsername").val();
+//     let email = $("#signUpEmail").val();
+//     let password = $("#signUpPassword").val();
+//     let repassword = $("#signUpRepassword").val();
+//     // post the data in json
+//     $.post('/signup', {
+//         "username": username, "email": email, "password": password, "repassword": repassword
+//     }).done(function (response){
+//         // post success
+//         let server_code = response["returnValue"];
+//         let server_text = response["text"];
+//         if(server_code == 0) { // sign up success
+//             // alert success message
+//             alert(server_text);
+//         }else if(server_code == 1) { // fail: reconfirm password
+//             // alert fail message
+//             alert(server_text);
+//         }
+//     }).fail(function (){
+//         // post fail
+//         alert("server fail");
+//     });
+// }
 
-// sign up function
-function signUp(){
-    // get the input value
-    let username = $("#signUpUsername").val();
-    let email = $("#signUpEmail").val();
-    let password = $("#signUpPassword").val();
-    let repassword = $("#signUpRepassword").val();
-    // post the data in json
-    $.post('/signup', {
-        "username": username, "email": email, "password": password, "repassword": repassword
-    }).done(function (response){
-        // post success
-        let server_code = response["returnValue"];
-        let server_text = response["text"];
-        if(server_code == 0) { // sign up success
-            // alert success message
-            alert(server_text);
-        }else if(server_code == 1) { // fail: reconfirm password
-            // alert fail message
-            alert(server_text);
-        }
-    }).fail(function (){
-        // post fail
-        alert("server fail");
-    });
-}
-
-// sign in function
-function signIn(){
-    // get the input value
-    let username = $("#signInUsername").val();
-    let password = $("#signInPsssword").val();
-    // post the data in json
-    $.post('/login', {
-        "username": username, "password": password
-    }).done(function (response){
-        // post success
-        let server_code = response["returnValue"];
-        let server_text = response["text"];
-        if(server_code == 0) { // sign in success
-            // alert success message
-            alert(server_text);
-        }else if(server_code == 1){ // fail: no user
-            // alert fail message
-            alert(server_text);
-        }else if (server_code == 2){ // fail: wrong password
-            // alert fail message
-            alert(server_text);
-        }
-    }).fail(function (){
-        // post fail
-        alert("server fail");
-    });
-}
+// // sign in function
+// function signIn(){
+//     // get the input value
+//     let username = $("#signInUsername").val();
+//     let password = $("#signInPsssword").val();
+//     // post the data in json
+//     $.post('/login', {
+//         "username": username, "password": password
+//     }).done(function (response){
+//         // post success
+//         let server_code = response["returnValue"];
+//         let server_text = response["text"];
+//         if(server_code == 0) { // sign in success
+//             // alert success message
+//             alert(server_text);
+//         }else if(server_code == 1){ // fail: no user
+//             // alert fail message
+//             alert(server_text);
+//         }else if (server_code == 2){ // fail: wrong password
+//             // alert fail message
+//             alert(server_text);
+//         }
+//     }).fail(function (){
+//         // post fail
+//         alert("server fail");
+//     });
+// }
 
 
 
