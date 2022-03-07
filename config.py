@@ -2,8 +2,26 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 import leancloud
+print('leancloud initiating')
 leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
+username = 'webserver'
+password = '12345678'
+
+current_user = leancloud.User.get_current()
+if current_user is not None:
+    if current_user.get('username') != username:
+        current_user.logout()
+
+if leancloud.User.get_current() is None:
+    print('webserver login...')
+    user = leancloud.User()
+    user.login(username=username, password=password)
+
+if leancloud.User.get_current() is not None:
+    print('webserver login successfully with "{}"'.format(username))
+else:
+    print('webserver login fail')
 
 class Config(object):
     HOST = '127.0.0.1'
