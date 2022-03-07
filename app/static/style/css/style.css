@@ -2902,7 +2902,7 @@ a:active, a:hover {
 
 .site-header .extend-container .main-navigation ul.extend-container li.dsn-drop-down > a:after {
     content: "";
-    background-image: url("../img/right.svg");
+    background-image: url("../../../../img/right.svg");
     background-size: 17px;
     height: 17px;
     width: 17px;
@@ -4751,7 +4751,7 @@ a:active, a:hover {
     width: 0;
     height: 100%;
     background-color: #a56433;
-    background-image: url("../img/pattern.png");
+    background-image: url("../../img/pattern.png");
     border-radius: 4px
 }
 
@@ -7661,7 +7661,7 @@ header .header-page .title-page:before {
     width: 22px;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("../img/line.svg")
+    background-image: url("../../img/line.svg")
 }
 
 @media only screen and (max-width: 991px) {

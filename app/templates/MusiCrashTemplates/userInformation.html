@@ -1,0 +1,48 @@
+{% extends "MusiCrashTemplates/base.html"%}
+{% block title %}
+Information of Your
+{% endblock %}
+
+{% block content %}
+    <section class="testimonial" data-stellar-background-ratio="0.7" >
+      <div class="section-p-60px overlay">
+        <div class="container">
+
+          <!-- Tittle -->
+          <div class="tittle white animate fadeInUp" data-wow-delay="2s">
+            <h5>Hello XXXX</h5>
+            <p>Our Happy Clients</p>
+          </div>
+
+          <!-- Slider Section -->
+          <div class="testi-slides animate fadeInUp" data-wow-delay="2s">
+
+            <!-- Slider 1 -->
+            <div class="testi">
+              <div class="avatar"> <img src="../../static/image/sebian_imgs/avatars/avatar-4.png" alt=""> </div>
+              <p>Personal Information</p>
+              <hr>
+              <h6>User Name</h6>
+              <p>1st March 2022</p>
+              <h6>Address</h6>
+              <p>1st March 2022</p>
+              <h6>Phone</h6>
+              <p>1st March 2022</p>
+              <h6>Email</h6>
+              <p>1st March 2022</p>
+              <h6>Address Day</h6>
+              <p>1st March 2022</p>
+              <p><u>
+                 <a href="{{ url_for('main.testmodify') }}" class="effect-ajax antiquewhite-font " ><u><span class="text-decoration-underline">Manage Your Personal Information</span></u></a>
+              </u></p>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+{% endblock %}

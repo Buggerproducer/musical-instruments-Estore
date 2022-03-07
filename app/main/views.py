@@ -35,5 +35,15 @@ def index():
 
 @main.route('/testbase')
 def testbase():
-    return render_template("MusiCrashTemplates/userInfo.html",async_mode=socketio.async_mode)
+    return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
 
+@main.route('/testinfo')
+def testinfo():
+    return render_template("MusiCrashTemplates/userInformation.html", async_mode=socketio.async_mode)
+
+@main.route('/test')
+def test():
+    return render_template("MusiCrashTemplates/test.html", async_mode=socketio.async_mode)
+@main.route('/testmodify')
+def testmodify():
+    return render_template("MusiCrashTemplates/modifyInfomation.html", async_mode=socketio.async_mode)

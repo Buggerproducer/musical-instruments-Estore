@@ -7,12 +7,23 @@
     margin-bottom: -20px;
 }
 
+.margin-top-reduce-10{
+    margin-top: -20px;
+}
+
+.margin-top-add-10{
+    margin-top: 10px;
+}
+
 .navajowhitewhite-font{
     color: navajowhite;
 }
 
 .antiquewhite-font{
     color: antiquewhite;
+}
+.black-font{
+    color: black !important;
 }
 
 .lightgrey{
@@ -34,4 +45,8 @@
 
 .darkgary-font{
     color: darkgray;
+}
+
+.background-f2f2f2{
+    background-color: #f2f2f2 !important;
 }

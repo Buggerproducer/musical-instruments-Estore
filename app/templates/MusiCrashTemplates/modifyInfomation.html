@@ -1,0 +1,59 @@
+{% extends 'MusiCrashTemplates/base.html'%}
+
+{% block title %}
+Modify Information
+{% endblock %}
+
+{% block content %}
+<div class="container section-margin b">
+        <div class="row ackground-f2f2f2">
+          <div class="col-lg-12">
+            <div class="form-box">
+              <div class="section-title text-center">
+                <p class="d-inline-block">Get in Touch</p>
+                <h2 class="background-transparent">Contact Us</h2>
+              </div>
+                <div class="messages"></div>
+                <div class="input__wrap controls">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <div class="entry">
+                          <label>Your name *</label>
+                          <input id="form_name" type="text" class="darkgary-font" name="name" placeholder="Type your name" required="required" data-error="name is required.">
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <div class="entry">
+                          <label>Your E-Mail *</label>
+                          <input id="form_email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <div class="entry">
+                          <label>What's up?</label>
+                          <textarea id="form_message" class="form-control" name="message" placeholder="Tell us about you and the world" required="required" data-error="Please,leave us a message."></textarea>
+                        </div>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="text-center">
+                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
+                          <button class="btn-form"><span class="label">Send Message</span><span class="icon-c"></span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
