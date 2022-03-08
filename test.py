@@ -1,6 +1,8 @@
 import random
 
 import leancloud
+from leancloud import cloud
+
 leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
 username = 'webserver'
@@ -89,3 +91,7 @@ def testUpdateObject():
     todo = Todo.create_without_data('621dc04647ea564cbed7a5dc')
     todo.set('title',str(random.random()*100))
     todo.save()
+
+
+
+print(cloud.run('test'))
