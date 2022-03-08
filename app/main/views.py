@@ -55,4 +55,4 @@ def testmodify():
     return render_template("MusiCrashTemplates/modifyInfomation.html", async_mode=socketio.async_mode)
 @main.route('/testmodifypw')
 def testmodifypw():
-    return render_template("MusiCrashTemplates/userInfo.html", async_mode=socketio.async_mode)
+    return render_template("MusiCrashTemplates/resetPassword.html", async_mode=socketio.async_mode)
