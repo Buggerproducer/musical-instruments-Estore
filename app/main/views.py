@@ -47,12 +47,28 @@ def testbase():
 def testinfo():
     return render_template("MusiCrashTemplates/userInformation.html", async_mode=socketio.async_mode)
 
+
 @main.route('/test')
 def test():
     return render_template("MusiCrashTemplates/test.html", async_mode=socketio.async_mode)
+
+
 @main.route('/testmodify')
 def testmodify():
     return render_template("MusiCrashTemplates/modifyInfomation.html", async_mode=socketio.async_mode)
+
+
 @main.route('/testmodifypw')
 def testmodifypw():
     return render_template("MusiCrashTemplates/userInfo.html", async_mode=socketio.async_mode)
+
+
+@main.route('/category')
+def category():
+    return render_template("category.html", async_mode=socketio.async_mode)
+
+
+@main.route('/product')
+def product():
+    return render_template("product.html", async_mode=socketio.async_mode)
+
