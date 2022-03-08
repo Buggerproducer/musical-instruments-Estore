@@ -68,7 +68,12 @@ def category():
     return render_template("category.html", async_mode=socketio.async_mode)
 
 
-@main.route('/product')
-def product():
-    return render_template("product.html", async_mode=socketio.async_mode)
+@main.route('/products')
+def products():
+    return render_template("products.html", async_mode=socketio.async_mode)
+
+
+@main.route('/productInfo')
+def productInfo():
+    return render_template("piano1.html", async_mode=socketio.async_mode)
 
