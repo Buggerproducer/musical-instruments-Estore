@@ -1,12 +1,29 @@
 import random
 
 import leancloud
+from leancloud import cloud
+
 leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
-username='Wenrui Liu'
-password='abcdefg'
-email='1148636961@qq.com'
-phone='17810644197'
+username = 'webserver'
+password = '12345678'
+email=''
+phone=''
+
+current_user = leancloud.User.get_current()
+if current_user is not None:
+    if current_user.get('username') != username:
+        current_user.logout()
+
+if leancloud.User.get_current() is None:
+    print('webserver login...')
+    user = leancloud.User()
+    user.login(username=username, password=password)
+
+if leancloud.User.get_current() is not None:
+    print('webserver login successfully with "{}"'.format(username))
+else:
+    print('webserver login fail')
 
 def register():
     # 创建实例
@@ -74,3 +91,7 @@ def testUpdateObject():
     todo = Todo.create_without_data('621dc04647ea564cbed7a5dc')
     todo.set('title',str(random.random()*100))
     todo.save()
+
+
+
+print(cloud.run('test'))
