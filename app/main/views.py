@@ -70,7 +70,11 @@ def category():
 
 @main.route('/products')
 def products():
-    return render_template("steinway.html", async_mode=socketio.async_mode)
+    return render_template("category/steinway.html", async_mode=socketio.async_mode)
+
+@main.route('/grotrian')
+def grotrian():
+    return render_template("category/grotrian.html", async_mode=socketio.async_mode)
 
 
 @main.route('/productInfo')
