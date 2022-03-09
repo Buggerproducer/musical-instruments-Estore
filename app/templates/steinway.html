@@ -7,7 +7,7 @@
 <meta name="discrption" content="parallax one page" />
 <meta name="keyword" content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
 <!-- Title -->
-<title>Daro - Creative Ajax Showcase Portfolio Template</title>
+<title>MusiCrash - Steinway</title>
 <!-- Font Google -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
@@ -18,13 +18,13 @@
 <link href="../static/style/css/style.css" rel="stylesheet" />
 </head>
 <!--classic-menu-->
-<body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax">
+<body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax v-light">
 
 <div class="preloader">
   <div class="preloader-bar">
     <div class="preloader-progress"></div>
   </div>
-  <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">DARO</span><span class="text-fill">DARO</span></h1>
+  <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">MusiCrash</span><span class="text-fill">MusiCrash</span></h1>
 </div>
 
 <!-- 头和脚 -->
@@ -147,9 +147,12 @@
               <div class="intro-project">
                 <div id="dsn-hero-title" class="intro-title">
                   <div class="metas d-inline-block"><span>CLASSIC GRAND PIANO</span></div>
-                  <h1 class="title" data-dsn-ajax="title">The Steinway Model B</h1>
+                  <h1 class="title" data-dsn-ajax="title">The Steinway Family</h1>
                 </div>
-                <p id="dsn-hero-description" class="description">The Steinway Model B is known among pianists as ‘the perfect piano’. At 6′ 11″ (211 cm), this classical grand piano is an outstanding example of versatility and melodious excellence. Astute musicians also have the option to select the Model B as a Steinway SPIRIO, including the world’s most innovative player piano technology. An exquisite piano, the Model B is a fitting choice for medium-sized venues and elegant living rooms.</p>
+                <p id="dsn-hero-description" class="description">In 1853, German immigrant Henry Engelhard Steinway founded Steinway & Sons in a small loft on Varick Street in Manhattan, New York.
+                    Over the next 30 years, Henry and his sons write a new chapter in modern piano manufacturing.
+                    They built pianos using handcrafted techniques passed down from master to apprentice.
+                    Today Steinway pianos are the preferred choice of more than 97% of pianists worldwide and are the dream piano and collector's item that everyone wants to own.</p>
                 <div id="dsn-hero-desc-items" class="intro-project-details d-flex">
                   <div class="descrption-item">
                     <h5>MICHEL LEGRAND</h5>
@@ -182,16 +185,16 @@
     </header>
 
     <div class="wrapper">
-      <div class="container colection-image section-margin has-popup over-hidden ">
-        <div class="project-image-collage project-collage-two-left" data-dsn-grid="move-up"><a href="../static/img/project/project3/2.jpg" class="img-box-parallax over-hidden"><img src="../static/img/project/project3/2.jpg" alt="" class="cover-bg-img has-top-bottom"></a><a href="../static/img/project/project3/3.jpg" class="img-box-parallax over-hidden"><img src="../static/img/project/project3/3.jpg" alt="" class="cover-bg-img  has-top-bottom"></a></div>
-      </div>
+{#      <div class="container colection-image section-margin has-popup over-hidden ">#}
+{#        <div class="project-image-collage project-collage-two-left" data-dsn-grid="move-up"><a href="../static/img/project/project3/2.jpg" class="img-box-parallax over-hidden"><img src="../static/img/project/project3/2.jpg" alt="" class="cover-bg-img has-top-bottom"></a><a href="../static/img/project/project3/3.jpg" class="img-box-parallax over-hidden"><img src="../static/img/project/project3/3.jpg" alt="" class="cover-bg-img  has-top-bottom"></a></div>#}
+{#      </div>#}
 
       <div class="container project-image-vertical has-popup section-margin">
         <div class="row">
-          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../static/img/project/project3/5.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="../static/img/project/project3/5.jpg" alt="" class="has-top-bottom"><span class="captions p-absolute">Architecture</span></a></div>
-          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../static/img/project/project3/7.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="../static/img/project/project3/7.jpg" alt="" class="has-top-bottom"><span class="captions p-absolute">Architecture</span></a></div>
-          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../static/img/project/project3/9.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="../static/img/project/project3/9.jpg" alt="" class="has-top-bottom"><span class="captions p-absolute">Architecture</span></a></div>
-          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../static/img/project/project3/8.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="../static/img/project/project3/8.jpg" alt="" class="has-top-bottom"><span class="captions p-absolute">Architecture</span></a></div>
+          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../static/img/project/project3/5.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/project/project3/1.jpg') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">Grand Piano</span></a></div>
+          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../static/img/project/project3/7.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/project/project1/1.jpg') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">Special Collector's Edition Piano</span></a></div>
+          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../static/img/project/project3/9.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/project/project4/1.jpg') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">Upright pianos</span></a></div>
+          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../static/img/project/project3/8.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/project/project5/1.jpg') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">Limited Edition Piano</span></a></div>
         </div>
       </div>
 
