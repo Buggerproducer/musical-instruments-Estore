@@ -6,7 +6,7 @@ AV.init({
 $(document).ready(
     function change(){
   const current_user = AV.User.current()
-  document.getElementById('username').innerText=current_user.getUsername();
+  document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
 })
 
 function testConnect() {
