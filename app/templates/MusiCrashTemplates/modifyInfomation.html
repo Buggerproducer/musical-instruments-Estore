@@ -47,17 +47,8 @@ Modify Information
                     <div class="col-lg-6">
                       <div class="form-group">
                         <div class="entry">
-                          <label>Birthday</label>
-                          <input id="form_email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
-                        </div>
-                        <div class="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <div class="entry">
                           <label>Address</label>
-                          <textarea id="form_message" class="form-control" name="message" placeholder="Tell us about you and the world" required="required" data-error="Please,leave us a message."></textarea>
+                          <input id="form_email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
                         </div>
                         <div class="help-block with-errors"></div>
                       </div>
@@ -73,7 +64,7 @@ Modify Information
                     <div class="col-6">
                       <div class="text-center">
                         <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-                          <button class="btn-form darkgary-font"><span class="label">Reset Password</span><span class="icon-c"></span></button>
+                          <button onclick="reset($('#form_email').val())" class="btn-form darkgary-font"><span class="label">Reset Password</span><span class="icon-c"></span></button>
                         </div>
                       </div>
                     </div>
