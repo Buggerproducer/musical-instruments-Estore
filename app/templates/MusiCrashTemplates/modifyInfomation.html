@@ -13,7 +13,7 @@ Modify Information
               <div class="section-title text-center">
                 <p class="d-inline-block">Welcome to MusiCrash</p>
                 <h2 class="background-transparent">Modify Your Information</h2>
-                <p class="d-inline-block"><a class="text-decoration-underline">Reset your password</a> </p>
+                <p class="d-inline-block"><a onclick="reset($('#email').val())" class="text-decoration-underline">Reset your password</a> </p>
 
               </div>
                 <div class="messages"></div>
@@ -32,7 +32,7 @@ Modify Information
                       <div class="form-group">
                         <div class="entry">
                           <label>E-Mail</label>
-                          <input id="form_email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
+                          <input id="email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
                         </div>
                         <div class="help-block with-errors"></div>
                       </div>
