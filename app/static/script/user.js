@@ -112,4 +112,5 @@ function changeInfo(username,phone,email){
 
 function reset(email) {
     AV.User.requestPasswordReset(email);
+      document.getElementById('result').innerText='email has been sent';
 }
