@@ -3,6 +3,12 @@ AV.init({
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
 
+$(document).ready(
+    function change(){
+  const current_user = AV.User.current()
+  document.getElementById('username').innerText=current_user.getUsername();
+})
+
 function testConnect() {
   const TestObject = AV.Object.extend('TestObject');
   const testObject = new TestObject();

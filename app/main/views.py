@@ -1,8 +1,13 @@
+import leancloud
+
 from app import socketio
 from flask_socketio import SocketIO, emit
 from flask import render_template
 from . import main
 from threading import Lock
+from leancloud import cloud
+
+leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
 thread = None
 thread_lock = Lock()
@@ -41,7 +46,11 @@ def signUp():
 
 @main.route('/testbase')
 def testbase():
-    return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
+    current_user = leancloud.User.get_current()
+    print(leancloud.User.get_current())
+    # username = current_user.username()
+    return render_template("MusiCrashTemplates/userCenter.html", username=current_user, async_mode=socketio.async_mode)
+
 
 @main.route('/testinfo')
 def testinfo():
