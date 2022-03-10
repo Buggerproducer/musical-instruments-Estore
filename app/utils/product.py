@@ -10,6 +10,10 @@ def getProductFromCategory(category_id:string,skip=0,limit=10):
     category = Category.create_without_data(category_id)
     query = leancloud.Query('ProductCategoryMap')
     query.equal_to('category', category)
+    query.include('product')
+    query.include('product.test')
     query.limit(limit)
     query.skip(skip)
     return query.find()
+
+
