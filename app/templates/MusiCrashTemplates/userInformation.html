@@ -24,7 +24,7 @@ Information of Your
               <p>Personal Information</p>
               <hr>
               <h6>User Name</h6>
-              <p>1st March 2022</p>
+              <p id="username2"></p>
               <h6>Address</h6>
               <p>1st March 2022</p>
               <h6>Phone</h6>
@@ -43,7 +43,13 @@ Information of Your
         </div>
       </div>
     </section>
+    <script>
 
+    console.log("eeee")
+    document.getElementById('username').innerText = "HELLO, " + getLoginState().getUsername();
+    document.getElementById('username2').innerText = getLoginState().getUsername();
+
+</script>
 
 
 {% endblock %}

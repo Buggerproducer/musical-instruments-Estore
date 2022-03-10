@@ -4,6 +4,7 @@ from app import socketio
 from flask_socketio import SocketIO, emit
 from flask import render_template
 from . import main
+from .forms import LoginForm
 from threading import Lock
 from leancloud import cloud
 
@@ -42,6 +43,11 @@ def index():
 @main.route('/signUp')
 def signUp():
     return render_template("signUp.html", async_mode=socketio.async_mode)
+
+
+# @main.route('/handle-login', methods=['POST'])
+# def handle_login():
+
 
 
 @main.route('/testbase')
