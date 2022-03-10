@@ -7169,7 +7169,8 @@ a:active, a:hover {
 }
 
 .v-light:not(.no-light) .project-image-vertical .image-vertical-item .captions {
-    color: #000
+    color: #000;
+    font-size:30px;
 }
 
 .project-image-vertical .image-vertical-item a {

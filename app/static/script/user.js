@@ -3,6 +3,12 @@ AV.init({
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
 
+$(document).ready(
+    function change(){
+  const current_user = AV.User.current()
+  document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
+})
+
 function testConnect() {
   const TestObject = AV.Object.extend('TestObject');
   const testObject = new TestObject();
@@ -112,4 +118,5 @@ function changeInfo(username,phone,email){
 
 function reset(email) {
     AV.User.requestPasswordReset(email);
+      document.getElementById('result').innerText='email has been sent';
 }

@@ -1,6 +1,8 @@
+<!--用于用户中心的界面-->
+
 {% extends "MusiCrashTemplates/base.html" %}
 {% block title %}
-User Information
+User Center
 {% endblock %}
 
 {% block content %}
@@ -10,7 +12,7 @@ User Information
 
           <!-- Tittle -->
           <div class="tittle white animate fadeInUp" data-wow-delay="2s">
-            <h5>Hello XXXX</h5>
+            <h5 id="username"></h5>
             <p>Our Happy Clients</p>
           </div>
 
@@ -185,25 +187,5 @@ User Information
         </div>
       </section>
 
-    <footer class="footer-1 p-relative background-section">
-      <div class="footer-nav">
-        <div class="container">
-          <ul>
-            <li><a class="link-hover" data-dsn="parallax" href="#">Home</a></li>
-            <li><a class="link-hover" data-dsn="parallax" href="#">Portfolio</a></li>
-            <li><a class="link-hover" data-dsn="parallax" href="#">About</a></li>
-            <li><a class="link-hover" data-dsn="parallax" href="#">News</a></li>
-            <li><a class="link-hover" data-dsn="parallax" href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright">
-        <div class="text-center">
-          <p>© 2020 Daro Digital Agency</p>
-          <div class="copright-text over-hidden">Designed by <a class="link-hover"
-                                                                          data-hover-text="DSN Grid" href="#"
-                                                                          target="_blank">DSN Grid</a> </div>
-        </div>
-      </div>
-    </footer>
+
 {% endblock %}
