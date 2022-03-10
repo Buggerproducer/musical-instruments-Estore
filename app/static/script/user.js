@@ -5,9 +5,11 @@ AV.init({
 
 $(document).ready(
     function change(){
-  const current_user = AV.User.current()
-  document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
+      const current_user = AV.User.current()
+      document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
 })
+
+
 
 function testConnect() {
   const TestObject = AV.Object.extend('TestObject');
