@@ -88,6 +88,21 @@ def products():
 def grotrian():
     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
 
+@main.route('/steinmeyer')
+def steinmeyer():
+    return render_template("category/steinmeyer.html", async_mode=socketio.async_mode)
+
+@main.route('/petrof')
+def petrof():
+    return render_template("category/petrof.html", async_mode=socketio.async_mode)
+
+@main.route('/yamaha')
+def yamaha():
+    return render_template("category/yamaha.html", async_mode=socketio.async_mode)
+
+@main.route('/Bösendorfer')
+def Bösendorfer():
+    return render_template("category/Bösendorfer.html", async_mode=socketio.async_mode)
 
 @main.route('/productInfo')
 def productInfo():

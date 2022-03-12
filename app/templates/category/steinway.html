@@ -16,6 +16,8 @@
 <!-- custom styles(optional) -->
 <link href="../../static/style/css/plugins.css" rel="stylesheet" />
 <link href="../../static/style/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../static/style/main_css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
 </head>
 <!--classic-menu-->
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax v-light">
@@ -358,64 +360,79 @@ The Steinway Model B’s soundboard is 9 mm thick at the centre, tapering to 6 m
 
     </div>
 
-    <div class="container section-margin">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="form-box">
-              <div class="section-title text-center">
-                <p class="d-inline-block">Get in Touch</p>
-                <h2>Contact Us</h2>
-              </div>
-              <form id="contact-form" class="form" method="post" action="contact.php"
-                                    data-toggle="validator">
-                <div class="messages"></div>
-                <div class="input__wrap controls">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <div class="entry">
-                          <label>Your name *</label>
-                          <input id="form_name" type="text" name="name"
-                                                            placeholder="Type your name" required="required"
-                                                            data-error="name is required.">
-                        </div>
-                        <div class="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <div class="entry">
-                          <label>Your E-Mail *</label>
-                          <input id="form_email" type="email" name="email"
-                                                            placeholder="Type your Email Address" required="required"
-                                                            data-error="Valid email is required.">
-                        </div>
-                        <div class="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <div class="entry">
-                          <label>Address</label>
-                          <textarea id="form_message" class="form-control" name="message" placeholder="We will deliver the product." required="required" data-error="Please,leave us a message."></textarea>
-                        </div>
-                        <div class="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="text-center">
-                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-                          <button class="btn-form"><span class="label">Send Message</span><span class="icon-c"></span></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+      <div class="container">
+          <div class="myPagination" style="margin-left: 25%"></div>
       </div>
+      <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+      <script src="../../static/js/Pagination.js"></script>
+      <script>
+          $(".myPagination").Pagination({
+              page:1,
+              count:1000,
+              groups: 10,
+              onPageChange:function (page) {
+                  console.log("当前是:" + page);
+              }
+          });
+      </script>
+{#    <div class="container section-margin">#}
+{#        <div class="row">#}
+{#          <div class="col-lg-12">#}
+{#            <div class="form-box">#}
+{#              <div class="section-title text-center">#}
+{#                <p class="d-inline-block">Get in Touch</p>#}
+{#                <h2>Contact Us</h2>#}
+{#              </div>#}
+{#              <form id="contact-form" class="form" method="post" action="contact.php"#}
+{#                                    data-toggle="validator">#}
+{#                <div class="messages"></div>#}
+{#                <div class="input__wrap controls">#}
+{#                  <div class="row">#}
+{#                    <div class="col-lg-6">#}
+{#                      <div class="form-group">#}
+{#                        <div class="entry">#}
+{#                          <label>Your name *</label>#}
+{#                          <input id="form_name" type="text" name="name"#}
+{#                                                            placeholder="Type your name" required="required"#}
+{#                                                            data-error="name is required.">#}
+{#                        </div>#}
+{#                        <div class="help-block with-errors"></div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="col-lg-6">#}
+{#                      <div class="form-group">#}
+{#                        <div class="entry">#}
+{#                          <label>Your E-Mail *</label>#}
+{#                          <input id="form_email" type="email" name="email"#}
+{#                                                            placeholder="Type your Email Address" required="required"#}
+{#                                                            data-error="Valid email is required.">#}
+{#                        </div>#}
+{#                        <div class="help-block with-errors"></div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="col-lg-12">#}
+{#                      <div class="form-group">#}
+{#                        <div class="entry">#}
+{#                          <label>Address</label>#}
+{#                          <textarea id="form_message" class="form-control" name="message" placeholder="We will deliver the product." required="required" data-error="Please,leave us a message."></textarea>#}
+{#                        </div>#}
+{#                        <div class="help-block with-errors"></div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="col-12">#}
+{#                      <div class="text-center">#}
+{#                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">#}
+{#                          <button class="btn-form"><span class="label">Send Message</span><span class="icon-c"></span></button>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </form>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
 
     <div class="next-project p-relative over-hidden section-padding mt-section" data-dsn-footer="project">
       <div id="dsn-footer-hero" class="img-next-box  p-absolute w-100 h-100" data-overlay="5"><img class="cover-bg-img" src="../../static/img/project/project4/1.jpg" alt=""></div>
@@ -484,5 +501,6 @@ The Steinway Model B’s soundboard is 9 mm thick at the centre, tapering to 6 m
 <script src="../../static/js/plugins.js"></script>
 <script src="../../static/js/dsn-grid.js"></script>
 <script src="../../static/js/custom.js"></script>
+
 </body>
 </html>
