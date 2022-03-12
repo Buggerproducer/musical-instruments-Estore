@@ -88,6 +88,10 @@ def products():
 def grotrian():
     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
 
+@main.route('/steinmeyer')
+def steinmeyer():
+    return render_template("category/steinmeyer.html", async_mode=socketio.async_mode)
+
 
 @main.route('/productInfo')
 def productInfo():
