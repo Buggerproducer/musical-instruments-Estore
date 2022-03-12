@@ -25,11 +25,17 @@
   </div>
   <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">MusiCrash</span><span class="text-fill">MusiCrash</span></h1>
 </div>
+<!-- 导航栏 -->
 <div class="site-header">
   <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+
+    <!-- 导航栏左边的logo -->
     <div class="inner-header p-relative">
-      <div class="main-logo"><a href="index.html" data-dsn="parallax"><img class="dark-logo" src="../static/img/logo-dark.png" alt="" /><img class="light-logo" src="../static/img/logo.png" alt="" /></a></div>
+      <div class="main-logo"><a href="index.html" data-dsn="parallax"><img class="dark-logo" src="{{ url_for('static', filename='img/logo-dark.png') }}" alt=""/><img class="light-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""/></a></div>
     </div>
+    <!-- 导航栏左边的logo结束 -->
+
+    <!-- 导航栏在其他页面 非当前页面 的效果 -->
     <div class="menu-icon d-flex align-items-baseline">
       <div class="text-menu p-relative  font-heading text-transform-upper">
         <div class="p-absolute text-button">Menu</div>
@@ -38,76 +44,108 @@
       </div>
       <div class="icon-m " data-dsn="parallax"><span class="menu-icon-line p-relative d-inline-block icon-top"></span><span class="menu-icon-line p-relative d-inline-block icon-center"></span><span class="menu-icon-line p-relative d-block icon-bottom"></span></div>
     </div>
+    <!-- 导航栏在其他页面的效果结束 -->
+
+    <!-- 导航栏右边的内容 -->
     <nav class="accent-menu main-navigation p-absolute  w-100  d-flex align-items-baseline ">
+      <!-- 不知道这行干嘛用的 -->
       <div class="menu-cover-title">Menu</div>
+
+      <!-- 导航栏右边的内容的ul -->
       <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
+        <!-- li 1: Home -->
         <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Home</span><span class="dsn-meta-menu">01</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="../static/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Home</span></li>
-            <li><a href="index.html"><span class="dsn-title-menu">One Page 1</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="demo2.html"><span class="dsn-title-menu">One Page 2</span><span class="dsn-meta-menu">02</span></a></li>
-            <li><a href="demo3.html"><span class="dsn-title-menu">One Page 3</span><span class="dsn-meta-menu">03</span></a></li>
-            <li><a href="demo-video.html"><span class="dsn-title-menu">One Page 4</span><span class="dsn-meta-menu">04</span></a></li>
+            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Home</span></li>
+            <li><a href="{{ url_for('main.index') }}"><span class="dsn-title-menu">Index</span><span class="dsn-meta-menu">01</span></a></li>
+<!--&lt;!&ndash;            <li><a href="demo2.html"><span class="dsn-title-menu">One Page 2</span><span class="dsn-meta-menu">02</span></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li><a href="demo3.html"><span class="dsn-title-menu">One Page 3</span><span class="dsn-meta-menu">03</span></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li><a href="demo-video.html"><span class="dsn-title-menu">One Page 4</span><span class="dsn-meta-menu">04</span></a></li>&ndash;&gt;-->
           </ul>
         </li>
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Sliders</span><span class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
+        <!-- li 2: Sliders -->
+        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Products</span><span class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="../static/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Sliders</span></li>
-            <li><a href="slider2.html"><span class="dsn-title-menu">Slider Vertical</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>
-            <li><a href="slider3.html"><span class="dsn-title-menu">Slider 3 Column</span><span class="dsn-meta-menu">03</span></a></li>
-            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>
+            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Sliders</span></li>
+            <li><a href="{{ url_for('main.category') }}"><span class="dsn-title-menu">Category</span><span class="dsn-meta-menu">01</span></a></li>
+<!--            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>-->
+            <li><a href="{{ url_for('main.productInfo') }}"><span class="dsn-title-menu">ProductInfo</span><span class="dsn-meta-menu">03</span></a></li>
+<!--            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>-->
           </ul>
         </li>
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Portfolio</span><span class="dsn-meta-menu">03</span><span class="dsn-bg-arrow"></span></a>
+        <!-- li 3: Portfolio -->
+<!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Portfolio</span><span class="dsn-meta-menu">03</span><span class="dsn-bg-arrow"></span></a>-->
+<!--          <ul>-->
+<!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Portfolio</span></li>-->
+<!--            <li><a href="work.html"><span class="dsn-title-menu">Work 3 columns</span><span class="dsn-meta-menu">01</span></a></li>-->
+<!--            <li><a href="work-2.html"><span class="dsn-title-menu">Work V2</span><span class="dsn-meta-menu">02</span></a></li>-->
+<!--            <li><a href="gallery.html"><span class="dsn-title-menu">gallery</span><span class="dsn-meta-menu">03</span></a></li>-->
+<!--            <li><a href="work-grid-2.html"><span class="dsn-title-menu">Work 2 columns</span><span class="dsn-meta-menu">04</span></a></li>-->
+<!--            <li><a href="work-grid-4.html"><span class="dsn-title-menu">Work 4 columns</span><span class="dsn-meta-menu">05</span></a></li>-->
+<!--            <li><a href="work-load.html"><span class="dsn-title-menu">Work Load More</span><span class="dsn-meta-menu">06</span></a></li>-->
+<!--            <li><a href="work-4.html"><span class="dsn-title-menu">Work horizontal</span><span class="dsn-meta-menu">07</span></a></li>-->
+<!--            <li><a href="work-3.html"><span class="dsn-title-menu">Work carousel</span><span class="dsn-meta-menu">08</span></a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+        <!-- li 4: About -->
+<!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">About</span><span class="dsn-meta-menu">04</span><span class="dsn-bg-arrow"></span></a>-->
+<!--          <ul>-->
+<!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">About</span></li>-->
+<!--            <li><a href="about.html"><span class="dsn-title-menu">About Us</span><span class="dsn-meta-menu">01</span></a></li>-->
+<!--            <li><a href="about-2.html"><span class="dsn-title-menu">About Us V2</span><span class="dsn-meta-menu">02</span></a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+        <!-- li 5: Stories -->
+<!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">05</span><span class="dsn-bg-arrow"></span></a>-->
+<!--          <ul>-->
+<!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Stories</span></li>-->
+<!--            <li><a href="blog.html"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">01</span></a></li>-->
+<!--            <li><a href="blog-grid.html"><span class="dsn-title-menu">Stories Grid</span><span class="dsn-meta-menu">02</span></a></li>-->
+<!--            <li><a href="post.html"><span class="dsn-title-menu">Single Post</span><span class="dsn-meta-menu">03</span></a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+        <!-- li 6: Contact -->
+<!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">06</span><span class="dsn-bg-arrow"></span></a>-->
+<!--          <ul>-->
+<!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Contact</span></li>-->
+<!--            <li><a href="contact.html"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">01</span></a></li>-->
+<!--            <li><a href="contact-2.html"><span class="dsn-title-menu">Contact V2</span><span class="dsn-meta-menu">02</span></a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+        <!-- li 7: Setting -->
+        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Setting</span><span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="../static/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Portfolio</span></li>
-            <li><a href="work.html"><span class="dsn-title-menu">Work 3 columns</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="work-2.html"><span class="dsn-title-menu">Work V2</span><span class="dsn-meta-menu">02</span></a></li>
-            <li><a href="gallery.html"><span class="dsn-title-menu">gallery</span><span class="dsn-meta-menu">03</span></a></li>
-            <li><a href="work-grid-2.html"><span class="dsn-title-menu">Work 2 columns</span><span class="dsn-meta-menu">04</span></a></li>
-            <li><a href="work-grid-4.html"><span class="dsn-title-menu">Work 4 columns</span><span class="dsn-meta-menu">05</span></a></li>
-            <li><a href="work-load.html"><span class="dsn-title-menu">Work Load More</span><span class="dsn-meta-menu">06</span></a></li>
-            <li><a href="work-4.html"><span class="dsn-title-menu">Work horizontal</span><span class="dsn-meta-menu">07</span></a></li>
-            <li><a href="work-3.html"><span class="dsn-title-menu">Work carousel</span><span class="dsn-meta-menu">08</span></a></li>
-          </ul>
-        </li>
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">About</span><span class="dsn-meta-menu">04</span><span class="dsn-bg-arrow"></span></a>
-          <ul>
-            <li class="dsn-back-menu"><img src="../static/img/left-chevron.svg" alt=""><span class="dsn-title-menu">About</span></li>
-            <li><a href="about.html"><span class="dsn-title-menu">About Us</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="about-2.html"><span class="dsn-title-menu">About Us V2</span><span class="dsn-meta-menu">02</span></a></li>
-          </ul>
-        </li>
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">05</span><span class="dsn-bg-arrow"></span></a>
-          <ul>
-            <li class="dsn-back-menu"><img src="../static/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Stories</span></li>
-            <li><a href="blog.html"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="blog-grid.html"><span class="dsn-title-menu">Stories Grid</span><span class="dsn-meta-menu">02</span></a></li>
-            <li><a href="post.html"><span class="dsn-title-menu">Single Post</span><span class="dsn-meta-menu">03</span></a></li>
-          </ul>
-        </li>
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">06</span><span class="dsn-bg-arrow"></span></a>
-          <ul>
-            <li class="dsn-back-menu"><img src="../static/img/left-chevron.svg" alt=""><span class="dsn-title-menu">Contact</span></li>
-            <li><a href="contact.html"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="contact-2.html"><span class="dsn-title-menu">Contact V2</span><span class="dsn-meta-menu">02</span></a></li>
+            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
+            <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
+            <li><a href="{{ url_for('main.signUp') }}"><span class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a href="javascript:logout();"><span class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>
+            <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a></li>
+            <li><a href="{{ url_for('main.testlogin') }}"><span class="dsn-title-menu">Test Login</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
         </li>
       </ul>
+      <!-- 导航栏右边的内容的ul结束 -->
+
+      <!-- 导航栏在其他页面 非当前页面 的效果 -->
       <div class="container-content  d-flex flex-column justify-content-end">
+
+        <!-- Studio和Contact -->
         <div class="nav__info">
+          <!-- Studio -->
           <div class="nav-content">
             <p class="title-line">Studio</p>
             <p>26-30 New Damietta<br>
               El-Mahalla El-Kubra,SK1 66LM</p>
           </div>
+          <!-- Contact -->
           <div class="nav-content">
             <p class="title-line">Contact</p>
             <p class="links over-hidden"><a href="#" data-hover-text="+00 (2)012 3321" class="link-hover">+00(2)012 3321</a></p>
             <p class="links  over-hidden"><a href="#" data-hover-text="info@dsngrid.com" class="link-hover">info@dsngrid.com</a></p>
           </div>
         </div>
+
+        <!-- Follow US -->
         <div class="nav-social">
           <div class="nav-social-inner p-relative">
             <p class="title-line">Follow us</p>
@@ -127,11 +165,19 @@
             </ul>
           </div>
         </div>
+
       </div>
+      <!-- 导航栏在其他页面的效果结束 -->
+
+      <!-- 导航栏右边的内容的鼠标悬停下划线效果 -->
       <div class="nav-border-bottom"></div>
+
     </nav>
+    <!-- 导航栏右边的内容结束 -->
+
   </div>
 </div>
+<!-- 导航栏结束 -->
 <main class="main-root">
   <div class="filters-content">
     <div class="close-wind" data-cursor="close"></div>
