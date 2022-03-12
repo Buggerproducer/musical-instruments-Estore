@@ -100,9 +100,9 @@ def petrof():
 def yamaha():
     return render_template("category/yamaha.html", async_mode=socketio.async_mode)
 
-@main.route('/carod')
-def carod():
-    return render_template("category/carod.html", async_mode=socketio.async_mode)
+@main.route('/Bösendorfer')
+def Bösendorfer():
+    return render_template("category/Bösendorfer.html", async_mode=socketio.async_mode)
 
 @main.route('/productInfo')
 def productInfo():
