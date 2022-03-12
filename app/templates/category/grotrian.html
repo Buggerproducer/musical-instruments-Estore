@@ -11,11 +11,15 @@
 <!-- Font Google -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/style/main_css/fontawesome-all.min.css">
 <link rel="shortcut icon" href="../../static/img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="../../static/img/favicon.ico" type="image/x-icon" />
 <!-- custom styles(optional) -->
 <link href="../../static/style/css/plugins.css" rel="stylesheet" />
 <link href="../../static/style/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../static/style/main_css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link rel="stylesheet" href="../../static/style/main_css/bootstrap.min.css">
 </head>
 <!--classic-menu-->
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax v-light">
@@ -147,7 +151,7 @@
               <div class="intro-project">
                 <div id="dsn-hero-title" class="intro-title">
                   <div class="metas d-inline-block"><span>CLASSIC GRAND PIANO</span></div>
-                  <h1 class="title" data-dsn-ajax="title">Grotrian</h1>
+                  <h1 class="title" data-dsn-ajax="title">GROTRIAN</h1>
                 </div>
                 <p id="dsn-hero-description" class="description">With a history of 186 years and six generations,
                     the company is a national treasure under the protection of the German government.
@@ -155,8 +159,8 @@
                     With its long and illustrious history, it is renowned worldwide for its elegance and its delightful sound.</p>
                 <div id="dsn-hero-desc-items" class="intro-project-details d-flex">
                   <div class="descrption-item">
-                    <h5>MICHEL LEGRAND</h5>
-                    <p style="max-width: 570px">“I insist on a Steinway for my recordings, my concerts and my home. It is the only piano I want to hear my music played on.”</p>
+                    <h5></h5>
+                    <p style="max-width: 570px">Because of our love of music, Grotrian's grand and upright instruments are made with an unrelenting pursuit of ancient methods, elegance and superb quality.</p>
                   </div>
 <!--                   <div class="descrption-item">
                     <h5>ROLE</h5>
@@ -358,64 +362,79 @@ The Steinway Model B’s soundboard is 9 mm thick at the centre, tapering to 6 m
 
     </div>
 
-    <div class="container section-margin">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="form-box">
-              <div class="section-title text-center">
-                <p class="d-inline-block">Get in Touch</p>
-                <h2>Contact Us</h2>
-              </div>
-              <form id="contact-form" class="form" method="post" action="contact.php"
-                                    data-toggle="validator">
-                <div class="messages"></div>
-                <div class="input__wrap controls">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <div class="entry">
-                          <label>Your name *</label>
-                          <input id="form_name" type="text" name="name"
-                                                            placeholder="Type your name" required="required"
-                                                            data-error="name is required.">
-                        </div>
-                        <div class="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <div class="entry">
-                          <label>Your E-Mail *</label>
-                          <input id="form_email" type="email" name="email"
-                                                            placeholder="Type your Email Address" required="required"
-                                                            data-error="Valid email is required.">
-                        </div>
-                        <div class="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <div class="entry">
-                          <label>Address</label>
-                          <textarea id="form_message" class="form-control" name="message" placeholder="We will deliver the product." required="required" data-error="Please,leave us a message."></textarea>
-                        </div>
-                        <div class="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="text-center">
-                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-                          <button class="btn-form"><span class="label">Send Message</span><span class="icon-c"></span></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+{#    <div class="container section-margin">#}
+{#        <div class="row">#}
+{#          <div class="col-lg-12">#}
+{#            <div class="form-box">#}
+{#              <div class="section-title text-center">#}
+{#                <p class="d-inline-block">Get in Touch</p>#}
+{#                <h2>Contact Us</h2>#}
+{#              </div>#}
+{#              <form id="contact-form" class="form" method="post" action="contact.php"#}
+{#                                    data-toggle="validator">#}
+{#                <div class="messages"></div>#}
+{#                <div class="input__wrap controls">#}
+{#                  <div class="row">#}
+{#                    <div class="col-lg-6">#}
+{#                      <div class="form-group">#}
+{#                        <div class="entry">#}
+{#                          <label>Your name *</label>#}
+{#                          <input id="form_name" type="text" name="name"#}
+{#                                                            placeholder="Type your name" required="required"#}
+{#                                                            data-error="name is required.">#}
+{#                        </div>#}
+{#                        <div class="help-block with-errors"></div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="col-lg-6">#}
+{#                      <div class="form-group">#}
+{#                        <div class="entry">#}
+{#                          <label>Your E-Mail *</label>#}
+{#                          <input id="form_email" type="email" name="email"#}
+{#                                                            placeholder="Type your Email Address" required="required"#}
+{#                                                            data-error="Valid email is required.">#}
+{#                        </div>#}
+{#                        <div class="help-block with-errors"></div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="col-lg-12">#}
+{#                      <div class="form-group">#}
+{#                        <div class="entry">#}
+{#                          <label>Address</label>#}
+{#                          <textarea id="form_message" class="form-control" name="message" placeholder="We will deliver the product." required="required" data-error="Please,leave us a message."></textarea>#}
+{#                        </div>#}
+{#                        <div class="help-block with-errors"></div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="col-12">#}
+{#                      <div class="text-center">#}
+{#                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">#}
+{#                          <button class="btn-form"><span class="label">Send Message</span><span class="icon-c"></span></button>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </form>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+      <div class="container">
+          <div class="myPagination" style="margin-left: 25%"></div>
       </div>
+      <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+      <script src="../../static/js/Pagination.js"></script>
+      <script>
+          $(".myPagination").Pagination({
+              page:1,
+              count:1000,
+              groups: 10,
+              onPageChange:function (page) {
+                  console.log("当前是:" + page);
+              }
+          });
+      </script>
 
     <div class="next-project p-relative over-hidden section-padding mt-section" data-dsn-footer="project">
       <div id="dsn-footer-hero" class="img-next-box  p-absolute w-100 h-100" data-overlay="5"><img class="cover-bg-img" src="../../static/img/project/project4/1.jpg" alt=""></div>
