@@ -75,17 +75,13 @@ def getAllCategory(skip=0, limit=50):
 def getCategoryById(category_id: string):
     """
     use category_id to get product
-    return:  a product av object
-    example operation: get the product's information
-    product.get('title').get('english') 获取产品英文名
-    product.get('title').get('chinese') 获取产品中文名
-    product.get('description').get('english') 获取产品英文描述
-    product.get('description').get('chinese') 获取产品中文描述
-    product.get('price').get('dollar') 获取美元价格
-    product.get('price').get('CNY') 获取人民币价格
-    product.get('cover').url 获取封面图片链接
+    return:  a category av object
+    example operation: get the first category information
+    result[0].get('title').get('english') 获取类别英文名
+    result[0].get('title').get('chinese') 获取类别中文名
+    result[0].get('cover').url 获取封面图片链接
     """
-    Category = leancloud.Object.extend('Product')
+    Category = leancloud.Object.extend('ProductCategory')
     query = Category.query
     category = query.get(category_id)
     return category
