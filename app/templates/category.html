@@ -69,7 +69,7 @@
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Products</span></li>
             <li><a href="{{ url_for('main.category') }}"><span class="dsn-title-menu">Category</span><span class="dsn-meta-menu">01</span></a></li>
 <!--            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>-->
-            <li><a href="{{ url_for('main.productInfo') }}"><span class="dsn-title-menu">ProductInfo</span><span class="dsn-meta-menu">03</span></a></li>
+            <li><a href="{{ url_for('main.productInfo', product_id=1) }}"><span class="dsn-title-menu">ProductInfo</span><span class="dsn-meta-menu">03</span></a></li>
 <!--            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>-->
           </ul>
         </li>
@@ -210,7 +210,7 @@
         <div class="container container-custom">
           <!-- 这是图片列表 -->
           <div class="projects-list">
-              {% for class in classes %}
+              {% for kind in kinds %}
               <div class="work-item-box p-relative Photography  architecture">
               <div class="work-item p-relative over-hidden">
                 <a href="../static/img/category/steinway/1.png">
@@ -221,9 +221,9 @@
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute">
                   <!-- link页面跳转到产品页面在下面 -->
-                  <a href="{{ url_for('main.products') }}" class="effect-ajax" data-dsn-ajax="work">
+                  <a href="{{ url_for('main.kinds', kind_id=kind.id) }}" class="effect-ajax" data-dsn-ajax="work">
                     <h5 class="cat"></h5>
-                    <h4>{{ class.get('title').get('english') }}</h4>
+                    <h4>{{ kind.get('title').get('english') }}</h4>
                     <span><span>View All</span></span>
                   </a>
                 </div>
@@ -240,7 +240,7 @@
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute">
                    link页面跳转到产品页面在下面
-                  <a href="{{ url_for('main.products') }}" class="effect-ajax" data-dsn-ajax="work">
+{#                  <a href="{{ url_for('main.products') }}" class="effect-ajax" data-dsn-ajax="work">#}
                     <h5 class="cat"></h5>
                     <h4>STEINWAY</h4>
                     <span><span>View All</span></span>
@@ -254,7 +254,7 @@
                 </a>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute">
-                    <a href="{{ url_for('main.grotrian') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">
+{#                    <a href="{{ url_for('main.grotrian') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">#}
                   <h5 class="cat"></h5>
                   <h4>GROTRIAN</h4>
                   <span><span>View All</span></span></a></div>
@@ -265,7 +265,7 @@
                 <div class="img-next-box" data-overlay="5" data-dsn-grid="move-up"><img class="cover-bg-img has-top-bottom" data-dsn-y="20%" src="../static/img/category/3.jpg" alt=""></div>
                 </a>
                 <div class="item-border p-absolute"></div>
-                <div class="item-info p-absolute"><a href="{{ url_for('main.steinmeyer') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">
+{#                <div class="item-info p-absolute"><a href="{{ url_for('main.steinmeyer') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">#}
                   <h5 class="cat"></h5>
                   <h4>STEINMEYER</h4>
                   <span><span>View All</span></span></a></div>
@@ -276,7 +276,7 @@
                 <div class="img-next-box " data-overlay="5" data-dsn-grid="move-up"><img class="cover-bg-img has-top-bottom" data-dsn-y="20%" src="../static/img/category/4.jpg" alt="" data-dsn-position="85%"></div>
                 </a>
                 <div class="item-border p-absolute"></div>
-                <div class="item-info p-absolute"><a href="{{ url_for('main.petrof') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">
+{#                <div class="item-info p-absolute"><a href="{{ url_for('main.petrof') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">#}
                   <h5 class="cat"></h5>
                   <h4>PETROF</h4>
                   <span><span>View All</span></span></a></div>
@@ -287,7 +287,7 @@
                 <div class="img-next-box " data-overlay="5" data-dsn-grid="move-up"><img class="cover-bg-img has-top-bottom" data-dsn-y="20%" src="../static/img/category/5.jpg" alt="" data-dsn-position="38%"></div>
                 </a>
                 <div class="item-border p-absolute"></div>
-                <div class="item-info p-absolute"><a href="{{ url_for('main.yamaha') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">
+{#                <div class="item-info p-absolute"><a href="{{ url_for('main.yamaha') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">#}
                   <h5 class="cat"></h5>
                   <h4>YAMAHA</h4>
                   <span><span>View All</span></span></a></div>
@@ -298,7 +298,7 @@
                 <div class="img-next-box " data-overlay="5" data-dsn-grid="move-up"><img class="cover-bg-img has-top-bottom" data-dsn-y="20%" src="../static/img/category/6.png" alt="" data-dsn-position="57%"></div>
                 </a>
                 <div class="item-border p-absolute"></div>
-                <div class="item-info p-absolute"><a href="{{ url_for('main.Bösendorfer') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">
+{#                <div class="item-info p-absolute"><a href="{{ url_for('main.Bösendorfer') }}" data-dsn-grid="move-up" class="effect-ajax" data-dsn-ajax="work">#}
                   <h5 class="cat"></h5>
                   <h4>Bösendorfer</h4>
                   <span><span>View All</span></span></a></div>
