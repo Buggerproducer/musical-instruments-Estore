@@ -114,7 +114,7 @@ def Bösendorfer():
 
 @main.route('/productInfo')
 def productInfo():
-    return render_template("piano1.html", async_mode=socketio.async_mode)
+    return render_template("productInfo1.html", async_mode=socketio.async_mode)
 
 
 @main.route('/productInfo/<product_id>')

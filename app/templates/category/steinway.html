@@ -193,10 +193,10 @@
 
       <div class="container project-image-vertical has-popup section-margin">
         <div class="row">
-          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../../static/img/project/project3/5.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/category/steinway/1.png') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">D Model Grand Piano</span></a></div>
-          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../../static/img/project/project3/7.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/category/steinway/2.png') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">GP-156 PE Grand Piano</span></a></div>
-          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../../static/img/project/project3/9.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/category/steinway/3.png') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">Model K-132 Upright Piano</span></a></div>
-          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="../../static/img/project/project3/8.jpg" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/category/steinway/4.png') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">The Black Masterpiece</span></a></div>
+          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="{{ url_for('static', filename='img/category/steinway/1.png') }}" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/category/steinway/1.png') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">D Model Grand Piano</span></a></div>
+          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="{{ url_for('static', filename='img/category/steinway/2.png') }}" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/category/steinway/2.png') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">GP-156 PE Grand Piano</span></a></div>
+          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="{{ url_for('static', filename='img/category/steinway/3.png') }}" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/category/steinway/3.png') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">Model K-132 Upright Piano</span></a></div>
+          <div class="col-md-6 image-vertical-item image-zoom" data-dsn="parallax"><a href="{{ url_for('static', filename='img/category/steinway/4.png') }}" class="img-box-parallax" data-dsn-grid="move-up"><img src="{{ url_for('static', filename='img/category/steinway/4.png') }}" alt="" class="has-top-bottom"><span class="captions p-absolute">The Black Masterpiece</span></a></div>
         </div>
       </div>
 
@@ -300,16 +300,27 @@
             <div class="col-lg-6 dsn-z-index-2">
               <div class="box-im" data-dsn-grid="move-up">
                 <a href="{{ url_for('main.productInfo') }}">
-                  <img class="has-top-bottom" src="../../static/img/project/project3/7.jpg" alt="" data-dsn-move="20%">
+                  <img class="has-top-bottom" src="{{ url_for('static', filename='img/category/steinway/1.png') }}" alt="" data-dsn-move="20%">
                 </a>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="box-info">
                 <div class="title-cover theme-color" data-dsn-grid="move-section" data-dsn-opacity="0.03" data-dsn-duration="170%" data-dsn-move="0%">Droow </div>
-                <div class="vertical-title dsn-up">
-                  <h2>Rim</h2>
-                </div>
+
+                <div class="dsn-button-link mt-30 user-no-selection">
+                      <a href="piano1.html" class="link-custom effect-ajax d-flex a-item-center p-relative" data-dsn-ajax="slider">
+                        <span class="link-text"><h5>View More</h5></span>
+                        <span class="link-circle p-absolute">
+                          <i class="fas fa-arrow-right"></i>
+                        </span>
+                      </a>
+                    </div>
+
+<!--                <div class="vertical-title dsn-up">-->
+<!--                  <h4><a class="bg-smaller" href="{{ url_for('main.productInfo') }}">View More</a></h4>-->
+<!--                </div>-->
+                <br>
                 <div class="bg-mask-content ">
                   <div class="mask-bg-2 dsn-up"></div>
                   <h6 class="dsn-up">Design inspired by ARCHSTUDIO.</h6>
@@ -321,35 +332,38 @@
         </div>
       </div>
 
-      <div class="box-gallery-vertical box-gallery-content  section-margin section-padding" data-dsn-animate="section">
-        <div class="mask-bg"></div>
-        <div class="container">
-          <div class="row align-items-center h-100">
-            <div class="col-lg-6 dsn-z-index-2">
-              <div class="box-im" data-dsn-grid="move-up"><img class="has-top-bottom" src="../../static/img/project/project3/7.jpg" alt="" data-dsn-move="20%"></div>
-            </div>
-            <div class="col-lg-6">
-              <div class="box-info">
-                <div class="title-cover theme-color" data-dsn-grid="move-section" data-dsn-opacity="0.03" data-dsn-duration="170%" data-dsn-move="0%">Droow </div>
-                <div class="vertical-title dsn-up">
-                  <h2>Soundboard</h2>
-                </div>
-                <div class="bg-mask-content ">
-                  <div class="mask-bg-2 dsn-up"></div>
-                  <h6 class="dsn-up">Design inspired by ARCHSTUDIO.</h6>
-                  <p class="dsn-up">You can find the soundboard at the centre of any Steinway piano, whether grand or upright, concert or baby, and it is instrumental in providing any piano with its unique sound quality. Incredible care must be taken to ensure that every instrument meets the rigorous quality requirements adhered to at Steinway & Sons.
+      <!-- Soundboard部分 -->
+<!--      <div class="box-gallery-vertical box-gallery-content  section-margin section-padding" data-dsn-animate="section">-->
+<!--        <div class="mask-bg"></div>-->
+<!--        <div class="container">-->
+<!--          <div class="row align-items-center h-100">-->
+<!--            <div class="col-lg-6 dsn-z-index-2">-->
+<!--              <div class="box-im" data-dsn-grid="move-up"><img class="has-top-bottom" src="../../static/img/project/project3/7.jpg" alt="" data-dsn-move="20%"></div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6">-->
+<!--              <div class="box-info">-->
+<!--                <div class="title-cover theme-color" data-dsn-grid="move-section" data-dsn-opacity="0.03" data-dsn-duration="170%" data-dsn-move="0%">Droow </div>-->
+<!--                <div class="vertical-title dsn-up">-->
+<!--                  <h2>Soundboard</h2>-->
+<!--                </div>-->
+<!--                <div class="bg-mask-content ">-->
+<!--                  <div class="mask-bg-2 dsn-up"></div>-->
+<!--                  <h6 class="dsn-up">Design inspired by ARCHSTUDIO.</h6>-->
+<!--                  <p class="dsn-up">You can find the soundboard at the centre of any Steinway piano, whether grand or upright, concert or baby, and it is instrumental in providing any piano with its unique sound quality. Incredible care must be taken to ensure that every instrument meets the rigorous quality requirements adhered to at Steinway & Sons.-->
 
-This rigour includes the selection of the wood and the adherence to the design of the Steinway soundboard. Sitka spruce is the most resonant wood available; the Sitka used in the manufacture of Steinway instruments is sourced from one island in Alaska with a unique micro-climate. This ensures the wood has superior grain density, direction and colour. The wood selected for use in the creation of Steinway pianos must meet a minimum number of annual growth rings.
+<!--This rigour includes the selection of the wood and the adherence to the design of the Steinway soundboard. Sitka spruce is the most resonant wood available; the Sitka used in the manufacture of Steinway instruments is sourced from one island in Alaska with a unique micro-climate. This ensures the wood has superior grain density, direction and colour. The wood selected for use in the creation of Steinway pianos must meet a minimum number of annual growth rings.-->
 
-Steinway’s 1936 patented Diaphragmatic Soundboard features a unique design that allows a piano to vibrate more freely, creating a warmer, richer and more resonant sound for a longer period of time. The soundboard tapers gradually outwards from the centre, allowing for greater flexibility of movement.
+<!--Steinway’s 1936 patented Diaphragmatic Soundboard features a unique design that allows a piano to vibrate more freely, creating a warmer, richer and more resonant sound for a longer period of time. The soundboard tapers gradually outwards from the centre, allowing for greater flexibility of movement.-->
 
-The Steinway Model B’s soundboard is 9 mm thick at the centre, tapering to 6 mm at the rim and outer case, where it is double crowned.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!--The Steinway Model B’s soundboard is 9 mm thick at the centre, tapering to 6 mm at the rim and outer case, where it is double crowned.</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+
 <!--      <div class="container-fluid no-padding section-margin">
         <div class="img-box-parallax parallax-responsive" data-dsn-grid="move-up"><img src="../static/img/project/project3/6.jpg" class="has-bigger-scale">
           <div class="cap"><span>Photography</span></div>
