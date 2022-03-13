@@ -79,9 +79,6 @@ def testmodifypw():
 @main.route('/category')
 def category():
     kinds = product.getAllCategory(0, 50)
-    for kind in kinds:
-        print(kind.get('title').id)
-        print(kind.get('title').get('english'))
     return render_template("category.html", kinds=kinds, async_mode=socketio.async_mode)
 
 
@@ -94,17 +91,15 @@ def products():
 def kinds(kind_id):
     products = product.getProductByCategory(kind_id)
     kind = product.getCategoryById(kind_id)
-    print(kind_id)
-    print(kind.get('title').id)
-    print(kind.get('title').get('english'))
     return render_template("kind.html", products=products, kind=kind, async_mode=socketio.async_mode)
 
 
 @main.route('/productInfo/<product_id>')
 def productInfo(product_id):
-    commodity_title = product.getProductById(product_id)
+    commodity = product.getProductById(product_id)
+    # print(product_id)
     # commodity_title = commodity.get('title').get('english')
-    return render_template("piano.html", commodity_title=commodity_title, async_mode=socketio.async_mode)
+    return render_template("piano.html", commodity=commodity, async_mode=socketio.async_mode)
 
 
 # @main.route('/grotrian')
