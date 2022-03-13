@@ -83,5 +83,6 @@ def getCategoryById(category_id: string):
     """
     Category = leancloud.Object.extend('ProductCategory')
     query = Category.query
+    query.include('title')
     category = query.get(category_id)
     return category
