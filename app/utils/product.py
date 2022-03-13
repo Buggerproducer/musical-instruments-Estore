@@ -20,6 +20,7 @@ def getProductById(product_id: string):
     """
     Product = leancloud.Object.extend('Product')
     query = Product.query
+    query.include('title')
     product = query.get(product_id)
     return product
 
