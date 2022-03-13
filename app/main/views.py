@@ -7,6 +7,7 @@ from . import main
 from .forms import LoginForm
 from threading import Lock
 from leancloud import cloud
+from ..utils import product
 
 # leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
@@ -77,34 +78,47 @@ def testmodifypw():
 
 @main.route('/category')
 def category():
-    return render_template("category.html", async_mode=socketio.async_mode)
+    classes = product.getAllCategory(0, 50)
+    return render_template("category.html", classes=classes, async_mode=socketio.async_mode)
 
 
 @main.route('/products')
 def products():
     return render_template("category/steinway.html", async_mode=socketio.async_mode)
 
+
 @main.route('/grotrian')
 def grotrian():
     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
+
 
 @main.route('/steinmeyer')
 def steinmeyer():
     return render_template("category/steinmeyer.html", async_mode=socketio.async_mode)
 
+
 @main.route('/petrof')
 def petrof():
     return render_template("category/petrof.html", async_mode=socketio.async_mode)
+
 
 @main.route('/yamaha')
 def yamaha():
     return render_template("category/yamaha.html", async_mode=socketio.async_mode)
 
+
 @main.route('/Bösendorfer')
 def Bösendorfer():
     return render_template("category/Bösendorfer.html", async_mode=socketio.async_mode)
+
 
 @main.route('/productInfo')
 def productInfo():
     return render_template("piano1.html", async_mode=socketio.async_mode)
 
+
+@main.route('/productInfo/<product_id>')
+def productinf(product_id):
+    commodity_title = product.getProductById(product_id)
+    # commodity_title = commodity.get('title').get('english')
+    return render_template("piano.html", commodity_title=commodity_title, async_mode=socketio.async_mode)

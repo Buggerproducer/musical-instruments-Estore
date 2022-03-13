@@ -164,7 +164,8 @@
         <div class="container container-custom">
           <!-- 这是图片列表 -->
           <div class="projects-list">
-            <div class="work-item-box p-relative Photography  architecture">
+              {% for class in classes %}
+              <div class="work-item-box p-relative Photography  architecture">
               <div class="work-item p-relative over-hidden">
                 <a href="../static/img/category/steinway/1.png">
                   <div class="img-next-box " data-overlay="6" data-dsn-grid="move-up">
@@ -174,6 +175,25 @@
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute">
                   <!-- link页面跳转到产品页面在下面 -->
+                  <a href="{{ url_for('main.products') }}" class="effect-ajax" data-dsn-ajax="work">
+                    <h5 class="cat"></h5>
+                    <h4>{{ class.get('title').get('english') }}</h4>
+                    <span><span>View All</span></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+ <!--           <div class="work-item-box p-relative Photography  architecture">
+              <div class="work-item p-relative over-hidden">
+                <a href="../static/img/category/steinway/1.png">
+                  <div class="img-next-box " data-overlay="6" data-dsn-grid="move-up">
+                    <img class="cover-bg-img has-top-bottom" data-dsn-y="20%" src="../static/img/category/1.jpg" alt="">
+                  </div>
+                </a>
+                <div class="item-border p-absolute"></div>
+                <div class="item-info p-absolute">
+                   link页面跳转到产品页面在下面
                   <a href="{{ url_for('main.products') }}" class="effect-ajax" data-dsn-ajax="work">
                     <h5 class="cat"></h5>
                     <h4>STEINWAY</h4>
@@ -237,7 +257,7 @@
                   <h4>Bösendorfer</h4>
                   <span><span>View All</span></span></a></div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- 图片列表结束 -->
