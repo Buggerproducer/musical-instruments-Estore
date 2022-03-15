@@ -94,4 +94,4 @@ def testUpdateObject():
 
 
 
-#print(cloud.run('test'))
+print(cloud.run('test'))
