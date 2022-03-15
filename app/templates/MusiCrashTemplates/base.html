@@ -34,7 +34,10 @@
   <link href="../../static/style/sebian_css/animate.css" rel="stylesheet" type="text/css">
   <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
   <link href="../../static/style/sebian_css/custom.css" rel="stylesheet" type="text/css">
-
+  <script src="../../static/js/jquery-3.1.1.min.js"></script>
+  <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+ <script src="../../static/script/user.js"></script>
   <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 
   <!-- JavaScripts -->
@@ -221,7 +224,6 @@
 </div>
 
 
-<script src="../../static/js/jquery-3.1.1.min.js"></script>
 <script src="../../static/js/sebian_js/wow.min.js"></script>
 <script src="../../static/js/sebian_js/bootstrap.min.js"></script>
 <script src="../../static/js/sebian_js/own-menu.js"></script>
@@ -229,8 +231,6 @@
 <script src="../../static/js/plugins.js"></script>
 <script src="../../static/js/dsn-grid.js"></script>
 <script src="../../static/js/custom.js"></script>
-    <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
-    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
-<script src="../../static/script/user.js"></script>
+
 </body>
 </html>
