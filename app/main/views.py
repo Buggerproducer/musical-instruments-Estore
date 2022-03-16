@@ -102,6 +102,10 @@ def productInfo(product_id):
     return render_template("piano.html", commodity=commodity, async_mode=socketio.async_mode)
 
 
+@main.route('/testfuwenben')
+def testfuwenben():
+    return render_template("MusiCrashTemplates/fuwenben.html")
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)

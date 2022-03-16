@@ -5,16 +5,20 @@
     <title>Title</title>
 
 <!-- 引入 js -->
-<script src="../../static/dist/wangEditor.min.js"></script>
+<script src="../../static/script/wangEditor_revise.min.js"></script>
 
 
 </head>
 <body>
-<div id="editor"></div>
+<div id="editor" style="margin: 40px"></div>
 </body>
 <script>
     const E = window.wangEditor;
     const editor = new E('#editor');
+    editor.config.uploadImgServer = 'https://ppobpvtv.api.lncldglobal.com/1.1/functions/upload_img'
+    editor.config.uploadImgHeaders = {
+        'x-lc-id': 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI','x-lc-sign': '87d28a0e718a4ea4846b00ea2a53bdb4,1647415050912'
+    }
     editor.create();
 </script>
 </html>

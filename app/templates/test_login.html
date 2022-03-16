@@ -59,6 +59,27 @@ if(user){
 
 <button onclick="reset($('#email').val())">Reset Password</button>
 
+<button onclick="document.getElementById('result').innerText=AV.User.current().getSessionToken()">get token</button>
+
+<button onclick="AV.Cloud.run('test').then(function (data) {
+  // 处理结果
+  document.getElementById('result').innerText=data
+}, function (err) {
+  // 处理报错
+  document.getElementById('result').innerText=err
+});">Test cloud</button>
+
+<button onclick="
+      $.ajax({
+  type: 'POST',
+  url: 'https://ppobpvtv.api.lncldglobal.com/1.1/functions/test',
+  headers: {'x-lc-id': 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI','x-lc-session': 'nwbqp58uv74xjjxmmkcplvfrp','x-lc-sign': '87d28a0e718a4ea4846b00ea2a53bdb4,1647415050912'},
+    success:function(data) {
+      document.getElementById('result').innerText=data
+      console.log(data)
+    }
+});
+">ajax</button>
 <hr>
 <p id="result"></p>
 
