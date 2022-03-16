@@ -72,6 +72,23 @@ def getAllCategory(skip=0, limit=50):
     result = query.find()
     return result
 
+def getAllProduct(skip=0, limit=50):
+    """
+    get all product
+    return: a list of products
+    example operation: get the first category information
+    result[0].get('title').get('english') 获取类别英文名
+    result[0].get('title').get('chinese') 获取类别中文名
+    result[0].get('cover').url 获取封面图片链接
+    """
+    query = leancloud.Query('Product')
+    query.limit(limit)
+    query.skip(skip)
+    query.include('title')
+    query.include('price')
+    query.include('description')
+    result = query.find()
+    return result
 
 def getCategoryById(category_id: string):
     """
