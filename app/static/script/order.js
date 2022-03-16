@@ -1,8 +1,3 @@
-AV.init({
-  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
-  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
-});
-
 function MakeOrder(obj){
     const Order = AV.Object.extend('Order');
     const order  = new Order();
