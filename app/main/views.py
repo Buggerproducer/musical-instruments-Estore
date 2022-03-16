@@ -55,6 +55,10 @@ def signUp():
 def testbase():
     return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
 
+@main.route('/testorder')
+def testorder():
+    products = product.getAllProduct(0, 50)
+    return render_template("test_order.html",products = products, async_mode=socketio.async_mode)
 
 @main.route('/testinfo')
 def testinfo():
