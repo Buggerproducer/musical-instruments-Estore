@@ -67,7 +67,7 @@
             <button onclick="
                 signInWithUsername($('#username2').val(),$('#password2').val(),function(user) {
                     alert('login success!');
-                    window.location.href = 'http://127.0.0.1:5000/';
+                    window.location.href = document.referrer;
                     document.getElementById('result').innerText='login success!'
                     console.log(user);
                 },function(error) {
