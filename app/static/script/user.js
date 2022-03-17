@@ -7,7 +7,7 @@ $(document).ready(
     function change(){
       const current_user = AV.User.current()
       document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
-      document.getElementById('username2').innerText=current_user.getUsername();
+      //document.getElementById('username2').innerText=current_user.getUsername();
 })
 
 
