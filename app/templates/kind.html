@@ -22,12 +22,12 @@
 <!--classic-menu-->
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax v-light">
 
-<div class="preloader">
-  <div class="preloader-bar">
-    <div class="preloader-progress"></div>
-  </div>
-  <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">MusiCrash</span><span class="text-fill">MusiCrash</span></h1>
-</div>
+<!--<div class="preloader">-->
+<!--  <div class="preloader-bar">-->
+<!--    <div class="preloader-progress"></div>-->
+<!--  </div>-->
+<!--  <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">MusiCrash</span><span class="text-fill">MusiCrash</span></h1>-->
+<!--</div>-->
 
 <!-- 头和脚 -->
 <div class="site-header">
@@ -309,15 +309,18 @@
             <div class="col-lg-6">
               <div class="box-info">
                 <div class="title-cover theme-color" data-dsn-grid="move-section" data-dsn-opacity="0.03" data-dsn-duration="170%" data-dsn-move="0%">Droow </div>
-
-                <div class="dsn-button-link mt-30 user-no-selection">
-                      <a href="{{ url_for('main.productInfo', product_id=product.id) }}" class="link-custom effect-ajax d-flex a-item-center p-relative" data-dsn-ajax="slider">
-                        <span class="link-text"><h5>View More</h5></span>
-                        <span class="link-circle p-absolute">
-                          <i class="fas fa-arrow-right"></i>
-                        </span>
-                      </a>
-                    </div>
+                <div>
+                  <a href="{{ url_for('main.productInfo', product_id=product.id) }}">View More</a>
+                </div>
+<!--                <div class="d-->
+<!--&lt;!&ndash;                sn-button-link mt-30 user-no-selection">&ndash;&gt;-->
+<!--                      <a href="{{ url_for('main.productInfo', product_id=product.id) }}" class="link-custom effect-ajax d-flex a-item-center p-relative" data-dsn-ajax="slider">-->
+<!--                        <span class="link-text"><h5>View More</h5></span>-->
+<!--                        <span class="link-circle p-absolute">-->
+<!--                          <i class="fas fa-arrow-right"></i>-->
+<!--                        </span>-->
+<!--                      </a>-->
+<!--                    </div>-->
 
 <!--                <div class="vertical-title dsn-up">-->
 {#<!--                  <h4><a class="bg-smaller" href="{{ url_for('main.productInfo') }}">View More</a></h4>-->#}

@@ -133,8 +133,3 @@ def testfuwenben():
 # @main.route('/Bösendorfer')
 # def Bösendorfer():
 #     return render_template("category/Bösendorfer.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/productInfo')
-# def productInfo():
-#     return render_template("productInfo1.html", async_mode=socketio.async_mode)
