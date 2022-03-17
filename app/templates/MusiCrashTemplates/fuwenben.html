@@ -8,8 +8,21 @@
 <script src="../../static/script/wangEditor_revise.min.js"></script>
     <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
 </head>
-<body>
-<div id="editor" style="margin: 40px"></div>
+<body style="height: 100%">
+<div style="height: 100%">
+<div id='left' style="float: left;width: 50%;height: 100%">
+    <div id="editor" style="margin: 20px"></div>
+    <span>
+        <button>
+            clear
+        </button>
+        <button onclick="document.getElementById('right').innerHTML=editor.txt.html()">
+            summon
+        </button>
+    </span>
+</div>
+<div id='right' style="float: right;width: 50%"></div>
+</div>
 </body>
 {#<script>#}
 {#    const E = window.wangEditor;#}
