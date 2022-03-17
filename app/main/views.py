@@ -110,6 +110,11 @@ def productInfo(product_id):
 def testfuwenben():
     return render_template("MusiCrashTemplates/fuwenben.html")
 
+
+@main.route('/backend')
+def backend():
+    return render_template("backend.html")
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
