@@ -23,9 +23,6 @@ order.set('user',currentUser);
   // 异常处理
 });
 });
-
-
-
   }
   else{
      document.getElementById('result').innerText='not already login';
