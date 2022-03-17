@@ -590,201 +590,204 @@
 <body class="product-template-default single single-product postid-5398 style-4-gold lang-en dsn-effect-scroll dsn-cursor-effect dsn-ajax">
 
 <!-- 导航栏 -->
-<div class="site-header" style="margin-top: 20px">
-        <div class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
+<div class="site-header">
+    <div
+         class="extend-container d-flex w-100 align-items-baseline justify-content-between align-items-end">
 
-            <!-- 导航栏左边的logo -->
-            <div class="inner-header p-relative">
-                <div class="main-logo"><a href="index.html" data-dsn="parallax">
-                    <img class="dark-logo"
-                                                                                     src="{{ url_for('static', filename='img/logo-dark.png') }}"
-                                                                                     alt=""/>
-<!--                    <img class="light-logo"-->
-<!--                                                                                                  src="{{ url_for('static', filename='img/logo.png') }}"-->
-<!--                                                                                                  alt=""/>-->
-                </a>
-                </div>
+        <!-- 导航栏左边的logo -->
+        <div class="inner-header p-relative">
+            <div class="main-logo"><a href="index.html" data-dsn="parallax">
+                <img class="dark-logo"
+                     src="{{ url_for('static', filename='img/logo-dark.png') }}"
+                     alt=""/>
+                <!--                    <img class="light-logo"-->
+                <!--                                                                                                  src="{{ url_for('static', filename='img/logo.png') }}"-->
+                <!--                                                                                                  alt=""/>-->
+            </a>
             </div>
-            <!-- 导航栏左边的logo结束 -->
+        </div>
+        <!-- 导航栏左边的logo结束 -->
+
+        <!-- 导航栏在其他页面 非当前页面 的效果 -->
+        <div class="menu-icon d-flex align-items-baseline">
+            <div class="text-menu p-relative  font-heading text-transform-upper">
+                <div class="p-absolute text-button" style="color: black">Menu</div>
+                <div class="p-absolute text-open" style="color: black">Open</div>
+                <div class="p-absolute text-close">Close</div>
+            </div>
+            <div class="icon-m " data-dsn="parallax"><span
+                    class="menu-icon-line p-relative d-inline-block icon-top"></span><span
+                    class="menu-icon-line p-relative d-inline-block icon-center"></span><span
+                    class="menu-icon-line p-relative d-block icon-bottom"></span></div>
+        </div>
+        <!-- 导航栏在其他页面的效果结束 -->
+
+        <!-- 导航栏右边的内容 -->
+        <nav class="accent-menu main-navigation p-absolute  w-100  d-flex align-items-baseline ">
+            <!-- 不知道这行干嘛用的 -->
+            <div class="menu-cover-title">Menu</div>
+
+            <!-- 导航栏右边的内容的ul -->
+            <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
+                <!-- li 1: Home -->
+                <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span
+                        class="dsn-title-menu">Home</span><span class="dsn-meta-menu">01</span><span
+                        class="dsn-bg-arrow"></span></a>
+                    <ul>
+                        <li class="dsn-back-menu"><img
+                                src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span
+                                class="dsn-title-menu">Home</span></li>
+                        <li><a href="{{ url_for('main.index') }}"><span class="dsn-title-menu">Index</span><span
+                                class="dsn-meta-menu">01</span></a></li>
+                        <!--&lt;!&ndash;            <li><a href="demo2.html"><span class="dsn-title-menu">One Page 2</span><span class="dsn-meta-menu">02</span></a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;            <li><a href="demo3.html"><span class="dsn-title-menu">One Page 3</span><span class="dsn-meta-menu">03</span></a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;            <li><a href="demo-video.html"><span class="dsn-title-menu">One Page 4</span><span class="dsn-meta-menu">04</span></a></li>&ndash;&gt;-->
+                    </ul>
+                </li>
+                <!-- li 2: Sliders -->
+                <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span
+                        class="dsn-title-menu">Products</span><span
+                        class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
+                    <ul>
+                        <li class="dsn-back-menu"><img
+                                src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span
+                                class="dsn-title-menu">Products</span></li>
+                        <li><a href="{{ url_for('main.category') }}"><span
+                                class="dsn-title-menu">Category</span><span class="dsn-meta-menu">01</span></a></li>
+                        <!--            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>-->
+                        <li><a href="{{ url_for('main.productInfo', product_id='622972726ca8d92534b035b') }}"><span
+                                class="dsn-title-menu">ProductInfo</span><span class="dsn-meta-menu">03</span></a>
+                        </li>
+                        <!--            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>-->
+                    </ul>
+                </li>
+                <!-- li 3: Portfolio -->
+                <!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Portfolio</span><span class="dsn-meta-menu">03</span><span class="dsn-bg-arrow"></span></a>-->
+                <!--          <ul>-->
+                <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Portfolio</span></li>-->
+                <!--            <li><a href="work.html"><span class="dsn-title-menu">Work 3 columns</span><span class="dsn-meta-menu">01</span></a></li>-->
+                <!--            <li><a href="work-2.html"><span class="dsn-title-menu">Work V2</span><span class="dsn-meta-menu">02</span></a></li>-->
+                <!--            <li><a href="gallery.html"><span class="dsn-title-menu">gallery</span><span class="dsn-meta-menu">03</span></a></li>-->
+                <!--            <li><a href="work-grid-2.html"><span class="dsn-title-menu">Work 2 columns</span><span class="dsn-meta-menu">04</span></a></li>-->
+                <!--            <li><a href="work-grid-4.html"><span class="dsn-title-menu">Work 4 columns</span><span class="dsn-meta-menu">05</span></a></li>-->
+                <!--            <li><a href="work-load.html"><span class="dsn-title-menu">Work Load More</span><span class="dsn-meta-menu">06</span></a></li>-->
+                <!--            <li><a href="work-4.html"><span class="dsn-title-menu">Work horizontal</span><span class="dsn-meta-menu">07</span></a></li>-->
+                <!--            <li><a href="work-3.html"><span class="dsn-title-menu">Work carousel</span><span class="dsn-meta-menu">08</span></a></li>-->
+                <!--          </ul>-->
+                <!--        </li>-->
+                <!-- li 4: About -->
+                <!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">About</span><span class="dsn-meta-menu">04</span><span class="dsn-bg-arrow"></span></a>-->
+                <!--          <ul>-->
+                <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">About</span></li>-->
+                <!--            <li><a href="about.html"><span class="dsn-title-menu">About Us</span><span class="dsn-meta-menu">01</span></a></li>-->
+                <!--            <li><a href="about-2.html"><span class="dsn-title-menu">About Us V2</span><span class="dsn-meta-menu">02</span></a></li>-->
+                <!--          </ul>-->
+                <!--        </li>-->
+                <!-- li 5: Stories -->
+                <!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">05</span><span class="dsn-bg-arrow"></span></a>-->
+                <!--          <ul>-->
+                <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Stories</span></li>-->
+                <!--            <li><a href="blog.html"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">01</span></a></li>-->
+                <!--            <li><a href="blog-grid.html"><span class="dsn-title-menu">Stories Grid</span><span class="dsn-meta-menu">02</span></a></li>-->
+                <!--            <li><a href="post.html"><span class="dsn-title-menu">Single Post</span><span class="dsn-meta-menu">03</span></a></li>-->
+                <!--          </ul>-->
+                <!--        </li>-->
+                <!-- li 6: Contact -->
+                <!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">06</span><span class="dsn-bg-arrow"></span></a>-->
+                <!--          <ul>-->
+                <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Contact</span></li>-->
+                <!--            <li><a href="contact.html"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">01</span></a></li>-->
+                <!--            <li><a href="contact-2.html"><span class="dsn-title-menu">Contact V2</span><span class="dsn-meta-menu">02</span></a></li>-->
+                <!--          </ul>-->
+                <!--        </li>-->
+                <!-- li 7: Setting -->
+                <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span
+                        class="dsn-title-menu">Setting</span><span class="dsn-meta-menu">07</span><span
+                        class="dsn-bg-arrow"></span></a>
+                    <ul>
+                        <li class="dsn-back-menu"><img
+                                src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span
+                                class="dsn-title-menu">Setting</span></li>
+                        <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
+                        <li><a href="{{ url_for('main.signUp') }}"><span
+                                class="dsn-title-menu">Login & Sign Up</span><span
+                                class="dsn-meta-menu">01</span></a></li>
+                        <li><a href="javascript:logout();"><span class="dsn-title-menu">Logout</span><span
+                                class="dsn-meta-menu">02</span></a></li>
+                        <li><a href="{{ url_for('main.testbase') }}"><span
+                                class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a>
+                        </li>
+                        <li><a href="{{ url_for('main.testlogin') }}"><span
+                                class="dsn-title-menu">Test Login</span><span
+                                class="dsn-meta-menu">02</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- 导航栏右边的内容的ul结束 -->
 
             <!-- 导航栏在其他页面 非当前页面 的效果 -->
-            <div class="menu-icon d-flex align-items-baseline">
-                <div class="text-menu p-relative  font-heading text-transform-upper">
-                    <div class="p-absolute text-button" style="color: black">Menu</div>
-                    <div class="p-absolute text-open" style="color: black">Open</div>
-                    <div class="p-absolute text-close">Close</div>
+            <div class="container-content  d-flex flex-column justify-content-end">
+
+                <!-- Studio和Contact -->
+                <div class="nav__info">
+                    <!-- Studio -->
+                    <div class="nav-content">
+                        <p class="title-line">Studio</p>
+                        <p>26-30 New Damietta<br>
+                            El-Mahalla El-Kubra,SK1 66LM</p>
+                    </div>
+                    <!-- Contact -->
+                    <div class="nav-content">
+                        <p class="title-line">Contact</p>
+                        <p class="links over-hidden"><a href="#" data-hover-text="+00 (2)012 3321"
+                                                        class="link-hover">+00(2)012 3321</a></p>
+                        <p class="links  over-hidden"><a href="#" data-hover-text="info@dsngrid.com"
+                                                         class="link-hover">info@dsngrid.com</a></p>
+                    </div>
                 </div>
-                <div class="icon-m " data-dsn="parallax"><span
-                        class="menu-icon-line p-relative d-inline-block icon-top"></span><span
-                        class="menu-icon-line p-relative d-inline-block icon-center"></span><span
-                        class="menu-icon-line p-relative d-block icon-bottom"></span></div>
+
+                <!-- Follow US -->
+                <div class="nav-social">
+                    <div class="nav-social-inner p-relative">
+                        <p class="title-line">Follow us</p>
+                        <ul>
+                            <li><a href="#" target="_blank" rel="nofollow">Dribbble.
+                                <div class="icon-circle"></div>
+                            </a></li>
+                            <li><a href="#" target="_blank" rel="nofollow">Behance.
+                                <div class="icon-circle"></div>
+                            </a></li>
+                            <li><a href="#" target="_blank" rel="nofollow">Linkedin.
+                                <div class="icon-circle"></div>
+                            </a></li>
+                            <li><a href="#" target="_blank" rel="nofollow">Twitter.
+                                <div class="icon-circle"></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
             <!-- 导航栏在其他页面的效果结束 -->
 
-            <!-- 导航栏右边的内容 -->
-            <nav class="accent-menu main-navigation p-absolute  w-100  d-flex align-items-baseline ">
-                <!-- 不知道这行干嘛用的 -->
-                <div class="menu-cover-title">Menu</div>
+            <!-- 导航栏右边的内容的鼠标悬停下划线效果 -->
+            <div class="nav-border-bottom"></div>
 
-                <!-- 导航栏右边的内容的ul -->
-                <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
-                    <!-- li 1: Home -->
-                    <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span
-                            class="dsn-title-menu">Home</span><span class="dsn-meta-menu">01</span><span
-                            class="dsn-bg-arrow"></span></a>
-                        <ul>
-                            <li class="dsn-back-menu"><img
-                                    src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span
-                                    class="dsn-title-menu">Home</span></li>
-                            <li><a href="{{ url_for('main.index') }}"><span class="dsn-title-menu">Index</span><span
-                                    class="dsn-meta-menu">01</span></a></li>
-                            <!--&lt;!&ndash;            <li><a href="demo2.html"><span class="dsn-title-menu">One Page 2</span><span class="dsn-meta-menu">02</span></a></li>&ndash;&gt;-->
-                            <!--&lt;!&ndash;            <li><a href="demo3.html"><span class="dsn-title-menu">One Page 3</span><span class="dsn-meta-menu">03</span></a></li>&ndash;&gt;-->
-                            <!--&lt;!&ndash;            <li><a href="demo-video.html"><span class="dsn-title-menu">One Page 4</span><span class="dsn-meta-menu">04</span></a></li>&ndash;&gt;-->
-                        </ul>
-                    </li>
-                    <!-- li 2: Sliders -->
-                    <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Products</span><span
-                            class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
-                        <ul>
-                            <li class="dsn-back-menu"><img
-                                    src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span
-                                    class="dsn-title-menu">Products</span></li>
-                            <li><a href="{{ url_for('main.category') }}"><span
-                                    class="dsn-title-menu">Category</span><span class="dsn-meta-menu">01</span></a></li>
-                            <!--            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>-->
-                            <li><a href="{{ url_for('main.productInfo', product_id='622972726ca8d92534b035b') }}"><span
-                                    class="dsn-title-menu">ProductInfo</span><span class="dsn-meta-menu">03</span></a>
-                            </li>
-                            <!--            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>-->
-                        </ul>
-                    </li>
-                    <!-- li 3: Portfolio -->
-                    <!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Portfolio</span><span class="dsn-meta-menu">03</span><span class="dsn-bg-arrow"></span></a>-->
-                    <!--          <ul>-->
-                    <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Portfolio</span></li>-->
-                    <!--            <li><a href="work.html"><span class="dsn-title-menu">Work 3 columns</span><span class="dsn-meta-menu">01</span></a></li>-->
-                    <!--            <li><a href="work-2.html"><span class="dsn-title-menu">Work V2</span><span class="dsn-meta-menu">02</span></a></li>-->
-                    <!--            <li><a href="gallery.html"><span class="dsn-title-menu">gallery</span><span class="dsn-meta-menu">03</span></a></li>-->
-                    <!--            <li><a href="work-grid-2.html"><span class="dsn-title-menu">Work 2 columns</span><span class="dsn-meta-menu">04</span></a></li>-->
-                    <!--            <li><a href="work-grid-4.html"><span class="dsn-title-menu">Work 4 columns</span><span class="dsn-meta-menu">05</span></a></li>-->
-                    <!--            <li><a href="work-load.html"><span class="dsn-title-menu">Work Load More</span><span class="dsn-meta-menu">06</span></a></li>-->
-                    <!--            <li><a href="work-4.html"><span class="dsn-title-menu">Work horizontal</span><span class="dsn-meta-menu">07</span></a></li>-->
-                    <!--            <li><a href="work-3.html"><span class="dsn-title-menu">Work carousel</span><span class="dsn-meta-menu">08</span></a></li>-->
-                    <!--          </ul>-->
-                    <!--        </li>-->
-                    <!-- li 4: About -->
-                    <!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">About</span><span class="dsn-meta-menu">04</span><span class="dsn-bg-arrow"></span></a>-->
-                    <!--          <ul>-->
-                    <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">About</span></li>-->
-                    <!--            <li><a href="about.html"><span class="dsn-title-menu">About Us</span><span class="dsn-meta-menu">01</span></a></li>-->
-                    <!--            <li><a href="about-2.html"><span class="dsn-title-menu">About Us V2</span><span class="dsn-meta-menu">02</span></a></li>-->
-                    <!--          </ul>-->
-                    <!--        </li>-->
-                    <!-- li 5: Stories -->
-                    <!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">05</span><span class="dsn-bg-arrow"></span></a>-->
-                    <!--          <ul>-->
-                    <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Stories</span></li>-->
-                    <!--            <li><a href="blog.html"><span class="dsn-title-menu">Stories</span><span class="dsn-meta-menu">01</span></a></li>-->
-                    <!--            <li><a href="blog-grid.html"><span class="dsn-title-menu">Stories Grid</span><span class="dsn-meta-menu">02</span></a></li>-->
-                    <!--            <li><a href="post.html"><span class="dsn-title-menu">Single Post</span><span class="dsn-meta-menu">03</span></a></li>-->
-                    <!--          </ul>-->
-                    <!--        </li>-->
-                    <!-- li 6: Contact -->
-                    <!--        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">06</span><span class="dsn-bg-arrow"></span></a>-->
-                    <!--          <ul>-->
-                    <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Contact</span></li>-->
-                    <!--            <li><a href="contact.html"><span class="dsn-title-menu">Contact</span><span class="dsn-meta-menu">01</span></a></li>-->
-                    <!--            <li><a href="contact-2.html"><span class="dsn-title-menu">Contact V2</span><span class="dsn-meta-menu">02</span></a></li>-->
-                    <!--          </ul>-->
-                    <!--        </li>-->
-                    <!-- li 7: Setting -->
-                    <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span
-                            class="dsn-title-menu">Setting</span><span class="dsn-meta-menu">07</span><span
-                            class="dsn-bg-arrow"></span></a>
-                        <ul>
-                            <li class="dsn-back-menu"><img
-                                    src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span
-                                    class="dsn-title-menu">Setting</span></li>
-                            <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
-                            <li><a href="{{ url_for('main.signUp') }}"><span
-                                    class="dsn-title-menu">Login & Sign Up</span><span
-                                    class="dsn-meta-menu">01</span></a></li>
-                            <li><a href="javascript:logout();"><span class="dsn-title-menu">Logout</span><span
-                                    class="dsn-meta-menu">02</span></a></li>
-                            <li><a href="{{ url_for('main.testbase') }}"><span
-                                    class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a>
-                            </li>
-                            <li><a href="{{ url_for('main.testlogin') }}"><span class="dsn-title-menu">Test Login</span><span
-                                    class="dsn-meta-menu">02</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- 导航栏右边的内容的ul结束 -->
+        </nav>
+        <!-- 导航栏右边的内容结束 -->
 
-                <!-- 导航栏在其他页面 非当前页面 的效果 -->
-                <div class="container-content  d-flex flex-column justify-content-end">
-
-                    <!-- Studio和Contact -->
-                    <div class="nav__info">
-                        <!-- Studio -->
-                        <div class="nav-content">
-                            <p class="title-line">Studio</p>
-                            <p>26-30 New Damietta<br>
-                                El-Mahalla El-Kubra,SK1 66LM</p>
-                        </div>
-                        <!-- Contact -->
-                        <div class="nav-content">
-                            <p class="title-line">Contact</p>
-                            <p class="links over-hidden"><a href="#" data-hover-text="+00 (2)012 3321"
-                                                            class="link-hover">+00(2)012 3321</a></p>
-                            <p class="links  over-hidden"><a href="#" data-hover-text="info@dsngrid.com"
-                                                             class="link-hover">info@dsngrid.com</a></p>
-                        </div>
-                    </div>
-
-                    <!-- Follow US -->
-                    <div class="nav-social">
-                        <div class="nav-social-inner p-relative">
-                            <p class="title-line">Follow us</p>
-                            <ul>
-                                <li><a href="#" target="_blank" rel="nofollow">Dribbble.
-                                    <div class="icon-circle"></div>
-                                </a></li>
-                                <li><a href="#" target="_blank" rel="nofollow">Behance.
-                                    <div class="icon-circle"></div>
-                                </a></li>
-                                <li><a href="#" target="_blank" rel="nofollow">Linkedin.
-                                    <div class="icon-circle"></div>
-                                </a></li>
-                                <li><a href="#" target="_blank" rel="nofollow">Twitter.
-                                    <div class="icon-circle"></div>
-                                </a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- 导航栏在其他页面的效果结束 -->
-
-                <!-- 导航栏右边的内容的鼠标悬停下划线效果 -->
-                <div class="nav-border-bottom"></div>
-
-            </nav>
-            <!-- 导航栏右边的内容结束 -->
-
-        </div>
     </div>
+</div>
 <!-- 导航栏结束 -->
 
 <div id="site-wrapper">
 
-<!--    <div class="banner-promo-top-header">-->
-<!--        <a href="{{ url_for('main.index') }}">-->
-<!--            <p>Welcome to MusiCrash !</p>-->
-<!--        </a>-->
+        <div class="banner-promo-top-header">
+            <a href="{{ url_for('main.index') }}">
+                <p>Welcome to MusiCrash !</p>
+            </a>
 
-<!--    </div>-->
+        </div>
 
     <header class="banner navbar navbar-default navbar-static-top site-banner" role="banner">
         <div class="container">
@@ -804,16 +807,19 @@
                 <div class="navbar-sidebar">
                     <section id="custom_post_widget-4" class="widget widget_custom_post_widget">
                         <div class="inner-section">
-                            <div class="inside-header" style="width: max-content">
-                                <a class="header-el factory-el" href="/lyon-healy-harps/harps-maker-company-history/" style="display: inline">
-                                    <img class="header-img" src="https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-1x.png" srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-1x.png 1x, https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-2x.png 2x" alt="The Factory">
+                            <div class="inside-header">
+                                <a style="display: inline" class="header-el factory-el" href="/lyon-healy-harps/harps-maker-company-history/">
+                                    <img class="header-img"
+                                         src="https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-1x.png"
+                                         srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-1x.png 1x, https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-2x.png 2x"
+                                         alt="The Factory">
                                     <span class="header-written">The Factory</span>
                                 </a>
-                                <a class="header-el collection-el" href="/harps-collections/" style="display: inline">
+                                <a style="margin-top: 20px" class="header-el collection-el" href="/harps-collections/">
                                     <img class="header-img"
-                                                                                                    src="https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-1x.png"
-                                                                                                    srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-1x.png 1x, https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-2x.png 2x"
-                                                                                                    alt="Collections">
+                                         src="https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-1x.png"
+                                         srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-1x.png 1x, https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-2x.png 2x"
+                                         alt="Collections">
                                     <span class="header-written">Collections</span>
                                 </a>
                             </div>
@@ -821,322 +827,348 @@
                     </section>
                 </div>
 
+                <!-- 右边的图标 -->
                 <div class="navbar-toggle-menu">
-                    <!-- 搜索框 -->
-                    <div class="navbar-search">
-                        <form role="search" action="https://www.lyonhealy.com/harps/" method="get" id="searchform">
-                            <input type="text" name="s" placeholder="Search Harp">
-                            <input type="hidden" name="single" value="harps">
-                            <button type="submit" alt="Search" value="Search">
-                                <img class="icn-search"
-                                     src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/graphic/icn-search-oro.svg"
-                                     width="18" height="18">
-                            </button>
-                        </form>
-                    </div>
-
-                    <div class="wrap-lang">
-
-                        <div style="display: inline; width: max-content" class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">
-                            <ul>
-                                <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal">
-                                    <a href="https://www.lyonhealy.com/harps/style-8-gold/" class="wpml-ls-link">
-                                        <span class="wpml-ls-native">En</span></a>
-                                </li>
-                                <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hans wpml-ls-item-legacy-list-horizontal">
-                                    <a href="https://www.lyonhealy.com/zh-hans/harps/style-8-gold/"
-                                       class="wpml-ls-link">
-                                        <span class="wpml-ls-native" lang="zh-hans">中文</span><span
-                                            class="wpml-ls-display"><span class="wpml-ls-bracket"> (</span>Chinese (Simplified)<span
-                                            class="wpml-ls-bracket">)</span></span></a>
-                                </li>
-                            </ul>
+                    <section id="custom_post_widget-5" class="widget widget_custom_post_widget">
+                        <div class="inner-section">
+                            <div class="inside-header">
+                                <a style="display: inline" class="header-el factory-el" href="/lyon-healy-harps/harps-maker-company-history/">
+                                    <img class="header-img"
+                                         src="https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-1x.png"
+                                         srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-1x.png 1x, https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-2x.png 2x"
+                                         alt="The Factory">
+                                    <span class="header-written">The Factory</span>
+                                </a>
+                                <a style="margin-top: 20px" class="header-el collection-el" href="/harps-collections/">
+                                    <img class="header-img"
+                                         src="https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-1x.png"
+                                         srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-1x.png 1x, https://www.lyonhealy.com/wp-content/uploads/2017/04/collections-2x.png 2x"
+                                         alt="Collections">
+                                    <span class="header-written">Collections</span>
+                                </a>
+                            </div>
                         </div>
-                        <a class="toggle-country" id="toggle-country-select" data-toggle="modal" data-keyboard="false"
-                           data-backdrop="static" href="#country-modal">
-                            <!-- <span class="text-toggle"></span> -->
-                            <span class="icon-toggle">
-                        <img class="icon-worldwide"
-                             srcset="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/header/worldwide-1x.png 1x,  https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/header/worldwide-2x.png 2x"
-                             src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/header/worldwide-1x.png"
-                             title="Select your country" alt="Select your country">
-                    </span>
-                        </a>
-                    </div>
+                    </section>
+                    <!-- 搜索框 -->
+<!--                    <div class="navbar-search">-->
+<!--                        <form role="search" action="https://www.lyonhealy.com/harps/" method="get" id="searchform">-->
+<!--                            <input type="text" name="s" placeholder="Search Harp">-->
+<!--                            &lt;!&ndash;                            <input type="hidden" name="single" value="harps">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            <button type="submit" alt="Search" value="Search">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                <img class="icn-search"&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                     src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/graphic/icn-search-oro.svg"&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                     width="18" height="18">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            </button>&ndash;&gt;-->
+<!--                        </form>-->
+<!--                    </div>-->
+                    <!-- 放大镜图标 -->
+<!--                    <div style="display:inline;">-->
+<!--                        <img class="icn-search"-->
+<!--                             src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/graphic/icn-search-oro.svg"-->
+<!--                             width="18" height="18">-->
+<!--                    </div>-->
 
-                    <a href="javascript:void(0)" type="button" class="navbar-toggle toggle-nav" data-toggle="offcanvas"
-                       data-toggle-class="show-nav">
-                        <!-- <span class="text-toggle">Menu</span> -->
-                        <span class="icon-toggle">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </span>
-                    </a>
+<!--                    <div class="wrap-lang">-->
+
+<!--                        <div style="display: inline;"-->
+<!--                             class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">-->
+<!--                            <ul>-->
+<!--                                <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal">-->
+<!--                                    <a href="https://www.lyonhealy.com/harps/style-8-gold/" class="wpml-ls-link">-->
+<!--                                        <span class="wpml-ls-native">En</span></a>-->
+<!--                                </li>-->
+<!--                                <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hans wpml-ls-item-legacy-list-horizontal">-->
+<!--                                    <a href="https://www.lyonhealy.com/zh-hans/harps/style-8-gold/"-->
+<!--                                       class="wpml-ls-link">-->
+<!--                                        <span class="wpml-ls-native" lang="zh-hans">中文</span><span-->
+<!--                                            class="wpml-ls-display"><span class="wpml-ls-bracket"> (</span>Chinese (Simplified)<span-->
+<!--                                            class="wpml-ls-bracket">)</span></span></a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                        <a style="display:inline;" class="toggle-country" id="toggle-country-select" data-toggle="modal" data-keyboard="false" data-backdrop="static" href="#country-modal">-->
+<!--                            &lt;!&ndash; <span class="text-toggle"></span> &ndash;&gt;-->
+<!--                            <span class="icon-toggle">-->
+<!--                                <img class="icon-worldwide"-->
+<!--                                    srcset="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/header/worldwide-1x.png 1x,  https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/header/worldwide-2x.png 2x"-->
+<!--                                    src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/header/worldwide-1x.png"-->
+<!--                                    title="Select your country" alt="Select your country">-->
+<!--                            </span>-->
+<!--                        </a>-->
+<!--                    </div>-->
+
+<!--                    <a href="javascript:void(0)" type="button" class="navbar-toggle toggle-nav" data-toggle="offcanvas"-->
+<!--                       data-toggle-class="show-nav">-->
+<!--                        &lt;!&ndash; <span class="text-toggle">Menu</span> &ndash;&gt;-->
+<!--                        <span class="icon-toggle">-->
+<!--                        <span class="icon-bar"></span>-->
+<!--                        <span class="icon-bar"></span>-->
+<!--                        <span class="icon-bar"></span>-->
+<!--                    </span>-->
+<!--                    </a>-->
                 </div>
             </div>
         </div>
     </header>
 
-<!--    <div class="top-navigation">-->
-<!--        <header class="banner navbar navbar-inverse navbar-top-navigation" role="banner">-->
-<!--            <div class="container">-->
-<!--                <span class="menu-title">Collections</span>-->
-<!--                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"-->
-<!--                        data-target=".navbar-inside">-->
-<!--                    <span class="text-toggle sr-only">Menu</span>-->
-<!--                    <span class="icon-toggle">-->
-<!--            <i class="fa fa-angle-down" aria-hidden="true"></i>-->
-<!--          </span>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--            <nav class="collapse navbar-collapse navbar-inside" role="navigation">-->
-<!--                <div class="container">-->
-<!--                    <div class="menu-collections-container">-->
-<!--                        <ul id="menu-collections" class="nav navbar-nav navbar-centered">-->
-<!--                            <li id="menu-item-282"-->
-<!--                                class="premium-harps-el active menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-282">-->
-<!--                                <a title="Premium" href="https://www.lyonhealy.com/harps-collections/premium-harps/">Premium</a>-->
-<!--                            </li>-->
-<!--                            <li id="menu-item-281"-->
-<!--                                class="professional-pedal-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-281">-->
-<!--                                <a title="Professional Pedal"-->
-<!--                                   href="https://www.lyonhealy.com/harps-collections/professional-pedal-harps/">Professional-->
-<!--                                    Pedal</a></li>-->
-<!--                            <li id="menu-item-285"-->
-<!--                                class="electric-electroacoustic-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-285">-->
-<!--                                <a title="Electric &amp; Electroacoustic"-->
-<!--                                   href="https://www.lyonhealy.com/harps-collections/electric-electroacoustic-harps/">Electric-->
-<!--                                    &amp; Electroacoustic</a></li>-->
-<!--                            <li id="menu-item-283"-->
-<!--                                class="chicago-line-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-283">-->
-<!--                                <a title="Chicago Line"-->
-<!--                                   href="https://www.lyonhealy.com/harps-collections/chicago-line-harps/">Chicago-->
-<!--                                    Line</a></li>-->
-<!--                            <li id="menu-item-284"-->
-<!--                                class="lever-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-284">-->
-<!--                                <a title="Lever Harps" href="https://www.lyonhealy.com/harps-collections/lever-harps/">Lever-->
-<!--                                    Harps</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </nav>-->
-<!--        </header>-->
-<!--    </div>-->
+    <!--    <div class="top-navigation">-->
+    <!--        <header class="banner navbar navbar-inverse navbar-top-navigation" role="banner">-->
+    <!--            <div class="container">-->
+    <!--                <span class="menu-title">Collections</span>-->
+    <!--                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"-->
+    <!--                        data-target=".navbar-inside">-->
+    <!--                    <span class="text-toggle sr-only">Menu</span>-->
+    <!--                    <span class="icon-toggle">-->
+    <!--            <i class="fa fa-angle-down" aria-hidden="true"></i>-->
+    <!--          </span>-->
+    <!--                </button>-->
+    <!--            </div>-->
+    <!--            <nav class="collapse navbar-collapse navbar-inside" role="navigation">-->
+    <!--                <div class="container">-->
+    <!--                    <div class="menu-collections-container">-->
+    <!--                        <ul id="menu-collections" class="nav navbar-nav navbar-centered">-->
+    <!--                            <li id="menu-item-282"-->
+    <!--                                class="premium-harps-el active menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-282">-->
+    <!--                                <a title="Premium" href="https://www.lyonhealy.com/harps-collections/premium-harps/">Premium</a>-->
+    <!--                            </li>-->
+    <!--                            <li id="menu-item-281"-->
+    <!--                                class="professional-pedal-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-281">-->
+    <!--                                <a title="Professional Pedal"-->
+    <!--                                   href="https://www.lyonhealy.com/harps-collections/professional-pedal-harps/">Professional-->
+    <!--                                    Pedal</a></li>-->
+    <!--                            <li id="menu-item-285"-->
+    <!--                                class="electric-electroacoustic-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-285">-->
+    <!--                                <a title="Electric &amp; Electroacoustic"-->
+    <!--                                   href="https://www.lyonhealy.com/harps-collections/electric-electroacoustic-harps/">Electric-->
+    <!--                                    &amp; Electroacoustic</a></li>-->
+    <!--                            <li id="menu-item-283"-->
+    <!--                                class="chicago-line-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-283">-->
+    <!--                                <a title="Chicago Line"-->
+    <!--                                   href="https://www.lyonhealy.com/harps-collections/chicago-line-harps/">Chicago-->
+    <!--                                    Line</a></li>-->
+    <!--                            <li id="menu-item-284"-->
+    <!--                                class="lever-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-284">-->
+    <!--                                <a title="Lever Harps" href="https://www.lyonhealy.com/harps-collections/lever-harps/">Lever-->
+    <!--                                    Harps</a></li>-->
+    <!--                        </ul>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </nav>-->
+    <!--        </header>-->
+    <!--    </div>-->
 
-<!--    <div class="offcanvas-nav">-->
-<!--        <div class="offcanvas-inside">-->
-<!--            <div class="offcanvas-toggle">-->
-<!--                <a href="javascript:void(0)" type="button" class="navbar-toggle toggle-nav" data-toggle="offcanvas"-->
-<!--                   data-toggle-class="show-nav">-->
-<!--                    <span class="text-toggle">Close</span>-->
-<!--                    <span class="icon-toggle">-->
-<!--          <span class="icon-bar top-bar"></span>-->
-<!--          <span class="icon-bar bottom-bar"></span>-->
-<!--        </span>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            <div class="offcanvas-sidebar primary-navigation">-->
-<!--                <div class="container">-->
-<!--                    <div class="offcanvas-row offcanvas-main">-->
-<!--                        <section id="nav_menu-2" class="widget widget_nav_menu">-->
-<!--                            <div class="inner-section">-->
-<!--                                <div class="menu-primary-navigation-1-container">-->
-<!--                                    <ul id="menu-primary-navigation-1" class="menu">-->
-<!--                                        <li id="menu-item-82"-->
-<!--                                            class="home-el menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-82">-->
-<!--                                            <a title="Home" href="https://www.lyonhealy.com/">Home</a></li>-->
-<!--                                        <li id="menu-item-100"-->
-<!--                                            class="collections-el menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-100">-->
-<!--                                            <a title="Collections" href="https://www.lyonhealy.com/harps-collections/">Collections</a>-->
-<!--                                            <ul class="sub-menu">-->
-<!--                                                <li id="menu-item-104"-->
-<!--                                                    class="premium-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-104">-->
-<!--                                                    <a title="Premium Harps"-->
-<!--                                                       href="https://www.lyonhealy.com/harps-collections/premium-harps/">Premium-->
-<!--                                                        Harps</a></li>-->
-<!--                                                <li id="menu-item-105"-->
-<!--                                                    class="professional-pedal-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-105">-->
-<!--                                                    <a title="Professional Pedal"-->
-<!--                                                       href="https://www.lyonhealy.com/harps-collections/professional-pedal-harps/">Professional-->
-<!--                                                        Pedal</a></li>-->
-<!--                                                <li id="menu-item-102"-->
-<!--                                                    class="electric-electroacoustic-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-102">-->
-<!--                                                    <a title="Electric &amp; Electroacoustic"-->
-<!--                                                       href="https://www.lyonhealy.com/harps-collections/electric-electroacoustic-harps/">Electric-->
-<!--                                                        &amp; Electroacoustic</a></li>-->
-<!--                                                <li id="menu-item-101"-->
-<!--                                                    class="chicago-line-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-101">-->
-<!--                                                    <a title="Chicago Line"-->
-<!--                                                       href="https://www.lyonhealy.com/harps-collections/chicago-line-harps/">Chicago-->
-<!--                                                        Line</a></li>-->
-<!--                                                <li id="menu-item-103"-->
-<!--                                                    class="lever-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-103">-->
-<!--                                                    <a title="Lever Harps"-->
-<!--                                                       href="https://www.lyonhealy.com/harps-collections/lever-harps/">Lever-->
-<!--                                                        Harps</a></li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                        <li id="menu-item-535"-->
-<!--                                            class="lyon-healy-el menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-535">-->
-<!--                                            <a href="#">Lyon &amp; Healy</a>-->
-<!--                                            <ul class="sub-menu">-->
-<!--                                                <li id="menu-item-108"-->
-<!--                                                    class="history-el menu-item menu-item-type-post_type menu-item-object-page menu-item-108">-->
-<!--                                                    <a title="Company history"-->
-<!--                                                       href="https://www.lyonhealy.com/lyon-healy-harps/harps-maker-company-history/">Company-->
-<!--                                                        history</a></li>-->
-<!--                                                <li id="menu-item-107"-->
-<!--                                                    class="today-el menu-item menu-item-type-post_type menu-item-object-page menu-item-107">-->
-<!--                                                    <a title="Lyon &amp; Healy today"-->
-<!--                                                       href="https://www.lyonhealy.com/lyon-healy-harps/harps-makers-lyon-healy-today/">Lyon-->
-<!--                                                        &amp; Healy today</a></li>-->
-<!--                                                <li id="menu-item-333"-->
-<!--                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-333">-->
-<!--                                                    <a href="https://www.lyonhealy.com/lyon-healy-harps/harps-factory-photogallery/">Photogallery</a>-->
-<!--                                                </li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                        <section id="nav_menu-3" class="widget widget_nav_menu">-->
-<!--                            <div class="inner-section">-->
-<!--                                <div class="menu-primary-navigation-2-container">-->
-<!--                                    <ul id="menu-primary-navigation-2" class="menu">-->
-<!--                                        <li id="menu-item-536"-->
-<!--                                            class="services-el menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-536">-->
-<!--                                            <a href="#">Services</a>-->
-<!--                                            <ul class="sub-menu">-->
-<!--                                                <li id="menu-item-115"-->
-<!--                                                    class="regulation-el menu-item menu-item-type-post_type menu-item-object-page menu-item-115">-->
-<!--                                                    <a title="Regulations"-->
-<!--                                                       href="https://www.lyonhealy.com/harp-services/harp-regulations-technicians/">Regulations</a>-->
-<!--                                                </li>-->
-<!--                                                <li id="menu-item-114"-->
-<!--                                                    class="repair-el menu-item menu-item-type-post_type menu-item-object-page menu-item-114">-->
-<!--                                                    <a href="https://www.lyonhealy.com/harp-services/harp-repairs/">Repairs</a>-->
-<!--                                                </li>-->
-<!--                                                <li id="menu-item-113"-->
-<!--                                                    class="tecnician-el menu-item menu-item-type-post_type menu-item-object-page menu-item-113">-->
-<!--                                                    <a title="Technician guild"-->
-<!--                                                       href="https://www.lyonhealy.com/harp-services/harp-technicians-guild/">Technicians-->
-<!--                                                        Guild</a></li>-->
-<!--                                                <li id="menu-item-112"-->
-<!--                                                    class="appraisal-el menu-item menu-item-type-post_type menu-item-object-page menu-item-112">-->
-<!--                                                    <a title="Appraisal request"-->
-<!--                                                       href="https://www.lyonhealy.com/harp-services/appraisal-request/">Appraisal-->
-<!--                                                        Request</a></li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                        <li id="menu-item-1988"-->
-<!--                                            class="pre-owned-el menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1988">-->
-<!--                                            <a title="Pre-owned" href="#">Pre-owned / Rental</a>-->
-<!--                                            <ul class="sub-menu">-->
-<!--                                                <li id="menu-item-3663"-->
-<!--                                                    class="preowned-el menu-item menu-item-type-post_type menu-item-object-page menu-item-3663">-->
-<!--                                                    <a href="https://www.lyonhealy.com/preowned-and-rental-harps/">Pre-owned,-->
-<!--                                                        rent to own and bounty harps</a></li>-->
-<!--                                                <li id="menu-item-1989"-->
-<!--                                                    class="rental-el menu-item menu-item-type-post_type menu-item-object-page menu-item-1989">-->
-<!--                                                    <a href="https://www.lyonhealy.com/rental-program/">Rental-->
-<!--                                                        Program</a></li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                        <section id="nav_menu-4" class="widget widget_nav_menu">-->
-<!--                            <div class="inner-section">-->
-<!--                                <div class="menu-primary-navigation-3-container">-->
-<!--                                    <ul id="menu-primary-navigation-3" class="menu">-->
-<!--                                        <li id="menu-item-wpml-ls-9-en"-->
-<!--                                            class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-9-en">-->
-<!--                                            <a title="En" href="https://www.lyonhealy.com/harps/style-8-gold/"><span-->
-<!--                                                    class="wpml-ls-native" lang="en">En</span></a>-->
-<!--                                            <ul class="sub-menu">-->
-<!--                                                <li id="menu-item-wpml-ls-9-zh-hans"-->
-<!--                                                    class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-zh-hans wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-zh-hans">-->
-<!--                                                    <a title="中文"-->
-<!--                                                       href="https://www.lyonhealy.com/zh-hans/harps/style-8-gold/"><span-->
-<!--                                                            class="wpml-ls-native" lang="zh-hans">中文</span></a></li>-->
-<!--                                                <li id="menu-item-wpml-ls-9-fr"-->
-<!--                                                    class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-fr">-->
-<!--                                                    <a title="Fr"-->
-<!--                                                       href="https://www.lyonhealy.com/fr/harps/style-8-gold/"><span-->
-<!--                                                            class="wpml-ls-native" lang="fr">Fr</span></a></li>-->
-<!--                                                <li id="menu-item-wpml-ls-9-de"-->
-<!--                                                    class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-de wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-de">-->
-<!--                                                    <a title="De"-->
-<!--                                                       href="https://www.lyonhealy.com/de/harps/style-8-gold/"><span-->
-<!--                                                            class="wpml-ls-native" lang="de">De</span></a></li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                        <li id="menu-item-122"-->
-<!--                                            class="news-events-el menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-122">-->
-<!--                                            <a title="News &amp; Events" href="#">News &amp; Events</a>-->
-<!--                                            <ul class="sub-menu">-->
-<!--                                                <li id="menu-item-358"-->
-<!--                                                    class="events-el menu-item menu-item-type-post_type menu-item-object-page menu-item-358">-->
-<!--                                                    <a title="Events Calendar"-->
-<!--                                                       href="https://www.lyonhealy.com/harps-events-calendar/">Events-->
-<!--                                                        Calendar</a></li>-->
-<!--                                                <li id="menu-item-128"-->
-<!--                                                    class="news-el menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-128">-->
-<!--                                                    <a title="News" href="https://www.lyonhealy.com/harp-news/">News</a>-->
-<!--                                                </li>-->
-<!--                                                <li id="menu-item-127"-->
-<!--                                                    class="media-el menu-item menu-item-type-post_type menu-item-object-page menu-item-127">-->
-<!--                                                    <a title="Media room" href="https://www.lyonhealy.com/media-room/">Media-->
-<!--                                                        Room</a></li>-->
-<!--                                                <li id="menu-item-126"-->
-<!--                                                    class="award-el menu-item menu-item-type-post_type menu-item-object-page menu-item-126">-->
-<!--                                                    <a title="Lyon &amp; Healy Award"-->
-<!--                                                       href="https://www.lyonhealy.com/awards/">Lyon &amp; Healy-->
-<!--                                                        Awards</a></li>-->
-<!--                                                <li id="menu-item-125"-->
-<!--                                                    class="harptacular menu-item menu-item-type-post_type menu-item-object-page menu-item-125">-->
-<!--                                                    <a title="Harptacular"-->
-<!--                                                       href="https://www.lyonhealy.com/harptacular/">Harptacular</a>-->
-<!--                                                </li>-->
-<!--                                                <li id="menu-item-1322"-->
-<!--                                                    class="summer-el menu-item menu-item-type-post_type menu-item-object-page menu-item-1322">-->
-<!--                                                    <a href="https://www.lyonhealy.com/summer/">Summer Concert-->
-<!--                                                        Series</a></li>-->
-<!--                                                <li id="menu-item-1923"-->
-<!--                                                    class="harp-day-el menu-item menu-item-type-post_type menu-item-object-page menu-item-1923">-->
-<!--                                                    <a href="https://www.lyonhealy.com/harp-day/">Harp Day</a></li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                        <li id="menu-item-129"-->
-<!--                                            class="contact-el menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-129">-->
-<!--                                            <a title="Contact us" href="https://www.lyonhealy.com/contact-us/">Contact-->
-<!--                                                us</a>-->
-<!--                                            <ul class="sub-menu">-->
-<!--                                                <li id="menu-item-686"-->
-<!--                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-686">-->
-<!--                                                    <a href="https://www.lyonhealy.com/contact-us/">Contacts</a></li>-->
-<!--                                                <li id="menu-item-684"-->
-<!--                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-684">-->
-<!--                                                    <a href="https://www.lyonhealy.com/find-a-dealer-harps/">Find a-->
-<!--                                                        dealer</a></li>-->
-<!--                                                <li id="menu-item-685"-->
-<!--                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-685">-->
-<!--                                                    <a href="https://www.lyonhealy.com/newsletter/">Newsletter</a></li>-->
-<!--                                            </ul>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </section>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
+    <!--    <div class="offcanvas-nav">-->
+    <!--        <div class="offcanvas-inside">-->
+    <!--            <div class="offcanvas-toggle">-->
+    <!--                <a href="javascript:void(0)" type="button" class="navbar-toggle toggle-nav" data-toggle="offcanvas"-->
+    <!--                   data-toggle-class="show-nav">-->
+    <!--                    <span class="text-toggle">Close</span>-->
+    <!--                    <span class="icon-toggle">-->
+    <!--          <span class="icon-bar top-bar"></span>-->
+    <!--          <span class="icon-bar bottom-bar"></span>-->
+    <!--        </span>-->
+    <!--                </a>-->
+    <!--            </div>-->
+    <!--            <div class="offcanvas-sidebar primary-navigation">-->
+    <!--                <div class="container">-->
+    <!--                    <div class="offcanvas-row offcanvas-main">-->
+    <!--                        <section id="nav_menu-2" class="widget widget_nav_menu">-->
+    <!--                            <div class="inner-section">-->
+    <!--                                <div class="menu-primary-navigation-1-container">-->
+    <!--                                    <ul id="menu-primary-navigation-1" class="menu">-->
+    <!--                                        <li id="menu-item-82"-->
+    <!--                                            class="home-el menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-82">-->
+    <!--                                            <a title="Home" href="https://www.lyonhealy.com/">Home</a></li>-->
+    <!--                                        <li id="menu-item-100"-->
+    <!--                                            class="collections-el menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-100">-->
+    <!--                                            <a title="Collections" href="https://www.lyonhealy.com/harps-collections/">Collections</a>-->
+    <!--                                            <ul class="sub-menu">-->
+    <!--                                                <li id="menu-item-104"-->
+    <!--                                                    class="premium-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-104">-->
+    <!--                                                    <a title="Premium Harps"-->
+    <!--                                                       href="https://www.lyonhealy.com/harps-collections/premium-harps/">Premium-->
+    <!--                                                        Harps</a></li>-->
+    <!--                                                <li id="menu-item-105"-->
+    <!--                                                    class="professional-pedal-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-105">-->
+    <!--                                                    <a title="Professional Pedal"-->
+    <!--                                                       href="https://www.lyonhealy.com/harps-collections/professional-pedal-harps/">Professional-->
+    <!--                                                        Pedal</a></li>-->
+    <!--                                                <li id="menu-item-102"-->
+    <!--                                                    class="electric-electroacoustic-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-102">-->
+    <!--                                                    <a title="Electric &amp; Electroacoustic"-->
+    <!--                                                       href="https://www.lyonhealy.com/harps-collections/electric-electroacoustic-harps/">Electric-->
+    <!--                                                        &amp; Electroacoustic</a></li>-->
+    <!--                                                <li id="menu-item-101"-->
+    <!--                                                    class="chicago-line-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-101">-->
+    <!--                                                    <a title="Chicago Line"-->
+    <!--                                                       href="https://www.lyonhealy.com/harps-collections/chicago-line-harps/">Chicago-->
+    <!--                                                        Line</a></li>-->
+    <!--                                                <li id="menu-item-103"-->
+    <!--                                                    class="lever-harps-el menu-item menu-item-type-taxonomy menu-item-object-product-collection menu-item-103">-->
+    <!--                                                    <a title="Lever Harps"-->
+    <!--                                                       href="https://www.lyonhealy.com/harps-collections/lever-harps/">Lever-->
+    <!--                                                        Harps</a></li>-->
+    <!--                                            </ul>-->
+    <!--                                        </li>-->
+    <!--                                        <li id="menu-item-535"-->
+    <!--                                            class="lyon-healy-el menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-535">-->
+    <!--                                            <a href="#">Lyon &amp; Healy</a>-->
+    <!--                                            <ul class="sub-menu">-->
+    <!--                                                <li id="menu-item-108"-->
+    <!--                                                    class="history-el menu-item menu-item-type-post_type menu-item-object-page menu-item-108">-->
+    <!--                                                    <a title="Company history"-->
+    <!--                                                       href="https://www.lyonhealy.com/lyon-healy-harps/harps-maker-company-history/">Company-->
+    <!--                                                        history</a></li>-->
+    <!--                                                <li id="menu-item-107"-->
+    <!--                                                    class="today-el menu-item menu-item-type-post_type menu-item-object-page menu-item-107">-->
+    <!--                                                    <a title="Lyon &amp; Healy today"-->
+    <!--                                                       href="https://www.lyonhealy.com/lyon-healy-harps/harps-makers-lyon-healy-today/">Lyon-->
+    <!--                                                        &amp; Healy today</a></li>-->
+    <!--                                                <li id="menu-item-333"-->
+    <!--                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-333">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/lyon-healy-harps/harps-factory-photogallery/">Photogallery</a>-->
+    <!--                                                </li>-->
+    <!--                                            </ul>-->
+    <!--                                        </li>-->
+    <!--                                    </ul>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </section>-->
+    <!--                        <section id="nav_menu-3" class="widget widget_nav_menu">-->
+    <!--                            <div class="inner-section">-->
+    <!--                                <div class="menu-primary-navigation-2-container">-->
+    <!--                                    <ul id="menu-primary-navigation-2" class="menu">-->
+    <!--                                        <li id="menu-item-536"-->
+    <!--                                            class="services-el menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-536">-->
+    <!--                                            <a href="#">Services</a>-->
+    <!--                                            <ul class="sub-menu">-->
+    <!--                                                <li id="menu-item-115"-->
+    <!--                                                    class="regulation-el menu-item menu-item-type-post_type menu-item-object-page menu-item-115">-->
+    <!--                                                    <a title="Regulations"-->
+    <!--                                                       href="https://www.lyonhealy.com/harp-services/harp-regulations-technicians/">Regulations</a>-->
+    <!--                                                </li>-->
+    <!--                                                <li id="menu-item-114"-->
+    <!--                                                    class="repair-el menu-item menu-item-type-post_type menu-item-object-page menu-item-114">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/harp-services/harp-repairs/">Repairs</a>-->
+    <!--                                                </li>-->
+    <!--                                                <li id="menu-item-113"-->
+    <!--                                                    class="tecnician-el menu-item menu-item-type-post_type menu-item-object-page menu-item-113">-->
+    <!--                                                    <a title="Technician guild"-->
+    <!--                                                       href="https://www.lyonhealy.com/harp-services/harp-technicians-guild/">Technicians-->
+    <!--                                                        Guild</a></li>-->
+    <!--                                                <li id="menu-item-112"-->
+    <!--                                                    class="appraisal-el menu-item menu-item-type-post_type menu-item-object-page menu-item-112">-->
+    <!--                                                    <a title="Appraisal request"-->
+    <!--                                                       href="https://www.lyonhealy.com/harp-services/appraisal-request/">Appraisal-->
+    <!--                                                        Request</a></li>-->
+    <!--                                            </ul>-->
+    <!--                                        </li>-->
+    <!--                                        <li id="menu-item-1988"-->
+    <!--                                            class="pre-owned-el menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1988">-->
+    <!--                                            <a title="Pre-owned" href="#">Pre-owned / Rental</a>-->
+    <!--                                            <ul class="sub-menu">-->
+    <!--                                                <li id="menu-item-3663"-->
+    <!--                                                    class="preowned-el menu-item menu-item-type-post_type menu-item-object-page menu-item-3663">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/preowned-and-rental-harps/">Pre-owned,-->
+    <!--                                                        rent to own and bounty harps</a></li>-->
+    <!--                                                <li id="menu-item-1989"-->
+    <!--                                                    class="rental-el menu-item menu-item-type-post_type menu-item-object-page menu-item-1989">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/rental-program/">Rental-->
+    <!--                                                        Program</a></li>-->
+    <!--                                            </ul>-->
+    <!--                                        </li>-->
+    <!--                                    </ul>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </section>-->
+    <!--                        <section id="nav_menu-4" class="widget widget_nav_menu">-->
+    <!--                            <div class="inner-section">-->
+    <!--                                <div class="menu-primary-navigation-3-container">-->
+    <!--                                    <ul id="menu-primary-navigation-3" class="menu">-->
+    <!--                                        <li id="menu-item-wpml-ls-9-en"-->
+    <!--                                            class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-9-en">-->
+    <!--                                            <a title="En" href="https://www.lyonhealy.com/harps/style-8-gold/"><span-->
+    <!--                                                    class="wpml-ls-native" lang="en">En</span></a>-->
+    <!--                                            <ul class="sub-menu">-->
+    <!--                                                <li id="menu-item-wpml-ls-9-zh-hans"-->
+    <!--                                                    class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-zh-hans wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-zh-hans">-->
+    <!--                                                    <a title="中文"-->
+    <!--                                                       href="https://www.lyonhealy.com/zh-hans/harps/style-8-gold/"><span-->
+    <!--                                                            class="wpml-ls-native" lang="zh-hans">中文</span></a></li>-->
+    <!--                                                <li id="menu-item-wpml-ls-9-fr"-->
+    <!--                                                    class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-fr">-->
+    <!--                                                    <a title="Fr"-->
+    <!--                                                       href="https://www.lyonhealy.com/fr/harps/style-8-gold/"><span-->
+    <!--                                                            class="wpml-ls-native" lang="fr">Fr</span></a></li>-->
+    <!--                                                <li id="menu-item-wpml-ls-9-de"-->
+    <!--                                                    class="menu-item wpml-ls-slot-9 wpml-ls-item wpml-ls-item-de wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-9-de">-->
+    <!--                                                    <a title="De"-->
+    <!--                                                       href="https://www.lyonhealy.com/de/harps/style-8-gold/"><span-->
+    <!--                                                            class="wpml-ls-native" lang="de">De</span></a></li>-->
+    <!--                                            </ul>-->
+    <!--                                        </li>-->
+    <!--                                        <li id="menu-item-122"-->
+    <!--                                            class="news-events-el menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-122">-->
+    <!--                                            <a title="News &amp; Events" href="#">News &amp; Events</a>-->
+    <!--                                            <ul class="sub-menu">-->
+    <!--                                                <li id="menu-item-358"-->
+    <!--                                                    class="events-el menu-item menu-item-type-post_type menu-item-object-page menu-item-358">-->
+    <!--                                                    <a title="Events Calendar"-->
+    <!--                                                       href="https://www.lyonhealy.com/harps-events-calendar/">Events-->
+    <!--                                                        Calendar</a></li>-->
+    <!--                                                <li id="menu-item-128"-->
+    <!--                                                    class="news-el menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-128">-->
+    <!--                                                    <a title="News" href="https://www.lyonhealy.com/harp-news/">News</a>-->
+    <!--                                                </li>-->
+    <!--                                                <li id="menu-item-127"-->
+    <!--                                                    class="media-el menu-item menu-item-type-post_type menu-item-object-page menu-item-127">-->
+    <!--                                                    <a title="Media room" href="https://www.lyonhealy.com/media-room/">Media-->
+    <!--                                                        Room</a></li>-->
+    <!--                                                <li id="menu-item-126"-->
+    <!--                                                    class="award-el menu-item menu-item-type-post_type menu-item-object-page menu-item-126">-->
+    <!--                                                    <a title="Lyon &amp; Healy Award"-->
+    <!--                                                       href="https://www.lyonhealy.com/awards/">Lyon &amp; Healy-->
+    <!--                                                        Awards</a></li>-->
+    <!--                                                <li id="menu-item-125"-->
+    <!--                                                    class="harptacular menu-item menu-item-type-post_type menu-item-object-page menu-item-125">-->
+    <!--                                                    <a title="Harptacular"-->
+    <!--                                                       href="https://www.lyonhealy.com/harptacular/">Harptacular</a>-->
+    <!--                                                </li>-->
+    <!--                                                <li id="menu-item-1322"-->
+    <!--                                                    class="summer-el menu-item menu-item-type-post_type menu-item-object-page menu-item-1322">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/summer/">Summer Concert-->
+    <!--                                                        Series</a></li>-->
+    <!--                                                <li id="menu-item-1923"-->
+    <!--                                                    class="harp-day-el menu-item menu-item-type-post_type menu-item-object-page menu-item-1923">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/harp-day/">Harp Day</a></li>-->
+    <!--                                            </ul>-->
+    <!--                                        </li>-->
+    <!--                                        <li id="menu-item-129"-->
+    <!--                                            class="contact-el menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-129">-->
+    <!--                                            <a title="Contact us" href="https://www.lyonhealy.com/contact-us/">Contact-->
+    <!--                                                us</a>-->
+    <!--                                            <ul class="sub-menu">-->
+    <!--                                                <li id="menu-item-686"-->
+    <!--                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-686">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/contact-us/">Contacts</a></li>-->
+    <!--                                                <li id="menu-item-684"-->
+    <!--                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-684">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/find-a-dealer-harps/">Find a-->
+    <!--                                                        dealer</a></li>-->
+    <!--                                                <li id="menu-item-685"-->
+    <!--                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-685">-->
+    <!--                                                    <a href="https://www.lyonhealy.com/newsletter/">Newsletter</a></li>-->
+    <!--                                            </ul>-->
+    <!--                                        </li>-->
+    <!--                                    </ul>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </section>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
 
     <!-- 似乎是原本导航栏 删去没影响 -->
@@ -1393,12 +1425,14 @@
                             </div>
                             <div class="entry-data">
                                 <header class="entry-header">
-                                    <div class="entry-collection"><h2 class="collection"><a
-                                            href="https://www.lyonhealy.com/harps-collections/premium-harps/">Premium</a>
-                                    </h2></div>
-                                    <h1 class="entry-title">{{ commodity.get('title').get('english') }}</h1>
+                                    <!--                                    <div class="entry-collection"><h2 class="collection"><a-->
+                                    <!--                                            href="https://www.lyonhealy.com/harps-collections/premium-harps/">Premium</a>-->
+                                    <!--                                    </h2></div>-->
+                                    <!--                                    <h1 class="entry-title">{{ commodity.get('title').get('english') }}</h1>-->
                                     <span class="brand hidden">Lyon &amp; Healy</span>
                                 </header>
+                                <h2 class="entry-title" style="color:white;font-family: 'Roboto';">{{
+                                    commodity.get('title').get('english') }}</h2><br><br>
                                 <div class="entry-content">
                                     <p>Already a modern classic, the new Lyon &amp; Healy Style 4 is a Premium
                                         instrument being introduced to our standard catalog.&nbsp; The elegance of this
@@ -1673,6 +1707,8 @@
                                     class="entry-product post-159 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
                                 <div class="inside-product equal-el" style="height: 509px;">
                                     <a href="https://www.lyonhealy.com/harps/style-26-gold/">
+                                        <div class="entry-text" style="color:white; text-align: center">Style 26 Gold
+                                        </div>
                                         <div class="entry-image" data-mh="entry-image" style="height: 458px;">
                                             <img width="375" height="616"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/Product/Europa/Europa-II.jpg/jcr:content/Europa%20II.jpg"
@@ -1681,11 +1717,12 @@
                                                  sizes="(max-width: 375px) 100vw, 375px"></div>
                                         <!--                                                 srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/Style26-Gold-bubinga-375x616.jpg 375w, https://www.lyonhealy.com/wp-content/uploads/2017/04/Style26-Gold-bubinga.jpg 768w"-->
 
-                                        <div class="entry-text">
-                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">
-                                                <h2 class="entry-title">Style 26 Gold</h2>
-                                            </header>
-                                        </div>
+                                        <!--                                        <div class="entry-text">Style 26 Gold</div>-->
+
+                                        <!--                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">-->
+                                        <!--                                                <h2 class="entry-title">Style 26 Gold</h2>-->
+                                        <!--                                            </header>-->
+                                        <!--                                        </div>-->
                                     </a>
                                 </div>
                             </article>
@@ -1694,6 +1731,8 @@
                                     class="entry-product post-151 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
                                 <div class="inside-product equal-el" style="height: 509px;">
                                     <a href="https://www.lyonhealy.com/harps/style-3-gold/">
+                                        <div class="entry-text" style="color:white; text-align: center">Style 3 Gold
+                                        </div>
                                         <div class="entry-image" data-mh="entry-image" style="height: 458px;">
                                             <img width="375" height="616"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/News/20170222/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201208153853.jpg/jcr:content/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201208153853.jpg"
@@ -1702,11 +1741,11 @@
                                                  sizes="(max-width: 375px) 100vw, 375px"></div>
                                         <!--                                                 srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/Style-3-Gold-375x616.jpg 375w, https://www.lyonhealy.com/wp-content/uploads/2017/04/Style-3-Gold.jpg 768w"-->
 
-                                        <div class="entry-text">
-                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">
-                                                <h2 class="entry-title">Style 3 Gold</h2>
-                                            </header>
-                                        </div>
+                                        <!--                                        <div class="entry-text">-->
+                                        <!--                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">-->
+                                        <!--                                                <h2 class="entry-title">Style 3 Gold</h2>-->
+                                        <!--                                            </header>-->
+                                        <!--                                        </div>-->
                                     </a>
                                 </div>
                             </article>
@@ -1715,6 +1754,8 @@
                                     class="entry-product post-145 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
                                 <div class="inside-product equal-el" style="height: 509px;">
                                     <a href="https://www.lyonhealy.com/harps/style-8-gold/">
+                                        <div class="entry-text" style="color:white; text-align: center">Style 8 Gold
+                                        </div>
                                         <div class="entry-image" data-mh="entry-image" style="height: 458px;">
                                             <img width="375" height="616"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/Special-Pianos/CrownJewel/Grands/CJ_Walnut.jpg/jcr:content/CJ_Walnut.jpg"
@@ -1723,11 +1764,11 @@
                                                  sizes="(max-width: 375px) 100vw, 375px"></div>
                                         <!--                                                 srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/Style-8-Gold-375x616.jpg 375w, https://www.lyonhealy.com/wp-content/uploads/2017/04/Style-8-Gold.jpg 768w"-->
 
-                                        <div class="entry-text">
-                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">
-                                                <h2 class="entry-title">Style 8 Gold</h2>
-                                            </header>
-                                        </div>
+                                        <!--                                        <div class="entry-text">-->
+                                        <!--                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">-->
+                                        <!--                                                <h2 class="entry-title">Style 8 Gold</h2>-->
+                                        <!--                                            </header>-->
+                                        <!--                                        </div>-->
                                     </a>
                                 </div>
                             </article>
@@ -1736,6 +1777,8 @@
                                     class="entry-product post-131 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
                                 <div class="inside-product equal-el" style="height: 509px;">
                                     <a href="https://www.lyonhealy.com/harps/prince-william-gold/">
+                                        <div class="entry-text" style="color:white; text-align: center">Prince William
+                                        </div>
                                         <div class="entry-image" data-mh="entry-image" style="height: 458px;">
                                             <img width="375" height="616"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/Product/%E8%B4%9D%E5%A4%9A%E8%8A%AC/%E8%B4%9D%E5%A4%9A%E8%8A%AC1.jpg/jcr:content/%E8%B4%9D%E5%A4%9A%E8%8A%AC1.jpg"
@@ -1744,11 +1787,11 @@
                                                  sizes="(max-width: 375px) 100vw, 375px"></div>
                                         <!--                                                 srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/Prince-William-375x616.jpg 375w, https://www.lyonhealy.com/wp-content/uploads/2017/04/Prince-William.jpg 768w"-->
 
-                                        <div class="entry-text">
-                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">
-                                                <h2 class="entry-title">Prince William</h2>
-                                            </header>
-                                        </div>
+                                        <!--                                        <div class="entry-text">-->
+                                        <!--                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">-->
+                                        <!--                                                <h2 class="entry-title">Prince William</h2>-->
+                                        <!--                                            </header>-->
+                                        <!--                                        </div>-->
                                     </a>
                                 </div>
                             </article>
@@ -1757,6 +1800,7 @@
                                     class="entry-product post-130 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
                                 <div class="inside-product equal-el" style="height: 509px;">
                                     <a href="https://www.lyonhealy.com/harps/louis-xv/">
+                                        <div class="entry-text" style="color:white; text-align: center">Louis XV</div>
                                         <div class="entry-image" data-mh="entry-image" style="height: 458px;">
                                             <img width="375" height="616"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/News/20170222/%E6%A8%B1%E6%A1%83%E6%9C%A8.jpg/jcr:content/%E6%A8%B1%E6%A1%83%E6%9C%A8.jpg"
@@ -1765,11 +1809,11 @@
                                                  sizes="(max-width: 375px) 100vw, 375px"></div>
                                         <!--                                                 srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/LouisXV-375x616.jpg 375w, https://www.lyonhealy.com/wp-content/uploads/2017/04/LouisXV.jpg 768w"-->
 
-                                        <div class="entry-text">
-                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">
-                                                <h2 class="entry-title">Louis XV</h2>
-                                            </header>
-                                        </div>
+                                        <!--                                        <div class="entry-text">-->
+                                        <!--                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">-->
+                                        <!--                                                <h2 class="entry-title">Louis XV</h2>-->
+                                        <!--                                            </header>-->
+                                        <!--                                        </div>-->
                                     </a>
                                 </div>
                             </article>
@@ -1778,6 +1822,9 @@
                                     class="entry-product post-80 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
                                 <div class="inside-product equal-el" style="height: 509px;">
                                     <a href="https://www.lyonhealy.com/harps/louis-xv-special/">
+                                        <div class="entry-text" style="color:white; text-align: center">Louis XV
+                                            Special
+                                        </div>
                                         <div class="entry-image" data-mh="entry-image" style="height: 458px;">
                                             <img width="375" height="616"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/News/20170222/%E5%B0%A4%E5%8D%A1%E5%9D%A6%E6%AF%92%E6%9C%A8.png/jcr:content/%E5%B0%A4%E5%8D%A1%E5%9D%A6%E6%AF%92%E6%9C%A8.png"
@@ -1786,11 +1833,11 @@
                                                  sizes="(max-width: 375px) 100vw, 375px"></div>
                                         <!--                                                 srcset="https://www.lyonhealy.com/wp-content/uploads/2017/04/Louis-XV-Special-375x616.jpg 375w, https://www.lyonhealy.com/wp-content/uploads/2017/04/Louis-XV-Special.jpg 768w"-->
 
-                                        <div class="entry-text">
-                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">
-                                                <h2 class="entry-title">Louis XV Special</h2>
-                                            </header>
-                                        </div>
+                                        <!--                                        <div class="entry-text">-->
+                                        <!--                                            <header class="entry-header" data-mh="entry-header" style="height: 51px;">-->
+                                        <!--                                                <h2 class="entry-title">Louis XV Special</h2>-->
+                                        <!--                                            </header>-->
+                                        <!--                                        </div>-->
                                     </a>
                                 </div>
                             </article>
@@ -2048,7 +2095,7 @@
     <div class="box-numper"><span>0%</span></div>
 </div>
 
-<div class="day-night" style="margin-top: 20px">
+<div class="day-night">
     <div class="night active" data-dsn-theme="dark">
         <svg width="48" height="48" viewBox="0 0 48 48">
             <rect x="12.3" y="23.5" width="2.6" height="1"></rect>
