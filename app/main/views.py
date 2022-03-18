@@ -115,6 +115,10 @@ def testfuwenben():
 def backend():
     return render_template("backend.html")
 
+@main.route('/testCollection')
+def testCollection():
+    return render_template("MusiCrashTemplates/collectionLists.html")
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
