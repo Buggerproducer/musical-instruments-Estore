@@ -7,6 +7,7 @@
 <!-- 引入 js -->
 <script src="../../static/script/wangEditor_revise.min.js"></script>
     <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+     <script src="{{ url_for('static',filename='js/product.js') }}"></script>
 </head>
 <body style="height: 100%">
 <div style="height: 100%">
@@ -16,7 +17,7 @@
         <button>
             clear
         </button>
-        <button onclick="document.getElementById('right').innerHTML=editor.txt.html()">
+        <button onclick="createProduct()">
             summon
         </button>
     </span>
@@ -54,8 +55,7 @@
         }, (error) => {
           // 保存失败，可能是文件无法被读取，或者上传过程中出现问题
         });
-
-    }
+    };
     editor.create();
 </script>
 </html>
