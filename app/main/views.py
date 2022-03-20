@@ -2,7 +2,7 @@ import leancloud
 
 from app import socketio
 from flask_socketio import SocketIO, emit
-from flask import render_template
+from flask import render_template, request, session
 from . import main
 from .forms import LoginForm
 from threading import Lock
@@ -46,6 +46,14 @@ def signUp():
     return render_template("signUp.html", async_mode=socketio.async_mode)
 
 
+@main.route('/checkLogin', methods=['POST'])
+def checkLogin():
+    user = request.form['user']
+    if user:
+        session['authenticated'] = True
+    else:
+        session['authenticated'] = False
+    print(1)
 # @main.route('/handle-login', methods=['POST'])
 # def handle_login():
 
@@ -58,7 +66,7 @@ def testbase():
 @main.route('/testorder')
 def testorder():
     products = product.getAllProduct(0, 50)
-    return render_template("test_order.html",products = products, async_mode=socketio.async_mode)
+    return render_template("test_order.html", products=products, async_mode=socketio.async_mode)
 
 @main.route('/testinfo')
 def testinfo():
@@ -114,6 +122,7 @@ def testfuwenben():
 @main.route('/backend')
 def backend():
     return render_template("backend.html")
+
 
 @main.route('/testCollection')
 def testCollection():

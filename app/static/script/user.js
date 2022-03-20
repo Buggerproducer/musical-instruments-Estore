@@ -7,6 +7,7 @@ $(document).ready(
     function change(){
       const current_user = AV.User.current()
       document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
+        console.log(sessionStorage.getItem('authenticated'))
       //document.getElementById('username2').innerText=current_user.getUsername();
 })
 
@@ -51,6 +52,15 @@ async function signInWithUsername(username,password, onSuccess, onFail){
   AV.User.logIn(username, password).then((user) => {
       // 登录成功
 ////
+      const current_user = AV.User.current();
+      $.post("/checkLogin",
+          {
+              'user': current_user
+          }).done(
+          function(){
+                console.log("ddddd")
+                console.log(sessionStorage.getItem('authenticated'))
+          });
       onSuccess(user);
   }, (error) => {
       // 登录失败（可能是密码错误）
