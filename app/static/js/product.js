@@ -1,8 +1,5 @@
 
 function createProduct(pagecontent) {
-
-
-
     if(pagecontent!==''){
         document.getElementById('right').innerHTML=pagecontent;
           const HTMLs = AV.Object.extend('HTMLs');
@@ -20,8 +17,6 @@ function createProduct(pagecontent) {
     else{
         console.log("enter your page");
     }
-
-
 }
 
 function updateProduct(id,pagecontent){
@@ -38,7 +33,5 @@ query.get(id).then((page) => {
   // 异常处理
 });
 });
-
-
 
 }
