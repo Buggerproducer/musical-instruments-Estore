@@ -5,10 +5,28 @@
     <title>Title</title>
 
 <!-- 引入 js -->
+            <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
 <script src="../../static/script/wangEditor_revise.min.js"></script>
+        <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
     <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/user.js') }}"></script>
      <script src="{{ url_for('static',filename='js/product.js') }}"></script>
+
 </head>
+<label>
+    product id:
+    <input type="text" id="id">
+</label>
+<button onclick="let user=getLoginState();
+   result= document.getElementById('result');
+if(user){
+    result.innerText='login already, current user is '+user.getUsername();
+}else{
+    result.innerText='not already login';
+}
+">check state</button>
+<p id="result"></p>
+
 <body style="height: 100%">
 <div style="height: 100%">
 <div id='left' style="float: left;width: 50%;height: 100%">
@@ -17,7 +35,7 @@
         <button>
             clear
         </button>
-        <button onclick="createProduct()">
+        <button onclick="createProduct(editor.txt.html())">
             summon
         </button>
     </span>
