@@ -5,11 +5,11 @@ AV.init({
 
 $(document).ready(
     function change(){
-      const current_user = AV.User.current()
+      const current_user = AV.User.current();
       document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
         console.log(sessionStorage.getItem('authenticated'))
       //document.getElementById('username2').innerText=current_user.getUsername();
-})
+});
 
 
 
@@ -49,17 +49,18 @@ async function signUp(username, email, phone, password, onSuccess, onFail){
 }
 
 async function signInWithUsername(username,password, onSuccess, onFail){
+    let key = 'authenticated';
   AV.User.logIn(username, password).then((user) => {
       // 登录成功
 ////
       const current_user = AV.User.current();
-      $.post("/checkLogin",
+      $.post('/checkLogin',
           {
-              'user': current_user
+              'user': current_user.get('username')
           }).done(
-          function(){
-                console.log("ddddd")
-                console.log(sessionStorage.getItem('authenticated'))
+          function(response){
+                console.log("ddddd");
+                console.log(sessionStorage.getItem('authenticated'));
           });
       onSuccess(user);
   }, (error) => {

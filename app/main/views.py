@@ -2,7 +2,7 @@ import leancloud
 
 from app import socketio
 from flask_socketio import SocketIO, emit
-from flask import render_template, request, session
+from flask import render_template, request, session, jsonify
 from . import main
 from .forms import LoginForm
 from threading import Lock
@@ -48,12 +48,15 @@ def signUp():
 
 @main.route('/checkLogin', methods=['POST'])
 def checkLogin():
+    print(1)
     user = request.form['user']
-    if user:
+    if user == 'c':
         session['authenticated'] = True
+        return jsonify({'response':1})
     else:
         session['authenticated'] = False
-    print(1)
+        return jsonify({'response': 2})
+
 # @main.route('/handle-login', methods=['POST'])
 # def handle_login():
 
