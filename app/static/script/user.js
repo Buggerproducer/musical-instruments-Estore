@@ -8,6 +8,7 @@ $(document).ready(
       const current_user = AV.User.current();
       document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
         console.log(sessionStorage.getItem('authenticated'))
+
       //document.getElementById('username2').innerText=current_user.getUsername();
 });
 
@@ -59,9 +60,10 @@ async function signInWithUsername(username,password, onSuccess, onFail){
               'user': current_user.get('username')
           }).done(
           function(response){
-                console.log("ddddd");
+                console.log(response);
                 console.log(sessionStorage.getItem('authenticated'));
           });
+
       onSuccess(user);
   }, (error) => {
       // 登录失败（可能是密码错误）
@@ -85,6 +87,22 @@ async function logout() {
     if(getLoginState()!=null){
         AV.User.logOut();
         alert('logout successfully');
+        const current_user = AV.User.current();
+        let username;
+        if(current_user==null){
+            username = null;
+        }
+        else{
+            username = current_user.get('username');
+        }
+        $.post('/checkLogin',
+          {
+              'user': username
+          }).done(
+          function(response){
+              $("a#logouta").attr("href", "/signUp")
+              document.getElementById('logout').innerText = "Login & Sign Up"
+          });
         // document.getElementById('result').innerText='logout successfully';
     }
     else{

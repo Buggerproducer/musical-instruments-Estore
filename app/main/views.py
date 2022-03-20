@@ -38,7 +38,11 @@ def testlogin():
 
 @main.route('/')
 def index():
-    return render_template("index.html", async_mode=socketio.async_mode)
+    if session.get('authenticated') is None or session.get('authenticated') is False:
+        authenticated = False
+    else:
+        authenticated = True
+    return render_template("index.html", authenticated=authenticated, async_mode=socketio.async_mode)
 
 
 @main.route('/signUp')
@@ -48,11 +52,10 @@ def signUp():
 
 @main.route('/checkLogin', methods=['POST'])
 def checkLogin():
-    print(1)
     user = request.form['user']
-    if user == 'c':
+    if user:
         session['authenticated'] = True
-        return jsonify({'response':1})
+        return jsonify({'response': 1})
     else:
         session['authenticated'] = False
         return jsonify({'response': 2})
@@ -61,10 +64,15 @@ def checkLogin():
 # def handle_login():
 
 
+@main.route('/check', methods=['POST'])
+def check():
+    print(2)
+
 
 @main.route('/testbase')
 def testbase():
     return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
+
 
 @main.route('/testorder')
 def testorder():

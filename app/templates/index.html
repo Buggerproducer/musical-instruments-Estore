@@ -18,6 +18,7 @@
 <link href="{{ url_for('static', filename='style/css/style.css') }}" type="text/css" rel="stylesheet"/>
 <link href="{{ url_for('static', filename='style/index.css') }}" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="../static/style/main_css/fontawesome-all.min.css">
+
 </head>
 <!--classic-menu-->
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax classic-menu v-light">
@@ -120,10 +121,10 @@
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
             <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
-            {% if session['authenticated'] %}
-              <li><a href="javascript:logout();"><span class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>
+            {% if authenticated %}
+              <li><a id="logouta" href="javascript:logout();"><span id="logout" class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>
             {% else %}
-            <li><a href="{{ url_for('main.signUp') }}"><span class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a id="logina" href="{{ url_for('main.signUp') }}"><span id="login" class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
             {% endif %}
             <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a></li>
             <li><a href="{{ url_for('main.testlogin') }}"><span class="dsn-title-menu">Test Login</span><span class="dsn-meta-menu">02</span></a></li>
