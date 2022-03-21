@@ -100,6 +100,7 @@ async function logout() {
               'user': username
           }).done(
           function(response){
+              prompt(auth)
               $("a#logouta").attr("href", "/signUp")
               document.getElementById('logout').innerText = "Login & Sign Up"
           });
