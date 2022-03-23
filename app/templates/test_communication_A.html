@@ -42,7 +42,7 @@ function sendMessage(){
     let message = $('#message').val();
     realtime.createIMClient(user_name).then(function(user) {
 			  return user.createConversation({
-				members: ['金深远'],
+				members: ['Skywalker'],
 				name: message,
 				unique: true
 			  });
