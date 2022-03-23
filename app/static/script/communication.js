@@ -1,4 +1,4 @@
-const realtime = new Realtime({
+const realtime = new AVRealtime({
   appId: 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI',
   appKey: 'pShwYQQ4JVfSStc56MvkHNrr',
 });
