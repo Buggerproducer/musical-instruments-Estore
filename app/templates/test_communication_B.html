@@ -53,7 +53,7 @@ function sendMessage(){
 }
 realtime.createIMClient(username).then(function(jerry) {
 			  jerry.on(Event.MESSAGE, function(message, conversation) {
-			      let el = $('<p>'+user_name+' : '+message.text+'</p>');
+			      let el = $('<p>'+username+' : '+message.text+'</p>');
                 $('#talk').append(el);
 				console.log('Message received: ' + message.text);
 			  });
