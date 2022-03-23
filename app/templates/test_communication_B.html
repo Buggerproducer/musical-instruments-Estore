@@ -11,18 +11,27 @@
     <script src="{{ url_for('static',filename='script/typed-messages.min.js') }}"></script>
 
     <script src="{{ url_for('static',filename='script/user.js') }}"></script>
-{#    <script src="{{ url_for('static',filename='script/communication.js') }}"></script>#}
+    <script src="{{ url_for('static',filename='script/communication.js') }}"></script>
 
 
 </head>
 <body>
 <script>
-    Realtime=AV.Realtime
+    var { Realtime, TextMessage,Event } = AV;
 const realtime = new Realtime({
   appId: 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI',
   appKey: 'pShwYQQ4JVfSStc56MvkHNrr',
-
 });
+AV.init({
+  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
+  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
+});
+realtime.createIMClient('Jerry').then(function(jerry) {
+			  jerry.on(Event.MESSAGE, function(message, conversation) {
+				console.log('Message received: ' + message.text);
+			  });
+			}).catch(console.error);
+
 </script>
 </body>
 

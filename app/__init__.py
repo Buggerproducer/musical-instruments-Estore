@@ -19,6 +19,8 @@ def create_app(config_name):
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+    from .test import testRoute as test_blueprint
+    app.register_blueprint(test_blueprint)
 
     socketio.init_app(app=app, async_mode=async_mode)
 
