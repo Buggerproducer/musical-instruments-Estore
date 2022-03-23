@@ -16,8 +16,19 @@
 
 </head>
 <body>
+<label>
+    <input type="text" id = 'message'>
+</label>
+<button onclick="sendMessage()">send</button>
+<div id = 'talk'>
+
+</div>
+
+
 <script>
-    var { Realtime, TextMessage } = AV;
+
+    console.log(user_name);
+    var { Realtime, TextMessage,Event } = AV;
 const realtime = new Realtime({
   appId: 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI',
   appKey: 'pShwYQQ4JVfSStc56MvkHNrr',
@@ -26,18 +37,32 @@ AV.init({
   appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
-realtime.createIMClient('Tom').then(function(tom) {
-			  // 创建与Jerry之间的对话
-			  return tom.createConversation({
-				members: ['Jerry'],
-				name: 'Tom & Jerry',
+
+function sendMessage(){
+    let message = $('#message').val();
+    realtime.createIMClient(user_name).then(function(user) {
+			  return user.createConversation({
+				members: ['金深远'],
+				name: message,
 				unique: true
 			  });
 			}).then(function(conversation) {
 			  // 发送消息
-			  return conversation.send(new TextMessage('今天几号？'));
+			  return conversation.send(new TextMessage(message));
 			}).then(function(message) {
-			  console.log('Tom & Jerry', '发送成功！');
+			  console.log(message.text, '发送成功！');
+			}).catch(console.error);
+
+    let el = $('<p>'+user_name+' : '+message+'</p>');
+    $('#talk').append(el);
+}
+
+realtime.createIMClient(user_name).then(function(user) {
+			  user.on(Event.MESSAGE, function(message, conversation) {
+				console.log('Message received: ' + message.text);
+				 let el = $('<p>'+username+' : '+message.text+'</p>');
+                $('#talk').append(el);
+			  });
 			}).catch(console.error);
 
 </script>

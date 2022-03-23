@@ -62,21 +62,6 @@ def check():
     print(2)
 
 
-# 个人信息页面
-@main.route('/testbase')
-def testbase():
-    return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
-
-
-@main.route('/testinfo')
-def testinfo():
-    return render_template("MusiCrashTemplates/userInformation.html", async_mode=socketio.async_mode)
-
-
-@main.route('/testmodify')
-def testmodify():
-    return render_template("MusiCrashTemplates/modifyInfomation.html", async_mode=socketio.async_mode)
-
 
 # 商品品牌分类页面
 @main.route('/category')
@@ -113,17 +98,7 @@ def backend():
     return render_template("backend.html")
 
 
-@main.route('/testCollection')
-def testCollection():
-    return render_template("MusiCrashTemplates/collectionLists.html")
 
-@main.route('/testCommunicationA')
-def testCommunicationA():
-    return render_template("test_communication_A.html")
-
-@main.route('/testCommunicationB')
-def testCommunicationB():
-    return render_template("test_communication_B.html")
 
 # @main.route('/grotrian')
 # def grotrian():

@@ -60,9 +60,14 @@ def testfuwenben():
 def testCollection():
     return render_template("MusiCrashTemplates/collectionLists.html")
 
-@testRoute.route('/communication')
-def testCommunication():
-    return render_template("test_communication.html")
+@testRoute.route('/CommunicationA')
+def testCommunicationA():
+    return render_template("test_communication_A.html")
+
+@testRoute.route('/CommunicationB')
+def testCommunicationB():
+    return render_template("test_communication_B.html")
+
 
 # @main.route('/grotrian')
 # def grotrian():

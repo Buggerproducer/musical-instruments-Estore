@@ -16,6 +16,14 @@
 
 </head>
 <body>
+<label>
+    <input type="text" id = 'message'>
+</label>
+<button onclick="sendMessage()">send</button>
+<div id = 'talk'>
+
+</div>
+
 <script>
     var { Realtime, TextMessage,Event } = AV;
 const realtime = new Realtime({
@@ -26,8 +34,27 @@ AV.init({
   appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
-realtime.createIMClient('Jerry').then(function(jerry) {
+function sendMessage(){
+    let message = $('#message').val();
+    realtime.createIMClient(user_name).then(function(user) {
+			  return user.createConversation({
+				members: ['lvjunyi'],
+				name: message,
+				unique: true
+			  });
+			}).then(function(conversation) {
+			  // 发送消息
+			  return conversation.send(new TextMessage(message));
+			}).then(function(message) {
+			  console.log(message, '发送成功！');
+			}).catch(console.error);
+    let el = $('<p>'+username+' : '+message+'</p>');
+    $('#talk').append(el);
+}
+realtime.createIMClient(username).then(function(jerry) {
 			  jerry.on(Event.MESSAGE, function(message, conversation) {
+			      let el = $('<p>'+user_name+' : '+message.text+'</p>');
+                $('#talk').append(el);
 				console.log('Message received: ' + message.text);
 			  });
 			}).catch(console.error);
