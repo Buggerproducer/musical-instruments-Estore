@@ -69,6 +69,7 @@ def getAllCategory(skip=0, limit=50):
     query.limit(limit)
     query.skip(skip)
     query.include('title')
+    query.include('img')
     result = query.find()
     return result
 
@@ -102,5 +103,6 @@ def getCategoryById(category_id: string):
     Category = leancloud.Object.extend('ProductCategory')
     query = Category.query
     query.include('title')
+    query.include('img')
     category = query.get(category_id)
     return category
