@@ -26,16 +26,6 @@ def join():
     emit("notify", {'data':"someone join"}, broadcast=True)
 
 
-@main.route('/testio')
-def testio():
-    return render_template("test_io.html", async_mode=socketio.async_mode)
-
-
-@main.route('/testlogin')
-def testlogin():
-    return render_template("test_login.html", async_mode=socketio.async_mode)
-
-
 # 索引页面index
 @main.route('/')
 def index():
@@ -78,30 +68,14 @@ def testbase():
     return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
 
 
-@main.route('/testorder')
-def testorder():
-    products = product.getAllProduct(0, 50)
-    return render_template("test_order.html", products=products, async_mode=socketio.async_mode)
-
-
 @main.route('/testinfo')
 def testinfo():
     return render_template("MusiCrashTemplates/userInformation.html", async_mode=socketio.async_mode)
 
 
-@main.route('/test')
-def test():
-    return render_template("MusiCrashTemplates/test.html", async_mode=socketio.async_mode)
-
-
 @main.route('/testmodify')
 def testmodify():
     return render_template("MusiCrashTemplates/modifyInfomation.html", async_mode=socketio.async_mode)
-
-
-@main.route('/testmodifypw')
-def testmodifypw():
-    return render_template("MusiCrashTemplates/re.html", async_mode=socketio.async_mode)
 
 
 # 商品品牌分类页面
@@ -133,24 +107,11 @@ def productInfo(product_id):
     return render_template("piano.html", commodity=commodity, async_mode=socketio.async_mode)
 
 
-@main.route('/testfuwenben')
-def testfuwenben():
-    return render_template("MusiCrashTemplates/fuwenben.html")
-
-
 # 后台页面
 @main.route('/backend')
 def backend():
     return render_template("backend.html")
 
-
-@main.route('/testCollection')
-def testCollection():
-    return render_template("MusiCrashTemplates/collectionLists.html")
-
-@main.route('/testCommunication')
-def testCommunication():
-    return render_template("test_communication.html")
 
 # @main.route('/grotrian')
 # def grotrian():
@@ -175,3 +136,45 @@ def testCommunication():
 # @main.route('/Bösendorfer')
 # def Bösendorfer():
 #     return render_template("category/Bösendorfer.html", async_mode=socketio.async_mode)
+
+
+
+# @main.route('/testio')
+# def testio():
+#     return render_template("test_io.html", async_mode=socketio.async_mode)
+#
+#
+# @main.route('/testlogin')
+# def testlogin():
+#     return render_template("test_login.html", async_mode=socketio.async_mode)
+#
+#
+# @main.route('/testorder')
+# def testorder():
+#     products = product.getAllProduct(0, 50)
+#     return render_template("test_order.html", products=products, async_mode=socketio.async_mode)
+#
+#
+# @main.route('/testfuwenben')
+# def testfuwenben():
+#     return render_template("MusiCrashTemplates/fuwenben.html")
+#
+#
+# @main.route('/testCollection')
+# def testCollection():
+#     return render_template("MusiCrashTemplates/collectionLists.html")
+#
+#
+# @main.route('/testCommunication')
+# def testCommunication():
+#     return render_template("test_communication.html")
+#
+#
+# @main.route('/testmodifypw')
+# def testmodifypw():
+#     return render_template("MusiCrashTemplates/re.html", async_mode=socketio.async_mode)
+#
+#
+# @main.route('/test')
+# def test():
+#     return render_template("MusiCrashTemplates/test.html", async_mode=socketio.async_mode)
