@@ -113,6 +113,18 @@ def backend():
     return render_template("backend.html")
 
 
+@main.route('/testCollection')
+def testCollection():
+    return render_template("MusiCrashTemplates/collectionLists.html")
+
+@main.route('/testCommunicationA')
+def testCommunicationA():
+    return render_template("test_communication_A.html")
+
+@main.route('/testCommunicationB')
+def testCommunicationB():
+    return render_template("test_communication_B.html")
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
@@ -136,45 +148,3 @@ def backend():
 # @main.route('/Bösendorfer')
 # def Bösendorfer():
 #     return render_template("category/Bösendorfer.html", async_mode=socketio.async_mode)
-
-
-
-# @main.route('/testio')
-# def testio():
-#     return render_template("test_io.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/testlogin')
-# def testlogin():
-#     return render_template("test_login.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/testorder')
-# def testorder():
-#     products = product.getAllProduct(0, 50)
-#     return render_template("test_order.html", products=products, async_mode=socketio.async_mode)
-#
-#
-# @main.route('/testfuwenben')
-# def testfuwenben():
-#     return render_template("MusiCrashTemplates/fuwenben.html")
-#
-#
-# @main.route('/testCollection')
-# def testCollection():
-#     return render_template("MusiCrashTemplates/collectionLists.html")
-#
-#
-# @main.route('/testCommunication')
-# def testCommunication():
-#     return render_template("test_communication.html")
-#
-#
-# @main.route('/testmodifypw')
-# def testmodifypw():
-#     return render_template("MusiCrashTemplates/re.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/test')
-# def test():
-#     return render_template("MusiCrashTemplates/test.html", async_mode=socketio.async_mode)

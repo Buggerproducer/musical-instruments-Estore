@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='script/im-browser.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/typed-messages.min.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='script/user.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/communication.js') }}"></script>
+
+
+</head>
+<body>
+<script>
+    var { Realtime, TextMessage } = AV;
+const realtime = new Realtime({
+  appId: 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI',
+  appKey: 'pShwYQQ4JVfSStc56MvkHNrr',
+});
+AV.init({
+  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
+  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
+});
+realtime.createIMClient('Tom').then(function(tom) {
+			  // 创建与Jerry之间的对话
+			  return tom.createConversation({
+				members: ['Jerry'],
+				name: 'Tom & Jerry',
+				unique: true
+			  });
+			}).then(function(conversation) {
+			  // 发送消息
+			  return conversation.send(new TextMessage('今天几号？'));
+			}).then(function(message) {
+			  console.log('Tom & Jerry', '发送成功！');
+			}).catch(console.error);
+
+</script>
+</body>
+
+
+
+
+
+</html>
