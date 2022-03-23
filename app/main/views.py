@@ -148,6 +148,10 @@ def backend():
 def testCollection():
     return render_template("MusiCrashTemplates/collectionLists.html")
 
+@main.route('/testCommunication')
+def testCommunication():
+    return render_template("test_communication.html")
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
