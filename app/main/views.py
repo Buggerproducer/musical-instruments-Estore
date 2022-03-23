@@ -36,6 +36,7 @@ def testlogin():
     return render_template("test_login.html", async_mode=socketio.async_mode)
 
 
+# 索引页面index
 @main.route('/')
 def index():
     if session.get('authenticated') is None or session.get('authenticated') is False:
@@ -45,11 +46,13 @@ def index():
     return render_template("index.html", authenticated=authenticated, async_mode=socketio.async_mode)
 
 
+# 登录注册页面
 @main.route('/signUp')
 def signUp():
     return render_template("signUp.html", async_mode=socketio.async_mode)
 
 
+# 查看用户登录状态
 @main.route('/checkLogin', methods=['POST'])
 def checkLogin():
     user = request.form['user']
@@ -69,6 +72,7 @@ def check():
     print(2)
 
 
+# 个人信息页面
 @main.route('/testbase')
 def testbase():
     return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
@@ -78,6 +82,7 @@ def testbase():
 def testorder():
     products = product.getAllProduct(0, 50)
     return render_template("test_order.html", products=products, async_mode=socketio.async_mode)
+
 
 @main.route('/testinfo')
 def testinfo():
@@ -99,6 +104,7 @@ def testmodifypw():
     return render_template("MusiCrashTemplates/re.html", async_mode=socketio.async_mode)
 
 
+# 商品品牌分类页面
 @main.route('/category')
 def category():
     kinds = product.getAllCategory(0, 50)
@@ -110,6 +116,7 @@ def products():
     return render_template("category/steinway.html", async_mode=socketio.async_mode)
 
 
+# 不同品牌商品的商品展示页面
 @main.route('/kind/<kind_id>')
 def kinds(kind_id):
     products = product.getProductByCategory(kind_id)
@@ -117,6 +124,7 @@ def kinds(kind_id):
     return render_template("kind.html", products=products, kind=kind, async_mode=socketio.async_mode)
 
 
+# 商品具体信息页面
 @main.route('/productInfo/<product_id>')
 def productInfo(product_id):
     commodity = product.getProductById(product_id)
@@ -130,6 +138,7 @@ def testfuwenben():
     return render_template("MusiCrashTemplates/fuwenben.html")
 
 
+# 后台页面
 @main.route('/backend')
 def backend():
     return render_template("backend.html")
