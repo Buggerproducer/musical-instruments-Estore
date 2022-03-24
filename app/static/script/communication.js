@@ -1,4 +1,4 @@
-const username = '金深远';
+
 const user_name = AV.User.current().get('username');
 /*user.createConversation({ // tom 是一个 IMClient 实例
   // 指定对话的成员除了当前用户 Tom（SDK 会默认把当前用户当做对话成员）之外，还有 Jerry

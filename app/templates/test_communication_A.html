@@ -17,6 +17,9 @@
 </head>
 <body>
 <label>
+    <input type="text" id = 'people'>
+</label>
+<label>
     <input type="text" id = 'message'>
 </label>
 <button onclick="sendMessage()">send</button>
@@ -39,10 +42,11 @@ AV.init({
 });
 
 function sendMessage(){
+    let username = $('#people').val();
     let message = $('#message').val();
     realtime.createIMClient(user_name).then(function(user) {
 			  return user.createConversation({
-				members: ['Skywalker'],
+				members: [username],
 				name: message,
 				unique: true
 			  });
@@ -58,6 +62,7 @@ function sendMessage(){
 }
 
 realtime.createIMClient(user_name).then(function(user) {
+    let username = $('#people').val();
 			  user.on(Event.MESSAGE, function(message, conversation) {
 				console.log('Message received: ' + message.text);
 				 let el = $('<p>'+username+' : '+message.text+'</p>');
