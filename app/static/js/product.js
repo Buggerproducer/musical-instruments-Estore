@@ -55,7 +55,7 @@ const Price = AV.Object.extend('Price');
     }
 }
 
-createProduct('<p>s</p>','ab','sa',15);
+// createProduct('<p>s</p>','ab','sa',15);
 
 
 
@@ -63,12 +63,21 @@ createProduct('<p>s</p>','ab','sa',15);
 
 function updateProduct(id,detail,title,description,price){
       //  id = $('#id').val();
-const Product = AV.Object.extend('Product');
-const product = Product.createWithoutData(id);
-product.set('title',title);
-product.set('price',price);
-product.set('detail',detail);
-product.set('description',description);
-product.save();
+    const Product = AV.Object.extend('Product');
+    const product = Product.createWithoutData(id);
+    product.set('title',title);
+    product.set('price',price);
+    product.set('detail',detail);
+    product.set('description',description);
+    product.save();
 
+}
+
+function updateEnglishProduct(id,title,description,detail){
+    const Product=AV.Object.extend('Product');
+    const product=Product.createWithoutData(id);
+    product.set('title.english',title)
+    product.set('description.english',description)
+    product.set('detail.englishHTML',detail)
+    product.save();
 }

@@ -25,5 +25,8 @@ function load(title,description,detail){
 }
 
 function submit(){
-    console.log(document.getElementsByTagName('meta')['product_id'].content)
+    // id=document.getElementsByTagName('meta')['product_id'].content
+    id='622972726ca8d92534b035b9'
+    //2022年3月24号14:20金深远开始玩原神
+    updateEnglishProduct(id,$('#title').value,$('#description').value,editor.txt.html)
 }
