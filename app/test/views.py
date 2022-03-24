@@ -69,6 +69,16 @@ def testCommunicationB():
     return render_template("test_communication_B.html")
 
 
+@testRoute.route('/producteditor')
+def testProductEditor():
+    return render_template("test_product_editor.html")
+
+@testRoute.route('/producteditor/<id>')
+def testProductEditorUpdate(id):
+    current_product=product.getProductById(id)
+
+    return render_template("test_product_editor.html",product=current_product)
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)

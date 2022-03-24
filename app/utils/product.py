@@ -1,5 +1,6 @@
 import string
 import leancloud
+from .. import models
 
 if __name__ == '__main__':
     leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
@@ -18,9 +19,12 @@ def getProductById(product_id: string):
     product.get('price').get('CNY') 获取人民币价格
     product.get('cover').url 获取封面图片链接
     """
-    Product = leancloud.Object.extend('Product')
+    Product = models.Product
     query = Product.query
     query.include('title')
+    query.include('description')
+    query.include('detail')
+    query.include('price')
     product = query.get(product_id)
     return product
 

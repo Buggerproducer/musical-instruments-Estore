@@ -46,7 +46,7 @@ function sendMessage(){
     let message = $('#message').val();
     realtime.createIMClient(user_name).then(function(user) {
 			  return user.createConversation({
-				members: ['Skywalker'],
+				members: [username],
 				name: message,
 				unique: true
 			  });
