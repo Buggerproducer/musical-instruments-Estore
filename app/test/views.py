@@ -75,9 +75,7 @@ def testProductEditor():
 
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
-    current_product=product.getProductById(id)
-
-    return render_template("test_product_editor.html",product=current_product)
+    return render_template("test_product_editor.html",product_id=id)
 
 # @main.route('/grotrian')
 # def grotrian():

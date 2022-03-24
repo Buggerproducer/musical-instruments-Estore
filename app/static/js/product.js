@@ -1,4 +1,18 @@
 
+
+function getProductById(id,onSuccess){
+    const query = new AV.Query('Product');
+    query.include('title')
+    query.include('description')
+    query.include('detail')
+    query.include('price')
+    query.get(id).then((product) => {
+        onSuccess(product)
+    });
+}
+
+
+
 function createProduct(detail,title,description,price) {
     if(detail!==''){
        // document.getElementById('right').innerHTML=detail;
@@ -73,11 +87,9 @@ function updateProduct(id,detail,title,description,price){
 
 }
 
-function updateEnglishProduct(id,title,description,detail){
-    const Product=AV.Object.extend('Product');
-    const product=Product.createWithoutData(id);
-    product.set('title.english',title)
-    product.set('description.english',description)
-    product.set('detail.englishHTML',detail)
+function updateEnglishProduct(product,title,description,detail){
+    product.get('title').set('english',title)
+    product.get('description').set('english',description)
+    product.get('detail').set('englishHTML',detail)
     product.save();
 }

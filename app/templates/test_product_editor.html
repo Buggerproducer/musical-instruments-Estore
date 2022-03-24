@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name='product_id' content="{{ product.id }}">
+    <meta name="product_id" content="{{ product_id }}">
     <title>Title</title>
     <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
     <script src="../../static/script/wangEditor_revise.min.js"></script>
@@ -24,11 +24,12 @@
 
 <script src="{{ url_for('static',filename='script/productEditor.js') }}"></script>
 <script>
-    {% if product %}
-        load('{{ product.title.english }}',
-            '{{ product.description.english }}',
-            '{{ product.detail.englishHTML }}')
-    {% endif %}
+    let id=document.getElementsByTagName('meta')['product_id'].content
+    if(id!=='') {
+        getProductById(id, function (product) {
+            loadProduct(product)
+        })
+    }
 </script>
 </body>
 </html>

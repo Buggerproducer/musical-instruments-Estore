@@ -4,6 +4,8 @@ AV.init({
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
 
+var currentProduct=null
+
 const E = window.wangEditor;
 const editor = new E('#editor');
 editor.config.customUploadImg = function (resultFiles, insertImgFn) {
@@ -18,15 +20,15 @@ editor.config.customUploadImg = function (resultFiles, insertImgFn) {
     };
 editor.create();
 
-function load(title,description,detail){
-    document.getElementById('title').value=title
-    document.getElementById('description').value=description
-    editor.txt.html(detail)
+function loadProduct(product){
+    document.getElementById('title').value=product.get('title').get('english')
+    document.getElementById('description').value=product.get('description').get('english')
+    editor.txt.html(product.get('detail').get('englishHTML'))
+    currentProduct=product
 }
 
 function submit(){
-    // id=document.getElementsByTagName('meta')['product_id'].content
-    id='622972726ca8d92534b035b9'
     //2022年3月24号14:20金深远开始玩原神
-    updateEnglishProduct(id,$('#title').value,$('#description').value,editor.txt.html)
+    console.log(editor.txt.html())
+    updateEnglishProduct(currentProduct,$('#title').value,$('#description').value,editor.txt.html())
 }
