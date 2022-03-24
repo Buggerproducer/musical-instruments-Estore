@@ -302,7 +302,7 @@
             <div class="col-lg-6 dsn-z-index-2">
               <div class="box-im" data-dsn-grid="move-up">
                 <a href="{{ url_for('main.productInfo', product_id=product.id) }}">
-                  <img class="has-top-bottom" src="{{ url_for('static', filename='img/category/steinway/1.png') }}" alt="" data-dsn-move="20%">
+                  <img class="has-top-bottom" src="{{ product.get('cover').url }}" alt="" data-dsn-move="20%">
                 </a>
               </div>
             </div>
