@@ -1,7 +1,7 @@
 
-function createProduct(pagecontent,title,description,price) {
-    if(pagecontent!==''){
-       // document.getElementById('right').innerHTML=pagecontent;
+function createProduct(detail,title,description,price) {
+    if(detail!==''){
+       // document.getElementById('right').innerHTML=detail;
 
     const Title = AV.Object.extend('Strings');
     const c_title = new Title();
@@ -30,7 +30,7 @@ const Price = AV.Object.extend('Price');
 });
     const HTMLs = AV.Object.extend('HTMLs');
     const html  = new HTMLs();
-    html.set('englishHTML',pagecontent.toString());
+    html.set('englishHTML',detail.toString());
    html.save().then((html) => {
   console.log('保存成功htmll。objectId：'+html.getObjectId());
 }, (error) => {
@@ -55,25 +55,20 @@ const Price = AV.Object.extend('Price');
     }
 }
 
-createProduct('<p>s</p>','sad','sa',15);
+//createProduct('<p>s</p>','sad','sa',15);
 
 
 
 
 
-function updateProduct(id,pagecontent){
+function updateProduct(id,detail,title,description,price){
       //  id = $('#id').val();
-const query = new AV.Query('HTMLs');
-console.log(id);
-query.get(id).then((page) => {
-    let current = page.get('englishHTML');
-     page.set('englishHTML',pagecontent.toString());
-       page.save().then((html) => {
-  console.log('保存成功。objectId：'+html.getObjectId());
-}, (error) => {
-      console.log("error");
-  // 异常处理
-});
-});
+const Product = AV.Object.extend('Product');
+const product = Product.createWithoutData(id);
+product.set('title',title);
+product.set('price',price);
+product.set('detail',detail);
+product.set('description',description);
+product.save();
 
 }
