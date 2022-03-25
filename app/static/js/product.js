@@ -2,10 +2,10 @@
 
 function getProductById(id,onSuccess){
     const query = new AV.Query('Product');
-    query.include('title')
-    query.include('description')
-    query.include('detail')
-    query.include('price')
+    query.include('title');
+    query.include('description');
+    query.include('detail');
+    query.include('price');
     query.get(id).then((product) => {
         onSuccess(product)
     });
@@ -88,8 +88,8 @@ function updateProduct(id,detail,title,description,price){
 }
 
 function updateEnglishProduct(product,title,description,detail){
-    product.get('title').set('english',title)
-    product.get('description').set('english',description)
-    product.get('detail').set('englishHTML',detail)
+    product.get('title').set('english',title);
+    product.get('description').set('english',description);
+    product.get('detail').set('englishHTML',detail);
     product.save();
 }
