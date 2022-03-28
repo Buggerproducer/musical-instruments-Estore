@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <meta name="discrption" content="parallax one page"/>
   <meta name="keyword" content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple"/>
+    {% block extra_meta %}
+    {% endblock %}
     <!-- Title -->
     <title>
         {% block title %}
@@ -35,11 +37,13 @@
   <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
   <link href="../../static/style/sebian_css/custom.css" rel="stylesheet" type="text/css">
 
-<script src="../../static/script/jquery.js"></script>
+  <script src="../../static/script/jquery.js"></script>
   <script src="../../static/js/jquery-3.1.1.min.js"></script>
   <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
-    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
- <script src="../../static/script/user.js"></script>
+  <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+  <script src="../../static/script/user.js"></script>
+  {% block extra_head_script %}
+  {% endblock %}
   <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 
   <!-- JavaScripts -->
@@ -64,7 +68,7 @@
 
     <!-- 导航栏左边的logo -->
     <div class="inner-header p-relative">
-      <div class="main-logo"><a href="#" data-dsn="parallax"><img class="dark-logo" src="{{ url_for('static', filename='img/logo-dark.png') }}" alt=""/><img class="light-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""/></a></div>
+      <div class="main-logo"><a href="#" data-dsn="parallax"><img class="dark-logo" src="{{ url_for('static', filename='img/logo-dark.png') }}" alt=""/></a></div>
     </div>
     <!-- 导航栏左边的logo结束 -->
 
