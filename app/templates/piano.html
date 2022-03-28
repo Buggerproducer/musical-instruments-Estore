@@ -1462,12 +1462,20 @@
                                        data-toggle="offcanvas" data-toggle-class="show-form">Add to Your Shopping Cart</a>
                                 </div>
                                 </div>
-                                <a href="javascript:void(0)">
-                                    <script>
-                                         window.open('test_communication_A.html', '_blank', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')
-                                    </script>
+<!--                                <input type="button" value="点击我看看效果" οnclick="window.open('test_communication_A.html', '_blank', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')" style="background-color: white"/>-->
+                                <a href="{{ url_for('main.communicateA') }}">
                                     <img src="../static/img/kefu.png" width="50px" style="background-color: white; border-radius: 30px; padding: 5px">
                                 </a>
+
+                                <input type="button" style="background-image: url(../static/img/kefu.png); border-style: none;" onclick="window.open('http://127.0.0.1:5000/communicateA', '_blank', 'height=800, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')" value="BUTTON">
+<!--                                <a href="javascript:void(0)" type="button" οnclick=javascript:jump()>-->
+<!--                                    <script>-->
+<!--                                        function jump() {-->
+<!--                                            window.open('test_communication_A.html', '_blank', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')-->
+<!--                                        };-->
+<!--                                    </script>-->
+<!--                                    <img src="../static/img/kefu.png" width="50px" style="background-color: white; border-radius: 30px; padding: 5px">-->
+<!--                                </a>-->
                                 <div class="entry-buttons">
                                 </div>
                                 <div class="entry-finishes">
