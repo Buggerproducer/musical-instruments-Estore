@@ -31,7 +31,7 @@
 
     <!-- 导航栏左边的logo -->
     <div class="inner-header p-relative">
-      <div class="main-logo"><a href="index.html" data-dsn="parallax"><img class="dark-logo" src="{{ url_for('static', filename='img/logo-dark.png') }}" alt=""/><img class="light-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""/></a></div>
+      <div class="main-logo"><a href="#" data-dsn="parallax"><img class="dark-logo" src="{{ url_for('static', filename='img/logo-dark.png') }}" alt=""/><img class="light-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""/></a></div>
     </div>
     <!-- 导航栏左边的logo结束 -->
 
@@ -113,14 +113,22 @@
 <!--          </ul>-->
 <!--        </li>-->
         <!-- li 7: Setting -->
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Setting</span><span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
+        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">
+          {% if authenticated %}
+          <img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">
+          {% else %}
+          Setting
+          {% endif %}
+        </span><span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
             <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
-            <li><a href="{{ url_for('main.signUp') }}"><span class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
-            <li><a href="javascript:logout();"><span class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>
+            {% if authenticated %}
+            <li><a id="logouta" href="javascript:logout();"><span id="logout" class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>
+            {% else %}
+            <li><a id="logina" href="{{ url_for('main.signUp') }}"><span id="login" class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
+            {% endif %}
             <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a></li>
-            <li><a href="{{ url_for('main.testlogin') }}"><span class="dsn-title-menu">Test Login</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
         </li>
       </ul>
@@ -215,13 +223,14 @@
               <div class="work-item p-relative over-hidden">
                 <a href="../static/img/category/steinway/1.png">
                   <div class="img-next-box " data-overlay="6" data-dsn-grid="move-up">
-                    <img class="cover-bg-img has-top-bottom" data-dsn-y="20%" src="../static/img/category/1.jpg" alt="">
+                    <img class="cover-bg-img has-top-bottom" data-dsn-y="20%" src="{{ kind.get('img').url }}" alt="">
                   </div>
                 </a>
                 <div class="item-border p-absolute"></div>
                 <div class="item-info p-absolute">
                   <!-- link页面跳转到产品页面在下面 -->
                   <a href="{{ url_for('main.kinds', kind_id=kind.id) }}" class="effect-ajax" data-dsn-ajax="work">
+<!--                    class="effect-ajax" data-dsn-ajax="work">-->
                     <h5 class="cat"></h5>
                     <h4>{{ kind.get('title').get('english') }}</h4>
                     <span><span>View All</span></span>

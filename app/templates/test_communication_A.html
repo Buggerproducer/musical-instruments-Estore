@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src= "../static/script/jquery.min.js"></script>
+        <script src="../static/script/socket.io.js"></script>
+    <script src="../static/script/av-min.js"></script>
+
+    <script src="../static/script/im-browser.min.js"></script>
+    <script src="../static/script/typed-messages.min.js"></script>
+
+    <script src="../static/script/user.js"></script>
+    <script src="../static/script/communication.js"></script>
+
+
+</head>
+<body>
+<label>
+    <input type="text" id = 'people'>
+</label>
+<label>
+    <input type="text" id = 'message'>
+</label>
+<button onclick="sendMessage()">send</button>
+<div id = 'talk'>
+
+</div>
+
+
+<script>
+
+    console.log(user_name);
+    var { Realtime, TextMessage,Event } = AV;
+const realtime = new Realtime({
+  appId: 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI',
+  appKey: 'pShwYQQ4JVfSStc56MvkHNrr',
+});
+AV.init({
+  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
+  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
+});
+
+function sendMessage(){
+    let username = $('#people').val();
+    let message = $('#message').val();
+    realtime.createIMClient(user_name).then(function(user) {
+			  return user.createConversation({
+				members: [username],
+				name: message,
+				unique: true
+			  });
+			}).then(function(conversation) {
+			  // 发送消息
+			  return conversation.send(new TextMessage(message));
+			}).then(function(message) {
+			  console.log(message.text, '发送成功！');
+			}).catch(console.error);
+
+    let el = $('<p>'+user_name+' : '+message+'</p>');
+    $('#talk').append(el);
+}
+
+realtime.createIMClient(user_name).then(function(user) {
+    let username = $('#people').val();
+			  user.on(Event.MESSAGE, function(message, conversation) {
+				console.log('Message received: ' + message.text);
+				 let el = $('<p>'+username+' : '+message.text+'</p>');
+                $('#talk').append(el);
+			  });
+			}).catch(console.error);
+
+</script>
+</body>
+
+
+
+
+
+</html>
