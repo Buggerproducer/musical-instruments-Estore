@@ -1,0 +1,72 @@
+{% extends 'MusiCrashTemplates/base.html' %}
+
+{% block  extra_meta %}
+    <meta charset="UTF-8">
+    <meta name="product_id" content="{{ product_id }}">
+{% endblock %}
+
+{% block title %}
+    Product Editor
+{% endblock %}
+
+{% block extra_head_script %}
+    <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/wangEditor_revise.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/user.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/product.js') }}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <header>
+      <div class="header-page background-section">
+        <div class="container h-100">
+          <div class="contenet-hero p-relative">
+              <div class="form-group">
+                <div class="entry">
+                  <h1 class="p-relative title">title:<input id="title" type="text" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required."></h1>
+                <div class="help-block with-errors"></div>
+                </div>
+            </div>
+              <h2 class="title-page p-relative">cover:</h2>
+                <div class = "file-box">
+                    <div class="form-group">
+                        <div class="entry">
+                            <input type='text' name='textfield' id='textfield'  />
+                        <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <input type='button' class='btn' value='Browse' />
+                    <input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
+                    <input type="submit" name="submit" class="btn" value="Upload" />
+                </div>
+                            <h1 class="p-relative title">title: <input id='title' type="text" class="title-page"></h1>
+            <p class="subtitle-page">description: <input id='description' type="text" ></p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <label>title: <input id='title' type="text"></label>
+    <br>
+    <label>description: <input id='description' type="text"></label>
+    <br>
+    <label>cover:<input type="file"></label>
+    <hr>
+    <div id="editor" style="margin: 20px"></div>
+    <hr>
+    <button onclick="submit()">submit</button>
+{% endblock %}
+
+{% block scirpt %}
+    <script src="{{ url_for('static',filename='script/productEditor.js') }}"></script>
+    <script>
+        let id=document.getElementsByTagName('meta')['product_id'].content
+        if(id!=='') {
+            getProductById(id, function (product) {
+                loadProduct(product)
+            })
+        }
+    </script>
+
+
+{% endblock %}
