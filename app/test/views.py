@@ -73,6 +73,7 @@ def testCommunicationB():
 def testProductEditor():
     return render_template("test_product_editor.html")
 
+
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
     return render_template("test_product_editor.html",product_id=id)
