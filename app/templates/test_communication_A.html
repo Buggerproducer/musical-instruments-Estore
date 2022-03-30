@@ -42,7 +42,7 @@
 
 
       <div class="chat-history">
-        <ul>
+        <ul id = 'chat'>
 
 <!--          <li class="clearfix">-->
 <!--            <div class="message-data align-right">-->
@@ -65,26 +65,26 @@
 <!--            </div>-->
 <!--          </li>-->
 
-<!--          <li class="clearfix">-->
-<!--            <div class="message-data align-right">-->
-<!--              <span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;-->
-<!--              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>-->
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
 
-<!--            </div>-->
-<!--            <div class="message other-message float-right">-->
-<!--              Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project?-->
-<!--            </div>-->
-<!--          </li>-->
+            </div>
+            <div class="message other-message float-right">
+              Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project?
+            </div>
+          </li>
 
-<!--          <li>-->
-<!--            <div class="message-data">-->
-<!--              <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>-->
-<!--              <span class="message-data-time">10:20 AM, Today</span>-->
-<!--            </div>-->
-<!--            <div class="message my-message">-->
-<!--              Actually everything was fine. I'm very excited to show this to our team.-->
-<!--            </div>-->
-<!--          </li>-->
+          <li>
+            <div class="message-data">
+              <span class="message-data-name" id = 'username'><i class="fa fa-circle online"></i> Vincent</span>
+              <span class="message-data-time">10:20 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              Actually everything was fine. I'm very excited to show this to our team.
+            </div>
+          </li>
 
             <div class="message-data">
               <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
@@ -101,13 +101,13 @@
 
       <div class="chat-message clearfix">
           <p class="lead emoji-picker-container">
-              <textarea class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>
+              <textarea id = "input" class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>
           </p>
 
         <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
         <i class="fa fa-file-image-o"></i>
 
-        <button>Send</button>
+        <button onclick="sendMessage()">Send</button>
 
       </div> <!-- end chat-message -->
 
@@ -202,11 +202,11 @@ AV.init({
 });
 
 function sendMessage(){
-    let username = $('#people').val();
-    let message = $('#message').val();
+    //let username = $('#people').val();
+    let message = $('#input').val();
     realtime.createIMClient(user_name).then(function(user) {
 			  return user.createConversation({
-				members: [username],
+				members: ['staff'],
 				name: message,
 				unique: true
 			  });
@@ -217,18 +217,43 @@ function sendMessage(){
 			  console.log(message.text, '发送成功！');
 			}).catch(console.error);
 
-    let el = $('<p>'+user_name+' : '+message+'</p>');
-    $('#talk').append(el);
+  /*  let el = $('<p>'+user_name+' : '+message+'</p>');
+
+    $('#talk').append(el);*/
+  addbox_client(message,user_name);
 }
 
 realtime.createIMClient(user_name).then(function(user) {
-    let username = $('#people').val();
 			  user.on(Event.MESSAGE, function(message, conversation) {
 				console.log('Message received: ' + message.text);
-				 let el = $('<p>'+username+' : '+message.text+'</p>');
-                $('#talk').append(el);
+				 /*let el = $('<p>'+username+' : '+message.text+'</p>');
+                $('#talk').append(el);*/
+				 addbox_staff(message,'staff');
 			  });
 			}).catch(console.error);
+function addbox_client(message,person){
+    $('#chat').append("          <li>\n" +
+        "            <div class=\"message-data\">\n" +
+        "              <span class=\"message-data-name\" id = 'username'><i class=\"fa fa-circle online\"></i>"+person+"</span>\n" +
+        "              <span class=\"message-data-time\">10:20 AM, Today</span>\n" +
+        "            </div>\n" +
+        "            <div class=\"message my-message\">\n" +
+        message +
+        "            </div>\n" +
+        "          </li>");
+}
+function addbox_staff(message,person){
+    $('#chat').append("          <li>\n" +
+        "            <div class=\"message-data\">\n" +
+        "              <span class=\"message-data-name\" id = 'username'><i class=\"fa fa-circle online\"></i>"+person+"</span>\n" +
+        "              <span class=\"message-data-time\">10:20 AM, Today</span>\n" +
+        "            </div>\n" +
+        "            <div class=\"message my-message\">\n" +
+        message +
+        "            </div>\n" +
+        "          </li>");
+}
+
 
 </script>
 </body>
