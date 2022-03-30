@@ -113,6 +113,10 @@ def backend():
     return render_template("backend.html")
 
 
+# 顾客聊天页面
+@main.route('/communicateA')
+def communicateA():
+    return render_template("test_communication_A.html")
 
 
 # @main.route('/grotrian')
