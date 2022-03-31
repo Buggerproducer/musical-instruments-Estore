@@ -2574,7 +2574,7 @@ function initMap() {
             new google.maps.Marker({
                 position: letLeng,
                 animation: google.maps.Animation.BOUNCE,
-                icon: "assets/img/map-marker.png",
+                icon: "staff_index/img/map-marker.png",
                 title: "ASL",
                 map: map,
             });
