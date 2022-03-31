@@ -5,9 +5,6 @@ function setCollect(user,product){
     collection.set('product',product);
     collection.set('status',true);
     collection.save();
-
-
-
 }
 
 function cancelCollect(id){

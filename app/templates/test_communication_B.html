@@ -34,21 +34,34 @@ AV.init({
   appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
+    let username = 'Skywalker';
 function sendMessage(){
     let message = $('#message').val();
+
     realtime.createIMClient(user_name).then(function(user) {
 			  return user.createConversation({
-				members: ['lvjunyi'],
+				members: [username],
 				name: message,
 				unique: true
 			  });
 			}).then(function(conversation) {
 			  // 发送消息
+        conversation.queryMessages({
+  limit: 30, // limit 取值范围 1~100，默认 20
+}).then(function(messages) {
+    for(var i = 0;i<messages.length;i++){
+        console.log(messages[i].content['_lctext']);
+    }
+    console.log(messages)
+  // 最新的十条消息，按时间增序排列
+}).catch(console.error.bind(console));
+
+
 			  return conversation.send(new TextMessage(message));
 			}).then(function(message) {
 			  console.log(message, '发送成功！');
 			}).catch(console.error);
-    let el = $('<p>'+username+' : '+message+'</p>');
+    let el = $('<p>'+' : '+message+'</p>');
     $('#talk').append(el);
 }
 realtime.createIMClient(username).then(function(jerry) {
@@ -58,6 +71,8 @@ realtime.createIMClient(username).then(function(jerry) {
 				console.log('Message received: ' + message.text);
 			  });
 			}).catch(console.error);
+
+
 
 </script>
 </body>
