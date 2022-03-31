@@ -178,6 +178,7 @@ body .container_ui input[type="checkbox"]:not(:checked) + label > .container_ui_
 }
 body .container_ui input[type="checkbox"]:checked + label > .container_ui__item .face .color_bar {
   right: auto;
+  width: 100%;
   height: 90px;
 }
 body .container_ui input[type="checkbox"]:checked + label > .container_ui__item .face .color_bar p {
