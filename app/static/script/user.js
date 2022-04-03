@@ -152,3 +152,14 @@ function reset(email) {
     AV.User.requestPasswordReset(email);
       document.getElementById('result').innerText='email has been sent';
 }
+
+
+async function checkIsOperation() {
+    roles=await AV.User.current().getRoles()
+    for(role in roles){
+        if (roles[role].getName()==='operation'){
+            return true
+        }
+    }
+    return false
+}

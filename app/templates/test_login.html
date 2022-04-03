@@ -81,7 +81,11 @@ if(user){
     }
 });
 ">ajax</button>
+<button onclick="checkIsOperation().then(res=>{
+    document.getElementById('result').innerText= res
+})">check</button>
 <hr>
+
 <p id="result"></p>
 
 
