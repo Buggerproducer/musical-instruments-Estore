@@ -107,10 +107,22 @@ def productInfo(product_id):
     return render_template("piano.html", commodity=commodity, async_mode=socketio.async_mode)
 
 
-# 后台页面
-@main.route('/backend')
-def backend():
+# 后台页面数据展示
+@main.route('/backend_data')
+def backend_data():
     return render_template("backend.html")
+
+
+# 后台页面index
+@main.route('/staff_index')
+def staff_index():
+    return render_template("staff_index.html")
+
+
+# 后台页面显示消息
+@main.route('/staff_chat')
+def staff_chat():
+    return render_template("staff_chat.html")
 
 
 # 顾客聊天页面

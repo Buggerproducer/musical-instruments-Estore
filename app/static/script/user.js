@@ -55,6 +55,7 @@ async function signInWithUsername(username,password, onSuccess, onFail){
       // 登录成功
 ////
       const current_user = AV.User.current();
+      //const roles = AV.User.current().getRoles();
       $.post('/checkLogin',
           {
               'user': current_user.get('username')
@@ -102,6 +103,7 @@ async function logout() {
           function(response){
               $("a#logouta").attr("href", "/signUp")
               document.getElementById('logout').innerText = "Login & Sign Up"
+              document.getElementById('logoutb').innerText = "Setting"
           });
         // document.getElementById('result').innerText='logout successfully';
     }
@@ -151,4 +153,15 @@ function changeInfo(username,phone,email){
 function reset(email) {
     AV.User.requestPasswordReset(email);
       document.getElementById('result').innerText='email has been sent';
+}
+
+
+async function checkIsOperation() {
+    roles=await AV.User.current().getRoles()
+    for(role in roles){
+        if (roles[role].getName()==='operation'){
+            return true
+        }
+    }
+    return false
 }

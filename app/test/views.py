@@ -73,9 +73,10 @@ def testCommunicationB():
 def testProductEditor():
     return render_template("MusiCrashTemplates/productEditor.html")
 
+
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
-    return render_template("MusiCrashTemplates/productEditor.html",product_id=id)
+    return render_template("MusiCrashTemplates/productEditor.html", product_id=id)
 
 # @main.route('/grotrian')
 # def grotrian():
