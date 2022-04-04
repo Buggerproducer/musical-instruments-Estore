@@ -118,6 +118,13 @@ def backend_data():
 def staff_index():
     return render_template("staff_index.html")
 
+
+# 后台页面显示消息
+@main.route('/staff_chat')
+def staff_chat():
+    return render_template("staff_chat.html")
+
+
 # 顾客聊天页面
 @main.route('/communicateA')
 def communicateA():
