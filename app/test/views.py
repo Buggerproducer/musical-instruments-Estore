@@ -73,6 +73,10 @@ def testCommunicationB():
 def testProductEditor():
     return render_template("MusiCrashTemplates/productEditor.html")
 
+@testRoute.route('/orderList')
+def testOrderList():
+    return render_template("MusiCrashTemplates/orderList.html")
+
 
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
