@@ -33,18 +33,22 @@
 .background-antiquewhite{
     background-color: antiquewhite !important;
 }
+.background-navajowhite{
+    background-color: navajowhite !important;
+}
 
 .background-transparent{
     background-color: transparent !important;
 }
 
 .background-boarder{
-    border-radius: 2px !important;
+    border-radius: 5px !important;
     border: 1px antiquewhite !important;
+    padding: 2px;
 }
 
 .darkgary-font{
-    color: darkgray;
+    color: darkgray !important;
 }
 
 .background-f2f2f2{
@@ -54,8 +58,15 @@
 .margin-left{
     margin-left: 11%;
 }
+.margin-left-5{
+    margin-left: 20px;
+}
 
-.file-box{ position:relative;width:340px}
+.margin-left-4{
+    margin-left: 10px;
+}
+
+.file-box{ position:relative;width:100%}
 .txt{ height:40%; border:1px solid #cdcdcd; width:180px;}
 .file-btn{ background-color:#FFF; border:1px solid #CDCDCD;height:24px; width:70px;}
-.file{ position:absolute; top:70%; right:80px; height:24px;filter:alpha(opacity:0);opacity: 0;width:260px }
+.file{ position:absolute; top:60%; right:95px; height:50px;filter:alpha(opacity:0);opacity: 0;width:260px }
