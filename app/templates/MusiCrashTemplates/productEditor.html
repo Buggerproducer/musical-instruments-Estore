@@ -14,47 +14,81 @@
     <script src="{{ url_for('static',filename='script/wangEditor_revise.min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/user.js') }}"></script>
     <script src="{{ url_for('static',filename='js/product.js') }}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 {% endblock %}
 
 
 {% block content %}
-    <header>
-      <div class="header-page background-section">
+      <div class="background-section ">
         <div class="container h-100">
-          <div class="contenet-hero p-relative">
-              <div class="form-group">
+{#        标题部分#}
+          <div class="contenet-hero">
+              <div class="form-group text-center">
                 <div class="entry">
-                  <h1 class="p-relative title">title:<input id="title" type="text" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required."></h1>
+                  <h1 class="p-relative title">title:<input id="title" type="text" name="email" placeholder="" required="required" data-error="Valid email is required."></h1>
                 <div class="help-block with-errors"></div>
                 </div>
             </div>
-              <h2 class="title-page p-relative">cover:</h2>
-                <div class = "file-box">
-                    <div class="form-group">
+{#          文件上传部分#}
+              <div class="text-center">
+{#                  输入框#}
+                  <h2 class="title-page ">cover:</h2>
+                  <div class = "file-box">
+                    <div class="row">
+                        <div class="col-6">
+                         <div class="form-group">
                         <div class="entry">
                             <input type='text' name='textfield' id='textfield'  />
                         <div class="help-block with-errors"></div>
                         </div>
                     </div>
-                    <input type='button' class='btn' value='Browse' />
-                    <input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
-                    <input type="submit" name="submit" class="btn" value="Upload" />
+{#                    上传按钮#}
+                    </div>
+                      <div class="col-6">
+                      <div class="text-center">
+                        <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
+                            <input type='button' class='btn darkgray-font' value='Browse' />
+                            <input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
+                            <input type="submit" name="submit" class="btn darkgary-font margin-left-5" value="Upload" />
+                        </div>
+                      </div>
+                    </div>
+                    </div>
                 </div>
-                            <h1 class="p-relative title">title: <input id='title' type="text" class="title-page"></h1>
-            <p class="subtitle-page">description: <input id='description' type="text" ></p>
+              </div>
+{#          描述部分#}
+              <div class="form-group text-center">
+                <div class="entry">
+                    <p class="subtitle-page">description: <input id='description' type="text" ></p>
+                <div class="help-block with-errors"></div>
+                </div>
+            </div>
+{#            标签部分#}
+              <div class="form-group text-center">
+                     <h4>Labels </h4>
+                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
+                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
+                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
+                        <!--{% for label in labels %}
+                              <span class="label label-info background-antiquewhite background-boarder margin-left-4">{{ label.labelname }}<span><button><i class="bi bi-file-earmark-x background-navajowhite background-boarder"></i></button></span></span>
+                        {% endfor %}
+                        -->
+                </div>
+            </div>
+          <div id="editor" style="margin: 20px"></div>
+          <hr>
+          <div class="col-12">
+              <div class="text-center">
+                <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
+                  <button class="btn-form" onclick="submit()"><span class="label">Submit</span><span class="icon-c"></span></button>
+                </div>
+              </div>
           </div>
+
         </div>
       </div>
-    </header>
-    <label>title: <input id='title' type="text"></label>
-    <br>
-    <label>description: <input id='description' type="text"></label>
-    <br>
-    <label>cover:<input type="file"></label>
-    <hr>
-    <div id="editor" style="margin: 20px"></div>
-    <hr>
-    <button onclick="submit()">submit</button>
+      </div>
+
 {% endblock %}
 
 {% block scirpt %}

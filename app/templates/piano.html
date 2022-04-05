@@ -4,56 +4,56 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script type="text/javascript" charset="utf-8"
-            src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/dad5257e8784c6cb4633ebbf068517135d2e0d05/popup.js"></script>
-    <script async=""
-            src="https://chimpstatic.com/mcjs-connected/js/users/950ce55a2fae3f5e7f5c3e383/1d9e1d65914240a44af835174.js"></script>
-    <script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5K7GKN7"></script>
-    <script type="text/javascript">
-        var gform;
-        gform || (document.addEventListener("gform_main_scripts_loaded", function () {
-            gform.scriptsLoaded = !0
-        }), window.addEventListener("DOMContentLoaded", function () {
-            gform.domLoaded = !0
-        }), gform = {
-            domLoaded: !1, scriptsLoaded: !1, initializeOnLoaded: function (o) {
-                gform.domLoaded && gform.scriptsLoaded ? o() : !gform.domLoaded && gform.scriptsLoaded ? window.addEventListener("DOMContentLoaded", o) : document.addEventListener("gform_main_scripts_loaded", o)
-            }, hooks: {action: {}, filter: {}}, addAction: function (o, n, r, t) {
-                gform.addHook("action", o, n, r, t)
-            }, addFilter: function (o, n, r, t) {
-                gform.addHook("filter", o, n, r, t)
-            }, doAction: function (o) {
-                gform.doHook("action", o, arguments)
-            }, applyFilters: function (o) {
-                return gform.doHook("filter", o, arguments)
-            }, removeAction: function (o, n) {
-                gform.removeHook("action", o, n)
-            }, removeFilter: function (o, n, r) {
-                gform.removeHook("filter", o, n, r)
-            }, addHook: function (o, n, r, t, i) {
-                null == gform.hooks[o][n] && (gform.hooks[o][n] = []);
-                var e = gform.hooks[o][n];
-                null == i && (i = n + "_" + e.length), gform.hooks[o][n].push({
-                    tag: i,
-                    callable: r,
-                    priority: t = null == t ? 10 : t
-                })
-            }, doHook: function (n, o, r) {
-                var t;
-                if (r = Array.prototype.slice.call(r, 1), null != gform.hooks[n][o] && ((o = gform.hooks[n][o]).sort(function (o, n) {
-                    return o.priority - n.priority
-                }), o.forEach(function (o) {
-                    "function" != typeof (t = o.callable) && (t = window[t]), "action" == n ? t.apply(null, r) : r[0] = t.apply(null, r)
-                })), "filter" == n) return r[0]
-            }, removeHook: function (o, n, t, i) {
-                var r;
-                null != gform.hooks[o][n] && (r = (r = gform.hooks[o][n]).filter(function (o, n, r) {
-                    return !!(null != i && i != o.tag || null != t && t != o.priority)
-                }), gform.hooks[o][n] = r)
-            }
-        });
-    </script>
+<!--    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>-->
+<!--    <script type="text/javascript" charset="utf-8"-->
+<!--            src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/dad5257e8784c6cb4633ebbf068517135d2e0d05/popup.js"></script>-->
+<!--    <script async=""-->
+<!--            src="https://chimpstatic.com/mcjs-connected/js/users/950ce55a2fae3f5e7f5c3e383/1d9e1d65914240a44af835174.js"></script>-->
+<!--    <script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5K7GKN7"></script>-->
+<!--    <script type="text/javascript">-->
+<!--        var gform;-->
+<!--        gform || (document.addEventListener("gform_main_scripts_loaded", function () {-->
+<!--            gform.scriptsLoaded = !0-->
+<!--        }), window.addEventListener("DOMContentLoaded", function () {-->
+<!--            gform.domLoaded = !0-->
+<!--        }), gform = {-->
+<!--            domLoaded: !1, scriptsLoaded: !1, initializeOnLoaded: function (o) {-->
+<!--                gform.domLoaded && gform.scriptsLoaded ? o() : !gform.domLoaded && gform.scriptsLoaded ? window.addEventListener("DOMContentLoaded", o) : document.addEventListener("gform_main_scripts_loaded", o)-->
+<!--            }, hooks: {action: {}, filter: {}}, addAction: function (o, n, r, t) {-->
+<!--                gform.addHook("action", o, n, r, t)-->
+<!--            }, addFilter: function (o, n, r, t) {-->
+<!--                gform.addHook("filter", o, n, r, t)-->
+<!--            }, doAction: function (o) {-->
+<!--                gform.doHook("action", o, arguments)-->
+<!--            }, applyFilters: function (o) {-->
+<!--                return gform.doHook("filter", o, arguments)-->
+<!--            }, removeAction: function (o, n) {-->
+<!--                gform.removeHook("action", o, n)-->
+<!--            }, removeFilter: function (o, n, r) {-->
+<!--                gform.removeHook("filter", o, n, r)-->
+<!--            }, addHook: function (o, n, r, t, i) {-->
+<!--                null == gform.hooks[o][n] && (gform.hooks[o][n] = []);-->
+<!--                var e = gform.hooks[o][n];-->
+<!--                null == i && (i = n + "_" + e.length), gform.hooks[o][n].push({-->
+<!--                    tag: i,-->
+<!--                    callable: r,-->
+<!--                    priority: t = null == t ? 10 : t-->
+<!--                })-->
+<!--            }, doHook: function (n, o, r) {-->
+<!--                var t;-->
+<!--                if (r = Array.prototype.slice.call(r, 1), null != gform.hooks[n][o] && ((o = gform.hooks[n][o]).sort(function (o, n) {-->
+<!--                    return o.priority - n.priority-->
+<!--                }), o.forEach(function (o) {-->
+<!--                    "function" != typeof (t = o.callable) && (t = window[t]), "action" == n ? t.apply(null, r) : r[0] = t.apply(null, r)-->
+<!--                })), "filter" == n) return r[0]-->
+<!--            }, removeHook: function (o, n, t, i) {-->
+<!--                var r;-->
+<!--                null != gform.hooks[o][n] && (r = (r = gform.hooks[o][n]).filter(function (o, n, r) {-->
+<!--                    return !!(null != i && i != o.tag || null != t && t != o.priority)-->
+<!--                }), gform.hooks[o][n] = r)-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -65,11 +65,11 @@
     <link rel="alternate" hreflang="x-default" href="https://www.lyonhealy.com/harps/style-4-gold/">
 
     <!-- Google Tag Manager for WordPress by gtm4wp.com -->
-    <script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">//<![CDATA[
-    var gtm4wp_datalayer_name = "dataLayer";
-    var dataLayer = dataLayer || [];
-    //]]>
-    </script>
+<!--    <script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">//<![CDATA[-->
+<!--    var gtm4wp_datalayer_name = "dataLayer";-->
+<!--    var dataLayer = dataLayer || [];-->
+<!--    //]]>-->
+<!--    </script>-->
     <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
     <!-- This site is optimized with the Yoast SEO plugin v18.2 - https://yoast.com/wordpress/plugins/seo/ -->
     <title>STYLE 4 GOLD - Premium Harps - Lyon &amp; Healy Harps</title>
@@ -92,140 +92,140 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:label1" content="Est. reading time">
     <meta name="twitter:data1" content="1 minute">
-    <script type="application/ld+json" class="yoast-schema-graph">{
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "@id": "https://www.lyonhealy.com/#website",
-                "url": "https://www.lyonhealy.com/",
-                "name": "Lyon &amp; Healy Harps",
-                "description": "Harpmakers since 1889",
-                "potentialAction": [
-                    {
-                        "@type": "SearchAction",
-                        "target": {
-                            "@type": "EntryPoint",
-                            "urlTemplate": "https://www.lyonhealy.com/?s={search_term_string}"
-                        },
-                        "query-input": "required name=search_term_string"
-                    }
-                ],
-                "inLanguage": "en-US"
-            },
-            {
-                "@type": "ImageObject",
-                "@id": "https://www.lyonhealy.com/harps/style-4-gold/#primaryimage",
-                "inLanguage": "en-US",
-                "url": "https://www.lyonhealy.com/wp-content/uploads/2022/01/Style4.jpg",
-                "contentUrl": "https://www.lyonhealy.com/wp-content/uploads/2022/01/Style4.jpg",
-                "width": 1500,
-                "height": 2464
-            },
-            {
-                "@type": "WebPage",
-                "@id": "https://www.lyonhealy.com/harps/style-4-gold/#webpage",
-                "url": "https://www.lyonhealy.com/harps/style-4-gold/",
-                "name": "STYLE 4 GOLD - Premium Harps - Lyon &amp; Healy Harps",
-                "isPartOf": {
-                    "@id": "https://www.lyonhealy.com/#website"
-                },
-                "primaryImageOfPage": {
-                    "@id": "https://www.lyonhealy.com/harps/style-4-gold/#primaryimage"
-                },
-                "datePublished": "2022-01-28T20:09:03+00:00",
-                "dateModified": "2022-02-11T17:59:28+00:00",
-                "description": "Already a modern classic, the new Lyon &amp; Healy Style 4 is a Premium instrument being introduced to our standard catalog.  The elegance of this",
-                "breadcrumb": {
-                    "@id": "https://www.lyonhealy.com/harps/style-4-gold/#breadcrumb"
-                },
-                "inLanguage": "en-US",
-                "potentialAction": [
-                    {
-                        "@type": "ReadAction",
-                        "target": [
-                            "https://www.lyonhealy.com/harps/style-4-gold/"
-                        ]
-                    }
-                ]
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://www.lyonhealy.com/harps/style-4-gold/#breadcrumb",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://www.lyonhealy.com/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Products",
-                        "item": "https://www.lyonhealy.com/harps/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": "STYLE 4 GOLD"
-                    }
-                ]
-            }
-        ]
-    }</script>
+<!--    <script type="application/ld+json" class="yoast-schema-graph">{-->
+<!--        "@context": "https://schema.org",-->
+<!--        "@graph": [-->
+<!--            {-->
+<!--                "@type": "WebSite",-->
+<!--                "@id": "https://www.lyonhealy.com/#website",-->
+<!--                "url": "https://www.lyonhealy.com/",-->
+<!--                "name": "Lyon &amp; Healy Harps",-->
+<!--                "description": "Harpmakers since 1889",-->
+<!--                "potentialAction": [-->
+<!--                    {-->
+<!--                        "@type": "SearchAction",-->
+<!--                        "target": {-->
+<!--                            "@type": "EntryPoint",-->
+<!--                            "urlTemplate": "https://www.lyonhealy.com/?s={search_term_string}"-->
+<!--                        },-->
+<!--                        "query-input": "required name=search_term_string"-->
+<!--                    }-->
+<!--                ],-->
+<!--                "inLanguage": "en-US"-->
+<!--            },-->
+<!--            {-->
+<!--                "@type": "ImageObject",-->
+<!--                "@id": "https://www.lyonhealy.com/harps/style-4-gold/#primaryimage",-->
+<!--                "inLanguage": "en-US",-->
+<!--                "url": "https://www.lyonhealy.com/wp-content/uploads/2022/01/Style4.jpg",-->
+<!--                "contentUrl": "https://www.lyonhealy.com/wp-content/uploads/2022/01/Style4.jpg",-->
+<!--                "width": 1500,-->
+<!--                "height": 2464-->
+<!--            },-->
+<!--            {-->
+<!--                "@type": "WebPage",-->
+<!--                "@id": "https://www.lyonhealy.com/harps/style-4-gold/#webpage",-->
+<!--                "url": "https://www.lyonhealy.com/harps/style-4-gold/",-->
+<!--                "name": "STYLE 4 GOLD - Premium Harps - Lyon &amp; Healy Harps",-->
+<!--                "isPartOf": {-->
+<!--                    "@id": "https://www.lyonhealy.com/#website"-->
+<!--                },-->
+<!--                "primaryImageOfPage": {-->
+<!--                    "@id": "https://www.lyonhealy.com/harps/style-4-gold/#primaryimage"-->
+<!--                },-->
+<!--                "datePublished": "2022-01-28T20:09:03+00:00",-->
+<!--                "dateModified": "2022-02-11T17:59:28+00:00",-->
+<!--                "description": "Already a modern classic, the new Lyon &amp; Healy Style 4 is a Premium instrument being introduced to our standard catalog.  The elegance of this",-->
+<!--                "breadcrumb": {-->
+<!--                    "@id": "https://www.lyonhealy.com/harps/style-4-gold/#breadcrumb"-->
+<!--                },-->
+<!--                "inLanguage": "en-US",-->
+<!--                "potentialAction": [-->
+<!--                    {-->
+<!--                        "@type": "ReadAction",-->
+<!--                        "target": [-->
+<!--                            "https://www.lyonhealy.com/harps/style-4-gold/"-->
+<!--                        ]-->
+<!--                    }-->
+<!--                ]-->
+<!--            },-->
+<!--            {-->
+<!--                "@type": "BreadcrumbList",-->
+<!--                "@id": "https://www.lyonhealy.com/harps/style-4-gold/#breadcrumb",-->
+<!--                "itemListElement": [-->
+<!--                    {-->
+<!--                        "@type": "ListItem",-->
+<!--                        "position": 1,-->
+<!--                        "name": "Home",-->
+<!--                        "item": "https://www.lyonhealy.com/"-->
+<!--                    },-->
+<!--                    {-->
+<!--                        "@type": "ListItem",-->
+<!--                        "position": 2,-->
+<!--                        "name": "Products",-->
+<!--                        "item": "https://www.lyonhealy.com/harps/"-->
+<!--                    },-->
+<!--                    {-->
+<!--                        "@type": "ListItem",-->
+<!--                        "position": 3,-->
+<!--                        "name": "STYLE 4 GOLD"-->
+<!--                    }-->
+<!--                ]-->
+<!--            }-->
+<!--        ]-->
+<!--    }</script>-->
     <!-- / Yoast SEO plugin. -->
 
 
     <link rel="dns-prefetch" href="//s.w.org">
-    <script type="text/javascript">
-        window._wpemojiSettings = {
-            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
-            "ext": ".png",
-            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/",
-            "svgExt": ".svg",
-            "source": {"concatemoji": "https:\/\/www.lyonhealy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.1"}
-        };
-        /*! This file is auto-generated */
-        !function (e, a, t) {
-            var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d");
+<!--    <script type="text/javascript">-->
+<!--        window._wpemojiSettings = {-->
+<!--            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",-->
+<!--            "ext": ".png",-->
+<!--            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/",-->
+<!--            "svgExt": ".svg",-->
+<!--            "source": {"concatemoji": "https:\/\/www.lyonhealy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.1"}-->
+<!--        };-->
+<!--        /*! This file is auto-generated */-->
+<!--        !function (e, a, t) {-->
+<!--            var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d");-->
 
-            function s(e, t) {
-                var a = String.fromCharCode;
-                p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
-                e = i.toDataURL();
-                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
-            }
+<!--            function s(e, t) {-->
+<!--                var a = String.fromCharCode;-->
+<!--                p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);-->
+<!--                e = i.toDataURL();-->
+<!--                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()-->
+<!--            }-->
 
-            function c(e) {
-                var t = a.createElement("script");
-                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
-            }
+<!--            function c(e) {-->
+<!--                var t = a.createElement("script");-->
+<!--                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)-->
+<!--            }-->
 
-            for (o = Array("flag", "emoji"), t.supports = {
-                everything: !0,
-                everythingExceptFlag: !0
-            }, r = 0; r < o.length; r++) t.supports[o[r]] = function (e) {
-                if (!p || !p.fillText) return !1;
-                switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
-                    case"flag":
-                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]);
-                    case"emoji":
-                        return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613])
-                }
-                return !1
-            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
-            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () {
-                t.DOMReady = !0
-            }, t.supports.everything || (n = function () {
-                t.readyCallback()
-            }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () {
-                "complete" === a.readyState && t.readyCallback()
-            })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji)))
-        }(window, document, window._wpemojiSettings);
-    </script>
-    <script src="https://www.lyonhealy.com/wp-includes/js/wp-emoji-release.min.js?ver=5.9.1" type="text/javascript"
-            defer=""></script>
+<!--            for (o = Array("flag", "emoji"), t.supports = {-->
+<!--                everything: !0,-->
+<!--                everythingExceptFlag: !0-->
+<!--            }, r = 0; r < o.length; r++) t.supports[o[r]] = function (e) {-->
+<!--                if (!p || !p.fillText) return !1;-->
+<!--                switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {-->
+<!--                    case"flag":-->
+<!--                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]);-->
+<!--                    case"emoji":-->
+<!--                        return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613])-->
+<!--                }-->
+<!--                return !1-->
+<!--            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);-->
+<!--            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () {-->
+<!--                t.DOMReady = !0-->
+<!--            }, t.supports.everything || (n = function () {-->
+<!--                t.readyCallback()-->
+<!--            }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () {-->
+<!--                "complete" === a.readyState && t.readyCallback()-->
+<!--            })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji)))-->
+<!--        }(window, document, window._wpemojiSettings);-->
+<!--    </script>-->
+<!--    <script src="https://www.lyonhealy.com/wp-includes/js/wp-emoji-release.min.js?ver=5.9.1" type="text/javascript"-->
+<!--            defer=""></script>-->
     <style type="text/css">
         img.wp-smiley,
         img.emoji {
@@ -497,16 +497,16 @@
     <link rel="stylesheet" id="sage/css-css"
           href="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/styles/main-8372c968c6.css"
           type="text/css" media="all">
-    <script type="text/javascript" src="https://www.lyonhealy.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0"
-            id="jquery-core-js"></script>
-    <script type="text/javascript" src="https://www.lyonhealy.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"
-            id="jquery-migrate-js"></script>
-    <script type="text/javascript" async="async"
-            src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/scripts/html5shiv-692922fc2c.js"
-            id="lyonhealy/html5shiv-js"></script>
-    <script type="text/javascript" async="async"
-            src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/scripts/picturefill-6d3f841c87.js"
-            id="lyonhealy/picturefill-js"></script>
+<!--    <script type="text/javascript" src="https://www.lyonhealy.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0"-->
+<!--            id="jquery-core-js"></script>-->
+<!--    <script type="text/javascript" src="https://www.lyonhealy.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"-->
+<!--            id="jquery-migrate-js"></script>-->
+<!--    <script type="text/javascript" async="async"-->
+<!--            src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/scripts/html5shiv-692922fc2c.js"-->
+<!--            id="lyonhealy/html5shiv-js"></script>-->
+<!--    <script type="text/javascript" async="async"-->
+<!--            src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/scripts/picturefill-6d3f841c87.js"-->
+<!--            id="lyonhealy/picturefill-js"></script>-->
     <link rel="https://api.w.org/" href="https://www.lyonhealy.com/wp-json/">
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.lyonhealy.com/xmlrpc.php?rsd">
     <link rel="wlwmanifest" type="application/wlwmanifest+xml"
@@ -520,25 +520,25 @@
     <meta name="generator" content="WPML ver:4.5.5 stt:60,1,4,3;">
 
     <!-- Google Tag Manager for WordPress by gtm4wp.com -->
-    <script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">//<![CDATA[
-    var dataLayer_content = [];
-    dataLayer.push(dataLayer_content);//]]>
-    </script>
-    <script data-cfasync="false">//<![CDATA[
-    (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-            '//www.googletagmanager.com/gtm.' + 'js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5K7GKN7');//]]>
-    </script>
+<!--    <script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">//<![CDATA[-->
+<!--    var dataLayer_content = [];-->
+<!--    dataLayer.push(dataLayer_content);//]]>-->
+<!--    </script>-->
+<!--    <script data-cfasync="false">//<![CDATA[-->
+<!--    (function (w, d, s, l, i) {-->
+<!--        w[l] = w[l] || [];-->
+<!--        w[l].push({-->
+<!--            'gtm.start':-->
+<!--                new Date().getTime(), event: 'gtm.js'-->
+<!--        });-->
+<!--        var f = d.getElementsByTagName(s)[0],-->
+<!--            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';-->
+<!--        j.async = true;-->
+<!--        j.src =-->
+<!--            '//www.googletagmanager.com/gtm.' + 'js?id=' + i + dl;-->
+<!--        f.parentNode.insertBefore(j, f);-->
+<!--    })(window, document, 'script', 'dataLayer', 'GTM-5K7GKN7');//]]>-->
+<!--    </script>-->
     <!-- End Google Tag Manager -->
     <!-- End Google Tag Manager for WordPress by gtm4wp.com -->
     <link rel="icon" href="https://www.lyonhealy.com/wp-content/uploads/2017/06/cropped-LH-Favicon-32x32.jpg"
@@ -550,10 +550,10 @@
     <meta name="msapplication-TileImage"
           content="https://www.lyonhealy.com/wp-content/uploads/2017/06/cropped-LH-Favicon-270x270.jpg">
 
-    <script id="mcjs">!function (c, h, i, m, p) {
-        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
-    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/950ce55a2fae3f5e7f5c3e383/1d9e1d65914240a44af835174.js");</script>
-    <script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/378114591/?random=1646726147756&amp;cv=9&amp;fst=1646726147756&amp;num=1&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=900&amp;u_w=1440&amp;u_ah=807&amp;u_aw=1440&amp;u_cd=24&amp;u_his=3&amp;u_tz=480&amp;u_java=false&amp;u_nplug=1&amp;u_nmime=3&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fwww.lyonhealy.com%2Fharps%2Fstyle-4-gold%2F&amp;ref=https%3A%2F%2Fwww.lyonhealy.com%2Fharps-collections%2Fpremium-harps%2F&amp;tiba=STYLE%204%20GOLD%20-%20Premium%20Harps%20-%20Lyon%20%26%20Healy%20Harps&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script>
+<!--    <script id="mcjs">!function (c, h, i, m, p) {-->
+<!--        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)-->
+<!--    }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/950ce55a2fae3f5e7f5c3e383/1d9e1d65914240a44af835174.js");</script>-->
+<!--    <script src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/378114591/?random=1646726147756&amp;cv=9&amp;fst=1646726147756&amp;num=1&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=900&amp;u_w=1440&amp;u_ah=807&amp;u_aw=1440&amp;u_cd=24&amp;u_his=3&amp;u_tz=480&amp;u_java=false&amp;u_nplug=1&amp;u_nmime=3&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fwww.lyonhealy.com%2Fharps%2Fstyle-4-gold%2F&amp;ref=https%3A%2F%2Fwww.lyonhealy.com%2Fharps-collections%2Fpremium-harps%2F&amp;tiba=STYLE%204%20GOLD%20-%20Premium%20Harps%20-%20Lyon%20%26%20Healy%20Harps&amp;hn=www.googleadservices.com&amp;async=1&amp;rfmt=3&amp;fmt=4"></script>-->
 
     <!-- base的 -->
     <meta charset="utf-8">
@@ -1391,24 +1391,24 @@
     <div class="wrap-product" role="document">
         <main class="main-product">
 
-            <script type="application/ld+json">
-                {
-                    "@context": "http://schema.org/",
-                    "@type": "Product",
-                    "name": "STYLE 4 GOLD",
-                    "image": "https://www.lyonhealy.com/wp-content/uploads/2022/01/Style4.jpg",
-                    "description": "Already a modern classic, the new Lyon &amp; Healy Style 4 is a Premium instrument being introduced to our standard catalog.  The elegance of this instrument is enhanced by a 23+ karat gold leaf gilding on the column, base and soundboard.  A classic design that combines well into a modern setting and will get noticed on the main stages of the world. This instrument is made distinctive by its matte varnish offered in different finishes including walnut, natural or the striking royal blue.  As an option, the Style 4 Special may come with precious wood veneering to make this instrument even more unique.  Listen to a sound sample in this video.",
-                    "url": "https://www.lyonhealy.com/harps/style-4-gold/",
-                    "height": "188 cm",
-                    "width": "100 cm",
-                    "weight": "37 kg",
-                    "material": "23+ Karat Gold and Royal Blue; Optional Specials** w/exotic veneers",
-                    "brand": {
-                        "@type": "Thing",
-                        "name": "Lyon & Healy"
-                    }
-                }
-            </script>
+<!--            <script type="application/ld+json">-->
+<!--                {-->
+<!--                    "@context": "http://schema.org/",-->
+<!--                    "@type": "Product",-->
+<!--                    "name": "STYLE 4 GOLD",-->
+<!--                    "image": "https://www.lyonhealy.com/wp-content/uploads/2022/01/Style4.jpg",-->
+<!--                    "description": "Already a modern classic, the new Lyon &amp; Healy Style 4 is a Premium instrument being introduced to our standard catalog.  The elegance of this instrument is enhanced by a 23+ karat gold leaf gilding on the column, base and soundboard.  A classic design that combines well into a modern setting and will get noticed on the main stages of the world. This instrument is made distinctive by its matte varnish offered in different finishes including walnut, natural or the striking royal blue.  As an option, the Style 4 Special may come with precious wood veneering to make this instrument even more unique.  Listen to a sound sample in this video.",-->
+<!--                    "url": "https://www.lyonhealy.com/harps/style-4-gold/",-->
+<!--                    "height": "188 cm",-->
+<!--                    "width": "100 cm",-->
+<!--                    "weight": "37 kg",-->
+<!--                    "material": "23+ Karat Gold and Royal Blue; Optional Specials** w/exotic veneers",-->
+<!--                    "brand": {-->
+<!--                        "@type": "Thing",-->
+<!--                        "name": "Lyon & Healy"-->
+<!--                    }-->
+<!--                }-->
+<!--            </script>-->
 
             <article
                     class="post-5398 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
@@ -1467,7 +1467,7 @@
                                     <img src="../static/img/kefu.png" width="50px" style="background-color: white; border-radius: 30px; padding: 5px">
                                 </a>
 
-{#                                <input type="button" value="communicate" style="background-image: url(../static/img/kefu.png); border-style: none; background: white" onclick="window.open('http://127.0.0.1:5000/communicateA', '_blank', 'height=700, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')">#}
+<!--{#                                <input type="button" value="communicate" style="background-image: url(../static/img/kefu.png); border-style: none; background: white" onclick="window.open('http://127.0.0.1:5000/communicateA', '_blank', 'height=700, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')">#}-->
 <!--                                <a href="javascript:void(0)" type="button" οnclick=javascript:jump()>-->
 <!--                                    <script>-->
 <!--                                        function jump() {-->
@@ -1731,12 +1731,12 @@
 
                             <article
                                     class="entry-product post-159 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
-                                <div class="inside-product equal-el" style="height: 509px;">
+                                <div class="inside-product equal-el" style="height: 400px;">
                                     <a href="https://www.lyonhealy.com/harps/style-26-gold/">
                                         <div class="entry-text" style="color:white; text-align: center">Style 26 Gold
                                         </div>
-                                        <div class="entry-image" data-mh="entry-image" style="height: 458px;">
-                                            <img width="375" height="616"
+                                        <div class="entry-image" data-mh="entry-image" style="height: 375px;">
+                                            <img width="375" height="375"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/Product/Europa/Europa-II.jpg/jcr:content/Europa%20II.jpg"
                                                  class="attachment-prodotti_thumb size-prodotti_thumb wp-post-image"
                                                  alt="Style 26 Gold" loading="lazy" title="Style 26 Gold"
@@ -1755,12 +1755,12 @@
 
                             <article
                                     class="entry-product post-151 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
-                                <div class="inside-product equal-el" style="height: 509px;">
+                                <div class="inside-product equal-el" style="height: 400px;">
                                     <a href="https://www.lyonhealy.com/harps/style-3-gold/">
                                         <div class="entry-text" style="color:white; text-align: center">Style 3 Gold
                                         </div>
-                                        <div class="entry-image" data-mh="entry-image" style="height: 458px;">
-                                            <img width="375" height="616"
+                                        <div class="entry-image" data-mh="entry-image" style="height: 375px;">
+                                            <img width="375" height="375"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/News/20170222/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201208153853.jpg/jcr:content/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20201208153853.jpg"
                                                  class="attachment-prodotti_thumb size-prodotti_thumb wp-post-image"
                                                  alt="Style 3 Gold" loading="lazy" title="Style 3 Gold"
@@ -1778,12 +1778,12 @@
 
                             <article
                                     class="entry-product post-145 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
-                                <div class="inside-product equal-el" style="height: 509px;">
+                                <div class="inside-product equal-el" style="height: 400px;">
                                     <a href="https://www.lyonhealy.com/harps/style-8-gold/">
                                         <div class="entry-text" style="color:white; text-align: center">Style 8 Gold
                                         </div>
-                                        <div class="entry-image" data-mh="entry-image" style="height: 458px;">
-                                            <img width="375" height="616"
+                                        <div class="entry-image" data-mh="entry-image" style="height: 375px;">
+                                            <img width="375" height="375"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/Special-Pianos/CrownJewel/Grands/CJ_Walnut.jpg/jcr:content/CJ_Walnut.jpg"
                                                  class="attachment-prodotti_thumb size-prodotti_thumb wp-post-image"
                                                  alt="Style 8 Gold" loading="lazy" title="Style 8 Gold"
@@ -1801,12 +1801,12 @@
 
                             <article
                                     class="entry-product post-131 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
-                                <div class="inside-product equal-el" style="height: 509px;">
+                                <div class="inside-product equal-el" style="height: 400px;">
                                     <a href="https://www.lyonhealy.com/harps/prince-william-gold/">
                                         <div class="entry-text" style="color:white; text-align: center">Prince William
                                         </div>
-                                        <div class="entry-image" data-mh="entry-image" style="height: 458px;">
-                                            <img width="375" height="616"
+                                        <div class="entry-image" data-mh="entry-image" style="height: 375px;">
+                                            <img width="375" height="375"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/Product/%E8%B4%9D%E5%A4%9A%E8%8A%AC/%E8%B4%9D%E5%A4%9A%E8%8A%AC1.jpg/jcr:content/%E8%B4%9D%E5%A4%9A%E8%8A%AC1.jpg"
                                                  class="attachment-prodotti_thumb size-prodotti_thumb wp-post-image"
                                                  alt="Prince William" loading="lazy" title="Prince William"
@@ -1824,11 +1824,11 @@
 
                             <article
                                     class="entry-product post-130 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
-                                <div class="inside-product equal-el" style="height: 509px;">
+                                <div class="inside-product equal-el" style="height: 400px;">
                                     <a href="https://www.lyonhealy.com/harps/louis-xv/">
                                         <div class="entry-text" style="color:white; text-align: center">Louis XV</div>
-                                        <div class="entry-image" data-mh="entry-image" style="height: 458px;">
-                                            <img width="375" height="616"
+                                        <div class="entry-image" data-mh="entry-image" style="height: 375px;">
+                                            <img width="375" height="375"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/News/20170222/%E6%A8%B1%E6%A1%83%E6%9C%A8.jpg/jcr:content/%E6%A8%B1%E6%A1%83%E6%9C%A8.jpg"
                                                  class="attachment-prodotti_thumb size-prodotti_thumb wp-post-image"
                                                  alt="Louis XV" loading="lazy" title="Louis XV"
@@ -1846,13 +1846,13 @@
 
                             <article
                                     class="entry-product post-80 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
-                                <div class="inside-product equal-el" style="height: 509px;">
+                                <div class="inside-product equal-el" style="height: 400px;">
                                     <a href="https://www.lyonhealy.com/harps/louis-xv-special/">
                                         <div class="entry-text" style="color:white; text-align: center">Louis XV
                                             Special
                                         </div>
-                                        <div class="entry-image" data-mh="entry-image" style="height: 458px;">
-                                            <img width="375" height="616"
+                                        <div class="entry-image" data-mh="entry-image" style="height: 375px;">
+                                            <img width="375" height="375"
                                                  src="https://www.steinway.com.cn/.imaging/mte/steinway-us-theme/XL-Square/dam/steinway.com-china/News/20170222/%E5%B0%A4%E5%8D%A1%E5%9D%A6%E6%AF%92%E6%9C%A8.png/jcr:content/%E5%B0%A4%E5%8D%A1%E5%9D%A6%E6%AF%92%E6%9C%A8.png"
                                                  class="attachment-prodotti_thumb size-prodotti_thumb wp-post-image"
                                                  alt="Louis XV Special" loading="lazy" title="Louis XV Special"
@@ -1900,220 +1900,220 @@
 
     <!-- 不能删 -->
     <!-- Modal Select Country -->
-    <div class="modal fade" id="country-modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <img srcset="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-1x.png 1x,  https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-2x.png 2x"
-                         src="https://https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-1x.png"
-                         title="Lyon &amp; Healy Harps" alt="Lyon &amp; Healy Harps">
-                </div>
-                <div class="modal-body">
-                    <h2 class="modal-title">Select your country</h2>
-                    <div class="modal-buttons">
-                        <a ref="javascript:void(0)" data-country="us" type="button" class="btn-country">United
-                            States</a>
-                        <a ref="javascript:void(0)" data-country="all" type="button" class="btn-country">Rest of the
-                            world</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="modal fade" id="country-modal" tabindex="-1" role="dialog">-->
+<!--        <div class="modal-dialog" role="document">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header">-->
+<!--                    <img srcset="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-1x.png 1x,  https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-2x.png 2x"-->
+<!--                         src="https://https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-1x.png"-->
+<!--                         title="Lyon &amp; Healy Harps" alt="Lyon &amp; Healy Harps">-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    <h2 class="modal-title">Select your country</h2>-->
+<!--                    <div class="modal-buttons">-->
+<!--                        <a ref="javascript:void(0)" data-country="us" type="button" class="btn-country">United-->
+<!--                            States</a>-->
+<!--                        <a ref="javascript:void(0)" data-country="all" type="button" class="btn-country">Rest of the-->
+<!--                            world</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <!-- 下面都是些js 跟页面呈现有关 -->
     <!-- Google Tag Manager (noscript) -->
-    <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5K7GKN7"
-        height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"&gt;&lt;/iframe&gt;
-    </noscript>
+<!--    <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5K7GKN7"-->
+<!--        height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"&gt;&lt;/iframe&gt;-->
+<!--    </noscript>-->
     <!-- End Google Tag Manager (noscript) -->
     <link rel="stylesheet" id="wpml-legacy-horizontal-list-0-css"
           href="//www.lyonhealy.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-list-horizontal/style.min.css?ver=1"
           type="text/css" media="all">
-    <script type="text/javascript"
-            src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/scripts/main-820c4ceec4.js"
-            id="sage/js-js"></script>
-    <script type="text/javascript"
-            src="https://www.lyonhealy.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9"
-            id="regenerator-runtime-js"></script>
-    <script type="text/javascript"
-            src="https://www.lyonhealy.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"
-            id="wp-polyfill-js"></script>
-    <script type="text/javascript"
-            src="https://www.lyonhealy.com/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5"
-            id="wp-dom-ready-js"></script>
-    <script type="text/javascript"
-            src="https://www.lyonhealy.com/wp-includes/js/dist/hooks.min.js?ver=1e58c8c5a32b2e97491080c5b10dc71c"
-            id="wp-hooks-js"></script>
-    <script type="text/javascript"
-            src="https://www.lyonhealy.com/wp-includes/js/dist/i18n.min.js?ver=30fcecb428a0e8383d3776bcdd3a7834"
-            id="wp-i18n-js"></script>
-    <script type="text/javascript" id="wp-i18n-js-after">
-        wp.i18n.setLocaleData({'text direction\u0004ltr': ['ltr']});
-    </script>
-    <script type="text/javascript" id="wp-a11y-js-translations">
-        (function (domain, translations) {
-            var localeData = translations.locale_data[domain] || translations.locale_data.messages;
-            localeData[""].domain = domain;
-            wp.i18n.setLocaleData(localeData, domain);
-        })("default", {"locale_data": {"messages": {"": {}}}});
-    </script>
-    <script type="text/javascript"
-            src="https://www.lyonhealy.com/wp-includes/js/dist/a11y.min.js?ver=68e470cf840f69530e9db3be229ad4b6"
-            id="wp-a11y-js"></script>
-    <script type="text/javascript" defer="defer"
-            src="https://www.lyonhealy.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.5.16"
-            id="gform_json-js"></script>
-    <script type="text/javascript" id="gform_gravityforms-js-extra">
-        /* <![CDATA[ */
-        var gform_i18n = {
-            "datepicker": {
-                "days": {
-                    "monday": "Mon",
-                    "tuesday": "Tue",
-                    "wednesday": "Wed",
-                    "thursday": "Thu",
-                    "friday": "Fri",
-                    "saturday": "Sat",
-                    "sunday": "Sun"
-                },
-                "months": {
-                    "january": "January",
-                    "february": "February",
-                    "march": "March",
-                    "april": "April",
-                    "may": "May",
-                    "june": "June",
-                    "july": "July",
-                    "august": "August",
-                    "september": "September",
-                    "october": "October",
-                    "november": "November",
-                    "december": "December"
-                },
-                "firstDay": 1,
-                "iconText": "Select date"
-            }
-        };
-        var gf_global = {
-            "gf_currency_config": {
-                "name": "U.S. Dollar",
-                "symbol_left": "$",
-                "symbol_right": "",
-                "symbol_padding": "",
-                "thousand_separator": ",",
-                "decimal_separator": ".",
-                "decimals": 2,
-                "code": "USD"
-            },
-            "base_url": "https:\/\/www.lyonhealy.com\/wp-content\/plugins\/gravityforms",
-            "number_formats": [],
-            "spinnerUrl": "https:\/\/www.lyonhealy.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg",
-            "strings": {
-                "newRowAdded": "New row added.",
-                "rowRemoved": "Row removed",
-                "formSaved": "The form has been saved.  The content contains the link to return and complete the form."
-            }
-        };
-        var gf_legacy_multi = {"3": "1"};
-        /* ]]> */
-    </script>
-    <script type="text/javascript" defer="defer"
-            src="https://www.lyonhealy.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.5.16"
-            id="gform_gravityforms-js"></script>
-    <script type="text/javascript" id="gform_conditional_logic-js-extra">
-        /* <![CDATA[ */
-        var gf_legacy = {"is_legacy": "1"};
-        /* ]]> */
-    </script>
-    <script type="text/javascript" defer="defer"
-            src="https://www.lyonhealy.com/wp-content/plugins/gravityforms/js/conditional_logic.min.js?ver=2.5.16"
-            id="gform_conditional_logic-js"></script>
-    <script type="text/javascript" defer="defer"
-            src="https://www.google.com/recaptcha/api.js?hl=en&amp;ver=5.9.1#038;render=explicit"
-            id="gform_recaptcha-js"></script>
-    <script type="text/javascript">
-        gform.initializeOnLoaded(function () {
-            jQuery(document).on('gform_post_render', function (event, formId, currentPage) {
-                if (formId == 3) {
-                    gf_global["number_formats"][3] = {
-                        "24": {"price": false, "value": false},
-                        "17": {"price": false, "value": false},
-                        "18": {"price": false, "value": false},
-                        "6": {"price": false, "value": false},
-                        "32": {"price": false, "value": false},
-                        "28": {"price": false, "value": false},
-                        "7": {"price": false, "value": false},
-                        "21": {"price": false, "value": false},
-                        "13": {"price": false, "value": false},
-                        "22": {"price": false, "value": false},
-                        "15": {"price": false, "value": false},
-                        "16": {"price": false, "value": false},
-                        "23": {"price": false, "value": false},
-                        "26": {"price": false, "value": false},
-                        "27": {"price": false, "value": false},
-                        "29": {"price": false, "value": false},
-                        "33": {"price": false, "value": false}
-                    };
-                    if (window['jQuery']) {
-                        if (!window['gf_form_conditional_logic']) window['gf_form_conditional_logic'] = new Array();
-                        window['gf_form_conditional_logic'][3] = {
-                            logic: {
-                                15: {
-                                    "field": {
-                                        "actionType": "show",
-                                        "logicType": "all",
-                                        "rules": [{"fieldId": "22", "operator": "is", "value": "Yes"}]
-                                    }, "nextButton": null, "section": ""
-                                }
-                            },
-                            dependents: {15: [15]},
-                            animation: 0,
-                            defaults: {
-                                "28": {"28.1": "", "28.2": "", "28.3": "", "28.4": "", "28.5": "", "28.6": ""},
-                                "13": "Harp Information & Sales",
-                                "26": "STYLE 4 GOLD",
-                                "27": "https:\/\/www.lyonhealy.com\/harps\/style-4-gold\/"
-                            },
-                            fields: {
-                                "24": [],
-                                "17": [],
-                                "18": [],
-                                "6": [],
-                                "32": [],
-                                "28": [],
-                                "7": [],
-                                "21": [],
-                                "13": [],
-                                "22": [15],
-                                "15": [],
-                                "16": [],
-                                "23": [],
-                                "26": [],
-                                "27": [],
-                                "29": [],
-                                "33": []
-                            }
-                        };
-                        if (!window['gf_number_format']) window['gf_number_format'] = 'decimal_dot';
-                        jQuery(document).ready(function () {
-                            window['gformInitPriceFields']();
-                            gf_apply_rules(3, [15], true);
-                            jQuery('#gform_wrapper_3').show();
-                            jQuery(document).trigger('gform_post_conditional_logic', [3, null, true]);
-                        });
-                    }
-                }
-            });
-            jQuery(document).bind('gform_post_conditional_logic', function (event, formId, fields, isInit) {
-            })
-        });
-    </script>
-    <script type="text/javascript">
-        gform.initializeOnLoaded(function () {
-            jQuery(document).trigger('gform_post_render', [3, 1])
-        });
-    </script>
+<!--    <script type="text/javascript"-->
+<!--            src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/scripts/main-820c4ceec4.js"-->
+<!--            id="sage/js-js"></script>-->
+<!--    <script type="text/javascript"-->
+<!--            src="https://www.lyonhealy.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9"-->
+<!--            id="regenerator-runtime-js"></script>-->
+<!--    <script type="text/javascript"-->
+<!--            src="https://www.lyonhealy.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"-->
+<!--            id="wp-polyfill-js"></script>-->
+<!--    <script type="text/javascript"-->
+<!--            src="https://www.lyonhealy.com/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5"-->
+<!--            id="wp-dom-ready-js"></script>-->
+<!--    <script type="text/javascript"-->
+<!--            src="https://www.lyonhealy.com/wp-includes/js/dist/hooks.min.js?ver=1e58c8c5a32b2e97491080c5b10dc71c"-->
+<!--            id="wp-hooks-js"></script>-->
+<!--    <script type="text/javascript"-->
+<!--            src="https://www.lyonhealy.com/wp-includes/js/dist/i18n.min.js?ver=30fcecb428a0e8383d3776bcdd3a7834"-->
+<!--            id="wp-i18n-js"></script>-->
+<!--    <script type="text/javascript" id="wp-i18n-js-after">-->
+<!--        wp.i18n.setLocaleData({'text direction\u0004ltr': ['ltr']});-->
+<!--    </script>-->
+<!--    <script type="text/javascript" id="wp-a11y-js-translations">-->
+<!--        (function (domain, translations) {-->
+<!--            var localeData = translations.locale_data[domain] || translations.locale_data.messages;-->
+<!--            localeData[""].domain = domain;-->
+<!--            wp.i18n.setLocaleData(localeData, domain);-->
+<!--        })("default", {"locale_data": {"messages": {"": {}}}});-->
+<!--    </script>-->
+<!--    <script type="text/javascript"-->
+<!--            src="https://www.lyonhealy.com/wp-includes/js/dist/a11y.min.js?ver=68e470cf840f69530e9db3be229ad4b6"-->
+<!--            id="wp-a11y-js"></script>-->
+<!--    <script type="text/javascript" defer="defer"-->
+<!--            src="https://www.lyonhealy.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.5.16"-->
+<!--            id="gform_json-js"></script>-->
+<!--    <script type="text/javascript" id="gform_gravityforms-js-extra">-->
+<!--        /* <![CDATA[ */-->
+<!--        var gform_i18n = {-->
+<!--            "datepicker": {-->
+<!--                "days": {-->
+<!--                    "monday": "Mon",-->
+<!--                    "tuesday": "Tue",-->
+<!--                    "wednesday": "Wed",-->
+<!--                    "thursday": "Thu",-->
+<!--                    "friday": "Fri",-->
+<!--                    "saturday": "Sat",-->
+<!--                    "sunday": "Sun"-->
+<!--                },-->
+<!--                "months": {-->
+<!--                    "january": "January",-->
+<!--                    "february": "February",-->
+<!--                    "march": "March",-->
+<!--                    "april": "April",-->
+<!--                    "may": "May",-->
+<!--                    "june": "June",-->
+<!--                    "july": "July",-->
+<!--                    "august": "August",-->
+<!--                    "september": "September",-->
+<!--                    "october": "October",-->
+<!--                    "november": "November",-->
+<!--                    "december": "December"-->
+<!--                },-->
+<!--                "firstDay": 1,-->
+<!--                "iconText": "Select date"-->
+<!--            }-->
+<!--        };-->
+<!--        var gf_global = {-->
+<!--            "gf_currency_config": {-->
+<!--                "name": "U.S. Dollar",-->
+<!--                "symbol_left": "$",-->
+<!--                "symbol_right": "",-->
+<!--                "symbol_padding": "",-->
+<!--                "thousand_separator": ",",-->
+<!--                "decimal_separator": ".",-->
+<!--                "decimals": 2,-->
+<!--                "code": "USD"-->
+<!--            },-->
+<!--            "base_url": "https:\/\/www.lyonhealy.com\/wp-content\/plugins\/gravityforms",-->
+<!--            "number_formats": [],-->
+<!--            "spinnerUrl": "https:\/\/www.lyonhealy.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg",-->
+<!--            "strings": {-->
+<!--                "newRowAdded": "New row added.",-->
+<!--                "rowRemoved": "Row removed",-->
+<!--                "formSaved": "The form has been saved.  The content contains the link to return and complete the form."-->
+<!--            }-->
+<!--        };-->
+<!--        var gf_legacy_multi = {"3": "1"};-->
+<!--        /* ]]> */-->
+<!--    </script>-->
+<!--    <script type="text/javascript" defer="defer"-->
+<!--            src="https://www.lyonhealy.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.5.16"-->
+<!--            id="gform_gravityforms-js"></script>-->
+<!--    <script type="text/javascript" id="gform_conditional_logic-js-extra">-->
+<!--        /* <![CDATA[ */-->
+<!--        var gf_legacy = {"is_legacy": "1"};-->
+<!--        /* ]]> */-->
+<!--    </script>-->
+<!--    <script type="text/javascript" defer="defer"-->
+<!--            src="https://www.lyonhealy.com/wp-content/plugins/gravityforms/js/conditional_logic.min.js?ver=2.5.16"-->
+<!--            id="gform_conditional_logic-js"></script>-->
+<!--    <script type="text/javascript" defer="defer"-->
+<!--            src="https://www.google.com/recaptcha/api.js?hl=en&amp;ver=5.9.1#038;render=explicit"-->
+<!--            id="gform_recaptcha-js"></script>-->
+<!--    <script type="text/javascript">-->
+<!--        gform.initializeOnLoaded(function () {-->
+<!--            jQuery(document).on('gform_post_render', function (event, formId, currentPage) {-->
+<!--                if (formId == 3) {-->
+<!--                    gf_global["number_formats"][3] = {-->
+<!--                        "24": {"price": false, "value": false},-->
+<!--                        "17": {"price": false, "value": false},-->
+<!--                        "18": {"price": false, "value": false},-->
+<!--                        "6": {"price": false, "value": false},-->
+<!--                        "32": {"price": false, "value": false},-->
+<!--                        "28": {"price": false, "value": false},-->
+<!--                        "7": {"price": false, "value": false},-->
+<!--                        "21": {"price": false, "value": false},-->
+<!--                        "13": {"price": false, "value": false},-->
+<!--                        "22": {"price": false, "value": false},-->
+<!--                        "15": {"price": false, "value": false},-->
+<!--                        "16": {"price": false, "value": false},-->
+<!--                        "23": {"price": false, "value": false},-->
+<!--                        "26": {"price": false, "value": false},-->
+<!--                        "27": {"price": false, "value": false},-->
+<!--                        "29": {"price": false, "value": false},-->
+<!--                        "33": {"price": false, "value": false}-->
+<!--                    };-->
+<!--                    if (window['jQuery']) {-->
+<!--                        if (!window['gf_form_conditional_logic']) window['gf_form_conditional_logic'] = new Array();-->
+<!--                        window['gf_form_conditional_logic'][3] = {-->
+<!--                            logic: {-->
+<!--                                15: {-->
+<!--                                    "field": {-->
+<!--                                        "actionType": "show",-->
+<!--                                        "logicType": "all",-->
+<!--                                        "rules": [{"fieldId": "22", "operator": "is", "value": "Yes"}]-->
+<!--                                    }, "nextButton": null, "section": ""-->
+<!--                                }-->
+<!--                            },-->
+<!--                            dependents: {15: [15]},-->
+<!--                            animation: 0,-->
+<!--                            defaults: {-->
+<!--                                "28": {"28.1": "", "28.2": "", "28.3": "", "28.4": "", "28.5": "", "28.6": ""},-->
+<!--                                "13": "Harp Information & Sales",-->
+<!--                                "26": "STYLE 4 GOLD",-->
+<!--                                "27": "https:\/\/www.lyonhealy.com\/harps\/style-4-gold\/"-->
+<!--                            },-->
+<!--                            fields: {-->
+<!--                                "24": [],-->
+<!--                                "17": [],-->
+<!--                                "18": [],-->
+<!--                                "6": [],-->
+<!--                                "32": [],-->
+<!--                                "28": [],-->
+<!--                                "7": [],-->
+<!--                                "21": [],-->
+<!--                                "13": [],-->
+<!--                                "22": [15],-->
+<!--                                "15": [],-->
+<!--                                "16": [],-->
+<!--                                "23": [],-->
+<!--                                "26": [],-->
+<!--                                "27": [],-->
+<!--                                "29": [],-->
+<!--                                "33": []-->
+<!--                            }-->
+<!--                        };-->
+<!--                        if (!window['gf_number_format']) window['gf_number_format'] = 'decimal_dot';-->
+<!--                        jQuery(document).ready(function () {-->
+<!--                            window['gformInitPriceFields']();-->
+<!--                            gf_apply_rules(3, [15], true);-->
+<!--                            jQuery('#gform_wrapper_3').show();-->
+<!--                            jQuery(document).trigger('gform_post_conditional_logic', [3, null, true]);-->
+<!--                        });-->
+<!--                    }-->
+<!--                }-->
+<!--            });-->
+<!--            jQuery(document).bind('gform_post_conditional_logic', function (event, formId, fields, isInit) {-->
+<!--            })-->
+<!--        });-->
+<!--    </script>-->
+<!--    <script type="text/javascript">-->
+<!--        gform.initializeOnLoaded(function () {-->
+<!--            jQuery(document).trigger('gform_post_render', [3, 1])-->
+<!--        });-->
+<!--    </script>-->
 
 </div>
 
@@ -2149,8 +2149,8 @@
 </div>
 
 <!-- Scripts -->
-<script src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" type="text/javascript"></script>
-<script src="//www.googleadservices.com/pagead/conversion_async.js" type="text/javascript"></script>
+<!--<script src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" type="text/javascript"></script>-->
+<!--<script src="//www.googleadservices.com/pagead/conversion_async.js" type="text/javascript"></script>-->
 
 <!-- base的 -->
 <script src="../static/js/jquery-3.1.1.min.js"></script>

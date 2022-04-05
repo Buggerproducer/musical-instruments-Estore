@@ -60,9 +60,11 @@ def testfuwenben():
 def testCollection():
     return render_template("MusiCrashTemplates/collectionLists.html")
 
+
 @testRoute.route('/CommunicationA')
 def testCommunicationA():
     return render_template("test_communication_A.html")
+
 
 @testRoute.route('/CommunicationB')
 def testCommunicationB():
@@ -72,6 +74,10 @@ def testCommunicationB():
 @testRoute.route('/producteditor')
 def testProductEditor():
     return render_template("MusiCrashTemplates/productEditor.html")
+
+@testRoute.route('/orderList')
+def testOrderList():
+    return render_template("MusiCrashTemplates/orderList.html")
 
 
 @testRoute.route('/producteditor/<id>')

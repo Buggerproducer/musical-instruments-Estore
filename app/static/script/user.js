@@ -55,6 +55,7 @@ async function signInWithUsername(username,password, onSuccess, onFail){
       // 登录成功
 ////
       const current_user = AV.User.current();
+      //const roles = AV.User.current().getRoles();
       $.post('/checkLogin',
           {
               'user': current_user.get('username')
@@ -102,6 +103,7 @@ async function logout() {
           function(response){
               $("a#logouta").attr("href", "/signUp")
               document.getElementById('logout').innerText = "Login & Sign Up"
+              document.getElementById('logoutb').innerText = "Setting"
           });
         // document.getElementById('result').innerText='logout successfully';
     }

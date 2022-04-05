@@ -117,13 +117,14 @@
 <!--          </ul>-->
 <!--        </li>-->
         <!-- li 7: Setting -->
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">
+        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span id="logoutb" class="dsn-title-menu">
           {% if authenticated %}
           <img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">
           {% else %}
           Setting
           {% endif %}
-        </span><span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
+        </span>
+            <span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
             <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
@@ -133,6 +134,9 @@
             <li><a id="logina" href="{{ url_for('main.signUp') }}"><span id="login" class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
             {% endif %}
             <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a></li>
+            <li><a href="{{ url_for('main.staff_index') }}"><span class="dsn-title-menu">Administrator</span><span class="dsn-meta-menu">02</span></a></li>
+            <li><a href="{{ url_for('main.backend_data') }}"><span class="dsn-title-menu">Backend</span><span class="dsn-meta-menu">03</span></a></li>
+
           </ul>
         </li>
       </ul>
