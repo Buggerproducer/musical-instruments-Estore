@@ -82,7 +82,7 @@
 <!--              Are we meeting today? Project has been already finished and I have results to show you.-->
 <!--            </div>-->
 <!--          </li>-->
-
+<!--
           <li class="clearfix">
             <div class="message-data align-right">
               <span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;
@@ -112,7 +112,7 @@
             <i class="fa fa-circle online" style="color: #AED2A6"></i>
             <i class="fa fa-circle online" style="color:#DAE9DA"></i>
           </li>
-
+-->
         </ul>
 
       </div> <!-- end chat-history -->
@@ -223,26 +223,26 @@ function sendMessage(){
     //let username = $('#people').val();
     let message = $('#input').val();
 
-    realtime.createIMClient(user_name).then(function(user) {
-			  return user.createConversation({
-				members: ['staff'],
-				name: message,
-				unique: true
-			  });
-			}).then(function(conversation) {
-			  // 发送消息
-			  return conversation.send(new TextMessage(message));
+    realtime.createIMClient("lvjunyi").then(function(user) {
+        user.getConversation(conversation_id).then(function(conversation) {
+            console.log(conversation.id);
+            return conversation.send(new TextMessage(message));
+        }).catch(console.error.bind(console));
+    }).catch(console.error.bind(console));
+			/*}).then(function(conversation) {
+			 // 发送消息
+			 return conversation.send(new TextMessage(message));
 			}).then(function(message) {
-			  console.log(message.text, '发送成功！');
-			}).catch(console.error);
+			 console.log(message.text, '发送成功！');
+			}).catch(console.error);*/
 
   /*  let el = $('<p>'+user_name+' : '+message+'</p>');
 
     $('#talk').append(el);*/
-  addbox_client(message,user_name);
+    addbox_client(message,user_name);
 }
 
-realtime.createIMClient(user_name).then(function(user) {
+realtime.createIMClient(user).then(function(user) {
 			  user.on(Event.MESSAGE, function(message, conversation) {
 				console.log('Message received: ' + message.text);
 				 /*let el = $('<p>'+username+' : '+message.text+'</p>');
@@ -250,6 +250,7 @@ realtime.createIMClient(user_name).then(function(user) {
 				 addbox_staff(message,'staff');
 			  });
 			}).catch(console.error);
+
 function addbox_client(message,person){
     $('#chat').append("          <li>\n" +
         "            <div class=\"message-data\">\n" +

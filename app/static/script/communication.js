@@ -34,6 +34,7 @@ $(document).ready(
                 a.href = "/conversation/" + conversations[conversation].id
                 img.src = "../static/chat-widget/img/t1.png"
                 img.alt = "avatar"
+                div2.innerText = conversations[conversation].name
                 list.appendChild(li);
                 li.appendChild(a);
                 a.appendChild(img);
@@ -46,9 +47,11 @@ $(document).ready(
         if(conversation_id!=1){
             console.log(conversation_id);
             var chat = document.getElementById("chat");
+            //var { MessageQueryDirection } = require('leancloud-realtime');
             user.getConversation(conversation_id).then(function(conversation) {
                 console.log(conversation.id);
                 conversation.queryMessages({
+                    //direction: MessageQueryDirection.OLD_TO_NEW,
                     limit: 30, // limit 取值范围 1~100，默认 20
                 }).then(function(messages) {
                     for(var i = 0;i<messages.length;i++){
@@ -61,16 +64,26 @@ $(document).ready(
                         var div2 = document.createElement("div");
                         if(messages[i].from=='lvjunyi'){
                             li.className = "clearfix";
-                            div1.className= "message-data align_right";
+                            div1.className= "message-data align-right";
                             span1.className = "message-data-time";
                             span2.className = "message-data-name";
+                            ii.className = "fa fa-circle me"
                             div2.className = "message other-message float-right";
+                            span1.innerText = messages[i]._timestamp+" ";
+                            span2.innerText = messages[i].from+" ";
+                            span2.appendChild(ii);
                         }
                         else{
                             div1.className = "message-data";
                             span1.className = "message-data-name";
                             span2.className = "message-data-time";
+                            ii.className = "fa fa-circle online"
                             div2.className = "message my-message";
+                            span1.appendChild(ii)
+                            span1.append(" "+messages[i].from);
+                            //span1.innerText =
+                            span2.innerText = messages[i]._timestamp;
+
                         }
                         div2.innerText = messages[i].content['_lctext'];
                         chat.appendChild(li);
