@@ -2,10 +2,11 @@ import leancloud
 
 from app import socketio
 from flask_socketio import SocketIO, emit
-from flask import render_template, request, session, jsonify
+from flask import render_template, request, session, jsonify, redirect, url_for
 from . import main
 from .forms import LoginForm
 from threading import Lock
+from functools import wraps
 from leancloud import cloud
 from ..utils import product
 
@@ -14,6 +15,14 @@ from ..utils import product
 thread = None
 thread_lock = Lock()
 
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get('authenticated') is None or session.get('authenticated') is False:
+            return redirect(url_for("main.index"))
+        return f(*args, **kwargs)
+    return decorated_function
 
 @socketio.event
 def my_ping():
@@ -67,13 +76,16 @@ def check():
 def testbase():
     return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
 
+
 @main.route('/history_order')
 def history_order():
     return render_template("MusiCrashTemplates/orderList.html", async_mode=socketio.async_mode)
 
+
 @main.route('/collection')
 def collection():
     return render_template("MusiCrashTemplates/collectionLists.html", async_mode=socketio.async_mode)
+
 
 @main.route('/testinfo')
 def testinfo():
@@ -134,6 +146,7 @@ def staff_chat():
 
 # 顾客聊天页面
 @main.route('/communicate')
+@login_required
 def communicate():
     return render_template("test_communication_A.html")
 
