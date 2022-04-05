@@ -60,9 +60,11 @@ def testfuwenben():
 def testCollection():
     return render_template("MusiCrashTemplates/collectionLists.html")
 
+
 @testRoute.route('/CommunicationA')
 def testCommunicationA():
     return render_template("test_communication_A.html")
+
 
 @testRoute.route('/CommunicationB')
 def testCommunicationB():

@@ -131,6 +131,11 @@ def communicateA():
     return render_template("test_communication_A.html")
 
 
+@main.route('/conversation/<conversation_id>')
+def conversation(conversation_id):
+    print(conversation_id)
+    return render_template("test_communication_A.html", conversation_id=conversation_id)
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
