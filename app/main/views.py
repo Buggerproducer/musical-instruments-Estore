@@ -67,6 +67,13 @@ def check():
 def testbase():
     return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
 
+@main.route('/history_order')
+def history_order():
+    return render_template("MusiCrashTemplates/orderList.html", async_mode=socketio.async_mode)
+
+@main.route('/collection')
+def collection():
+    return render_template("MusiCrashTemplates/collectionLists.html", async_mode=socketio.async_mode)
 
 @main.route('/testinfo')
 def testinfo():
