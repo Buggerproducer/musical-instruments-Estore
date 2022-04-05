@@ -13,7 +13,7 @@ console.log(idArray);
 $(document).ready(
     function () {
     var list = document.getElementById('communication');
-    realtime.createIMClient(c_user).then(async function (user) {
+    realtime.createIMClient('lvjunyi').then(async function (user) {
         var query = user.getQuery();
         //query.containedIn('m', [c_user.id]);
         query.find().then(function (conversations) {
@@ -45,15 +45,40 @@ $(document).ready(
         }).catch(console.error.bind(console));
         if(conversation_id!=1){
             console.log(conversation_id);
+            var chat = document.getElementById("chat");
             user.getConversation(conversation_id).then(function(conversation) {
                 console.log(conversation.id);
                 conversation.queryMessages({
                     limit: 30, // limit 取值范围 1~100，默认 20
                 }).then(function(messages) {
                     for(var i = 0;i<messages.length;i++){
-                    console.log(messages[i].content['_lctext']);
-
-                }
+                        console.log(messages[i].from);
+                        var li = document.createElement("li");
+                        var div1 = document.createElement("div");
+                        var span1 = document.createElement("span");
+                        var span2 = document.createElement("span");
+                        var ii = document.createElement("i");
+                        var div2 = document.createElement("div");
+                        if(messages[i].from=='lvjunyi'){
+                            li.className = "clearfix";
+                            div1.className= "message-data align_right";
+                            span1.className = "message-data-time";
+                            span2.className = "message-data-name";
+                            div2.className = "message other-message float-right";
+                        }
+                        else{
+                            div1.className = "message-data";
+                            span1.className = "message-data-name";
+                            span2.className = "message-data-time";
+                            div2.className = "message my-message";
+                        }
+                        div2.innerText = messages[i].content['_lctext'];
+                        chat.appendChild(li);
+                        li.appendChild(div1);
+                        div1.appendChild(span1);
+                        div1.appendChild(span2);
+                        li.appendChild(div2);
+                    }
                 console.log(messages)
                 // 最新的十条消息，按时间增序排列
                 }).catch(console.error.bind(console));
