@@ -133,14 +133,13 @@ def staff_chat():
 
 
 # 顾客聊天页面
-@main.route('/communicateA')
-def communicateA():
+@main.route('/communicate')
+def communicate():
     return render_template("test_communication_A.html")
 
 
 @main.route('/conversation/<conversation_id>')
 def conversation(conversation_id):
-    print(conversation_id)
     return render_template("test_communication_A.html", conversation_id=conversation_id)
 
 # @main.route('/grotrian')
