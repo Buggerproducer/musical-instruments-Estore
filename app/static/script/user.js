@@ -4,15 +4,38 @@ AV.init({
 });
 
 $(document).ready(
-    function change(){
-      const current_user = AV.User.current();
-      document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
+    function change_profile(){
+        const current_user = AV.User.current();
+        document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
         console.log(sessionStorage.getItem('authenticated'))
-
       //document.getElementById('username2').innerText=current_user.getUsername();
 });
 
 
+$(document).ready(
+    function change_index(){
+        const current_user = AV.User.current();
+        //document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
+        console.log(sessionStorage.getItem('authenticated'))
+        checkIsOperation().then(res=>{
+            if(res){
+                var oplist = document.getElementById('user-operation');
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                var span = document.createElement("span");
+                var span1 = document.createElement("span");
+                a.href = '/staff_index';
+                span.className = "sn-title-menu";
+                span1.className = "dsn-meta-menu";
+                span.innerText = "Administrator";
+                oplist.appendChild(li);
+                li.appendChild(a);
+                a.appendChild(span);
+                a.appendChild(span1);
+            }
+        })
+      //document.getElementById('username2').innerText=current_user.getUsername();
+});
 
 function testConnect() {
   const TestObject = AV.Object.extend('TestObject');
