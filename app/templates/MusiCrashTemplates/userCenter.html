@@ -21,11 +21,15 @@ User Center
 
             <!-- Slider 1 -->
             <div class="testi">
-              <div class="avatar"> <img src="../../static/image/sebian_imgs/avatars/avatar-4.png" alt=""> </div>
-              <p>Add your personal statement</p>
+<!--              <div class="avatar"> <img src="../../static/image/sebian_imgs/avatars/avatar-4.png" alt=""> </div>-->
+<!--              <p>Add your personal statement</p>-->
               <hr>
               <h6>Welcome To MusiCrush</h6>
-              <p>1st March 2022</p>
+              <p id = 'date'></p>
+                            <script>
+                var myDate = new Date();
+                $('#date').text( myDate.toLocaleDateString());
+              </script>
               <p><u>
                  <a href="{{ url_for('main.testinfo') }}" class="effect-ajax antiquewhite-font " ><u><span class="text-decoration-underline">Manage Your Personal Information</span></u></a>
               </u></p>
@@ -48,7 +52,7 @@ User Center
                 <div class="after-bg p-absolute w-100 h-100 cover-bg antiquewhite" data-image-src="../../static/img/pattern.png"></div>
                 <div class="icon"><img src="../../static/img/services/graph.svg" alt=""></div>
                 <div class="content background-transparent"><span class="theme-color">01</span>
-                  <h4 class="title-block "><a href="{{ url_for("main.collection") }}">Bag</a></h4>
+                  <h4 class="title-block "><a href="{{ url_for("main.collection") }}">Collections</a></h4>
                   <p>Here is for what you have collected</p>
                 </div>
               </div>
