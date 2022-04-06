@@ -56,11 +56,12 @@
 {#                        <!-- Image -->#}
 {#                        <div class="img"> <img src="{{ collection.image }}" alt=""> </div>#}
 {#                      </div>#}
-{#                      <div class="col-sm-8">#}
-{#                        <div class="details-sec"> <a href="#.">{{ collection.name}}</a> <span class="font-montserrat">{{ collection.price }} USD</span> </div>#}
+{#                      <div class="col-sm-8">#} {# 商品价格 #}
+{#                        <div class="details-sec"> <a href="#.">Price</a> <span class="font-montserrat">{{ collection.price }} USD</span> </div>#}
 {#                        <!-- Rating Stars -->#}
-{#                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>#}
-{#                        <p>{{ collection.description }}</p>#}
+                          {# 收藏商品名称 #}
+{#                        <p>{{ collection.name }}</p>#}
+                          {# 跳转到收藏商品详情页 #}
 {#                        <a href="{{ collection.detail }}" class="btn btn-small btn-dark">More</a> </div>#}
 {#                    </div>#}
 {#                  </div>#}
@@ -76,12 +77,16 @@
                         <div class="img"> <img src="../../static/image/sebian_imgs/new-item-1.jpg" alt=""> </div>
                       </div>
                       <div class="col-sm-8">
-                        <div class="details-sec"> <a href="#.">Product Name</a> <span class="font-montserrat">XXX.XX USD</span> </div>
+                        <div class="details-sec"> <a href="#.">Price</a> <span class="font-montserrat">XXX.XX USD</span> </div>
                         <!-- Rating Stars -->
                         <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
-                        <a href="#." class="btn btn-small btn-dark">More</a> </div>
-                    </div>
+                        <div class="row">
+                            <a href="#." class="btn btn-small btn-dark">More</a>
+                            <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>
+                        </div>
+                      </div>
+                      </div>
                   </div>
                 </li>
 
