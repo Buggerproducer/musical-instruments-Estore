@@ -93,3 +93,73 @@ function updateEnglishProduct(product,title,description,detail){
     product.get('detail').set('englishHTML',detail);
     product.save();
 }
+
+function setProductCover(product_id,resultFiles){
+    const file = new AV.File(resultFiles[0].name, resultFiles[0]);
+    file.save().then((file) => {
+        // insertImgFn(file.get("url"))
+        const product=new AV.Object.createWithoutData('Product',product_id)
+        console.log('emmmm')
+        product.set('cover',file)
+        product.save().then(()=>{
+            console.log('success!!!')
+        })
+    }, (error) => {
+        // 保存失败，可能是文件无法被读取，或者上传过程中出现问题
+    });
+}
+
+function setProductCategory(product_id,categories){
+    getCategoryByProduct(product_id,function (maps) {
+        AV.Object.destroyAll(maps).then(
+          function (deletedObjects) {
+              const l=[]
+              categories.forEach(function (c,i,a) {
+                    const map=new AV.Object("ProductCategoryMap")
+                    const product = AV.Object.createWithoutData('Product', product_id);
+                    const category = AV.Object.createWithoutData('ProductCategory', c);
+                    map.set("category",category)
+                    map.set("product",product)
+                  l.push(map)
+              })
+              AV.Object.saveAll(l).then(
+                  function (savedObjects) {
+                    // 成功保存所有对象时进入此 resolve 函数，savedObjects 是包含所有 AV.Object 的数组
+                      console.log("success!!")
+                  },
+                  function (error) {
+                    // 只要有一个对象保存错误就会进入此 reject 函数
+                  }
+                );
+
+          },
+          function (error) {
+            // 只要有一个对象删除错误就会进入此 reject 函数
+          }
+    );
+    })
+
+}
+
+
+function getCategoryByProduct(product_id,onSuccess){
+    const product = AV.Object.createWithoutData('Product', product_id);
+
+    // 构建 StudentCourseMap 的查询
+    const query = new AV.Query('ProductCategoryMap');
+
+    // 查询所有选择了线性代数的学生
+    query.equalTo('product', product);
+
+    // 执行查询
+    query.find().then(function (maps) {
+        // studentCourseMaps 是所有 course 等于线性代数的选课对象
+        // 然后遍历过程中可以访问每一个选课对象的 student,course,duration,platform 等属性
+        // maps.forEach(function (scm, i, a) {
+        //     const student = scm.get('student');
+        //     const duration = scm.get('duration');
+        //     const platform = scm.get('platform');
+        // });
+        onSuccess(maps)
+    });
+}

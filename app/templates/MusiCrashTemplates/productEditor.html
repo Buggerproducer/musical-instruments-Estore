@@ -19,7 +19,39 @@
     <script src="{{ url_for('static',filename='script/wangEditor_revise.min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/user.js') }}"></script>
     <script src="{{ url_for('static',filename='js/product.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static',filename='style/bootstrap-icons.css') }}">
+    <link href="{{ url_for('static',filename='staff_index/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" type="text/css">
+    <style>
+        .cLabel{
+            font-size: 10px;
+            margin: 10px;
+            padding: 2px 10px;
+            background: rgba(255, 255, 255, 0);
+            border-radius: 50px;
+            border: white 2.5px solid;
+            transition: 0.2s;
+        }
+
+        .cLabel:hover{
+            background: white;
+            color: red;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .cLabel:active {
+          transform: translateY(4px);
+        }
+
+        .cLabel.choose {
+            background: white;
+            color: red;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+          transform: translateY(2px);
+        }
+
+        .cLabel:after {
+            border: transparent;
+        }
+    </style>
 {% endblock %}
 
 
@@ -43,7 +75,8 @@
                         <div class="col-6">
                          <div class="form-group">
                         <div class="entry">
-                            <input type='text' name='textfield' id='textfield'  />
+{#                            <input type='text' name='textfield' id='textfield'  />#}
+                            <img id="cover" src="" alt="no cover" width="150" height="150">
                         <div class="help-block with-errors"></div>
                         </div>
                     </div>
@@ -52,9 +85,9 @@
                       <div class="col-6">
                       <div class="text-center">
                         <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-                            <input type='button' class='btn darkgray-font' value='Browse' />
-                            <input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
-                            <input type="submit" name="submit" class="btn darkgary-font margin-left-5" value="Upload" />
+{#                            <input type='button' class='btn darkgray-font' value='Browse' />#}
+                            <input type="file" name="fileField" class="file btn darkgray-font" id="fileField" onchange="windowURL = window.URL || window.webkitURL;const dataURL = windowURL.createObjectURL(this.files[0]);$('#cover').attr('src', dataURL);console.log(dataURL)" />
+{#                            <input type="submit" name="submit" class="btn darkgary-font margin-left-5" value="Upload" />#}
                         </div>
                       </div>
                     </div>
@@ -69,15 +102,15 @@
                 </div>
             </div>
 {#            标签部分#}
-              <div class="form-group text-center">
+              <div id="category" class="form-group text-center">
                      <h4>Labels </h4>
-                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
-                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
-                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
-                        <!--{% for label in labels %}
-                              <span class="label label-info background-antiquewhite background-boarder margin-left-4">{{ label.labelname }}<span><button><i class="bi bi-file-earmark-x background-navajowhite background-boarder"></i></button></span></span>
+{#                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>#}
+{#                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>#}
+{#                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>#}
+                        {% for label in labels %}
+                              <button id="{{ label.id }}" class="cLabel" onclick="if(this.classList.contains('choose')){this.classList.remove('choose')}else{this.classList.add('choose')}">{{ label.get('title').get('english') }}</button>
                         {% endfor %}
-                        -->
+
                 </div>
             </div>
           <div id="editor" style="margin: 20px"></div>

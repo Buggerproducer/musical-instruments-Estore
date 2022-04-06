@@ -71,18 +71,28 @@ def testCommunicationB():
     return render_template("test_communication_B.html")
 
 
-@testRoute.route('/producteditor')
-def testProductEditor():
-    return render_template("MusiCrashTemplates/productEditor.html")
+
 
 @testRoute.route('/orderList')
 def testOrderList():
     return render_template("MusiCrashTemplates/orderList.html")
 
 
+
+
+@testRoute.route('/producteditor')
+def testProductEditor():
+    labels=product.getAllCategory()
+    return render_template("MusiCrashTemplates/productEditor.html",labels=labels)
+
+
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
-    return render_template("MusiCrashTemplates/productEditor.html", product_id=id,labels=[{'labelname':'1'},{'labelname':'2'}])
+    labels = product.getAllCategory()
+    return render_template("MusiCrashTemplates/productEditor.html", product_id=id,labels=labels)
+
+
+
 
 # @main.route('/grotrian')
 # def grotrian():
