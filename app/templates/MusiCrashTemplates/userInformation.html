@@ -4,6 +4,10 @@
 Information of Your
 {% endblock %}
 
+{% block sebian_css %}
+{{ super() }}
+{% endblock %}
+
 {% block content %}
     <section class="testimonial" data-stellar-background-ratio="0.7" style="background-image: url('../../static/image/histroy_view1.jpg'); background-repeat: no-repeat; background-position-x: center; background-position-y: center">
       <div class="section-p-60px overlay">
@@ -52,4 +56,8 @@ Information of Your
 </script>
 
 
+{% endblock %}
+
+{% block sebian_script %}
+{{ super() }}
 {% endblock %}

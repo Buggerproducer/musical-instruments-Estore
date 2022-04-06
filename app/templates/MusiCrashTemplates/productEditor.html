@@ -9,6 +9,10 @@
     Product Editor
 {% endblock %}
 
+{% block sebian_css %}
+{{ super() }}
+{% endblock %}
+
 {% block extra_head_script %}
     <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/wangEditor_revise.min.js') }}"></script>
@@ -89,6 +93,10 @@
       </div>
       </div>
 
+{% endblock %}
+
+{% block sebian_script %}
+{{ super() }}
 {% endblock %}
 
 {% block scirpt %}
