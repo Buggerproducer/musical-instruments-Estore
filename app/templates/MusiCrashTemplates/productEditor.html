@@ -14,11 +14,12 @@
 {% endblock %}
 
 {% block extra_head_script %}
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/wangEditor_revise.min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/user.js') }}"></script>
     <script src="{{ url_for('static',filename='js/product.js') }}"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style/bootstrap-icons.css') }}">
 {% endblock %}
 
 
@@ -92,15 +93,7 @@
         </div>
       </div>
       </div>
-
-{% endblock %}
-
-{% block sebian_script %}
-{{ super() }}
-{% endblock %}
-
-{% block scirpt %}
-    <script src="{{ url_for('static',filename='script/productEditor.js') }}"></script>
+        <script src="{{ url_for('static',filename='script/productEditor.js') }}"></script>
     <script>
         let id=document.getElementsByTagName('meta')['product_id'].content
         if(id!=='') {
@@ -109,6 +102,15 @@
             })
         }
     </script>
+
+{% endblock %}
+
+{% block sebian_script %}
+{{ super() }}
+{% endblock %}
+
+{% block scirpt %}
+
 
 
 {% endblock %}

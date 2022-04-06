@@ -82,7 +82,7 @@ def testOrderList():
 
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
-    return render_template("MusiCrashTemplates/productEditor.html", product_id=id)
+    return render_template("MusiCrashTemplates/productEditor.html", product_id=id,labels=[{'labelname':'1'},{'labelname':'2'}])
 
 # @main.route('/grotrian')
 # def grotrian():
