@@ -14,7 +14,7 @@
     <script src="{{ url_for('static',filename='script/wangEditor_revise.min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/user.js') }}"></script>
     <script src="{{ url_for('static',filename='js/product.js') }}"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="{{ url_for('static',filename='staff_index/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" type="text/css">
 {% endblock %}
 
 
@@ -66,6 +66,12 @@
 {#            标签部分#}
               <div class="form-group text-center">
                      <h4>Labels </h4>
+                        <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                            </svg>
+                        </button></span></span>
+
                         <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
                         <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
                         <span class="label label-info background-antiquewhite background-boarder margin-left-4">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>
