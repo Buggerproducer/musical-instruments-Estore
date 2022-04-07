@@ -5,6 +5,10 @@
 Modify Information
 {% endblock %}
 
+{% block sebian_css %}
+{{ super() }}
+{% endblock %}
+
 {% block content %}
 <div class="container section-margin b">
     <div class="row ackground-f2f2f2">
@@ -70,4 +74,7 @@ Modify Information
           </div>
         </div>
 </div>
+{% endblock %}
+{% block sebian_script %}
+{{ super() }}
 {% endblock %}

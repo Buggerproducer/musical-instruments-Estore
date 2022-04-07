@@ -8,7 +8,7 @@ from .forms import LoginForm
 from threading import Lock
 from functools import wraps
 from leancloud import cloud
-from ..utils import product
+from ..utils import product, user
 
 # leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
@@ -20,7 +20,7 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get('authenticated') is None or session.get('authenticated') is False:
-            return redirect(url_for("main.index"))
+            return redirect(url_for("main.signUp"))
         return f(*args, **kwargs)
     return decorated_function
 
@@ -137,14 +137,21 @@ def backend_data():
 def staff_index():
     return render_template("staff_index.html")
 
+# 后台页面展示商品订单
+@main.route('/orderList/<user_id>')
+@login_required
+def testOrderList(user_id):
+    orders = user.getOrderByUser(user_id)
+    return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
 
-# 后台页面显示消息
+
+# 后台页面显示chat消息
 @main.route('/staff_chat')
 def staff_chat():
     return render_template("staff_chat.html")
 
 
-# 顾客聊天页面
+# 顾客聊天页面弹窗
 @main.route('/communicate')
 @login_required
 def communicate():

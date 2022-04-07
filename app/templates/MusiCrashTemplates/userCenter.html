@@ -5,6 +5,10 @@
 User Center
 {% endblock %}
 
+{% block sebian_css %}
+{{ super() }}
+{% endblock %}
+
 {% block content %}
     <section class="testimonial" data-stellar-background-ratio="0.7" style="background-image: url('../../static/image/histroy_view1.jpg'); background-repeat: no-repeat; background-position-x: center; background-position-y: center">
       <div class="section-p-60px overlay">
@@ -52,7 +56,7 @@ User Center
                 <div class="after-bg p-absolute w-100 h-100 cover-bg antiquewhite" data-image-src="../../static/img/pattern.png"></div>
                 <div class="icon"><img src="../../static/img/services/graph.svg" alt=""></div>
                 <div class="content background-transparent"><span class="theme-color">01</span>
-                  <h4 class="title-block "><a href="{{ url_for("main.collection") }}">Collections</a></h4>
+                  <h4 class="title-block "><a href="{{ url_for('main.collection') }}">Collections</a></h4>
                   <p>Here is for what you have collected</p>
                 </div>
               </div>
@@ -62,7 +66,7 @@ User Center
                 <div class="after-bg p-absolute w-100 h-100 cover-bg" data-image-src="../../static/img/pattern.png"></div>
                 <div class="icon"><img src="../../static/img/services/layout.svg" alt=""></div>
                 <div class="content background-transparent"><span class="theme-color">02</span>
-                    <h4 class="title-block"><a href="{{ url_for("main.history_order") }}">Orders</a></h4>
+                    <h4 class="title-block"><a href="javascript:void(0)" onclick="orderlist()">Orders</a></h4>
                   <p>Here is for what you have bought</p>
                 </div>
               </div>
@@ -197,4 +201,8 @@ User Center
 
 </script>
 
+{% endblock %}
+
+{% block sebian_script %}
+{{ super() }}
 {% endblock %}

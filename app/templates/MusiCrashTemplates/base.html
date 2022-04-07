@@ -28,6 +28,7 @@
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
+  {% block sebian_css %}
   <!--MAIN STYLE-->
   <link href="../../static/style/main_css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="../../static/style/sebian_css/main.css" rel="stylesheet" type="text/css">
@@ -36,12 +37,17 @@
   <link href="../../static/style/sebian_css/animate.css" rel="stylesheet" type="text/css">
   <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
   <link href="../../static/style/sebian_css/custom.css" rel="stylesheet" type="text/css">
+  {% endblock %}
 
   <script src="../../static/script/jquery.js"></script>
   <script src="../../static/js/jquery-3.1.1.min.js"></script>
   <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
   <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
   <script src="../../static/script/user.js"></script>
+
+  {% block css %}
+  {% endblock %}
+
   {% block extra_head_script %}
   {% endblock %}
   <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
@@ -225,10 +231,14 @@
 </div>
 <!-- 导航栏结束 -->
 <main class="main-root">
+  {% block content1 %}
+  {% endblock %}
     <div id="dsn-scrollbar">
     {% block content %}
     {% endblock %}
     <footer class="footer-1 p-relative background-section">
+      {% block footer_inside %}
+      {% endblock %}
       <div class="footer-nav">
         <div class="container">
           <ul>
@@ -282,11 +292,13 @@
   </div>
 </div>
 
-
+{% block sebian_script %}
 <script src="../../static/js/sebian_js/wow.min.js"></script>
 <script src="../../static/js/sebian_js/bootstrap.min.js"></script>
 <script src="../../static/js/sebian_js/own-menu.js"></script>
 <script src="../../static/js/sebian_js/main.js"></script>
+{% endblock %}
+<script src="../../static/js/jquery.min.js"></script>
 <script src="../../static/js/plugins.js"></script>
 <script src="../../static/js/dsn-grid.js"></script>
 <script src="../../static/js/custom.js"></script>
