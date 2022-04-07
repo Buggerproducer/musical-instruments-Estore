@@ -48,148 +48,148 @@
             <div class="popurlar_product list-style animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
               <ul>
                   <!--循环部分-->
-{#                  {% for order in order_list %}#}
-{#                      <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">#}
-{#                      <div class="items-in">#}
-{#                        <div class="row">#}
-{#                          <div class="col-sm-4">#}
-{#                            <!-- Image -->#}
-{#                            <div class="img"> <img src="../../static/image/sebian_imgs/new-item-1.jpg" alt=""> </div>#}
-{#                          </div>#}
-{#                          <div class="col-sm-8">#}
-{#                            <div class="row">#}
-{#                                <div class="details-sec col-sm-6"> <a href="#">Price</a><span class="font-montserrat">{{ order.price }} USD</span> </div>#}
-{#                                <div class="details-sec col-sm-6"> {{ order.date }}<br><br>order-id: {{ order.id }} </div>#}
-{#    #}
-{#                            </div>#}
-{#    #}
-{#                            <!-- Rating Stars -->#}
-{#                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>#}
-    {#                          这部分是商品名称#}
-{#                            <p>{{ order.prodcut }}</p>#}
-{#                            <div class="row">#}
-{#                                <div class="details-sec col-sm-6"></div>#}
-{#                                <div class="details-sec col-sm-6 font-playfair"> Status: {{ order.status }}</div>#}
-{#                            </div>#}
-{#                            <div class="row">#}
-{#                                <a href="#." class="btn btn-small btn-dark">More</a>#}
-{#                                <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                      </div>#}
-{#                      </div>#}
-{#                    </li>#}
-{#                  {% endfor %}#}
-                <!--以下li标签仅作展示作用，对接完成后删除-->
-                <!-- Products List -->
-                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                  <div class="items-in">
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <!-- Image -->
-                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-1.jpg" alt=""> </div>
-                      </div>
-                      <div class="col-sm-8">
+                  {% for order in order_list %}
+                      <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                      <div class="items-in">
                         <div class="row">
-                            <div class="details-sec col-sm-6"> <a href="#.">Price</a><span class="font-montserrat">XXX.XX USD</span> </div>
-                            <div class="details-sec col-sm-6"> 2022-04-03<br><br>order-id: 2550468999552747417 </div>
+                          <div class="col-sm-4">
+                            <!-- Image -->
+                            <div class="img"> <img src="{{ order.get('product').get('cover').url }}" alt=""> </div>
+                          </div>
+                          <div class="col-sm-8">
+                            <div class="row">
+                                <div class="details-sec col-sm-6"> <a href="#">Price</a><span class="font-montserrat">{{ order.get('price').get('dollar') }} USD</span> </div>
+                                <div class="details-sec col-sm-6"> {{ order.get('createdAt') }}<br><br>order-id: {{ order.id }} </div>
 
+                            </div>
+
+                            <!-- Rating Stars -->
+                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+<!--                              这部分是商品名称-->
+                            <p>{{ order.get('product').get('title').english }}</p>
+                            <div class="row">
+                                <div class="details-sec col-sm-6"></div>
+                                <div class="details-sec col-sm-6 font-playfair"> Status: {{ order.status }}</div>
+                            </div>
+                            <div class="row">
+                                <a href="#." class="btn btn-small btn-dark">More</a>
+                                <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>
+                            </div>
                         </div>
-
-                        <!-- Rating Stars -->
-                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-{#                          这部分是商品名称#}
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
-                        <div class="row">
-                            <div class="details-sec col-sm-6"></div>
-                            <div class="details-sec col-sm-6 font-playfair"> Status: Completed</div>
-                        </div>
-                        <div class="row">
-                            <a href="#." class="btn btn-small btn-dark">More</a>
-                            <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>
-                        </div>
-                    </div>
-                  </div>
-                  </div>
-                </li>
-
-                <!-- Products List -->
-                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                  <div class="items-in">
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <!-- Image -->
-                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-2.jpg" alt=""> </div>
                       </div>
-                      <div class="col-sm-8">
-                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>
-                        <!-- Rating Stars -->
-                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
-                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>
-                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>
-                    </div>
-                  </div>
-                </li>
-
-                <!-- Products List -->
-                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                  <div class="items-in">
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <!-- Image -->
-                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-3.jpg" alt=""> </div>
                       </div>
-                      <div class="col-sm-8">
-                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>
-                        <!-- Rating Stars -->
-                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
-                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>
-                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>
-                    </div>
-                  </div>
-                </li>
+                    </li>
+                  {% endfor %}
+<!--                &lt;!&ndash;以下li标签仅作展示作用，对接完成后删除&ndash;&gt;-->
+<!--                &lt;!&ndash; Products List &ndash;&gt;-->
+<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
+<!--                  <div class="items-in">-->
+<!--                    <div class="row">-->
+<!--                      <div class="col-sm-4">-->
+<!--                        &lt;!&ndash; Image &ndash;&gt;-->
+<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-1.jpg" alt=""> </div>-->
+<!--                      </div>-->
+<!--                      <div class="col-sm-8">-->
+<!--                        <div class="row">-->
+<!--                            <div class="details-sec col-sm-6"> <a href="#.">Price</a><span class="font-montserrat">XXX.XX USD</span> </div>-->
+<!--                            <div class="details-sec col-sm-6"> 2022-04-03<br><br>order-id: 2550468999552747417 </div>-->
 
-                <!-- Products List -->
-                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                  <div class="items-in">
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <!-- Image -->
-                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-4.jpg" alt=""> </div>
-                      </div>
-                      <div class="col-sm-8">
-                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>
-                        <!-- Rating Stars -->
-                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
-                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>
-                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>
-                    </div>
-                  </div>
-                </li>
+<!--                        </div>-->
 
-                <!-- Products List -->
-                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                  <div class="items-in">
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <!-- Image -->
-                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-5.jpg" alt=""> </div>
-                      </div>
-                      <div class="col-sm-8">
-                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>
-                        <!-- Rating Stars -->
-                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
-                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>
-                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
+<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>-->
+<!--{#                          这部分是商品名称#}-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
+<!--                        <div class="row">-->
+<!--                            <div class="details-sec col-sm-6"></div>-->
+<!--                            <div class="details-sec col-sm-6 font-playfair"> Status: Completed</div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <a href="#." class="btn btn-small btn-dark">More</a>-->
+<!--                            <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  </div>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; Products List &ndash;&gt;-->
+<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
+<!--                  <div class="items-in">-->
+<!--                    <div class="row">-->
+<!--                      <div class="col-sm-4">-->
+<!--                        &lt;!&ndash; Image &ndash;&gt;-->
+<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-2.jpg" alt=""> </div>-->
+<!--                      </div>-->
+<!--                      <div class="col-sm-8">-->
+<!--                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>-->
+<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
+<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
+<!--                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>-->
+<!--                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; Products List &ndash;&gt;-->
+<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
+<!--                  <div class="items-in">-->
+<!--                    <div class="row">-->
+<!--                      <div class="col-sm-4">-->
+<!--                        &lt;!&ndash; Image &ndash;&gt;-->
+<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-3.jpg" alt=""> </div>-->
+<!--                      </div>-->
+<!--                      <div class="col-sm-8">-->
+<!--                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>-->
+<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
+<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
+<!--                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>-->
+<!--                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; Products List &ndash;&gt;-->
+<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
+<!--                  <div class="items-in">-->
+<!--                    <div class="row">-->
+<!--                      <div class="col-sm-4">-->
+<!--                        &lt;!&ndash; Image &ndash;&gt;-->
+<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-4.jpg" alt=""> </div>-->
+<!--                      </div>-->
+<!--                      <div class="col-sm-8">-->
+<!--                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>-->
+<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
+<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
+<!--                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>-->
+<!--                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; Products List &ndash;&gt;-->
+<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
+<!--                  <div class="items-in">-->
+<!--                    <div class="row">-->
+<!--                      <div class="col-sm-4">-->
+<!--                        &lt;!&ndash; Image &ndash;&gt;-->
+<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-5.jpg" alt=""> </div>-->
+<!--                      </div>-->
+<!--                      <div class="col-sm-8">-->
+<!--                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>-->
+<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
+<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
+<!--                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>-->
+<!--                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
 
             <!--======= PAGINATION =========-->
             <ul class="pagination animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">

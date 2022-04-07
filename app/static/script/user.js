@@ -178,6 +178,9 @@ function reset(email) {
       document.getElementById('result').innerText='email has been sent';
 }
 
+function orderlist() {
+    window.location.href = '/orderList/'+AV.User.current().id
+}
 
 async function checkIsOperation() {
     roles=await AV.User.current().getRoles()
