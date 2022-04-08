@@ -597,9 +597,7 @@
         <!-- 导航栏左边的logo -->
         <div class="inner-header p-relative">
             <div class="main-logo"><a href="index.html" data-dsn="parallax">
-                <img class="dark-logo"
-                     src="{{ url_for('static', filename='img/logo-dark.png') }}"
-                     alt=""/>
+
                 <!--                    <img class="light-logo"-->
                 <!--                                                                                                  src="{{ url_for('static', filename='img/logo.png') }}"-->
                 <!--                                                                                                  alt=""/>-->
@@ -741,8 +739,7 @@
                         <p class="title-line">Contact</p>
                         <p class="links over-hidden"><a href="#" data-hover-text="+00 (2)012 3321"
                                                         class="link-hover">+00(2)012 3321</a></p>
-                        <p class="links  over-hidden"><a href="#" data-hover-text="info@dsngrid.com"
-                                                         class="link-hover">info@dsngrid.com</a></p>
+                        <p class="links  over-hidden"><a href="#" data-hover-text="musicrash1974@gmail.com" class="link-hover">musicrash1974@gmail.com</a></p>
                     </div>
                 </div>
 
@@ -795,7 +792,7 @@
             <div class="navbar-row">
                 <div class="navbar-logo">
                     <a class="brand" href="https://www.lyonhealy.com/">
-                        <img src="../static/img/logo.png" style="height: 50px">
+                        <a href="{{ url_for('main.index') }}"><img src="../static/img/logo.png" style="height: 50px"></a>
 <!--                        <img class="logo logo-mobile"-->
 <!--                             srcset="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-1x.png 1x,  https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-2x.png 2x"-->
 <!--                             src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-1x.png"-->
@@ -810,7 +807,7 @@
                     <section id="custom_post_widget-4" class="widget widget_custom_post_widget">
                         <div class="inner-section">
                             <div class="inside-header">
-                                <a style="display: inline" class="header-el factory-el" href="/lyon-healy-harps/harps-maker-company-history/">
+                                <a style="display: inline" class="header-el factory-el" href="{{ url_for('main.index') }}">
                                     Welcome to MusiCrash
 <!--                                    <img class="header-img"-->
 <!--                                         src="https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-1x.png"-->
@@ -1892,7 +1889,7 @@
             <div class="text-center">
                 <p>© 2022 MusiCrash</p>
                 <div class="copright-text over-hidden">Designed by <a class="link-hover"
-                                                                      data-hover-text="DSN Grid" href="#"
+                                                                      data-hover-text="MusiCrash" href="{{ url_for('main.index') }}"
                                                                       target="_blank">MusiCrash</a></div>
             </div>
         </div>
