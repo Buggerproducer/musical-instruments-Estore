@@ -8,7 +8,7 @@ from .forms import LoginForm
 from threading import Lock
 from functools import wraps
 from leancloud import cloud
-from ..utils import product
+from ..utils import product, user
 
 # leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
@@ -137,11 +137,12 @@ def backend_data():
 def staff_index():
     return render_template("staff_index.html")
 
-
 # 后台页面展示商品订单
-@main.route('/orderList')
-def testOrderList():
-    return render_template("orderList.html")
+@main.route('/orderList/<user_id>')
+@login_required
+def testOrderList(user_id):
+    orders = user.getOrderByUser(user_id)
+    return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
 
 
 # 后台页面显示商品列表
@@ -151,7 +152,7 @@ def testProductList():
 
 
 # 顾客聊天页面弹窗
-@main.route('/communicate')
+@main.route('/communicate/1')
 @login_required
 def communicate():
     return render_template("test_communication_A.html")
