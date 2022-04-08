@@ -137,15 +137,16 @@ def backend_data():
 def staff_index():
     return render_template("staff_index.html")
 
+
 # 后台页面展示商品订单
 @main.route('/orderList')
 def testOrderList():
-    return render_template("MusiCrashTemplates/orderList.html")
+    return render_template("orderList.html")
 
 
-# 后台页面显示chat消息
-@main.route('/staff_chat')
-def staff_chat():
+# 后台页面显示商品列表
+@main.route('/productList')
+def testProductList():
     return render_template("staff_chat.html")
 
 
