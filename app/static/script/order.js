@@ -14,7 +14,7 @@ function MakeOrder(obj){
   let status = "delivering";
 order.set('price',price);
 order.set('status',status);
-order.set('title',title);
+order.set('product',title);
 order.set('user',currentUser);
     order.save().then((order) => {
   console.log('保存成功。objectId：'+order.getObjectId());

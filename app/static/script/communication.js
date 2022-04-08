@@ -8,12 +8,12 @@ const user_name = AV.User.current().get('username');
 
 var idArray = window.location.href.split("/");
 var conversation_id = idArray[4];
-console.log(idArray);
+console.log(conversation_id);
 
 $(document).ready(
     function () {
     var list = document.getElementById('communication');
-    realtime.createIMClient('lvjunyi').then(async function (user) {
+    realtime.createIMClient(c_user).then(async function (user) {
         var query = user.getQuery();
         //query.containedIn('m', [c_user.id]);
         query.find().then(function (conversations) {
@@ -44,7 +44,7 @@ $(document).ready(
                 div3.appendChild(i);
             }
         }).catch(console.error.bind(console));
-        if(conversation_id!=1){
+        if(conversation_id!='1'){
             console.log(conversation_id);
             var chat = document.getElementById("chat");
             //var { MessageQueryDirection } = require('leancloud-realtime');
@@ -62,7 +62,7 @@ $(document).ready(
                         var span2 = document.createElement("span");
                         var ii = document.createElement("i");
                         var div2 = document.createElement("div");
-                        if(messages[i].from=='lvjunyi'){
+                        if(messages[i].from==c_user.id){
                             li.className = "clearfix";
                             div1.className= "message-data align-right";
                             span1.className = "message-data-time";
@@ -70,7 +70,12 @@ $(document).ready(
                             ii.className = "fa fa-circle me"
                             div2.className = "message other-message float-right";
                             span1.innerText = messages[i]._timestamp+" ";
-                            span2.innerText = messages[i].from+" ";
+                            if(c_user.id!='622431dd6f77474716d8351c'){
+                                span2.innerText = conversation.name+" ";
+                            }
+                            else{
+                                span2.innerText = "Staff ";
+                            }
                             span2.appendChild(ii);
                         }
                         else{
@@ -80,7 +85,12 @@ $(document).ready(
                             ii.className = "fa fa-circle online"
                             div2.className = "message my-message";
                             span1.appendChild(ii)
-                            span1.append(" "+messages[i].from);
+                            if(c_user.id!='622431dd6f77474716d8351c'){
+                                span1.append(" Staff")
+                            }
+                            else{
+                                span1.append(" "+conversation.name);
+                            }
                             //span1.innerText =
                             span2.innerText = messages[i]._timestamp;
 
