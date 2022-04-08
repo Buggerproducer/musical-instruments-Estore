@@ -8,12 +8,12 @@ const user_name = AV.User.current().get('username');
 
 var idArray = window.location.href.split("/");
 var conversation_id = idArray[4];
-console.log(idArray);
+console.log(conversation_id);
 
 $(document).ready(
     function () {
     var list = document.getElementById('communication');
-    realtime.createIMClient('lvjunyi').then(async function (user) {
+    realtime.createIMClient(c_user).then(async function (user) {
         var query = user.getQuery();
         //query.containedIn('m', [c_user.id]);
         query.find().then(function (conversations) {
@@ -44,7 +44,7 @@ $(document).ready(
                 div3.appendChild(i);
             }
         }).catch(console.error.bind(console));
-        if(conversation_id!=1){
+        if(conversation_id!='1'){
             console.log(conversation_id);
             var chat = document.getElementById("chat");
             //var { MessageQueryDirection } = require('leancloud-realtime');
@@ -80,7 +80,7 @@ $(document).ready(
                             ii.className = "fa fa-circle online"
                             div2.className = "message my-message";
                             span1.appendChild(ii)
-                            span1.append(" "+messages[i].from);
+                            span1.append(" "+conversation.name);
                             //span1.innerText =
                             span2.innerText = messages[i]._timestamp;
 

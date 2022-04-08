@@ -223,12 +223,36 @@ function sendMessage(){
     //let username = $('#people').val();
     let message = $('#input').val();
 
-    realtime.createIMClient("lvjunyi").then(function(user) {
-        user.getConversation(conversation_id).then(function(conversation) {
+    if(conversation_id=='622431dd6f77474716d8351c'){
+        realtime.createIMClient('622431dd6f77474716d8351c').then(function(user) {
+            user.getConversation(conversation_id).then(function(conversation) {
             console.log(conversation.id);
             return conversation.send(new TextMessage(message));
+            }).catch(console.error.bind(console));
         }).catch(console.error.bind(console));
-    }).catch(console.error.bind(console));
+    }
+    else if(conversation_id!='1'){
+        realtime.createIMClient(c_user).then(function(user) {
+            user.getConversation(conversation_id).then(function(conversation) {
+            console.log(conversation.id);
+            return conversation.send(new TextMessage(message));
+            }).catch(console.error.bind(console));
+        }).catch(console.error.bind(console));
+    }
+    else{
+        realtime.createIMClient(c_user).then(function(user) {
+            return user.createConversation({
+				members: ['622431dd6f77474716d8351c'],
+				name: user_name,
+				unique: true
+            });
+        }).then(function(conversation) {
+			  // 发送消息
+            return conversation.send(new TextMessage(message));
+        }).then(function(message) {
+            console.log(message.text, '发送成功！');
+        }).catch(console.error);
+    }
 			/*}).then(function(conversation) {
 			 // 发送消息
 			 return conversation.send(new TextMessage(message));

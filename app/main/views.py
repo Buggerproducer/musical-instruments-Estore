@@ -152,7 +152,7 @@ def staff_chat():
 
 
 # 顾客聊天页面弹窗
-@main.route('/communicate')
+@main.route('/communicate/1')
 @login_required
 def communicate():
     return render_template("test_communication_A.html")
