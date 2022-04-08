@@ -221,13 +221,24 @@ AV.init({
 
 function sendMessage(){
     //let username = $('#people').val();
-    let message = $('#input').val();
-
-    if(conversation_id=='622431dd6f77474716d8351c'){
+    let mes = $('#input').val();
+    let time;
+    if(c_user.id=='622431dd6f77474716d8351c'){
         realtime.createIMClient('622431dd6f77474716d8351c').then(function(user) {
             user.getConversation(conversation_id).then(function(conversation) {
             console.log(conversation.id);
-            return conversation.send(new TextMessage(message));
+            return conversation.send(new TextMessage(mes));
+            }).then(function(message) {
+                time = message._timestamp;
+                console.log(message, '发送成功！', time);
+                let n;
+                if(c_user.id!='622431dd6f77474716d8351c'){
+                    n = user_name;
+                }
+                else{
+                    n = 'Staff';
+                }
+                addbox_self(mes,n,time);
             }).catch(console.error.bind(console));
         }).catch(console.error.bind(console));
     }
@@ -235,7 +246,18 @@ function sendMessage(){
         realtime.createIMClient(c_user).then(function(user) {
             user.getConversation(conversation_id).then(function(conversation) {
             console.log(conversation.id);
-            return conversation.send(new TextMessage(message));
+            return conversation.send(new TextMessage(mes));
+            }).then(function(message) {
+                time = message._timestamp;
+                console.log(message, '发送成功！', time);
+                let n;
+                if(c_user.id!='622431dd6f77474716d8351c'){
+                    n = user_name;
+                }
+                else{
+                    n = 'Staff';
+                }
+                addbox_self(mes,n,time);
             }).catch(console.error.bind(console));
         }).catch(console.error.bind(console));
     }
@@ -248,9 +270,19 @@ function sendMessage(){
             });
         }).then(function(conversation) {
 			  // 发送消息
-            return conversation.send(new TextMessage(message));
+            return conversation.send(new TextMessage(mes));
         }).then(function(message) {
-            console.log(message.text, '发送成功！');
+            time = message._timestamp;
+            console.log(message, '发送成功！', time);
+            let n;
+            if(c_user.id!='622431dd6f77474716d8351c'){
+                    n = user_name;
+            }
+            else{
+                n = 'Staff';
+            }
+            console.log(time);
+            addbox_self(mes,n,time);
         }).catch(console.error);
     }
 			/*}).then(function(conversation) {
@@ -263,36 +295,46 @@ function sendMessage(){
   /*  let el = $('<p>'+user_name+' : '+message+'</p>');
 
     $('#talk').append(el);*/
-    addbox_client(message,user_name);
 }
 
-realtime.createIMClient(user).then(function(user) {
-			  user.on(Event.MESSAGE, function(message, conversation) {
-				console.log('Message received: ' + message.text);
-				 /*let el = $('<p>'+username+' : '+message.text+'</p>');
-                $('#talk').append(el);*/
-				 addbox_staff(message,'staff');
-			  });
-			}).catch(console.error);
+realtime.createIMClient(c_user).then(function(user) {
+    let n;
+    user.on(Event.MESSAGE, function(message, conversation) {
+        console.log('Message received: ' + message.text);
+        /*let el = $('<p>'+username+' : '+message.text+'</p>');
+        $('#talk').append(el);*/
+        if(c_user.id!='622431dd6f77474716d8351c'){
+            n = 'Staff'
+        }
+        else{
+            n = conversation.name;
+        }
+        addbox_other(message.text,n,message._timestamp);
+    });
+}).catch(console.error);
 
-function addbox_client(message,person){
+function addbox_other(message,person,time){
     $('#chat').append("          <li>\n" +
         "            <div class=\"message-data\">\n" +
         "              <span class=\"message-data-name\" id = 'username'><i class=\"fa fa-circle online\"></i>"+person+"</span>\n" +
-        "              <span class=\"message-data-time\">10:20 AM, Today</span>\n" +
+        "              <span class=\"message-data-time\">" +
+        time +
+        "</span>\n" +
         "            </div>\n" +
         "            <div class=\"message my-message\">\n" +
         message +
         "            </div>\n" +
         "          </li>");
 }
-function addbox_staff(message,person){
-    $('#chat').append("          <li>\n" +
-        "            <div class=\"message-data\">\n" +
-        "              <span class=\"message-data-name\" id = 'username'><i class=\"fa fa-circle online\"></i>"+person+"</span>\n" +
-        "              <span class=\"message-data-time\">10:20 AM, Today</span>\n" +
+function addbox_self(message,person,time){
+    $('#chat').append("          <li class='clearfix'>\n" +
+        "            <div class=\"message-data align-right\">\n" +
+        "              <span class=\"message-data-time\">" +
+        time +
+        "</span>\n" +
+        "              <span class=\"message-data-name\" id = 'username'>"+person+" <i class=\"fa fa-circle me\"></i></span>\n" +
         "            </div>\n" +
-        "            <div class=\"message my-message\">\n" +
+        "            <div class=\"message other-message float-right\">\n" +
         message +
         "            </div>\n" +
         "          </li>");
