@@ -37,8 +37,7 @@ function loadProduct(product){
 
 function submit(){
     //2022年3月24号14:20金深远开始玩原神
-    console.log(editor.txt.html())
-    updateEnglishProduct(currentProduct,$('#title').value,$('#description').value,editor.txt.html())
+    updateEnglishProduct(currentProduct,$('#title').val(),$('#description').val(),editor.txt.html())
     const buttons=$('.cLabel.choose')
     // console.log($('.cLabel.choose').size())
     // for(i in buttons){
