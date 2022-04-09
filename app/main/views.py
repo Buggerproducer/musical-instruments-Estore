@@ -155,7 +155,8 @@ def testAllOrderList():
 # 后台页面显示商品列表
 @main.route('/productList')
 def testProductList():
-    return render_template("staff_chat.html")
+    products = product.getAllProduct()
+    return render_template("staff_chat.html", products=products)
 
 
 # 顾客聊天页面弹窗
