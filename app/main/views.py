@@ -82,9 +82,10 @@ def history_order():
     return render_template("MusiCrashTemplates/orderList.html", async_mode=socketio.async_mode)
 
 
-@main.route('/collection')
-def collection():
-    return render_template("MusiCrashTemplates/collectionLists.html", async_mode=socketio.async_mode)
+@main.route('/collection/<user_id>')
+def collection(user_id):
+    collections = user.getCollectionByUser(user_id)
+    return render_template("MusiCrashTemplates/collectionLists.html", collections=collections, async_mode=socketio.async_mode)
 
 
 @main.route('/testinfo')

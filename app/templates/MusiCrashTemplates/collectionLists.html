@@ -48,25 +48,25 @@
             <div class="popurlar_product list-style animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
               <ul>
                   <!--循环部分-->
-{#                {% for collection in collections %}#}
-{#                    <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">#}
-{#                  <div class="items-in">#}
-{#                    <div class="row">#}
-{#                      <div class="col-sm-4">#}
-{#                        <!-- Image -->#}
-{#                        <div class="img"> <img src="{{ collection.image }}" alt=""> </div>#}
-{#                      </div>#}
-{#                      <div class="col-sm-8">#} {# 商品价格 #}
-{#                        <div class="details-sec"> <a href="#.">Price</a> <span class="font-montserrat">{{ collection.price }} USD</span> </div>#}
-{#                        <!-- Rating Stars -->#}
+                {% for collection in collections %}
+                    <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                  <div class="items-in">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <!-- Image -->
+                        <div class="img"> <img src="{{ collection.get('product').get('cover').url }}" alt=""> </div>
+                      </div>
+                      <div class="col-sm-8"> {# 商品价格 #}
+                        <div class="details-sec"> <a href="#.">Price</a> <span class="font-montserrat">{{ collection.get('product').get('price').get('dollar') }} USD</span> </div>
+                        <!-- Rating Stars -->
                           {# 收藏商品名称 #}
-{#                        <p>{{ collection.name }}</p>#}
+                        <p>{{ collection.get('product').get('name') }}</p>
                           {# 跳转到收藏商品详情页 #}
-{#                        <a href="{{ collection.detail }}" class="btn btn-small btn-dark">More</a> </div>#}
-{#                    </div>#}
-{#                  </div>#}
-{#                </li>#}
-{#                {% endfor %}  #}
+                        <a href="{{ url_for('main.productInfo', product_id=collection.get('product').get('id')) }}" class="btn btn-small btn-dark">More</a> </div>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
                 <!--以下li标签仅作展示作用，对接完成后删除-->
                 <!-- Products List -->
                 <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">

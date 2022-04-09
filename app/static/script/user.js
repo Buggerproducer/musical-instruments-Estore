@@ -182,6 +182,10 @@ function orderlist() {
     window.location.href = '/orderList/'+AV.User.current().id
 }
 
+function collectionlist() {
+    window.location.href = '/collection/'+AV.User.current().id
+}
+
 async function checkIsOperation() {
     roles=await AV.User.current().getRoles()
     for(role in roles){
