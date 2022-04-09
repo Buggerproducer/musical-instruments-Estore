@@ -37,8 +37,8 @@ function loadProduct(product){
 
 function submit(){
     //2022年3月24号14:20金深远开始玩原神
-    updateEnglishProduct(currentProduct,$('#title').val(),$('#description').val(),editor.txt.html())
-    const buttons=$('.cLabel.choose')
+    updateEnglishProduct(currentProduct,$('#title').val(),$('#description').val(),editor.txt.html());
+    const buttons=$('.cLabel.choose');
     // console.log($('.cLabel.choose').size())
     // for(i in buttons){
     //     console.log(i)
@@ -47,8 +47,9 @@ function submit(){
     const l=[]
     buttons.each(function (a,b) {
         // console.log(b)
-        l.push(b.id)
-    })
+        l.push(b.id);
+        alert('Successfully submit the change!')
+    });
     setProductCategory(currentProduct.id,l)
     if(document.getElementById('fileField').files.length!==0) {
         setProductCover(currentProduct.id, document.getElementById('fileField').files)
