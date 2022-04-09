@@ -39,10 +39,10 @@
                 signUp($('#username').val(),null,null,$('#password').val(),function(user) {
                     alert('Register Successfully!');
                     window.location.href = 'http://127.0.0.1:5000/signUp';
-                document.getElementById('result').innerText='register success!'
+                document.getElementById('result').innerText='register success!';
                 console.log(user)
                 },function(error) {
-                document.getElementById('result').innerText=error
+                document.getElementById('result').innerText=error;
                 console.log(error)
                 })"
             >register</button>
