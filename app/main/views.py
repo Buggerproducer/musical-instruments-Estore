@@ -137,12 +137,19 @@ def backend_data():
 def staff_index():
     return render_template("staff_index.html")
 
-# 后台页面展示商品订单
+
+# 个人中心展示商品订单
 @main.route('/orderList/<user_id>')
 @login_required
 def testOrderList(user_id):
     orders = user.getOrderByUser(user_id)
     return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
+
+
+# 个人中心展示商品订单
+@main.route('/allOrderList')
+def testAllOrderList():
+    return render_template("orderList.html")
 
 
 # 后台页面显示商品列表
