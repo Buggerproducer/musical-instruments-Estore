@@ -599,6 +599,7 @@
     <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/user.js') }}"></script>
     <script src="{{ url_for('static',filename='script/order.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/collection.js') }}"></script>
 
 </head>
 
@@ -1464,7 +1465,7 @@
                                 <div style="display: inline">
                                 <div class="entry-price" style="display:inline-block;">
                                     <span class="btn-price">$ 70,000</span>
-                                    <a href="javascript:void(0)" type="button" class="btn-toogle-info toggle-form"
+                                    <a href="javascript:void(0)" onclick="setCollect()" type="button" class="btn-toogle-info toggle-form"
                                        data-toggle="offcanvas" data-toggle-class="show-form">Add to Your Wish List</a>
                                 </div>
 

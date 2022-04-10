@@ -4,10 +4,17 @@ AV.init({
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
 
-var currentProduct=null
+var currentProduct=null;
 
 const E = window.wangEditor;
 const editor = new E('#editor');
+editor.config.lang = 'en';
+// 引入 i18next 插件
+
+
+editor.i18next = window.i18next;
+
+
 editor.config.customUploadImg = function (resultFiles, insertImgFn) {
     // resultFiles 是 input 中选中的文件列表
     // insertImgFn 是获取图片 url 后，插入到编辑器的方法
@@ -18,6 +25,7 @@ editor.config.customUploadImg = function (resultFiles, insertImgFn) {
         // 保存失败，可能是文件无法被读取，或者上传过程中出现问题
     });
     };
+
 editor.create();
 
 function loadProduct(product){
@@ -48,10 +56,11 @@ function submit(){
     buttons.each(function (a,b) {
         // console.log(b)
         l.push(b.id);
-        alert('Successfully submit the change!')
+
     });
     setProductCategory(currentProduct.id,l)
     if(document.getElementById('fileField').files.length!==0) {
         setProductCover(currentProduct.id, document.getElementById('fileField').files)
     }
+    alert('Successfully submit the change!')
 }
