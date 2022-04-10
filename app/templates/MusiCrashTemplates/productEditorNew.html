@@ -98,11 +98,14 @@
                             <div class="aui-content-img-box aui-content-full">
                                 <div class="aui-photo aui-up-img clear">
                                     <section class="aui-file-up fl">
-                                        <img id="cover" src="" alt="no cover" class="add-img">
                                         <img src="{{ url_for('static',filename='image/up.png') }}" class="add-img">
 
                                         <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
+
                                     </section>
+                                    <span>
+                                        <img id="cover" src="" alt="no cover" class="pre-cover">
+                                    </span>
                                 </div>
                             </div>
                         </div>
