@@ -1,3 +1,5 @@
+let collection_id
+
 function setCollect(){
     var idArray = window.location.href.split("/");
     var id = idArray[idArray.length-1];
@@ -14,13 +16,30 @@ function setCollect(){
             collection.set('user',currentUser);
             collection.set('product',product);
             collection.set('status',true);
-     collection.save();
+            collection.save().then((collection) => {
+                collection_id = collection.id
+                $("#collection").attr("onclick", "cancelCollect()");
+                document.getElementById('collection').innerText = "cancel collect"
+
+            }, (error) => {
+                console.log("error");
+                // 异常处理
+            });
     });
 }
 
-function cancelCollect(id){
+function cancelCollect(){
+    var idArray = window.location.href.split("/");
+    var id = idArray[idArray.length-1];
     const Collection = AV.Object.extend('CollectionMap');
-    const collection = Collection.createWithoutData(id);
+    console.log(collection_id);
+    const collection = Collection.createWithoutData(collection_id);
     collection.set('status',false);
-    collection.save();
+    collection.save().then((order) => {
+        document.getElementById('collection').innerText = "Add to your wish list"
+        $("#collection").attr("onclick", "setCollect()");
+    }, (error) => {
+        console.log("error");
+        // 异常处理
+    });
 }
