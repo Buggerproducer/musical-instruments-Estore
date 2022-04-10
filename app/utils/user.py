@@ -32,8 +32,8 @@ def getCollectionByUser(user_id,limit=10,skip=0):
     query.limit(limit)
     query.skip(skip)
     result = query.find()
-    lst = []
-    for i in result:
-        lst += [i.get('product')]
-    return lst
+    # lst = []
+    # for i in result:
+    #     lst += [i.get('product')]
+    return result
 
