@@ -8,6 +8,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="format-detection" content="telephone=no">
+         <meta name="product_id" content="{{ product_id }}">
 
         <title>信息照片上传</title>
 
@@ -96,7 +97,9 @@
                             <div class="aui-content-img-box aui-content-full">
                                 <div class="aui-photo aui-up-img clear">
                                     <section class="aui-file-up fl">
+                                        <img id="cover" src="" alt="no cover" class="add-img">
                                         <img src="{{ url_for('static',filename='image/up.png') }}" class="add-img">
+
                                         <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
                                     </section>
                                 </div>
@@ -143,7 +146,7 @@
         <script type="text/javascript" src="{{ url_for('static',filename='js/up.js') }}"></script>
         <script src="{{ url_for('static',filename='script/productEditor.js') }}"></script>
         <script>
-            let id=document.getElementsByTagName('meta')['product_id'].content
+            let id=document.getElementsByTagName('meta')['product_id'].content;
             if(id!=='') {
                 getProductById(id, function (product) {
                     loadProduct(product)
