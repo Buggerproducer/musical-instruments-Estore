@@ -10,6 +10,8 @@ const E = window.wangEditor;
 const editor = new E('#editor');
 editor.config.lang = 'en';
 // 引入 i18next 插件
+
+
 editor.i18next = window.i18next;
 
 
