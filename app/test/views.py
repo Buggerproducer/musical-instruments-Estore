@@ -89,7 +89,7 @@ def testProductEditor():
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
     labels = product.getAllCategory()
-    return render_template("MusiCrashTemplates/productEditor.html", product_id=id,labels=labels)
+    return render_template("MusiCrashTemplates/productEditorNew.html", product_id=id,labels=labels)
 
 
 
