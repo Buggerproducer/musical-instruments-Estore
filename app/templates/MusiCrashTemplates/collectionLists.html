@@ -49,11 +49,12 @@
               <ul>
                   <!--循环部分-->
                 {% for collection in collections %}
-                  {% if collection.get(status)!=false %}
+                  {% if collection.get('status')!=False %}
                 <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
                   <div class="items-in">
                     <div class="row">
                       <div class="col-sm-4">
+<!--                          {{ collection.get(status)}}-->
                         <!-- Image -->
                         <div class="img"> <img src="{{ collection.get('product').get('cover').url }}" alt=""> </div>
                       </div>
