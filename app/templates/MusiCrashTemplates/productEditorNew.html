@@ -101,6 +101,8 @@
                                         <img src="{{ url_for('static',filename='image/up.png') }}" class="add-img">
                                         <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
 
+                                        <input type="file" name="fileField" id="fileField" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
+
                                     </section>
                                     <span>
                                         <img id="cover" src="" alt="no cover" class="pre-cover">
@@ -119,15 +121,13 @@
                     </div>
                     <div id="category" class="aui-form-group clear">
                      <h4>Labels </h4>
-{#                        <button id="{{ label.id }}" class="cLabel" onclick="if(this.classList.contains('choose')){this.classList.remove('choose')}else{this.classList.add('choose')}">{{ label.get('title').get('english') }}</button>#}
-{#                        <span class="cLabel">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>#}
-{#                        <span class="cLabel">Label<span><button><i class="bi bi-dash background-navajowhite background-boarder"></i></button></span></span>#}
                         {% for label in labels %}
                               <button id="{{ label.id }}" class="cLabel" onclick="if(this.classList.contains('choose')){this.classList.remove('choose')}else{this.classList.add('choose')}">{{ label.get('title').get('english') }}</button>
                         {% endfor %}
 
                     </div>
                 </form>
+                <br>
             </div>
             <div class="aui-btn-default">
                 <button class="aui-btn aui-btn-account" onclick="submit()">Submit</button>

@@ -52,15 +52,15 @@ function submit(){
     //     console.log(i)
     // }
     // console.log(buttons)
-    const l=[]
+    const l=[];
     buttons.each(function (a,b) {
         // console.log(b)
         l.push(b.id);
 
     });
-    setProductCategory(currentProduct.id,l)
-    if(document.getElementById('fileField').files.length!==0) {
-        setProductCover(currentProduct.id, document.getElementById('fileField').files)
-    }
-    alert('Successfully submit the change!')
+    setProductCategory(currentProduct.id,l);
+     if(document.getElementById('fileField').files.length!==0) {
+         setProductCover(currentProduct.id, document.getElementById('fileField').files)
+     }
+    alert('Successfully submit the change!');
 }

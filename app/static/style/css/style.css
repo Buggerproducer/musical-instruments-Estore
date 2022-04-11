@@ -173,6 +173,7 @@ abbr[title] {
     text-decoration: underline;
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted
+
 }
 
 b, strong {
@@ -1035,8 +1036,10 @@ body.v-light:not(.no-light) {
     width: -moz-max-content;
     width: max-content;
     line-height: 0.9;
-    letter-spacing: 10px
+    letter-spacing: 10px;
 }
+
+
 
 .preloader .title .text-strok {
     color: transparent;
