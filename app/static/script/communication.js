@@ -33,6 +33,7 @@ $(document).ready(
                 i.className = "fa fa-circle online"
                 a.href = "/conversation/" + conversations[conversation].id
                 img.src = "../static/chat-widget/img/t1.png"
+                img.height=50
                 img.alt = "avatar"
                 div2.innerText = conversations[conversation].name
                 list.appendChild(li);
