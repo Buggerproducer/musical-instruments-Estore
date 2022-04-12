@@ -339,6 +339,8 @@
     this.id = id;
     this.$textarea = $textarea;
     this.emojiPopup = options.emojiPopup;
+     this.$editor = $('<div>').addClass('emoji-wysiwyg-editor').addClass($($textarea)[0].className);
+     this.$editor = $('<div>').attr('id','ta');
     this.$editor.data('self', this);
 
     if ($textarea.attr('maxlength')) {
@@ -358,60 +360,60 @@
      * ! MODIFICATION START Following code was modified by Igor Zhukov, in
      * order to improve rich text paste
      */
-    // var changeEvents = 'blur change';
-    // if (!this.options.norealTime) {
-    //   changeEvents += ' keyup';
-    // }
-    // this.$editor.on(changeEvents, function(e) {
-    //   return self.onChange.apply(self, [ e ]);
-    // });
+
+    var changeEvents = 'blur change';
+    if (!this.options.norealTime) {
+      changeEvents += ' keyup';
+    }
+    this.$editor.on(changeEvents, function(e) {
+      return self.onChange.apply(self, [ e ]);
+    });
     /* ! MODIFICATION END */
 
-    // this.$editor.on('mousedown focus', function() {
-    //   document.execCommand('enableObjectResizing', false, false);
-    // });
-    // this.$editor.on('blur', function() {
-    //   document.execCommand('enableObjectResizing', true, true);
-    // });
-
+    this.$editor.on('mousedown focus', function() {
+      document.execCommand('enableObjectResizing', false, false);
+    });
+    this.$editor.on('blur', function() {
+      document.execCommand('enableObjectResizing', true, true);
+    });
     var editorDiv = this.$editor;
-    // this.$editor.on("change keydown keyup resize scroll", function(e) {
-    //   if(MAX_LENGTH_ALLOWED_KEYS.indexOf(e.which) == -1 &&
-    //     !((e.ctrlKey || e.metaKey) && e.which == 65) && // Ctrl + A
-    //     !((e.ctrlKey || e.metaKey) && e.which == 67) && // Ctrl + C
-    //     editorDiv.text().length + editorDiv.find('img').length >= editorDiv.attr('maxlength'))
-    //   {
-    //     e.preventDefault();
-    //   }
-    //   self.updateBodyPadding(editorDiv);
-    // });
+    this.$editor.on("change keydown keyup resize scroll", function(e) {
+      if(MAX_LENGTH_ALLOWED_KEYS.indexOf(e.which) == -1 &&
+        !((e.ctrlKey || e.metaKey) && e.which == 65) && // Ctrl + A
+        !((e.ctrlKey || e.metaKey) && e.which == 67) && // Ctrl + C
+        editorDiv.text().length + editorDiv.find('img').length >= editorDiv.attr('maxlength'))
+      {
+        e.preventDefault();
+      }
+      self.updateBodyPadding(editorDiv);
+    });
 
-    // this.$editor.on("paste", function (e) {
-    //   e.preventDefault();
-    //   var content;
-    //   var charsRemaining = editorDiv.attr('maxlength') - (editorDiv.text().length + editorDiv.find('img').length);
-    //   if ((e.originalEvent || e).clipboardData) {
-    //     content = (e.originalEvent || e).clipboardData.getData('text/plain');
-    //     if (self.options.onPaste) {
-    //       content = self.options.onPaste(content);
-    //     }
-    //     if (charsRemaining < content.length) {
-    //       content = content.substring(0, charsRemaining);
-    //     }
-    //     document.execCommand('insertText', false, content);
-    //   }
-    //   else if (window.clipboardData) {
-    //     content = window.clipboardData.getData('Text');
-    //     if (self.options.onPaste) {
-    //       content = self.options.onPaste(content);
-    //     }
-    //     if (charsRemaining < content.length) {
-    //       content = content.substring(0, charsRemaining);
-    //     }
-    //     document.selection.createRange().pasteHTML(content);
-    //   }
-    //   editorDiv.scrollTop(editorDiv[0].scrollHeight);
-    // });
+    this.$editor.on("paste", function (e) {
+      e.preventDefault();
+      var content;
+      var charsRemaining = editorDiv.attr('maxlength') - (editorDiv.text().length + editorDiv.find('img').length);
+      if ((e.originalEvent || e).clipboardData) {
+        content = (e.originalEvent || e).clipboardData.getData('text/plain');
+        if (self.options.onPaste) {
+          content = self.options.onPaste(content);
+        }
+        if (charsRemaining < content.length) {
+          content = content.substring(0, charsRemaining);
+        }
+        document.execCommand('insertText', false, content);
+      }
+      else if (window.clipboardData) {
+        content = window.clipboardData.getData('Text');
+        if (self.options.onPaste) {
+          content = self.options.onPaste(content);
+        }
+        if (charsRemaining < content.length) {
+          content = content.substring(0, charsRemaining);
+        }
+        document.selection.createRange().pasteHTML(content);
+      }
+      editorDiv.scrollTop(editorDiv[0].scrollHeight);
+    });
 
     $textarea.after("<i class='emoji-picker-icon emoji-picker " + this.options.popupButtonClasses + "' data-id='" + id + "' data-type='picker'></i>");
 
@@ -468,14 +470,14 @@
       insertionContent = $img[0];
     }
 
-    // this.$editor.trigger('focus');
-    // if (this.selection) {
-    //   util.restoreSelection(this.selection);
-    // }
-    // try {
-    //   util.replaceSelection(insertionContent);
-    // } catch (e) {
-    // }
+    this.$editor.trigger('focus');
+    if (this.selection) {
+      util.restoreSelection(this.selection);
+    }
+    try {
+      util.replaceSelection(insertionContent);
+    } catch (e) {
+    }
 
     /*
      * MODIFICATION: Following line was added by Igor Zhukov, in order to
@@ -632,26 +634,26 @@
       return false;
     });
 
-    // this.$menu.on('click', 'a', function(e) {
-    //
-    //   self.emojiarea.updateBodyPadding(self.emojiarea.$editor);
-    //   if ($(this).hasClass('emoji-menu-tab')) {
-    //     if (self.getTabIndex(this) !== self.currentCategory) {
-    //       self.selectCategory(self.getTabIndex(this));
-    //     }
-    //     return false;
-    //   }
-    //
-    //   var emoji = $('.label', $(this)).text();
-    //   window.setTimeout(function() {
-    //     self.onItemSelected(emoji);
-    //     if (e.ctrlKey || e.metaKey) {
-    //       self.hide();
-    //     }
-    //   }, 0);
-    //   e.stopPropagation();
-    //   return false;
-    // });
+    this.$menu.on('click', 'a', function(e) {
+
+      self.emojiarea.updateBodyPadding(self.emojiarea.$editor);
+      if ($(this).hasClass('emoji-menu-tab')) {
+        if (self.getTabIndex(this) !== self.currentCategory) {
+          self.selectCategory(self.getTabIndex(this));
+        }
+        return false;
+      }
+
+      var emoji = $('.label', $(this)).text();
+      window.setTimeout(function() {
+        self.onItemSelected(emoji);
+        if (e.ctrlKey || e.metaKey) {
+          self.hide();
+        }
+      }, 0);
+      e.stopPropagation();
+      return false;
+    });
 
     this.selectCategory(0);
   };
