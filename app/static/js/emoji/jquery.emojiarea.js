@@ -339,7 +339,8 @@
     this.id = id;
     this.$textarea = $textarea;
     this.emojiPopup = options.emojiPopup;
-    this.$editor = $('<div>').addClass('emoji-wysiwyg-editor').addClass($($textarea)[0].className);
+     this.$editor = $('<div>').addClass('emoji-wysiwyg-editor').addClass($($textarea)[0].className);
+     this.$editor = $('<div>').attr('id','ta');
     this.$editor.data('self', this);
 
     if ($textarea.attr('maxlength')) {
@@ -359,6 +360,7 @@
      * ! MODIFICATION START Following code was modified by Igor Zhukov, in
      * order to improve rich text paste
      */
+
     var changeEvents = 'blur change';
     if (!this.options.norealTime) {
       changeEvents += ' keyup';
@@ -374,7 +376,6 @@
     this.$editor.on('blur', function() {
       document.execCommand('enableObjectResizing', true, true);
     });
-
     var editorDiv = this.$editor;
     this.$editor.on("change keydown keyup resize scroll", function(e) {
       if(MAX_LENGTH_ALLOWED_KEYS.indexOf(e.which) == -1 &&

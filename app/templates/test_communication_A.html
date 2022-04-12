@@ -233,7 +233,7 @@ function sendMessage(){
             }).then(function(message) {
                 time = message._timestamp;
                 console.log(message, '发送成功！', time);
-                $('#input').val("")
+                $('#ta').html("");
                 let n;
                 if(c_user.id!='622431dd6f77474716d8351c'){
                     n = user_name;
@@ -253,7 +253,7 @@ function sendMessage(){
             }).then(function(message) {
                 time = message._timestamp;
                 console.log(message, '发送成功！', time);
-                $('#input').val("")
+                $('#ta').html("");
                 let n;
                 if(c_user.id!='622431dd6f77474716d8351c'){
                     n = user_name;
@@ -278,6 +278,7 @@ function sendMessage(){
         }).then(function(message) {
             time = message._timestamp;
             console.log(message, '发送成功！', time);
+            $('#ta').html("");
             let n;
             if(c_user.id!='622431dd6f77474716d8351c'){
                     n = user_name;
