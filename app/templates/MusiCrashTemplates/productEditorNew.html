@@ -41,9 +41,9 @@
             }
 
             .cLabel:hover{
-                background: white;
-                color: red;
-                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                background: whitesmoke;
+                color: darkred;
+                box-shadow: 0 13px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             }
 
             .cLabel:active {
@@ -99,6 +99,7 @@
                                 <div class="aui-photo aui-up-img clear">
                                     <section class="aui-file-up fl">
                                         <img src="{{ url_for('static',filename='image/up.png') }}" class="add-img">
+                                        <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
 
                                         <input type="file" name="fileField" id="fileField" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple/>
 
