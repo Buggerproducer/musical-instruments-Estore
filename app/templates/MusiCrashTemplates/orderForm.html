@@ -1,10 +1,8 @@
-<!--用来展示收藏列表的页面-->
-<!--循环部分已经被注释！其结构和第一个div相似，对接后把标注该删除的部分删除-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Collections</title>
+    <title>Fill the order information</title>
      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="../../static/img/favicon.ico" type="image/x-icon"/>
@@ -26,164 +24,165 @@
 
 </head>
 <body>
-    <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s">
-      <div class="container">
-        <h4>Your Collections</h4>
-        <!-- Breadcrumb -->
-        <ol class="breadcrumb">
-          <li><a href=>User Center</a></li>
-          <li class="active">Collections</li>
-        </ol>
-      </div>
-    </section>
-    <div class="margin-left col-lg-9  animate fadeInUp center-block" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+<div id="wrap">
+    <div class="content">
+        <section class="section-p-30px pages-in chart-page">
+            <div class="container">
+                <div class="shopping-cart">
 
-            <!--======= ITEM CETOGRIES =========-->
-            <div class="items-short-type animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-            <!--一下是循环部分-->
-
-            {% for collection in collections %}
-            {% endfor %}
-            <!--======= Products =========-->
-            <div class="popurlar_product list-style animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-              <ul>
-                  <!--循环部分-->
-                {% for collection in collections %}
-                  {% if collection.get('status')!=False %}
-                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-                  <div class="items-in">
+                  <!-- SHOPPING INFORMATION -->
+                  <div class="cart-ship-info">
                     <div class="row">
-                      <div class="col-sm-4">
-<!--                          {{ collection.get(status)}}-->
-                        <!-- Image -->
-                        <div class="img"> <img src="{{ collection.get('product').get('cover').url }}" alt=""> </div>
+
+                      <!-- ESTIMATE SHIPPING & TAX -->
+                      <div class="col-sm-7">
+                        <h6>BILLING DETAILS</h6>
+                        <form>
+                          <ul class="row">
+
+                            <!-- *COUNTRY -->
+                            <li class="col-md-12">
+                              <label> *COUNTRY
+                                <select class="selectpicker" style="display: none;">
+                                  <option>UNITED KINGDOM</option>
+                                  <option>UNITED STATE</option>
+                                  <option>PAKISTAN</option>
+                                </select><div class="btn-group bootstrap-select"><button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="UNITED KINGDOM" aria-expanded="false"><span class="filter-option pull-left">UNITED KINGDOM</span>&nbsp;<span class="caret"></span></button><div class="dropdown-menu open" style="max-height: 175.156px; overflow: hidden; min-height: 0px;"><ul class="dropdown-menu inner selectpicker" role="menu" style="max-height: 175.156px; overflow-y: auto; min-height: 0px;"><li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>UNITED KINGDOM</span>"><span class="text">UNITED KINGDOM</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>UNITED STATE</span>"><span class="text">UNITED STATE</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>PAKISTAN</span>"><span class="text">PAKISTAN</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div></div>
+                              </label>
+                            </li>
+                            <!-- Name -->
+                            <li class="col-md-6">
+                              <label> *FIRST NAME
+                                <input type="text" name="first-name" value="" placeholder="">
+                              </label>
+                            </li>
+                            <!-- LAST NAME -->
+                            <li class="col-md-6">
+                              <label> *LAST NAME
+                                <input type="text" name="last-name" value="" placeholder="">
+                              </label>
+                            </li>
+                            <li class="col-md-12">
+                              <!-- COMPANY NAME -->
+                              <label>COMPANY NAME
+                                <input type="text" name="company" value="" placeholder="">
+                              </label>
+                            </li>
+                            <li class="col-md-12">
+                              <!-- ADDRESS -->
+                              <label>*ADDRESS
+                                <input type="text" name="address" value="" placeholder="">
+                                <input type="text" name="address" value="" placeholder="Optional">
+                              </label>
+                            </li>
+                            <!-- TOWN/CITY -->
+                            <li class="col-md-12">
+                              <label>*TOWN/CITY
+                                <input type="text" name="town" value="" placeholder="">
+                              </label>
+                            </li>
+
+                            <!-- COUNTRY -->
+                            <li class="col-md-6">
+                              <label> COUNTRY
+                                <input type="text" name="contry-state" value="" placeholder="STATE/COUNTRY">
+                              </label>
+                            </li>
+
+                            <!-- POSTCODE -->
+                            <li class="col-md-6">
+                              <label> *POSTCODE
+                                <input type="text" name="postal-code" value="" placeholder="POSTCODE/ZIP">
+                              </label>
+                            </li>
+
+                            <!-- EMAIL ADDRESS -->
+                            <li class="col-md-6">
+                              <label> *EMAIL ADDRESS
+                                <input type="text" name="contry-state" value="" placeholder="">
+                              </label>
+                            </li>
+                            <!-- PHONE -->
+                            <li class="col-md-6">
+                              <label> *PHONE
+                                <input type="text" name="postal-code" value="" placeholder="">
+                              </label>
+                            </li>
+
+                            <!-- CREATE AN ACCOUNT -->
+                            <li class="col-md-6">
+                              <div class="checkbox">
+                                <input id="checkbox1" class="styled" type="checkbox">
+                                <label for="checkbox1"> CREATE AN ACCOUNT ? </label>
+                              </div>
+                            </li>
+
+                            <!-- SHIP TO BILLING ADDRESS -->
+                            <li class="col-md-6">
+                              <div class="checkbox">
+                                <input id="checkbox2" class="styled" type="checkbox">
+                                <label for="checkbox2"> SHIP TO BILLING ADDRESS? </label>
+                              </div>
+                            </li>
+                          </ul>
+                        </form>
                       </div>
-                      <div class="col-sm-8"> {# 商品价格 #}
-                        <div class="details-sec"> <a href="#.">Price</a> <span class="font-montserrat">{{ collection.get('product').get('price').get('dollar') }} USD</span> </div>
-                        <!-- Rating Stars -->
-                          {# 收藏商品名称 #}
-                        <p>{{ collection.get('product').get('title').get('english') }}</p>
-                          {# 跳转到收藏商品详情页 #}
-                        <a href="{{ url_for('main.productInfo', product_id=collection.get('product').id) }}" class="btn btn-small btn-dark">More</a>
-<!--                        <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a></div>-->
+
+                      <!-- SUB TOTAL -->
+                      <div class="col-sm-5">
+                        <div class="order-place">
+                          <h5>YOUR ORDER</h5>
+                          <div class="order-detail">
+                            <p>PRODUCT <span>TOTAL</span></p>
+                            <div class="item-order">
+                              <p>DRAEY TRENCH COAT <span class="color"> x1 </span></p>
+                              <p>COLOR: BLACK </p>
+                              <p class="text-right">250.00 USD</p>
+                            </div>
+                            <p>CART SUBTOTAL <span>250.00 USD</span></p>
+                            <p>SHIPPING AND HANDLING <span>FREE SHIPPING</span></p>
+                            <p>ORDER TOTAL <span>250.00 USD</span></p>
+                          </div>
+                          <div class="pay-meth">
+                            <h5>PAYMENT METHODS</h5>
+                            <ul>
+                              <li>
+                                <div class="checkbox">
+                                  <input id="checkbox3-1" class="styled" type="checkbox">
+                                  <label for="checkbox3-1"> DIRECT BANK TRANSFER </label>
+                                </div>
+                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <input id="checkbox3-2" class="styled" type="checkbox">
+                                  <label for="checkbox3-2"> CHEQUE PAYMENT </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <input id="checkbox3-3" class="styled" type="checkbox">
+                                  <label for="checkbox3-3"> PAYPAL </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <input id="checkbox3-4" class="styled" type="checkbox">
+                                  <label for="checkbox3-4"> I’VE READ AND ACCEPT THE <span class="color"> TERMS &amp; CONDITIONS </span> </label>
+                                </div>
+                              </li>
+                            </ul>
+                            <a href="#." class="btn btn-small btn-dark pull-right">PLACE ORDER</a> </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  </div>
-                </li>
-                  {% endif %}
-                {% endfor %}
-                <!--以下li标签仅作展示作用，对接完成后删除-->
-                <!-- Products List -->
-<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
-<!--                  <div class="items-in">-->
-<!--                    <div class="row">-->
-<!--                      <div class="col-sm-4">-->
-<!--                        &lt;!&ndash; Image &ndash;&gt;-->
-<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-1.jpg" alt=""> </div>-->
-<!--                      </div>-->
-<!--                      <div class="col-sm-8">-->
-<!--                        <div class="details-sec"> <a href="#.">Price</a> <span class="font-montserrat">XXX.XX USD</span> </div>-->
-<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
-<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>-->
-<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
-<!--                        <div class="row">-->
-<!--                            <a href="#." class="btn btn-small btn-dark">More</a>-->
-<!--                            <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>-->
-<!--                        </div>-->
-<!--                      </div>-->
-<!--                      </div>-->
-<!--                  </div>-->
-<!--                </li>-->
-
-<!--                &lt;!&ndash; Products List &ndash;&gt;-->
-<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
-<!--                  <div class="items-in">-->
-<!--                    <div class="row">-->
-<!--                      <div class="col-sm-4">-->
-<!--                        &lt;!&ndash; Image &ndash;&gt;-->
-<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-2.jpg" alt=""> </div>-->
-<!--                      </div>-->
-<!--                      <div class="col-sm-8">-->
-<!--                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>-->
-<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
-<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></div>-->
-<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
-<!--                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>-->
-<!--                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </li>-->
-
-<!--                &lt;!&ndash; Products List &ndash;&gt;-->
-<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
-<!--                  <div class="items-in">-->
-<!--                    <div class="row">-->
-<!--                      <div class="col-sm-4">-->
-<!--                        &lt;!&ndash; Image &ndash;&gt;-->
-<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-3.jpg" alt=""> </div>-->
-<!--                      </div>-->
-<!--                      <div class="col-sm-8">-->
-<!--                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>-->
-<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
-<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i></div>-->
-<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
-<!--                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>-->
-<!--                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </li>-->
-
-<!--                &lt;!&ndash; Products List &ndash;&gt;-->
-<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
-<!--                  <div class="items-in">-->
-<!--                    <div class="row">-->
-<!--                      <div class="col-sm-4">-->
-<!--                        &lt;!&ndash; Image &ndash;&gt;-->
-<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-4.jpg" alt=""> </div>-->
-<!--                      </div>-->
-<!--                      <div class="col-sm-8">-->
-<!--                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>-->
-<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
-<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>-->
-<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
-<!--                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>-->
-<!--                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </li>-->
-
-<!--                &lt;!&ndash; Products List &ndash;&gt;-->
-<!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
-<!--                  <div class="items-in">-->
-<!--                    <div class="row">-->
-<!--                      <div class="col-sm-4">-->
-<!--                        &lt;!&ndash; Image &ndash;&gt;-->
-<!--                        <div class="img"> <img src="../../static/image/sebian_imgs/new-item-5.jpg" alt=""> </div>-->
-<!--                      </div>-->
-<!--                      <div class="col-sm-8">-->
-<!--                        <div class="details-sec"> <a href="#.">LOOSE-FIT TRENCH COAT</a> <span class="font-montserrat">129.00 USD</span> </div>-->
-<!--                        &lt;!&ndash; Rating Stars &ndash;&gt;-->
-<!--                        <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></div>-->
-<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>-->
-<!--                        <div class="full-width item-btn-com"> <a href="#."><i class="ion-shuffle"></i></a> <a href="#."><i class="fa fa-heart-o"></i></a> </div>-->
-<!--                        <a href="#." class="btn btn-small btn-dark">ADD TO CART</a> </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </li>-->
-              </ul>
+                </div>
             </div>
+        </section>
 
-            <!--======= PAGINATION =========-->
-            <ul class="pagination animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-              <li><a href="#.">1</a></li>
-              <li><a href="#.">2</a></li>
-              <li><a href="#.">3</a></li>
-              <li><a href="#.">4</a></li>
-              <li><a href="#.">5</a></li>
-              <li><a href="#."><i class="fa fa-angle-right"></i></a></li>
-            </ul>
-          </div>
     </div>
+</div>
 </body>
 <script src="../../static/js/sebian_js/wow.min.js"></script>
 <script src="../../static/js/sebian_js/bootstrap.min.js"></script>
