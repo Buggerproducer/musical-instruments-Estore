@@ -16,7 +16,7 @@ $(document).ready(
     function change_index(){
         const current_user = AV.User.current();
         //document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
-        console.log(sessionStorage.getItem('authenticated'))
+        console.log(sessionStorage.getItem('authenticated'));
         checkIsOperation().then(res=>{
             if(res){
                 var oplist = document.getElementById('user-operation');
