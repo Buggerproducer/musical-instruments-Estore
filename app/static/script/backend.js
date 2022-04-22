@@ -15,8 +15,6 @@ qp.find().then((products)=>{
              console.log(products[a].get('product').get('title').get('english'));
              $('#mostVisit').append('<tr><td>'+title+'</td>' +
                  '<td class="text-muted">'+visit+'</td>'+'</td>' +
-                 '<td class="text-muted">'+visit+'</td>'+'</td>' +
-                 '<td class="text-muted">'+visit+'</td>'+
                  '<td class="text-end w-1">' +
                  '                        <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-2"></div>' +
                  '</td>'+'</tr>');
