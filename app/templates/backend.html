@@ -2170,9 +2170,7 @@
       				padding: 4
       			},
       		},
-      		labels: [
-      			'2020-06-20', '2020-06-21', '2020-06-22', '2020-06-23', '2020-06-24', '2020-06-25', '2020-06-26', '2020-06-27', '2020-06-28', '2020-06-29', '2020-06-30', '2020-07-01', '2020-07-02', '2020-07-03', '2020-07-04', '2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08', '2020-07-09', '2020-07-10', '2020-07-11', '2020-07-12', '2020-07-13', '2020-07-14', '2020-07-15', '2020-07-16', '2020-07-17', '2020-07-18', '2020-07-19'
-      		],
+      		labels: datetable,
       		colors: ["#206bc4"],
       		legend: {
       			show: false,
@@ -2186,24 +2184,46 @@
 
 
 
-
       function getTime(n){
-         var myDate = new Date((new Date).getTime() + (n-27)*24*60*60*1000);
-      var t1 = myDate.toJSON().split('T').join(' ').substr(0,19);
+         var myDate = new Date((new Date).getTime() + (n-10)*24*60*60*1000);
+      var t1 = myDate.toJSON().split('T').join(' ').substr(0,10);
       return t1;
       }
-      let t = [];
-      for(let i = 0;i<27;i++){
-        t[i] = getTime(i);
+      let datetable = [];
+      for(let i = 1;i<11;i++){
+        datetable[i-1] = getTime(i);
       }
-      console.log(t);
-     getTime(0);
+    AV.init({
+  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
+  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
+});
+    console.log(getTime(6));
 
+    let mobilenum = [];
+    let desknum = [];
+  const query = new AV.Query('Traffic');
+  // for(let i = 1;i<5;i++){
+  //   let resul = query.equalTo('Date',getTime(4-i));
+  // resul.find().then((numbers) =>{
+  //       mobilenum[i-1] = numbers[0].get('Mobile');
+  //       desknum[i-1] = numbers[0].get('Desktop');
+  // console.log(numbers[0].get('Mobile'));
+  //     });
+  // }
+        let resul = query.greaterThan('Date',getTime(0));
+  resul.find().then((numbers) => {
+    for(let i = 0;i<10;i++){
+      mobilenum[i] = numbers[i].get('Mobile');
+    desknum[i] = numbers[i].get('Desktop');
+        console.log(numbers[i].get('Mobile'));
+    }
 
-
-
+  console.log(mobilenum);
       // @formatter:off
       document.addEventListener("DOMContentLoaded", function () {
+
+
+  });
       	window.ApexCharts && (new ApexCharts(document.getElementById('chart-mentions'), {
       		chart: {
       			type: "bar",
@@ -2231,10 +2251,12 @@
       		},
       		series: [{
       			name: "Desktop",
-      			data: [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 2, 12, 5, 8, 22, 6, 8, 6, 4, 1, 8, 24, 29, 51, 40, 47, 23, 26, 50, 26, 41, 22, 46, 47, 81, 46, 6]
+      			//data: [1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 2, 12, 5, 8, 22, 6, 8, 6, 4, 1, 8, 24, 29, 51, 40, 47, 23, 26, 50, 26, 41, 22, 46, 47, 81, 46, 6]
+              data:desknum
       		},{
       			name: "Mobile",
-      			data: [2, 5, 4, 3, 3, 1, 4, 7, 5, 1, 2, 5, 3, 2, 6, 7, 7, 1, 5, 5, 2, 12, 4, 6, 18, 3, 5, 2, 13, 15, 20, 47, 18, 15, 11, 10, 0]
+      			//data: [2, 5, 4, 3, 3, 1, 4, 7, 5, 1, 2, 5, 3, 2, 6, 7, 7, 1, 5, 5, 2, 12, 4, 6, 18, 3, 5, 2, 13, 15, 20, 47, 18, 15, 11, 10, 0]
+              data: mobilenum
       		}],
       		grid: {
       			padding: {
@@ -2267,7 +2289,7 @@
       				padding: 4
       			},
       		},
-      		labels: t,
+      		labels: datetable,
       		colors: ["#206bc4", "#79a6dc", "#bfe399"],
       		legend: {
       			show: false,
