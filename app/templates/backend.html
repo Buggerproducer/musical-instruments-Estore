@@ -14,6 +14,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <script src="../static/script/socket.io.js"></script>
     <script src="../static/script/av-min.js"></script>
+                <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+    <script src="../static/script/backend.js"></script>
     <title>Dashboard - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
     <!-- CSS files -->
     <link href="../static/style/backend_css/tabler.css" rel="stylesheet"/>
@@ -1157,99 +1159,85 @@
                     <h3 class="card-title">Most Visited Pages</h3>
                   </div>
                   <div class="card-table table-responsive">
-                    <table class="table table-vcenter">
+                    <table class="table table-vcenter" id="mostVisit">
                       <thead>
                         <tr>
                           <th>Page name</th>
                           <th>Visitors</th>
-                          <th>Unique</th>
-                          <th colspan="2">Bounce rate</th>
+<!--                          <th>Unique</th>-->
+<!--                          <th colspan="2">Bounce rate</th>-->
                         </tr>
                       </thead>
-                      <tr>
-                        <td>
-                          /about.html
-                          <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
-                          </a>
-                        </td>
-                        <td class="text-muted">4,896</td>
-                        <td class="text-muted">3,654</td>
-                        <td class="text-muted">82.54%</td>
-                        <td class="text-end w-1">
-                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-1"></div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          /special-promo.html
-                          <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
-                          </a>
-                        </td>
-                        <td class="text-muted">3,652</td>
-                        <td class="text-muted">3,215</td>
-                        <td class="text-muted">76.29%</td>
-                        <td class="text-end w-1">
-                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-2"></div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          /news/1,new-ui-kit.html
-                          <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
-                          </a>
-                        </td>
-                        <td class="text-muted">3,256</td>
-                        <td class="text-muted">2,865</td>
-                        <td class="text-muted">72.65%</td>
-                        <td class="text-end w-1">
-                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-3"></div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          /lorem-ipsum-dolor-sit-amet-very-long-url.html
-                          <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
-                          </a>
-                        </td>
-                        <td class="text-muted">986</td>
-                        <td class="text-muted">865</td>
-                        <td class="text-muted">44.89%</td>
-                        <td class="text-end w-1">
-                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-4"></div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          /colors.html
-                          <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
-                          </a>
-                        </td>
-                        <td class="text-muted">912</td>
-                        <td class="text-muted">822</td>
-                        <td class="text-muted">41.12%</td>
-                        <td class="text-end w-1">
-                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-5"></div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          /docs/index.html
-                          <a href="#" class="ms-1" aria-label="Open website"><!-- Download SVG icon from http://tabler-icons.io/i/link -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>
-                          </a>
-                        </td>
-                        <td class="text-muted">855</td>
-                        <td class="text-muted">798</td>
-                        <td class="text-muted">32.65%</td>
-                        <td class="text-end w-1">
-                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-6"></div>
-                        </td>
-                      </tr>
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          /about.html-->
+<!--&lt;!&ndash;                          <a href="#" class="ms-1" aria-label="Open website">&lt;!&ndash; Download SVG icon from http://tabler-icons.io/i/link &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </a>&ndash;&gt;-->
+<!--                        </td>-->
+<!--                        <td class="text-muted">4,896</td>-->
+<!--                        <td class="text-muted">3,654</td>-->
+<!--                        <td class="text-muted">82.54%</td>-->
+<!--                        <td class="text-end w-1">-->
+<!--                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-1"></div>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          /special-promo.html-->
+<!--&lt;!&ndash;                          <a href="#" class="ms-1" aria-label="Open website">&lt;!&ndash; Download SVG icon from http://tabler-icons.io/i/link &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </a>&ndash;&gt;-->
+<!--                        </td>-->
+<!--                        <td class="text-muted">3,652</td>-->
+<!--                        <td class="text-muted">3,215</td>-->
+<!--                        <td class="text-muted">76.29%</td>-->
+<!--                        <td class="text-end w-1">-->
+<!--                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-2"></div>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          /news/1,new-ui-kit.html-->
+<!--&lt;!&ndash;                          <a href="#" class="ms-1" aria-label="Open website">&lt;!&ndash; Download SVG icon from http://tabler-icons.io/i/link &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </a>&ndash;&gt;-->
+<!--                        </td>-->
+<!--                        <td class="text-muted">3,256</td>-->
+<!--                        <td class="text-muted">2,865</td>-->
+<!--                        <td class="text-muted">72.65%</td>-->
+<!--                        <td class="text-end w-1">-->
+<!--                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-3"></div>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          /lorem-ipsum-dolor-sit-amet-very-long-url.html-->
+<!--&lt;!&ndash;                          <a href="#" class="ms-1" aria-label="Open website">&lt;!&ndash; Download SVG icon from http://tabler-icons.io/i/link &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </a>&ndash;&gt;-->
+<!--                        </td>-->
+<!--                        <td class="text-muted">986</td>-->
+<!--                        <td class="text-muted">865</td>-->
+<!--                        <td class="text-muted">44.89%</td>-->
+<!--                        <td class="text-end w-1">-->
+<!--                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-4"></div>-->
+<!--                        </td>-->
+<!--                      </tr>-->
+<!--                      <tr>-->
+<!--                        <td>-->
+<!--                          /colors.html-->
+<!--&lt;!&ndash;                          <a href="#" class="ms-1" aria-label="Open website">&lt;!&ndash; Download SVG icon from http://tabler-icons.io/i/link &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" /><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" /></svg>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </a>&ndash;&gt;-->
+<!--                        </td>-->
+<!--                        <td class="text-muted">912</td>-->
+<!--                        <td class="text-muted">822</td>-->
+<!--                        <td class="text-muted">41.12%</td>-->
+<!--                        <td class="text-end w-1">-->
+<!--                          <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-5"></div>-->
+<!--                        </td>-->
+<!--                      </tr>-->
                     </table>
                   </div>
                 </div>
@@ -2193,32 +2181,19 @@
       for(let i = 1;i<11;i++){
         datetable[i-1] = getTime(i);
       }
-    AV.init({
-  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
-  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
-});
+
     console.log(getTime(6));
 
     let mobilenum = [];
     let desknum = [];
   const query = new AV.Query('Traffic');
-  // for(let i = 1;i<5;i++){
-  //   let resul = query.equalTo('Date',getTime(4-i));
-  // resul.find().then((numbers) =>{
-  //       mobilenum[i-1] = numbers[0].get('Mobile');
-  //       desknum[i-1] = numbers[0].get('Desktop');
-  // console.log(numbers[0].get('Mobile'));
-  //     });
-  // }
         let resul = query.greaterThan('Date',getTime(0));
   resul.find().then((numbers) => {
     for(let i = 0;i<10;i++){
       mobilenum[i] = numbers[i].get('Mobile');
     desknum[i] = numbers[i].get('Desktop');
-        console.log(numbers[i].get('Mobile'));
     }
 
-  console.log(mobilenum);
       // @formatter:off
       document.addEventListener("DOMContentLoaded", function () {
 
@@ -2611,4 +2586,5 @@
       // @formatter:on
     </script>
   </body>
+
 </html>
