@@ -121,7 +121,9 @@ def kinds(kind_id):
 # 商品具体信息页面
 @main.route('/productInfo/<product_id>')
 def productInfo(product_id):
-    commodity = product.getProductById(product_id)
+    commodity = product.getProductById(product_id,record=True)
+
+
     # print(product_id)
     # commodity_title = commodity.get('title').get('english')
     return render_template("piano.html", commodity=commodity, async_mode=socketio.async_mode)
