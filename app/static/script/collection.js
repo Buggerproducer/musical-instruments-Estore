@@ -3,10 +3,8 @@ let collection_id
 function setCollect(){
     var idArray = window.location.href.split("/");
     var id = idArray[idArray.length-1];
-    console.log(id);
     const Collection = AV.Object.extend('CollectionMap');
         const collection = new Collection();
-        console.log(id);
         query.get(id).then((product) => {
                 const titleid     = product.get('title').getObjectId();
                 const priceid     = product.get('price').getObjectId();

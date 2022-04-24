@@ -24,6 +24,7 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+
 @socketio.event
 def my_ping():
     emit('my_pong')
