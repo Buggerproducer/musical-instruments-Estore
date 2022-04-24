@@ -2,16 +2,16 @@
   appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
-const queryP = new AV.Query('ProductTraffic');
-let qp = queryP.greaterThan('visit',5);
-qp.include('product.title');
-qp.descending('visit');
-qp.limit(5);
+const queryP = new AV.Query('Product');
+let qp = queryP.greaterThan('visit_count',5);
+qp.include('title');
+qp.descending('visit_count');
+qp.limit(7);
 qp.find().then((products)=>{
-    for(let a = 0;a<5;a++){
-        let title = products[a].get('product').get('title').get('english');
-        let visit = products[a].get('visit');
-             //console.log(products[a].get('product').get('title').get('english'));
+    for(let a = 0;a<7;a++){
+        let title = products[a].get('title').get('english');
+        let visit = products[a].get('visit_count');
+             console.log(products[a].get('title').get('english'));
              $('#mostVisit').append('<tr><td>'+title+'</td>' +
                  '<td class="text-muted">'+visit+'</td>'+'</td>' +
                  '<td class="text-end w-1">' +
