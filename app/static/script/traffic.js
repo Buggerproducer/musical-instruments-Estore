@@ -1,9 +1,11 @@
 $(document).ready(
-    function add_traffic(){
-        var time = getTime(10)
+    add_traffic()
+    );
+function add_traffic(){
+        var time = getTime(10);
         console.log(time);
         const query = new AV.Query('Traffic');
-        query.equalTo('Date', time)
+        query.equalTo('Date', time);
         query.first().then((visit) => {
             console.log(visit.get('Desktop'));
             visit.increment('Desktop', 1);
@@ -21,7 +23,7 @@ $(document).ready(
         //     console.log("error")
         // });
       //document.getElementById('username2').innerText=current_user.getUsername();
-});
+}
 
 function getTime(n){
     var myDate = new Date((new Date).getTime() + (n-10)*24*60*60*1000);

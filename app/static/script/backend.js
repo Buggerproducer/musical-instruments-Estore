@@ -53,10 +53,9 @@ queryOrder.count().then((count3) => {
   $('#totalOrders').text(totalNum +' Orders');
   $('#deliverOrders').text(deliverNum+' Delivering');
 });
-
-
-
 });
 });
+
+
 
 
