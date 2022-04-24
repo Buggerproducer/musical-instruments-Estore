@@ -173,11 +173,14 @@ def communicate():
 @main.route('/conversation/<conversation_id>')
 def conversation(conversation_id):
     return render_template("test_communication_A.html", conversation_id=conversation_id)
+
+
 #订单填写页面
-@main.route('/fillBillInfo')
-def fillBillInfo():
-    labels=product.getAllCategory()
-    return render_template("MusiCrashTemplates/orderForm.html",labels=labels)
+@main.route('/fillBillInfo/<product_id>')
+def fillBillInfo(product_id):
+    piano = product.getProductById(product_id)
+    labels = product.getAllCategory()
+    return render_template("MusiCrashTemplates/orderForm.html", piano=piano, labels=labels)
 
 # @main.route('/grotrian')
 # def grotrian():

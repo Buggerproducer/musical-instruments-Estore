@@ -121,13 +121,13 @@
                           <div class="order-detail">
                             <p>PRODUCT <span>TOTAL</span></p>
                             <div class="item-order">
-                              <p>DRAEY TRENCH COAT <span class="color"> x1 </span></p>
-                              <p>COLOR: BLACK </p>
-                              <p class="text-right">250.00 USD</p>
+                              <p>{{ piano.get('title').get('english') }} <span class="color"> x1 </span></p>
+<!--                              <p>COLOR: BLACK </p>-->
+                              <p class="text-right">{{ piano.get('price').get('dollar') }}</p>
                             </div>
-                            <p>CART SUBTOTAL <span>250.00 USD</span></p>
+                            <p>CART SUBTOTAL <span>{{ piano.get('price').get('dollar') }}</span></p>
                             <p>SHIPPING AND HANDLING <span>FREE SHIPPING</span></p>
-                            <p>ORDER TOTAL <span>250.00 USD</span></p>
+                            <p>ORDER TOTAL <span>{{ piano.get('price').get('dollar') }}</span></p>
                           </div>
                           <div class="pay-meth">
                             <h5>PAYMENT METHODS</h5>
