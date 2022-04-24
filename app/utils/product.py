@@ -1,12 +1,14 @@
 import string
 import leancloud
 from .. import models
+import config
 
 if __name__ == '__main__':
     leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
 
-def getProductById(product_id: string):
+
+def getProductById(product_id: string,record=False):
     """
     use product_id to get product
     return:  a product av object
@@ -26,6 +28,17 @@ def getProductById(product_id: string):
     query.include('detail')
     query.include('price')
     product = query.get(product_id)
+    if record:
+        product.set('visit_count',product.get('visit_count')+1)
+        # print(leancloud.User.get_current())
+        leancloud.User.set_current(config.CURRENT_USER)
+        # if leancloud.User.get_current()==None:
+        #     print('emmmmmmmmmmmmmmmmmmmmm')
+        #     username = 'webserver2'
+        #     password = '12345678'
+        #     user = leancloud.User()
+        #     user.login(username=username, password=password)
+        product.save()
     return product
 
 

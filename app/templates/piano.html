@@ -12,7 +12,7 @@
 <script src="../static/js/plugins.js"></script>
 <script src="../static/js/dsn-grid.js"></script>
 <script src="../static/js/custom.js"></script>
-
+    <script src="../static/script/piano.js" defer></script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 <!--    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>-->
@@ -501,6 +501,39 @@
         .has-x-large-font-size {
             font-size: var(--wp--preset--font-size--x-large) !important;
         }
+
+        .piano {
+            display: flex;
+            justify-content:center;
+            margin-bottom: 50px;
+        }
+
+        .key {
+            height: calc(var(--width) * 4);
+            width: var(--width);
+        }
+
+        .white {
+            --width: 100px;
+            background-color: white;
+            border: 1px solid #333;
+        }
+
+        .white.active {
+            background-color: #CCC;
+        }
+
+        .black {
+            --width: 60px;
+            background-color: black;
+            margin-left: calc(var(--width) / -2);
+            margin-right: calc(var(--width) / -2);
+            z-index: 2;
+        }
+
+        .black.active {
+            background-color: #333;
+        }
     </style>
     <link rel="stylesheet" id="wpml-menu-item-0-css"
           href="//www.lyonhealy.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.min.css?ver=1"
@@ -601,7 +634,7 @@
     <script src="{{ url_for('static',filename='script/user.js') }}"></script>
     <script src="{{ url_for('static',filename='script/order.js') }}"></script>
     <script src="{{ url_for('static',filename='script/collection.js') }}"></script>
-    <script src="{{ url_for('static',filename='script/piano.js') }}"></script>
+
 </head>
 
 <body class="product-template-default single single-product postid-5398 style-4-gold lang-en dsn-effect-scroll dsn-cursor-effect dsn-ajax">
@@ -1731,25 +1764,40 @@ query.get(pid).then((p) => {
                 <section class="entry-new-add">
                 </section>
 
-
+                <hr>
                 <!-- section4 -->
-                <section class="entry-string">
-                    <div class="entry-string-wrapper">
-                        <a href="https://www.harp.com/string-products/style-4/?fwp_finder_string_source=original-manufacturer-strings&amp;brand="
-                           class="inside-entry-string" target="_blank">
-                            <div class="container">
-                                <h3 class="section-title">
-                                    Order strings for this model <small>Explore the string finder <img
-                                        srcset="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/graphic/arrow-primary-1x.png 1x, https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/graphic/arrow-primary-2x.png 2x"
-                                        src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/graphic/arrow-primary-1x.png"
-                                        alt="Arrow" class="img-arrow">
-                                </small>
-                                </h3>
-                            </div>
-                        </a>
-                    </div>
-                </section><!-- /.entry-string -->
+                <h3 class="section-title" style="text-align: center">Online Trial</h3>
+                        <div class="piano">
+                            <div data-note="C" class="key white"></div>
+                            <div data-note="Db" class="key black"></div>
+                            <div data-note="D" class="key white"></div>
+                            <div data-note="Eb" class="key black"></div>
+                            <div data-note="E" class="key white"></div>
+                            <div data-note="F" class="key white"></div>
+                            <div data-note="Gb" class="key black"></div>
+                            <div data-note="G" class="key white"></div>
+                            <div data-note="Ab" class="key black"></div>
+                            <div data-note="A" class="key white"></div>
+                            <div data-note="Bb" class="key black"></div>
+                            <div data-note="B" class="key white"></div>
+                        </div>
 
+                        <audio id="C" src="../static/notes/C.mp3"></audio>
+                        <audio id="Db" src="../static/notes/Db.mp3"></audio>
+                        <audio id="D" src="../static/notes/D.mp3"></audio>
+                        <audio id="Eb" src="../static/notes/Eb.mp3"></audio>
+                        <audio id="E" src="../static/notes/E.mp3"></audio>
+                        <audio id="F" src="../static/notes/F.mp3"></audio>
+                        <audio id="Gb" src="../static/notes/Gb.mp3"></audio>
+                        <audio id="G" src="../static/notes/G.mp3"></audio>
+                        <audio id="Ab" src="../static/notes/Ab.mp3"></audio>
+                        <audio id="A" src="../static/notes/A.mp3"></audio>
+                        <audio id="Bb" src="../static/notes/Bb.mp3"></audio>
+                        <audio id="B" src="../static/notes/B.mp3"></audio>
+
+
+
+                <script src="../static/script/piano.js" defer></script>
                 <!-- section5 -->
                 <section class="entry-related">
                     <div class="container">
