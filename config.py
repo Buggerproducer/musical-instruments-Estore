@@ -5,7 +5,7 @@ import leancloud
 print('leancloud initiating')
 leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
-username = 'webserver'
+username = 'webserver2'
 password = '12345678'
 
 current_user = leancloud.User.get_current()
@@ -22,6 +22,8 @@ if leancloud.User.get_current() is not None:
     print('webserver login successfully with "{}"'.format(username))
 else:
     print('webserver login fail')
+
+CURRENT_USER=leancloud.User.get_current()
 
 class Config(object):
     HOST = '127.0.0.1'

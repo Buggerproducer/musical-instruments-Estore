@@ -16,7 +16,7 @@ $(document).ready(
     function change_index(){
         const current_user = AV.User.current();
         //document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
-        console.log(sessionStorage.getItem('authenticated'))
+        console.log(sessionStorage.getItem('authenticated'));
         checkIsOperation().then(res=>{
             if(res){
                 var oplist = document.getElementById('user-operation');
@@ -36,6 +36,26 @@ $(document).ready(
         })
       //document.getElementById('username2').innerText=current_user.getUsername();
 });
+
+function updateLocation(){
+    if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        function (position) {
+            console.log( position.coords.longitude );
+            console.log( position.coords.latitude );
+            const point = new AV.GeoPoint({ latitude: position.coords.latitude, longitude: position.coords.longitude });
+                if(getLoginState()!=null) {
+                    const currentUser = AV.User.current();
+                    currentUser.set('location',point)
+                    currentUser.save()
+                }
+        },
+        function (e) {
+           throw(e.message);
+        }
+    )
+}
+}
 
 function testConnect() {
   const TestObject = AV.Object.extend('TestObject');
@@ -87,7 +107,7 @@ async function signInWithUsername(username,password, onSuccess, onFail){
                 console.log(response);
                 console.log(sessionStorage.getItem('authenticated'));
           });
-
+updateLocation()
       onSuccess(user);
   }, (error) => {
       // 登录失败（可能是密码错误）
@@ -99,7 +119,9 @@ async function signInWithUsername(username,password, onSuccess, onFail){
 async function signInWithEmail(email,password, onSuccess, onFail){
     AV.User.loginWithEmail(email, password).then((user) => {
       // 登录成功
+        updateLocation()
       onSuccess(user)
+
     }, (error) => {
       // 登录失败（可能是密码错误）
       onFail(error)

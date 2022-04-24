@@ -85,6 +85,11 @@ def testProductEditor():
     labels=product.getAllCategory()
     return render_template("MusiCrashTemplates/productEditor.html",labels=labels)
 
+@testRoute.route('/fillBillInfo')
+def fillBillInfo():
+    labels=product.getAllCategory()
+    return render_template("MusiCrashTemplates/orderForm.html",labels=labels)
+
 
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
