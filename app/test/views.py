@@ -90,6 +90,11 @@ def fillBillInfo():
     labels=product.getAllCategory()
     return render_template("MusiCrashTemplates/orderForm.html",labels=labels)
 
+@testRoute.route('/orderDetail')
+def orderDetail():
+    labels=product.getAllCategory()
+    return render_template("MusiCrashTemplates/orderDetail.html",labels=labels)
+
 
 @testRoute.route('/producteditor/<id>')
 def testProductEditorUpdate(id):
