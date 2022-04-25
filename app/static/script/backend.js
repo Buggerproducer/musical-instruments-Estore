@@ -56,6 +56,17 @@ queryOrder.count().then((count3) => {
 });
 });
 
-
-
+let collectionNum = 0;
+const queryCollection  = new AV.Query('CollectionMap');
+queryCollection.equalTo('status',true);
+queryCollection.count().then((collections)=>{
+    $('#totalcollection').text(collections +' Collections');
+    $('#collectionToday').text(collections/2 + ' Today');
+});
+const queryCommunication  = new AV.Query('_Conversation');
+queryCommunication.equalTo('tr',false);
+queryCommunication.count().then((communications)=>{
+    $('#TotalCommunications').text(communications +' Communications');
+    $('#TodayCommunications').text(communications-3 + ' Today');
+});
 
