@@ -6,11 +6,27 @@ function add_traffic(){
         console.log(time);
         const query = new AV.Query('Traffic');
         query.equalTo('Date', time);
-        query.first().then((visit) => {
-            console.log(visit.get('Desktop'));
-            visit.increment('Desktop', 1);
-            console.log(visit.get('Desktop'));
-            visit.save();
+        query.find().then((visit) => {
+            if(visit.length != 0){
+                console.log(visit[0].get('Desktop'));
+                visit[0].increment('Desktop', 1);
+                console.log(visit[0].get('Desktop'));
+                visit[0].save();
+            }
+            else{
+                const Traffic = AV.Object.extend('Traffic');
+                const traffic = new Traffic();
+                traffic.set('Date', time);
+                traffic.set('Desktop', 1);
+                traffic.set('Mobile', 0);
+                traffic.save().then((todo) => {
+                    // 成功保存之后，执行其他逻辑
+                    console.log(`保存成功`);
+                    }, (error) => {
+                    // 异常处理
+                });
+            }
+
         }, (error) => {
              console.log("error")
         });
