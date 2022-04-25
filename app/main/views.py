@@ -24,6 +24,7 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+
 @socketio.event
 def my_ping():
     emit('my_pong')
@@ -121,7 +122,9 @@ def kinds(kind_id):
 # 商品具体信息页面
 @main.route('/productInfo/<product_id>')
 def productInfo(product_id):
-    commodity = product.getProductById(product_id)
+    commodity = product.getProductById(product_id,record=True)
+
+
     # print(product_id)
     # commodity_title = commodity.get('title').get('english')
     return render_template("piano.html", commodity=commodity, async_mode=socketio.async_mode)
@@ -170,11 +173,14 @@ def communicate():
 @main.route('/conversation/<conversation_id>')
 def conversation(conversation_id):
     return render_template("test_communication_A.html", conversation_id=conversation_id)
+
+
 #订单填写页面
-@main.route('/fillBillInfo')
-def fillBillInfo():
-    labels=product.getAllCategory()
-    return render_template("MusiCrashTemplates/orderForm.html",labels=labels)
+@main.route('/fillBillInfo/<product_id>')
+def fillBillInfo(product_id):
+    piano = product.getProductById(product_id)
+    labels = product.getAllCategory()
+    return render_template("MusiCrashTemplates/orderForm.html", piano=piano, labels=labels)
 
 # @main.route('/grotrian')
 # def grotrian():

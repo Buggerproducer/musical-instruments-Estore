@@ -94,6 +94,13 @@ function updateEnglishProduct(product,title,description,detail){
     product.save();
 }
 
+function updateChineseProduct(product,title,description,detail){
+    product.get('title').set('chinese',title);
+    product.get('description').set('chinese',description);
+    product.get('detail').set('chineseHTML',detail);
+    product.save();
+}
+
 function setProductCover(product_id,resultFiles){
     const file = new AV.File(resultFiles[0].name, resultFiles[0]);
     file.save().then((file) => {
