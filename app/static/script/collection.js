@@ -1,4 +1,4 @@
-let collection_id
+let collection_id;
 
 function setCollect(){
     var idArray = window.location.href.split("/");
@@ -15,10 +15,9 @@ function setCollect(){
             collection.set('product',product);
             collection.set('status',true);
             collection.save().then((collection) => {
-                collection_id = collection.id
+                collection_id = collection.id;
                 $("#collection").attr("onclick", "cancelCollect()");
-                document.getElementById('collection').innerText = "cancel collect"
-
+                document.getElementById('collection').innerText = "cancel collect";
             }, (error) => {
                 console.log("error");
                 // 异常处理
