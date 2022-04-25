@@ -170,3 +170,19 @@ function getCategoryByProduct(product_id,onSuccess){
         onSuccess(maps)
     });
 }
+
+
+function getProductByVisitCount( onSuccess,skip=0, limit=10) {
+
+
+    const query = new AV.Query('Product')
+    query.descending('visit_count')
+    query.include('title')
+    query.include('description')
+    query.include('price')
+    query.limit(limit)
+    query.skip(skip)
+    query.find().then((products)=>{
+        onSuccess(products)
+    })
+}

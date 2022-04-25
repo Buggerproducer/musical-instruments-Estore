@@ -153,14 +153,18 @@ def testOrderList(user_id):
 # 个人中心展示商品订单
 @main.route('/allOrderList')
 def testAllOrderList():
-    return render_template("orderList.html")
+
+    return render_template("staff_chat.html")
 
 
 # 后台页面显示商品列表
 @main.route('/productList')
 def testProductList():
     products = product.getAllProduct()
-    return render_template("staff_chat.html", products=products)
+    lst = []
+    for i in products:
+        lst += [[product.getCategoryByProduct(i.id), i]]
+    return render_template("staff_chat.html", lst=lst)
 
 
 # 顾客聊天页面弹窗
