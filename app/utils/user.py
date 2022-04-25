@@ -20,7 +20,7 @@ def getOrderByUser(user_id, limit=10, skip=0):
     return result
 
 
-def getCollectionByUser(user_id,limit=10,skip=0):
+def getCollectionByUser(user_id, limit=10, skip=0):
     User = leancloud.Object.extend('_User')
     user = User.create_without_data(user_id)
     query = leancloud.Query('CollectionMap')
@@ -37,3 +37,13 @@ def getCollectionByUser(user_id,limit=10,skip=0):
     #     lst += [i.get('product')]
     return result
 
+
+def getAllOrder(skip=0, limit=50):
+    query = leancloud.Query('Order')
+    query.limit(limit)
+    query.skip(skip)
+    query.include('product')
+    query.include('user')
+    query.include('price')
+    result = query.find()
+    return result

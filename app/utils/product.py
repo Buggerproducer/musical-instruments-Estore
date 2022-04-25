@@ -7,8 +7,7 @@ if __name__ == '__main__':
     leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 
 
-
-def getProductById(product_id: string,record=False):
+def getProductById(product_id: string, record=False):
     """
     use product_id to get product
     return:  a product av object
@@ -29,7 +28,7 @@ def getProductById(product_id: string,record=False):
     query.include('price')
     product = query.get(product_id)
     if record:
-        product.set('visit_count',product.get('visit_count')+1)
+        product.set('visit_count', product.get('visit_count') + 1)
         # print(leancloud.User.get_current())
         leancloud.User.set_current(config.CURRENT_USER)
         # if leancloud.User.get_current()==None:
@@ -118,6 +117,7 @@ def getAllCategory(skip=0, limit=50):
     result = query.find()
     return result
 
+
 def getAllProduct(skip=0, limit=50):
     """
     get all product
@@ -136,6 +136,7 @@ def getAllProduct(skip=0, limit=50):
     result = query.find()
     return result
 
+
 def getCategoryById(category_id: string):
     """
     use category_id to get product
@@ -151,3 +152,14 @@ def getCategoryById(category_id: string):
     query.include('img')
     category = query.get(category_id)
     return category
+
+
+def getCategoryByProduct(product_id: string):
+    Product = leancloud.Object.extend('Product')
+    product = Product.create_without_data(product_id)
+    query = leancloud.Query('ProductCategoryMap')
+    query.equal_to('product', product)
+    query.include('category')
+    query.include('category.title')
+    result = query.first()
+    return result

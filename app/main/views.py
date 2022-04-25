@@ -24,6 +24,7 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+
 @socketio.event
 def my_ping():
     emit('my_pong')
@@ -152,14 +153,18 @@ def testOrderList(user_id):
 # 个人中心展示商品订单
 @main.route('/allOrderList')
 def testAllOrderList():
-    return render_template("orderList.html")
+
+    return render_template("staff_chat.html")
 
 
 # 后台页面显示商品列表
 @main.route('/productList')
 def testProductList():
     products = product.getAllProduct()
-    return render_template("staff_chat.html", products=products)
+    lst = []
+    for i in products:
+        lst += [[product.getCategoryByProduct(i.id), i]]
+    return render_template("staff_chat.html", lst=lst)
 
 
 # 顾客聊天页面弹窗
@@ -172,11 +177,14 @@ def communicate():
 @main.route('/conversation/<conversation_id>')
 def conversation(conversation_id):
     return render_template("test_communication_A.html", conversation_id=conversation_id)
+
+
 #订单填写页面
-@main.route('/fillBillInfo')
-def fillBillInfo():
-    labels=product.getAllCategory()
-    return render_template("MusiCrashTemplates/orderForm.html",labels=labels)
+@main.route('/fillBillInfo/<product_id>')
+def fillBillInfo(product_id):
+    piano = product.getProductById(product_id)
+    labels = product.getAllCategory()
+    return render_template("MusiCrashTemplates/orderForm.html", piano=piano, labels=labels)
 
 # @main.route('/grotrian')
 # def grotrian():
