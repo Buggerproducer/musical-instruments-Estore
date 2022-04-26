@@ -36,15 +36,23 @@ def join():
     emit("notify", {'data':"someone join"}, broadcast=True)
 
 
-# 索引页面index
+# 索引页面index_zh
 @main.route('/')
-def index():
+def index_zh():
     if session.get('authenticated') is None or session.get('authenticated') is False:
         authenticated = False
     else:
         authenticated = True
-    return render_template("index.html", authenticated=authenticated, async_mode=socketio.async_mode)
+    return render_template("index_zh.html", authenticated=authenticated, async_mode=socketio.async_mode)
 
+# 索引页面index_en
+@main.route('/')
+def index_en():
+    if session.get('authenticated') is None or session.get('authenticated') is False:
+        authenticated = False
+    else:
+        authenticated = True
+    return render_template("index_en.html", authenticated=authenticated, async_mode=socketio.async_mode)
 
 # 登录注册页面
 @main.route('/signUp')
@@ -118,6 +126,9 @@ def kinds(kind_id):
     kind = product.getCategoryById(kind_id)
     return render_template("kind.html", products=products, kind=kind, async_mode=socketio.async_mode)
 
+@main.route('/kind')
+def kinds_edit():
+    return render_template("kind-editing.html")
 
 # 商品具体信息页面
 @main.route('/productInfo/<product_id>')
