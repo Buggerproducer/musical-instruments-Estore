@@ -7,7 +7,7 @@
 <meta name="discrption" content="parallax one page"/>
 <meta name="keyword" content="agency, business, corporate, creative, freelancer, interior, joomla template, K2 Blog, minimal, modern, multipurpose, personal, portfolio, responsive, simple"/>
 <!-- Title -->
-<title style="display:none;">MusiCrash - 在线乐器商店</title>
+<title style="display:none;">缪斯克拉斯 - 在线乐器商店</title>
 <!-- Font Google -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
@@ -22,11 +22,12 @@
 </head>
 <!--classic-menu-->
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax classic-menu v-light">
+
 <div class="preloader">
   <div class="preloader-bar">
     <div class="preloader-progress"></div>
   </div>
-  <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">MusiCrash</span><span class="text-fill">MusiCrash</span></h1>
+  <h1 class="title v-middle"><span class="percent ">0</span><span class="text-strok">缪斯克拉斯</span><span class="text-fill">缪斯克拉斯</span></h1>
 </div>
 
 <!-- 导航栏 -->
@@ -58,14 +59,14 @@
       <!-- 导航栏右边的内容的ul -->
       <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
         <!-- li 1: Home -->
-        <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Home</span><span class="dsn-meta-menu">01</span><span class="dsn-bg-arrow"></span></a>
+        <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">主页</span><span class="dsn-meta-menu">01</span><span class="dsn-bg-arrow"></span></a>
           <ul>
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Home</span></li>
-            <li><a href="{{ url_for('main.index') }}"><span class="dsn-title-menu">索引</span><span class="dsn-meta-menu">01</span></a></li>
+            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">首页</span></li>
+            <li><a href="{{ url_for('main.index_zh') }}"><span class="dsn-title-menu">索引</span><span class="dsn-meta-menu">01</span></a></li>
           </ul>
         </li>
         <!-- li 2: Sliders -->
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">Products</span><span class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
+        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">商品</span><span class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">商品</span></li>
             <li><a href="{{ url_for('main.category') }}"><span class="dsn-title-menu">品牌</span><span class="dsn-meta-menu">01</span></a></li>
@@ -91,7 +92,7 @@
             {% else %}
             <li><a id="logina" href="{{ url_for('main.signUp') }}"><span id="login" class="dsn-title-menu" >登录 & 注册</span><span class="dsn-meta-menu">01</span></a></li>
             {% endif %}
-            <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a></li>
+            <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">用户信息</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
         </li>
       </ul>
@@ -119,18 +120,18 @@
         <!-- Follow US -->
         <div class="nav-social">
           <div class="nav-social-inner p-relative">
-            <p class="title-line">Follow us</p>
+            <p class="title-line">关注我们</p>
             <ul>
-              <li><a href="#" target="_blank" rel="nofollow">Dribbble.
+              <li><a href="#" target="_blank" rel="nofollow">追波
                 <div class="icon-circle"></div>
                 </a></li>
-              <li><a href="#" target="_blank" rel="nofollow">Behance.
+              <li><a href="#" target="_blank" rel="nofollow">彼行司
                 <div class="icon-circle"></div>
                 </a></li>
-              <li><a href="#" target="_blank" rel="nofollow">Linkedin.
+              <li><a href="#" target="_blank" rel="nofollow">领英
                 <div class="icon-circle"></div>
                 </a></li>
-              <li><a href="#" target="_blank" rel="nofollow">Twitter.
+              <li><a href="#" target="_blank" rel="nofollow">推特
                 <div class="icon-circle"></div>
                 </a></li>
             </ul>
@@ -153,6 +154,7 @@
 <main class="main-root">
   <div id="dsn-scrollbar">
     <div class="main-slider demo-2 p-relative w-100 h-100-v over-hidden " data-dsn-header="parallax">
+      <!-- 得改成具体商品 -->
       <div class="bg-container" id="dsn-hero-parallax-img">
         <div class="slide-inner h-100">
           <div class="swiper-wrapper">
@@ -161,14 +163,14 @@
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
-                    <div class="metas d-inline-block"><span>Product</span></div>
-                    <h1 class="title user-no-selection"><a href="#" class="effect-ajax" data-dsn-ajax="slider">MusiCrash</a></h1>
+                    <div class="metas d-inline-block"><span>商品</span></div>
+                    <h1 class="title user-no-selection"><a href="#" class="effect-ajax" data-dsn-ajax="slider">缪斯克拉斯</a></h1>
                     <div class="sub-text-header d-inline-block user-no-selection">
-                      <h5>Since 1974 </h5>
+                      <h5>源自1974 </h5>
                       <span></span></div>
                     <div class="dsn-button-link mt-30 user-no-selection">
                       <a href="#" class="link-custom effect-ajax d-flex a-item-center p-relative" data-dsn-ajax="slider">
-                        <span class="link-text">View Case</span>
+                        <span class="link-text">查看详情</span>
                         <span class="link-circle p-absolute">
                           <i class="fas fa-arrow-right"></i>
                         </span>
@@ -177,7 +179,7 @@
                   </div>
                 </div>
                 <div class="description p-absolute d-flex a-item-center background-section">
-                  <p>Local musical instruments shop</p>
+                  <p>当地乐器店</p>
                 </div>
               </div>
             </div>
@@ -186,17 +188,16 @@
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
-                    <div class="metas d-inline-block user-no-selection"><span>Fashion</span><span>Photography</span></div>
-                    <h1 class="title user-no-selection"><a href="#" class="color-white effect-ajax" data-dsn-ajax="slider">NFL Combine</a></h1>
+                    <div class="metas d-inline-block user-no-selection"><span>Fashion</span><span>摄影</span></div>
+                    <h1 class="title user-no-selection"><a href="#" class="color-white effect-ajax" data-dsn-ajax="slider">NFL结合</a></h1>
                     <div class="sub-text-header d-inline-block user-no-selection">
-                      <h5>Kirk Roush </h5>
-                      <span>- March 1st 2017</span></div>
-                    <div class="dsn-button-link mt-30 user-no-selection"><a href="#" class="link-custom effect-ajax d-flex a-item-center p-relative" data-dsn-ajax="slider"><span class="link-text">View Case</span><span class="link-circle p-absolute"><i class="fas fa-arrow-right"></i></span></a></div>
+                      <h5>柯克·劳什</h5>
+                      <span>- 2017年3月1日</span></div>
+                    <div class="dsn-button-link mt-30 user-no-selection"><a href="#" class="link-custom effect-ajax d-flex a-item-center p-relative" data-dsn-ajax="slider"><span class="link-text">查看详情</span><span class="link-circle p-absolute"><i class="fas fa-arrow-right"></i></span></a></div>
                   </div>
                 </div>
                 <div class="description p-absolute d-flex a-item-center background-section">
-                  <p>Series of images used for Under Armour's NFL combine authentic apparel.
-                    Photography</p>
+                  <p>安德玛的NFL系列图像结合了真实的服装摄影</p>
                 </div>
               </div>
             </div>
@@ -207,23 +208,19 @@
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
-                    <div class="metas d-inline-block user-no-selection"> <span>Photography</span> </div>
+                    <div class="metas d-inline-block user-no-selection"> <span>摄影</span> </div>
                     <h1 class="title user-no-selection"> <a href="#" class="color-white effect-ajax"
-                                               data-dsn-ajax="slider">Zero
-                      Untitled</a> </h1>
+                                               data-dsn-ajax="slider">零无标题</a> </h1>
                     <div class="sub-text-header d-inline-block user-no-selection">
-                      <h5>Aaron Brimhall</h5>
-                      <span>- March 17th 2020</span> </div>
+                      <h5>亚伦·布林霍尔</h5>
+                      <span>- 2020年3月17日</span> </div>
                     <div class="dsn-button-link mt-30 user-no-selection"> <a href="#"
                                                class="link-custom effect-ajax d-flex a-item-center p-relative"
-                                               data-dsn-ajax="slider"> <span class="link-text">View Case</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
+                                               data-dsn-ajax="slider"> <span class="link-text">查看详情</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
                   </div>
                 </div>
                 <div class="description p-absolute d-flex a-item-center background-section">
-                  <p>A beautifully designed bike from
-                    Zero Motorcycles SR/S. Huggo Eccles
-                    from Untitled Motorcycles has created
-                    something spectacular to the eye.</p>
+                  <p></p>
                 </div>
               </div>
             </div>
@@ -234,19 +231,19 @@
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
-                    <div class="metas d-inline-block user-no-selection"> <span>Fashion</span> <span>Photography</span> </div>
+                    <div class="metas d-inline-block user-no-selection"> <span>潮流</span> <span>摄影</span> </div>
                     <h1 class="title user-no-selection"> <a href="#" class="color-white effect-ajax"
-                                               data-dsn-ajax="slider">Blue Edition</a> </h1>
+                                               data-dsn-ajax="slider">蓝色版本</a> </h1>
                     <div class="sub-text-header d-inline-block user-no-selection">
-                      <h5>Elia Pirazzo </h5>
-                      <span>- March 29th 2020</span> </div>
+                      <h5>伊利亚·派拉佐</h5>
+                      <span>- 2020年3月29日</span> </div>
                     <div class="dsn-button-link mt-30 user-no-selection"> <a href="#"
                                                class="link-custom effect-ajax d-flex a-item-center p-relative"
-                                               data-dsn-ajax="slider"> <span class="link-text">View Case</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
+                                               data-dsn-ajax="slider"> <span class="link-text">查看详情</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
                   </div>
                 </div>
                 <div class="description p-absolute d-flex a-item-center background-section">
-                  <p>Pink Tint Photosession for popular Model in Ukraine .</p>
+                  <p>在乌克兰流行的模型的粉红色着色照相</p>
                 </div>
               </div>
             </div>
@@ -258,19 +255,17 @@
                   <div class="content p-relative w-100">
                     <div class="metas d-inline-block user-no-selection"> <span>Architecture</span> </div>
                     <h1 class="title user-no-selection"> <a href="#" class="color-white effect-ajax"
-                                               data-dsn-ajax="slider">Black
-                      Apartment</a> </h1>
+                                               data-dsn-ajax="slider">黑色公寓</a> </h1>
                     <div class="sub-text-header d-inline-block user-no-selection">
-                      <h5>Georgiy Traksel</h5>
+                      <h5>乔治·川克赛</h5>
                       <span>- March 25th 2020</span> </div>
                     <div class="dsn-button-link mt-30 user-no-selection"> <a href="#"
                                                class="link-custom effect-ajax d-flex a-item-center p-relative"
-                                               data-dsn-ajax="slider"> <span class="link-text">View Case</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
+                                               data-dsn-ajax="slider"> <span class="link-text">查看详情</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
                   </div>
                 </div>
                 <div class="description p-absolute d-flex a-item-center background-section">
-                  <p>Used softwares: 3ds max, corona
-                    render,quixel mixer and Photoshop Overall lighting HDRI</p>
+                  <p>使用软件:3ds max，电晕渲染，quixel混合器和Photoshop整体照明HDRI</p>
                 </div>
               </div>
             </div>
@@ -280,71 +275,19 @@
               <div class="slide-content p-absolute h-100 w-100 ">
                 <div class="row align-items-center h-100">
                   <div class="content p-relative w-100">
-                    <div class="metas d-inline-block user-no-selection"> <span>Digital Art</span> </div>
+                    <div class="metas d-inline-block user-no-selection"> <span>数字艺术</span> </div>
                     <h1 class="title user-no-selection"> <a href="#" class="color-white effect-ajax"
-                                               data-dsn-ajax="slider">Intentional</a> </h1>
+                                               data-dsn-ajax="slider">国际化</a> </h1>
                     <div class="sub-text-header d-inline-block user-no-selection">
-                      <h5>Pawel Nolbert</h5>
-                      <span>- June 13th 2018</span> </div>
+                      <h5>P保罗·诺伯特</h5>
+                      <span>- 2018年6月13日</span> </div>
                     <div class="dsn-button-link mt-30 user-no-selection"> <a href="#"
                                                class="link-custom effect-ajax d-flex a-item-center p-relative"
-                                               data-dsn-ajax="slider"> <span class="link-text">View Case</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
+                                               data-dsn-ajax="slider"> <span class="link-text">查看详情</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
                   </div>
                 </div>
                 <div class="description p-absolute d-flex a-item-center background-section">
-                  <p>Personal conceptual project. Reflecting on my personal style of paint
-                    illustration.</p>
-                </div>
-              </div>
-            </div>
-            <div class="slide-item swiper-slide">
-              <div class="cover-bg h-100 w-100 p-absolute hidden"
-                                 data-image-src="{{ url_for('static', filename='img/project/project7/1.jpg') }}" data-overlay="7"> </div>
-              <div class="image-bg cover-bg w-100 h-100">
-                <div data-dsn="video" data-overlay="6">
-                  <video class="bg-image cover-bg dsn-video"
-                                           poster="../static/img/project/project7/1.jpg" autoplay loop muted>
-                    <source src="http://theme.dsngrid.com/video/Equator.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <div class="slide-content p-absolute h-100 w-100 ">
-                <div class="row align-items-center h-100">
-                  <div class="content p-relative w-100">
-                    <div class="metas d-inline-block user-no-selection"> <span>Architecture</span> <span>Video</span> </div>
-                    <h1 class="title user-no-selection"> <a href="#" class="color-white effect-ajax"
-                                               data-dsn-ajax="slider">EQUATOR CGI</a> </h1>
-                    <div class="sub-text-header d-inline-block user-no-selection">
-                      <h5>Russian Archviz</h5>
-                      <span>- January 12th 2020</span> </div>
-                    <div class="dsn-button-link mt-30 user-no-selection"> <a href="#"
-                                               class="link-custom effect-ajax d-flex a-item-center p-relative"
-                                               data-dsn-ajax="slider"> <span class="link-text">View Case</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="slide-item swiper-slide">
-              <div class="image-bg cover-bg w-100 h-100"
-                                 data-image-src="{{ url_for('static', filename='img/project/project8/1.jpg') }}" data-overlay="7"
-                                 data-dsn-position="34%"> </div>
-              <div class="slide-content p-absolute h-100 w-100 ">
-                <div class="row align-items-center h-100">
-                  <div class="content p-relative w-100">
-                    <div class="metas d-inline-block user-no-selection"> <span>Photography</span> </div>
-                    <h1 class="title user-no-selection"> <a href="#" class="color-white effect-ajax"
-                                               data-dsn-ajax="slider">NATIVE UNION</a> </h1>
-                    <div class="sub-text-header d-inline-block user-no-selection">
-                      <h5>Britney Lam</h5>
-                      <span>- September 14th 2019</span> </div>
-                    <div class="dsn-button-link mt-30 user-no-selection"> <a href="#"
-                                               class="link-custom effect-ajax d-flex a-item-center p-relative"
-                                               data-dsn-ajax="slider"> <span class="link-text">View Case</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
-                  </div>
-                </div>
-                <div class="description p-absolute d-flex a-item-center background-section">
-                  <p>Personal conceptual project. Reflecting on my personal style of paint
-                    illustration.</p>
+                  <p>个人概念的项目,反映了我个人的绘画风格</p>
                 </div>
               </div>
             </div>
@@ -364,9 +307,9 @@
       <div class="social-network-box text-center w-100-v">
         <div class="social-network">
           <ul>
-            <li><a class="link-hover" href="#" data-hover-text="facebook">facebook</a></li>
-            <li><a class="link-hover" href="#" data-hover-text="behance">behance</a></li>
-            <li><a class="link-hover" href="#" data-hover-text="instagram">instagram</a></li>
+            <li><a class="link-hover" href="#" data-hover-text="facebook">脸书</a></li>
+            <li><a class="link-hover" href="#" data-hover-text="behance">彼罕思</a></li>
+            <li><a class="link-hover" href="#" data-hover-text="instagram">ins</a></li>
           </ul>
         </div>
       </div>
@@ -389,13 +332,13 @@
             <div class="col-lg-6">
               <div class="intro-about-info">
                 <div class="section-title-2">
-                  <h2>About Us</h2>
-                  <p>Why us?</p>
+                  <h2>关于我们</h2>
+                  <p>为什么选择我们?</p>
                 </div>
                 <div class="intro-about-info-bottom">
-                  <h2 class="title-h2 dsn-up">"There was no choice but MusiCrash."</h2>
-                  <p class="dsn-text">FAMILY-OWNED, KNOWLEDGEABLE & REPUTABLE
-                      SINCE 1974</p>
+                  <h2 class="title-h2 dsn-up">"除了缪斯克拉斯,你没有别的选择。"</h2>
+                  <p class="dsn-text">家族所有，知识渊博和声誉良好
+                      源自1974</p>
                   <div class="accordion mt-30">
 
                     <!-- Our Vision & Our goals & Our Mission部分 -->
@@ -407,12 +350,12 @@
                         <!-- Our Vision的标题和图标 -->
                         <div class="accordion__question expanded d-flex align-items-center p-relative">
                           <span class="icon"> <img src="{{ url_for('static', filename='img/vision.svg') }}" alt=""> </span>
-                          <h4 class="sm-title-block">SUPERIOR CUSTOMER SERVICE</h4>
+                          <h4 class="sm-title-block">卓越的客户服务</h4>
                         </div>
 
                         <!-- Our Vision下的文字介绍 -->
                         <div class="accordion__answer active">
-                          <p>Generations of Steinway craftsmen have been creating excellent pianos for decades, through their hands, time imparts character to the piano.</p>
+                          <p>数十年来，施坦威的几代工匠一直在创造优秀的钢琴，通过他们的手，时间赋予钢琴性格。</p>
                         </div>
 
                       </div>
@@ -422,14 +365,11 @@
                       <div class="accordion__item dsn-up">
 
                         <div class="accordion__question d-flex align-items-center p-relative"> <span class="icon"> <img src="{{ url_for('static', filename='img/target.svg') }}" alt=""> </span>
-                          <h4 class="sm-title-block">Our Departures</h4>
+                          <h4 class="sm-title-block">我们的</h4>
                         </div>
 
                         <div class="accordion__answer">
-                          <p>
-                            Steinway allows listeners to listen, share and experience live performance in close contact
-                            with top music and piano masters.
-                          </p>
+                          <p>施坦威让听众与顶级音乐和钢琴大师密切接触，聆听、分享和体验现场表演。</p>
                         </div>
 
                       </div>
@@ -438,17 +378,17 @@
                       <div class="accordion__item dsn-up">
 
                         <div class="accordion__question d-flex align-items-center p-relative"> <span class="icon"> <img src="{{ url_for('static', filename='img/mission.svg') }}" alt=""> </span>
-                          <h4 class="sm-title-block">Our History</h4>
+                          <h4 class="sm-title-block">我们的历史</h4>
                         </div>
 
                         <div class="accordion__answer">
                           <p>
-                              SINCE 1974
-                              Nick Margaritas founded Piano Man in 1974. A pianist with an education in business management,
-                              he initially started as a piano service company developing journeymen technicians and hiring personnel interested in honing their skills in piano technology.
-                              Nick was the first to import used Yamaha and Kawai pianos from Japan for resale here in America.
-                              MusiCrash has grown to be a major buyout specialist of troubled piano companies throughout the country.
-                              We have the largest facility on the East Coast and we regularly rebuild, refinish and restore pianos for artists, consumers and all major insurance companies.
+                              自1974年以来
+                              尼克·玛格丽塔斯于1974年创立了钢琴人。一个受过商业管理教育的钢琴家，
+                              他最初是一家钢琴服务公司，开发技工，并聘用对磨练钢琴技术技能感兴趣的人员。
+                              尼克是第一个从日本进口二手雅马哈和河合钢琴在美国转售的人。
+                              已经成长为全国陷入困境的钢琴公司的主要收购专家。
+                              我们拥有东海岸最大的设施，我们定期为艺术家、消费者和所有大型保险公司重建、翻新和修复钢琴。
                           </p>
                         </div>
 
@@ -473,9 +413,6 @@
                   </div>
                 </div>
 
-                <!-- 右边背景图片 多余的代码？？？ -->
-<!--                <img src="{{ url_for('static', filename='img/about-intro.jpg') }}" alt="">-->
-
                 <!-- 橙棕色背景白字大块 -->
                 <div class="exper background-theme p-absolute">
 
@@ -484,8 +421,8 @@
 
                   <!-- 169白色大数字下面的小字 -->
                   <h4 class="sm-title-block dsn-up">
-                    YEARS OF <br>
-                    PIANO EXPERIENCE
+                    多年的<br>
+                    制琴经验
                   </h4>
 
                   <!-- 白色浅纹理图案 -->
@@ -515,8 +452,8 @@
 
           <!-- Our Skills 标题部分上块 -->
           <div class="container no-padding section-title-2">
-            <h2>Our Pianos</h2>
-            <p>What we Best At</p>
+            <h2>我们的钢琴</h2>
+            <p>我们擅长什么</p>
           </div>
           <!-- Our Skills 标题部分上块结束 -->
 
@@ -530,7 +467,7 @@
               <div class="box-text">
 
                 <!-- 上面大字部分 -->
-                <h3 class="title-h2 dsn-text">We provide pure and dynamic performance </h3>
+                <h3 class="title-h2 dsn-text">我们提供纯粹和动态的性能</h3>
 
                 <!-- 下面列表部分 -->
                 <div class="accordion">
@@ -542,12 +479,12 @@
 
                       <!-- item1标题 -->
                       <div class="accordion__question p-relative">
-                        <h4 class="sm-title-block ">From Grand to Upright Pianos</h4>
+                        <h4 class="sm-title-block ">从大钢琴到立式钢琴</h4>
                       </div>
 
                       <!-- item1内容 -->
                       <div class="accordion__answer">
-                        <p>From grand to upright, there is always one of the different styles to meet your needs.</p>
+                        <p>从宏伟到直立，总有一种不同的风格来满足您的需求。</p>
                       </div>
 
                     </div>
@@ -881,13 +818,13 @@
                 <div class="title-cover" data-dsn-grid="move-section" data-dsn-opacity="0.1"
                      data-dsn-duration="170%" data-dsn-move="0%"> PIANO</div>
                 <div class="vertical-title ">
-                  <h2 class="dsn-text">MusiCrash</h2>
+                  <h2 class="dsn-text">缪斯克拉斯</h2>
                 </div>
                 <div class="bg-mask-content dsn-up">
                   <div class="mask-bg-2 background-section"></div>
                   <h6 class="dsn-up">
                       What we offer? </h6>
-                  <p class="dsn-up">The MusiCrash offers a great selection of New and Pre-owned pianos such as Bösendorfer, GROTRIAN, Petrof,Steinway & Sons, Steinmeyer, Yamaha!</p>
+                  <p class="dsn-up">The 缪斯克拉斯 offers a great selection of New and Pre-owned pianos such as Bösendorfer, GROTRIAN, Petrof,Steinway & Sons, Steinmeyer, Yamaha!</p>
                 </div>
                 <div class="d-inline-block dsn-up"> <a href="#" class="link-custom d-flex a-item-center p-relative"> <span class="link-text">Load More</span> <span class="link-circle p-absolute"> <i class="fas fa-arrow-right"></i> </span> </a> </div>
               </div>
@@ -955,7 +892,7 @@
                 <div class="testimonials-item">
                   <div class="top-box">
                     <h5 class="sm-title-block">Customer Support</h5>
-                    <p class="p-larg">"Love the MusiCrash Store! Not only is the quality of the pianos top notch, but the owner,
+                    <p class="p-larg">"Love the 缪斯克拉斯 Store! Not only is the quality of the pianos top notch, but the owner,
                         is very knowledgeable and his love for the piano just oozes out of him. It's very refreshing to see.
                         He makes you feel like family, and any questions you may have, he is always ready with an answer."</p>
                   </div>
@@ -963,7 +900,7 @@
                 <div class="testimonials-item">
                   <div class="top-box">
                     <h5 class="sm-title-block">Customer Support</h5>
-                    <p class="p-larg">"I bought my piano from the MusiCrash, the owner worked very hard to find out perfect piano.
+                    <p class="p-larg">"I bought my piano from the 缪斯克拉斯, the owner worked very hard to find out perfect piano.
                         The piano was delivered to my home in 2 days and it was everything we asked for."
                     </p>
                   </div>
@@ -971,7 +908,7 @@
                 <div class="testimonials-item">
                   <div class="top-box">
                     <h5 class="sm-title-block">Customer Support</h5>
-                    <p class="p-larg">"I recently bought a piano here for two reasons. The MusiCrash itself is top shelf and that's the kind
+                    <p class="p-larg">"I recently bought a piano here for two reasons. The 缪斯克拉斯 itself is top shelf and that's the kind
                     of product available here whether one is looking for an acoustic or electronic instrument. I have come to trust the honesty
                     and fair dealing as well as product knowledge."</p>
                   </div>
@@ -1261,8 +1198,8 @@
                 <p><strong>T</strong> <span>:</span> +001 225 3351</p>
                 <p><strong>F</strong> <span>:</span>+001 225 3351</p>
                 <p class="over-hidden"><strong>E</strong> <span>:</span><a class="link-hover"
-                                                                                           data-hover-text="musicrash1974@gmail.com"
-                                                                                           href="#">musicrash1974@gmail.com</a> </p>
+                                                                                           data-hover-text="缪斯克拉斯1974@gmail.com"
+                                                                                           href="#">缪斯克拉斯1974@gmail.com</a> </p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 footer-block-inner">
@@ -1290,10 +1227,10 @@
       </div>
       <div class="copyright">
         <div class="text-center">
-          <p>© 2022 MusiCrash</p>
+          <p>© 2022 缪斯克拉斯</p>
           <div class="copright-text over-hidden">Designed by <a class="link-hover"
-                                                                          data-hover-text="MusiCrash" href="{{ url_for('main.index') }}"
-                                                                          target="_blank">MusiCrash</a> </div>
+                                                                          data-hover-text="缪斯克拉斯" href="{{ url_for('main.index_zh') }}"
+                                                                          target="_blank">缪斯克拉斯</a> </div>
         </div>
       </div>
     </footer>
