@@ -108,10 +108,16 @@ def testmodify():
 
 
 # 商品品牌分类页面
-@main.route('/category')
-def category():
+@main.route('/category_zh')
+def category_zh():
     kinds = product.getAllCategory(0, 50)
-    return render_template("category.html", kinds=kinds, async_mode=socketio.async_mode)
+    return render_template("category_zh.html", kinds=kinds, async_mode=socketio.async_mode)
+
+# 商品品牌分类页面
+@main.route('/category_en')
+def category_en():
+    kinds = product.getAllCategory(0, 50)
+    return render_template("category_en.html", kinds=kinds, async_mode=socketio.async_mode)
 
 
 @main.route('/products')
@@ -120,26 +126,38 @@ def products():
 
 
 # 不同品牌商品的商品展示页面
-@main.route('/kind/<kind_id>')
-def kinds(kind_id):
+@main.route('/kind_zh/<kind_id>')
+def kinds_zh(kind_id):
     products = product.getProductByCategory(kind_id)
     kind = product.getCategoryById(kind_id)
-    return render_template("kind.html", products=products, kind=kind, async_mode=socketio.async_mode)
+    return render_template("kind_zh.html", products=products, kind=kind, async_mode=socketio.async_mode)
+
+# 不同品牌商品的商品展示页面
+@main.route('/kind_en/<kind_id>')
+def kinds_en(kind_id):
+    products = product.getProductByCategory(kind_id)
+    kind = product.getCategoryById(kind_id)
+    return render_template("kind_en.html", products=products, kind=kind, async_mode=socketio.async_mode)
 
 @main.route('/kind')
 def kinds_edit():
     return render_template("kind-editing.html")
 
 # 商品具体信息页面
-@main.route('/productInfo/<product_id>')
-def productInfo(product_id):
+@main.route('/productInfo_zh/<product_id>')
+def productInfo_zh(product_id):
     commodity = product.getProductById(product_id,record=True)
-
-
     # print(product_id)
     # commodity_title = commodity.get('title').get('english')
-    return render_template("piano.html", commodity=commodity, async_mode=socketio.async_mode)
+    return render_template("piano_zh.html", commodity=commodity, async_mode=socketio.async_mode)
 
+# 商品具体信息页面
+@main.route('/productInfo_en/<product_id>')
+def productInfo_en(product_id):
+    commodity = product.getProductById(product_id,record=True)
+    # print(product_id)
+    # commodity_title = commodity.get('title').get('english')
+    return render_template("piano_en.html", commodity=commodity, async_mode=socketio.async_mode)
 
 # 后台页面数据展示
 @main.route('/backend_data')
