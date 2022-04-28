@@ -45,5 +45,7 @@ def getAllOrder(skip=0, limit=50):
     query.include('product')
     query.include('user')
     query.include('price')
+    query.include('product.title')
+    query.include('product.description')
     result = query.find()
     return result
