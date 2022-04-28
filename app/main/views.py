@@ -145,7 +145,7 @@ def staff_index():
 # 个人中心展示商品订单
 @main.route('/orderList/<user_id>')
 @login_required
-def testOrderList(user_id):
+def userOrderList(user_id):
     orders = user.getOrderByUser(user_id)
     page = orders/5 + 1
     current_page = 1
@@ -162,16 +162,16 @@ def testOrderList(user_id):
     return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
 
 
-# 个人中心展示商品订单
+# 后台展示商品订单
 @main.route('/allOrderList')
-def testAllOrderList():
-
-    return render_template("staff_chat.html")
+def allOrderList():
+    orders = user.getAllOrder()
+    return render_template("orderList_merchant.html", order_list=orders)
 
 
 # 后台页面显示商品列表
 @main.route('/productList')
-def testProductList():
+def productList():
     products = product.getAllProduct()
     lst = []
     for i in products:
