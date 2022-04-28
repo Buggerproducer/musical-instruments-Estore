@@ -186,6 +186,11 @@ def fillBillInfo(product_id):
     labels = product.getAllCategory()
     return render_template("MusiCrashTemplates/orderForm.html", piano=piano, labels=labels)
 
+@main.route('/about_us')
+def aboutus():
+    return render_template("MusiCrashTemplates/about_us.html")
+
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
