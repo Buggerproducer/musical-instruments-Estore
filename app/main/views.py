@@ -145,21 +145,21 @@ def staff_index():
 # 个人中心展示商品订单
 @main.route('/orderList/<user_id>')
 @login_required
-def testOrderList(user_id):
+def userOrderList(user_id):
     orders = user.getOrderByUser(user_id)
     return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
 
 
 # 后台展示商品订单
 @main.route('/allOrderList')
-def testAllOrderList():
+def allOrderList():
     orders = user.getAllOrder()
     return render_template("orderList_merchant.html", order_list=orders)
 
 
 # 后台页面显示商品列表
 @main.route('/productList')
-def testProductList():
+def productList():
     products = product.getAllProduct()
     lst = []
     for i in products:
