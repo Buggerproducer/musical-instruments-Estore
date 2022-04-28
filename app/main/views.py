@@ -147,6 +147,18 @@ def staff_index():
 @login_required
 def testOrderList(user_id):
     orders = user.getOrderByUser(user_id)
+    page = orders/5 + 1
+    current_page = 1
+    next_page = current_page +1
+    pre_page = current_page-1
+    if current_page >= page:
+        next_page = None
+    if current_page == 1:
+        pre_page = None
+    pagination = {
+        "page":page,
+        "current_page":current_page
+    }
     return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
 
 
