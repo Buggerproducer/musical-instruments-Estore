@@ -81,9 +81,15 @@ def check():
 
 
 # 个人信息页面
-@main.route('/testbase')
-def testbase():
-    return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
+@main.route('/testbase_zh')
+def testbase_zh():
+    return render_template("MusiCrashTemplates/userCenter_zh.html", async_mode=socketio.async_mode)
+
+
+# 个人信息页面
+@main.route('/testbase_en')
+def testbase_en():
+    return render_template("MusiCrashTemplates/userCenter_en.html", async_mode=socketio.async_mode)
 
 
 @main.route('/history_order')
@@ -97,15 +103,25 @@ def collection(user_id):
     return render_template("MusiCrashTemplates/collectionLists.html", collections=collections, async_mode=socketio.async_mode)
 
 
-@main.route('/testinfo')
-def testinfo():
-    return render_template("MusiCrashTemplates/userInformation.html", async_mode=socketio.async_mode)
+@main.route('/testinfo_zh')
+def testinfo_zh():
+    return render_template("MusiCrashTemplates/userInformation_zh.html", async_mode=socketio.async_mode)
 
 
-@main.route('/testmodify')
-def testmodify():
-    return render_template("MusiCrashTemplates/modifyInfomation.html", async_mode=socketio.async_mode)
 
+@main.route('/testinfo_en')
+def testinfo_en():
+    return render_template("MusiCrashTemplates/userInformation_en.html", async_mode=socketio.async_mode)
+
+
+@main.route('/testmodify_zh')
+def testmodify_zh():
+    return render_template("MusiCrashTemplates/modifyInfomation_zh.html", async_mode=socketio.async_mode)
+
+
+@main.route('/testmodify_en')
+def testmodify_en():
+    return render_template("MusiCrashTemplates/modifyInfomation_en.html", async_mode=socketio.async_mode)
 
 # 商品品牌分类页面
 @main.route('/category_zh')
