@@ -150,11 +150,10 @@ def testOrderList(user_id):
     return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
 
 
-# 个人中心展示商品订单
+# 后台展示商品订单
 @main.route('/allOrderList')
 def testAllOrderList():
-
-    return render_template("staff_chat.html")
+    return render_template("orderList_merchant.html")
 
 
 # 后台页面显示商品列表
