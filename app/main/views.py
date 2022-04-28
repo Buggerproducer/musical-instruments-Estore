@@ -153,7 +153,8 @@ def testOrderList(user_id):
 # 后台展示商品订单
 @main.route('/allOrderList')
 def testAllOrderList():
-    return render_template("orderList_merchant.html")
+    orders = user.getAllOrder()
+    return render_template("orderList_merchant.html", order_list=orders)
 
 
 # 后台页面显示商品列表
