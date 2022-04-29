@@ -137,7 +137,7 @@
             {% if authenticated %}
             <li><a id="logouta" href="javascript:logout();"><span id="logout" class="dsn-title-menu">登出</span><span class="dsn-meta-menu">02</span></a></li>
             {% else %}
-            <li><a id="logina" href="{{ url_for('main.signUp') }}"><span id="login" class="dsn-title-menu" >登录 & 注册</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a id="logina" href="{{ url_for('main.signUp_zh') }}"><span id="login" class="dsn-title-menu" >登录 & 注册</span><span class="dsn-meta-menu">01</span></a></li>
             {% endif %}
             <li><a href="{{ url_for('main.testbase_zh') }}"><span class="dsn-title-menu">用户信息</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>

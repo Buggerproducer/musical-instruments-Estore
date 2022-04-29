@@ -46,7 +46,7 @@ def index_zh():
     return render_template("index_zh.html", authenticated=authenticated, async_mode=socketio.async_mode)
 
 # 索引页面index_en
-@main.route('/')
+@main.route('/en')
 def index_en():
     if session.get('authenticated') is None or session.get('authenticated') is False:
         authenticated = False
@@ -55,9 +55,14 @@ def index_en():
     return render_template("index_en.html", authenticated=authenticated, async_mode=socketio.async_mode)
 
 # 登录注册页面
-@main.route('/signUp')
-def signUp():
-    return render_template("signUp.html", async_mode=socketio.async_mode)
+@main.route('/signUp_zh')
+def signUp_zh():
+    return render_template("signUp_zh.html", async_mode=socketio.async_mode)
+
+# 登录注册页面
+@main.route('/signUp_en')
+def signUp_en():
+    return render_template("signUp_en.html", async_mode=socketio.async_mode)
 
 
 # 查看用户登录状态

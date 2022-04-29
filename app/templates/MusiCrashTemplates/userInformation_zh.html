@@ -1,7 +1,7 @@
 <!--用于展示用户详细的个人页面-->
 {% extends "MusiCrashTemplates/base_zh.html"%}
 {% block title %}
-Information of Your
+您的个人信息
 {% endblock %}
 
 {% block sebian_css %}
@@ -16,7 +16,7 @@ Information of Your
           <!-- Tittle -->
           <div class="tittle white animate fadeInUp" data-wow-delay="2s" >
             <h5 id="username"></h5>
-            <p>Our Happy Clients</p>
+            <p>欢迎您，我们尊贵的客户</p>
           </div>
 
           <!-- Slider Section -->
@@ -25,18 +25,18 @@ Information of Your
             <!-- Slider 1 -->
             <div class="testi">
               <div class="avatar"> <img src="../../static/image/sebian_imgs/avatars/avatar-4.jpg" alt=""> </div>
-              <p>Personal Information</p>
+              <p>个人信息</p>
               <hr>
-              <h6>User Name</h6>
+              <h6>用户名</h6>
               <p id="username2"></p>
-              <h6>Phone</h6>
+              <h6>手机号码</h6>
               <p>18811687595</p>
-              <h6>Email</h6>
+              <h6>邮箱</h6>
               <p>weijiong.you@ucdconnect.ie</p>
-              <h6>Address</h6>
-              <p>Beijiing, Chao yang district，Nan Mo Fang town, Pingleyuan No.100</p>
+              <h6>地址</h6>
+              <p>北京市，朝阳区100号北京工业大学</p>
               <p><u>
-                 <a href="{{ url_for('main.testmodify') }}" class="effect-ajax antiquewhite-font " ><u><span class="text-decoration-underline">Manage Your Personal Information</span></u></a>
+                 <a href="{{ url_for('main.testmodify_zh') }}" class="effect-ajax antiquewhite-font " ><u><span class="text-decoration-underline">管理您的个人信息</span></u></a>
               </u></p>
             </div>
 
