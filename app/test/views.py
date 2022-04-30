@@ -83,7 +83,7 @@ def testOrderList():
 @testRoute.route('/producteditor')
 def testProductEditor():
     labels=product.getAllCategory()
-    return render_template("MusiCrashTemplates/productEditor.html",labels=labels)
+    return render_template("MusiCrashTemplates/productEditorNew.html",labels=labels)
 
 @testRoute.route('/fillBillInfo')
 def fillBillInfo():

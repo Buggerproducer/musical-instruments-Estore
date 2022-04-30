@@ -26,6 +26,19 @@ editor.config.customUploadImg = function (resultFiles, insertImgFn) {
     });
     };
 
+editor.config.customUploadVideo = function (resultFiles, insertVideoFn) {
+    // resultFiles 是 input 中选中的文件列表
+    // insertVideoFn 是获取视频 url 后，插入到编辑器的方法
+
+    // 上传视频，返回结果，将视频地址插入到编辑器中
+        const file = new AV.File(resultFiles[0].name, resultFiles[0]);
+    file.save().then((file) => {
+        insertImgFn(file.get("url"))
+    }, (error) => {
+        // 保存失败，可能是文件无法被读取，或者上传过程中出现问题
+    });
+}
+
 editor.create();
 
 function loadProduct(product){
@@ -43,24 +56,50 @@ function loadProduct(product){
     })
 }
 
-function submit(){
+async function submit() {
     //2022年3月24号14:20金深远开始玩原神
-    updateEnglishProduct(currentProduct,$('#title').val(),$('#description').val(),editor.txt.html());
-    const buttons=$('.cLabel.choose');
-    // console.log($('.cLabel.choose').size())
-    // for(i in buttons){
-    //     console.log(i)
-    // }
-    // console.log(buttons)
-    const l=[];
-    buttons.each(function (a,b) {
-        // console.log(b)
-        l.push(b.id);
+    if (currentProduct) {
+        updateEnglishProduct(currentProduct, $('#title').val(), $('#description').val(), editor.txt.html());
+        const buttons = $('.cLabel.choose');
+        // console.log($('.cLabel.choose').size())
+        // for(i in buttons){
+        //     console.log(i)
+        // }
+        // console.log(buttons)
+        const l = [];
+        buttons.each(function (a, b) {
+            // console.log(b)
+            l.push(b.id);
 
-    });
-    setProductCategory(currentProduct.id,l);
-     if(document.getElementById('fileField').files.length!==0) {
-         setProductCover(currentProduct.id, document.getElementById('fileField').files)
-     }
-    alert('Successfully submit the change!');
+        });
+        setProductCategory(currentProduct.id, l);
+        if (document.getElementById('fileField').files.length !== 0) {
+            setProductCover(currentProduct.id, document.getElementById('fileField').files)
+        }
+        alert('Successfully submit the change!');
+    } else {
+        currentProduct=await createProduct( editor.txt.html(),$('#title').val(),$('#description').val(),0)
+        console.log(currentProduct)
+
+        if (currentProduct) {
+        updateEnglishProduct(currentProduct, $('#title').val(), $('#description').val(), editor.txt.html());
+        const buttons = $('.cLabel.choose');
+        // console.log($('.cLabel.choose').size())
+        // for(i in buttons){
+        //     console.log(i)
+        // }
+        // console.log(buttons)
+        const l = [];
+        buttons.each(function (a, b) {
+            // console.log(b)
+            l.push(b.id);
+
+        });
+        setProductCategory(currentProduct.id, l);
+        if (document.getElementById('fileField').files.length !== 0) {
+            setProductCover(currentProduct.id, document.getElementById('fileField').files)
+        }
+        alert('Successfully submit the change!');
+    }
+    }
 }
