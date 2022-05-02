@@ -228,7 +228,7 @@ def userOrderList_en(user_id):
         "pre_post": pre_pos,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
+    return render_template("MusiCrashTemplates/orderList.html", order_list=orders,pagination=pagination)
 
 @main.route('/orderList/<user_id>')
 @login_required
@@ -287,7 +287,7 @@ def allOrderList_en():
         "pre_post": pre_pos,
         "next": next_post
     }
-    return render_template("orderList_merchant.html", order_list=orders)
+    return render_template("orderList_merchant.html", order_list=orders,pagination=pagination)
 
 @main.route('/allOrderList_zh')
 def allOrderList_zh():
