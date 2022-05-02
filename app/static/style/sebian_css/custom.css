@@ -68,6 +68,10 @@
     margin-left: 10px;
 }
 
+.page_item_active{
+    background-color: darkgray !important;
+}
+
 .file-box{ position:relative;width:100%}
 .txt{ height:40%; border:1px solid #cdcdcd; width:180px;}
 .file-btn{ background-color:#FFF; border:1px solid #CDCDCD;height:24px; width:70px;}

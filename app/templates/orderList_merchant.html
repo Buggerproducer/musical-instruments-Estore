@@ -191,12 +191,70 @@
 
             <!--======= PAGINATION =========-->
             <ul class="pagination animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-              <li><a href="#.">1</a></li>
-              <li><a href="#.">2</a></li>
-              <li><a href="#.">3</a></li>
-              <li><a href="#.">4</a></li>
-              <li><a href="#.">5</a></li>
-              <li><a href="#."><i class="fa fa-angle-right"></i></a></li>
+                {% if pagination["page"]//5 > 1 %}
+                    {% if pagination["current_page"] > pagination["page"] - 5 %}
+                        <li>
+                            <a href="#.">1</a>
+                        </li>
+                        <li>
+                            <a href="#.">...</a>
+                        </li>
+                        {% for pagenum in range(pagination["current_page"]//5 * 5,pagination["page"]) %}
+                        <li><a {% if pagenum  == pagination["current_page"] %}
+                                class="page_item_active"
+                                {% endif %}
+                                href="#.">{{ pagenum }}</a></li>
+                        {% endfor %}
+
+                    {% elif pagination["current_page"] > 5 %}
+                        <li>
+                            <a href="#.">1</a>
+                        </li>
+                        <li>
+                            <a href="#.">...</a>
+                        </li>
+                        {% for pagenum in range(pagination["current_page"]//5 * 5,pagination["current_page"]//5 * 5 + 5) %}
+                        <li><a {% if pagenum  == pagination["current_page"] %}
+                                class="page_item_active"
+                                {% endif %}
+                                href="#.">{{ pagenum }}</a></li>
+                        {% endfor %}
+                        <li>
+                            <a href="#.">...</a>
+                        </li>
+                        <li>
+                            <a href="#.">{{ pagination["page"] }}</a>
+                        </li>
+                    {% else %}
+                    {% for pagenum in range(0,5) %}
+                        <li><a {% if pagenum + 1 == pagination["current_page"] %}
+                                class="page_item_active"
+                                {% endif %}
+                                href="#.">{{ pagenum + 1 }}</a></li>
+                    {% endfor %}
+                    <li>
+                            <a href="#.">...</a>
+                    </li>
+                    <li>
+                            <a href="#.">{{ pagination["page"] }}</a>
+                    </li>
+                    {% endif %}
+                {% else %}
+                    {% for pagenum in range(0,5) %}
+                    <li><a {% if pagenum + 1 == pagination["current_page"] %}
+                            class="page_item_active"
+                            {% endif %}
+                            href="#.">{{ pagenum + 1 }}</a></li>
+                {% endfor %}
+                {% endif %}
+
+{#              <li><a href="#.">1</a></li>#}
+{#              <li><a href="#.">2</a></li>#}
+{#              <li><a href="#.">3</a></li>#}
+{#              <li><a href="#.">4</a></li>#}
+{#              <li><a href="#.">5</a></li>#}
+{#              <li><a href="#."><i class="fa fa-angle-right"></i></a></li>#}
+            </ul>
             </ul>
           </div>
     </div>
