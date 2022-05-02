@@ -199,7 +199,7 @@
                         <li>
                             <a href="#.">...</a>
                         </li>
-                        {% for pagenum in range(pagination["current_page"]//5 * 5,pagination["page"]) %}
+                        {% for pagenum in range(pagination["current_page"]//5 * 5,pagination["page"]+1) %}
                         <li><a {% if pagenum  == pagination["current_page"] %}
                                 class="page_item_active"
                                 {% endif %}
