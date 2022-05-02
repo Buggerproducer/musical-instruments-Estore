@@ -181,40 +181,67 @@ def productInfo_en(product_id):
     return render_template("piano_en.html", commodity=commodity, async_mode=socketio.async_mode)
 
 # 后台页面数据展示
-@main.route('/backend_data')
-def backend_data():
-    return render_template("backend.html")
+@main.route('/backend_data_en')
+def backend_data_en():
+    return render_template("backend_en.html")
+
+@main.route('/backend_data_zh')
+def backend_data_zh():
+    return render_template("backend_zh.html")
 
 
 # 后台页面index
-@main.route('/staff_index')
-def staff_index():
+@main.route('/staff_index_en')
+def staff_index_en():
     return render_template("staff_index.html")
+
+@main.route('/staff_index_zh')
+def staff_index_zh():
+    return render_template("staff_index_CN.html")
 
 
 # 个人中心展示商品订单
+@main.route('/orderList_en/<user_id>')
+@login_required
+def userOrderList_en(user_id):
+    orders = user.getOrderByUser(user_id)
+    return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
+
 @main.route('/orderList/<user_id>')
 @login_required
-def userOrderList(user_id):
+def userOrderList_zh(user_id):
     orders = user.getOrderByUser(user_id)
     return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
 
 
 # 后台展示商品订单
-@main.route('/allOrderList')
-def allOrderList():
+@main.route('/allOrderList_en')
+def allOrderList_en():
+    orders = user.getAllOrder()
+    return render_template("orderList_merchant.html", order_list=orders)
+
+@main.route('/allOrderList_zh')
+def allOrderList_zh():
     orders = user.getAllOrder()
     return render_template("orderList_merchant.html", order_list=orders)
 
 
 # 后台页面显示商品列表
-@main.route('/productList')
-def productList():
+@main.route('/productList_en')
+def productList_en():
     products = product.getAllProduct()
     lst = []
     for i in products:
         lst += [[product.getCategoryByProduct(i.id), i]]
     return render_template("staff_chat.html", lst=lst)
+
+@main.route('/productList_zh')
+def productList_zh():
+    products = product.getAllProduct()
+    lst = []
+    for i in products:
+        lst += [[product.getCategoryByProduct(i.id), i]]
+    return render_template("staff_chat_CN.html", lst=lst)
 
 
 # 顾客聊天页面弹窗
