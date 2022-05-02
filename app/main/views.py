@@ -205,6 +205,29 @@ def staff_index_zh():
 @login_required
 def userOrderList_en(user_id):
     orders = user.getOrderByUser(user_id)
+    page_size = 1
+    if len(orders) % page_size != 0:
+        page = len(orders) // page_size + 1
+    else:
+        page = len(orders) // page_size
+
+    current_page = 18
+    next_page = current_page + 1
+    pre_page = current_page - 1
+    pre_pos = current_page // 5 * 5 - 1
+    next_post = current_page // 5 * 5 + 5
+    if current_page >= page:
+        next_page = None
+    if current_page == 1:
+        pre_page = None
+    pagination = {
+        "page": page,
+        "current_page": current_page,
+        "next_page": next_page,
+        "pre_page": pre_page,
+        "pre_post": pre_pos,
+        "next": next_post
+    }
     return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
 
 @main.route('/orderList/<user_id>')
@@ -241,6 +264,29 @@ def userOrderList_zh(user_id):
 @main.route('/allOrderList_en')
 def allOrderList_en():
     orders = user.getAllOrder()
+    page_size = 1
+    if len(orders) % page_size != 0:
+        page = len(orders) // page_size + 1
+    else:
+        page = len(orders) // page_size
+
+    current_page = 18
+    next_page = current_page + 1
+    pre_page = current_page - 1
+    pre_pos = current_page // 5 * 5 - 1
+    next_post = current_page // 5 * 5 + 5
+    if current_page >= page:
+        next_page = None
+    if current_page == 1:
+        pre_page = None
+    pagination = {
+        "page": page,
+        "current_page": current_page,
+        "next_page": next_page,
+        "pre_page": pre_page,
+        "pre_post": pre_pos,
+        "next": next_post
+    }
     return render_template("orderList_merchant.html", order_list=orders)
 
 @main.route('/allOrderList_zh')
