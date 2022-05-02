@@ -36,20 +36,33 @@ def join():
     emit("notify", {'data':"someone join"}, broadcast=True)
 
 
-# 索引页面index
+# 索引页面index_zh
 @main.route('/')
-def index():
+def index_zh():
     if session.get('authenticated') is None or session.get('authenticated') is False:
         authenticated = False
     else:
         authenticated = True
-    return render_template("index.html", authenticated=authenticated, async_mode=socketio.async_mode)
+    return render_template("index_zh.html", authenticated=authenticated, async_mode=socketio.async_mode)
 
+# 索引页面index_en
+@main.route('/en')
+def index_en():
+    if session.get('authenticated') is None or session.get('authenticated') is False:
+        authenticated = False
+    else:
+        authenticated = True
+    return render_template("index_en.html", authenticated=authenticated, async_mode=socketio.async_mode)
 
 # 登录注册页面
-@main.route('/signUp')
-def signUp():
-    return render_template("signUp.html", async_mode=socketio.async_mode)
+@main.route('/signUp_zh')
+def signUp_zh():
+    return render_template("signUp_zh.html", async_mode=socketio.async_mode)
+
+# 登录注册页面
+@main.route('/signUp_en')
+def signUp_en():
+    return render_template("signUp_en.html", async_mode=socketio.async_mode)
 
 
 # 查看用户登录状态
@@ -73,9 +86,15 @@ def check():
 
 
 # 个人信息页面
-@main.route('/testbase')
-def testbase():
-    return render_template("MusiCrashTemplates/userCenter.html", async_mode=socketio.async_mode)
+@main.route('/testbase_zh')
+def testbase_zh():
+    return render_template("MusiCrashTemplates/userCenter_zh.html", async_mode=socketio.async_mode)
+
+
+# 个人信息页面
+@main.route('/testbase_en')
+def testbase_en():
+    return render_template("MusiCrashTemplates/userCenter_en.html", async_mode=socketio.async_mode)
 
 
 @main.route('/history_order')
@@ -89,21 +108,37 @@ def collection(user_id):
     return render_template("MusiCrashTemplates/collectionLists.html", collections=collections, async_mode=socketio.async_mode)
 
 
-@main.route('/testinfo')
-def testinfo():
-    return render_template("MusiCrashTemplates/userInformation.html", async_mode=socketio.async_mode)
+@main.route('/testinfo_zh')
+def testinfo_zh():
+    return render_template("MusiCrashTemplates/userInformation_zh.html", async_mode=socketio.async_mode)
 
 
-@main.route('/testmodify')
-def testmodify():
-    return render_template("MusiCrashTemplates/modifyInfomation.html", async_mode=socketio.async_mode)
 
+@main.route('/testinfo_en')
+def testinfo_en():
+    return render_template("MusiCrashTemplates/userInformation_en.html", async_mode=socketio.async_mode)
+
+
+@main.route('/testmodify_zh')
+def testmodify_zh():
+    return render_template("MusiCrashTemplates/modifyInfomation_zh.html", async_mode=socketio.async_mode)
+
+
+@main.route('/testmodify_en')
+def testmodify_en():
+    return render_template("MusiCrashTemplates/modifyInfomation_en.html", async_mode=socketio.async_mode)
 
 # 商品品牌分类页面
-@main.route('/category')
-def category():
+@main.route('/category_zh')
+def category_zh():
     kinds = product.getAllCategory(0, 50)
-    return render_template("category.html", kinds=kinds, async_mode=socketio.async_mode)
+    return render_template("category_zh.html", kinds=kinds, async_mode=socketio.async_mode)
+
+# 商品品牌分类页面
+@main.route('/category_en')
+def category_en():
+    kinds = product.getAllCategory(0, 50)
+    return render_template("category_en.html", kinds=kinds, async_mode=socketio.async_mode)
 
 
 @main.route('/products')
@@ -112,40 +147,69 @@ def products():
 
 
 # 不同品牌商品的商品展示页面
-@main.route('/kind/<kind_id>')
-def kinds(kind_id):
+@main.route('/kind_zh/<kind_id>')
+def kinds_zh(kind_id):
     products = product.getProductByCategory(kind_id)
     kind = product.getCategoryById(kind_id)
-    return render_template("kind.html", products=products, kind=kind, async_mode=socketio.async_mode)
+    return render_template("kind_zh.html", products=products, kind=kind, async_mode=socketio.async_mode)
 
+# 不同品牌商品的商品展示页面
+@main.route('/kind_en/<kind_id>')
+def kinds_en(kind_id):
+    products = product.getProductByCategory(kind_id)
+    kind = product.getCategoryById(kind_id)
+    return render_template("kind_en.html", products=products, kind=kind, async_mode=socketio.async_mode)
+
+@main.route('/kind')
+def kinds_edit():
+    return render_template("kind-editing.html")
 
 # 商品具体信息页面
-@main.route('/productInfo/<product_id>')
-def productInfo(product_id):
+@main.route('/productInfo_zh/<product_id>')
+def productInfo_zh(product_id):
     commodity = product.getProductById(product_id,record=True)
-
-
     # print(product_id)
     # commodity_title = commodity.get('title').get('english')
-    return render_template("piano.html", commodity=commodity, async_mode=socketio.async_mode)
+    return render_template("piano_zh.html", commodity=commodity, async_mode=socketio.async_mode)
 
+# 商品具体信息页面
+@main.route('/productInfo_en/<product_id>')
+def productInfo_en(product_id):
+    commodity = product.getProductById(product_id,record=True)
+    # print(product_id)
+    # commodity_title = commodity.get('title').get('english')
+    return render_template("piano_en.html", commodity=commodity, async_mode=socketio.async_mode)
 
 # 后台页面数据展示
-@main.route('/backend_data')
-def backend_data():
-    return render_template("backend.html")
+@main.route('/backend_data_en')
+def backend_data_en():
+    return render_template("backend_en.html")
+
+@main.route('/backend_data_zh')
+def backend_data_zh():
+    return render_template("backend_zh.html")
 
 
 # 后台页面index
-@main.route('/staff_index')
-def staff_index():
+@main.route('/staff_index_en')
+def staff_index_en():
     return render_template("staff_index.html")
+
+@main.route('/staff_index_zh')
+def staff_index_zh():
+    return render_template("staff_index_CN.html")
 
 
 # 个人中心展示商品订单
+@main.route('/orderList_en/<user_id>')
+@login_required
+def userOrderList_en(user_id):
+    orders = user.getOrderByUser(user_id)
+    return render_template("MusiCrashTemplates/orderList.html", order_list=orders)
+
 @main.route('/orderList/<user_id>')
 @login_required
-def userOrderList(user_id):
+def userOrderList_zh(user_id):
     orders = user.getOrderByUser(user_id)
     page_size = 1
     if len(orders) % page_size != 0:
@@ -174,8 +238,13 @@ def userOrderList(user_id):
 
 
 # 后台展示商品订单
-@main.route('/allOrderList')
-def allOrderList():
+@main.route('/allOrderList_en')
+def allOrderList_en():
+    orders = user.getAllOrder()
+    return render_template("orderList_merchant.html", order_list=orders)
+
+@main.route('/allOrderList_zh')
+def allOrderList_zh():
     orders = user.getAllOrder()
     print(len(orders))
     page_size = 1
@@ -205,13 +274,21 @@ def allOrderList():
 
 
 # 后台页面显示商品列表
-@main.route('/productList')
-def productList():
+@main.route('/productList_en')
+def productList_en():
     products = product.getAllProduct()
     lst = []
     for i in products:
         lst += [[product.getCategoryByProduct(i.id), i]]
     return render_template("staff_chat.html", lst=lst)
+
+@main.route('/productList_zh')
+def productList_zh():
+    products = product.getAllProduct()
+    lst = []
+    for i in products:
+        lst += [[product.getCategoryByProduct(i.id), i]]
+    return render_template("staff_chat_CN.html", lst=lst)
 
 
 # 顾客聊天页面弹窗
@@ -232,6 +309,11 @@ def fillBillInfo(product_id):
     piano = product.getProductById(product_id)
     labels = product.getAllCategory()
     return render_template("MusiCrashTemplates/orderForm.html", piano=piano, labels=labels)
+
+@main.route('/about_us')
+def aboutus():
+    return render_template("MusiCrashTemplates/about_us.html")
+
 
 # @main.route('/grotrian')
 # def grotrian():
