@@ -20,12 +20,52 @@
   <link href="../../static/style/sebian_css/style.css" rel="stylesheet" type="text/css">
   <link href="../../static/style/sebian_css/responsive.css" rel="stylesheet" type="text/css">
   <link href="../../static/style/sebian_css/animate.css" rel="stylesheet" type="text/css">
+  <link href="../../static/style/sebian_css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static',filename='staff_index/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" type="text/css">
+
+
   <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
   <link href="../../static/style/sebian_css/custom.css" rel="stylesheet" type="text/css">
   <script src="../../static/js/sebian_js/jquery-1.11.3.js"></script>
 
 </head>
 <body>
+    <header class="header background-transparent">
+    <div>
+      <div class="container">
+        <!-- Nav -->
+        <nav class="webimenu">
+          <!-- MENU BUTTON RESPONSIVE -->
+          <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
+          <ul class="ownmenu">
+
+            <!--======= SEARCH ICON =========-->
+            <li class="search-nav"><a href="#."><i class="bi bi-search darkgary-font search-font-size"></i></a>
+              <ul class="dropdown">
+                <li class="row">
+                  <div class="col-sm-4 no-padding">
+                    <select class="selectpicker">
+                      <option>All</option>
+                      <option>Order ID</option>
+                      <option>Status</option>
+                      <option>Product Name</option>
+                      <option>User</option>
+
+                    </select>
+                  </div>
+                  <div class="col-sm-8 no-padding">
+                    <input type="search" class="form-control" placeholder="Search Here">
+                    <button type="submit"> <i class="bi bi-search"></i> </button>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
     <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s">
       <div class="container">
         <h4>Your Orders</h4>
@@ -55,7 +95,9 @@
                           </div>
                           <div class="col-sm-8">
                             <div class="row">
-                                <div class="details-sec col-sm-6"> <a href="#">Price</a><span class="font-montserrat">{{ order.get('price').get('dollar') }} USD</span> </div>
+{#                                <div class="details-sec col-sm-6"> <a href="#">Price</a><span class="font-montserrat">{{ order.get('price').get('dollar') }} USD</span> </div>#}
+                                <div class="details-sec col-sm-6"> <a href="#">Product</a><span class="font-montserrat">{{ order.get('product').get('title').get('english') }}</span> </div>
+
                                 <div class="details-sec col-sm-6"> {{ order.get('createdAt') }}<br><br>order-id: {{ order.id }} </div>
 
                             </div>
@@ -63,10 +105,12 @@
                             <!-- Rating Stars -->
                             <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
 <!--                              这部分是商品名称-->
-                            <p>{{ order.get('product').get('title').get('english') }}</p>
+{#                            <div class="details-sec col-sm-6 font-playfair">{{ order.get('product').get('title').get('english') }}</div>#}
+                            <div class="details-sec col-sm-6"> <a href="#">Price</a><span class="font-montserrat">{{ order.get('price').get('dollar') }} USD</span> </div>
+
                             <div class="row">
                                 <div class="details-sec col-sm-6"></div>
-                                <div class="details-sec col-sm-6 font-playfair"> Status: {{ order.status }}</div>
+                                <div class="details-sec col-sm-6 font-playfair"> Status: <span>{{ order.status }}</span></div>
                             </div>
                             <div class="row">
                                 <a href="#." class="btn btn-small btn-dark">More</a>
