@@ -74,3 +74,87 @@ def productInfo(product_id):
     # print(product_id)
     # commodity_title = commodity.get('title').get('english')
     return render_template("piano_zh.html", commodity=commodity, async_mode=socketio.async_mode)
+
+
+# 后台页面index
+@ch.route('/staff_index')
+def staff_index():
+    return render_template("staff_index_CN.html")
+
+
+# 后台页面数据展示
+@ch.route('/backend_data')
+def backend_data():
+    return render_template("backend_zh.html")
+
+
+# 个人中心展示商品订单
+@ch.route('/orderList/<user_id>')
+@login_required
+def userOrderList(user_id):
+    orders = user.getOrderByUser(user_id)
+    page_size = 1
+    if len(orders) % page_size != 0:
+        page = len(orders) // page_size + 1
+    else:
+        page = len(orders) // page_size
+
+    current_page = 1
+    next_page = current_page + 1
+    pre_page = current_page - 1
+    pre_pos = current_page // 5 * 5 - 1
+    next_post = current_page // 5 * 5 + 5
+    if current_page >= page:
+        next_page = None
+    if current_page == 1:
+        pre_page = None
+    pagination = {
+        "page": page,
+        "current_page": current_page,
+        "next_page": next_page,
+        "pre_page": pre_page,
+        "pre_post": pre_pos,
+        "next": next_post
+    }
+    return render_template("MusiCrashTemplates/orderList.html", order_list=orders, pagination=pagination)
+
+
+# 后台展示商品订单
+@ch.route('/allOrderList')
+def allOrderList():
+    orders = user.getAllOrder()
+    print(len(orders))
+    page_size = 1
+    if len(orders) % page_size != 0:
+        page = len(orders) // page_size +1
+    else:
+        page = len(orders) // page_size
+
+    current_page = 18
+    next_page = current_page + 1
+    pre_page = current_page - 1
+    pre_pos  = current_page//5 * 5 - 1
+    next_post = current_page // 5 *5 + 5
+    if current_page >= page:
+        next_page = None
+    if current_page == 1:
+        pre_page = None
+    pagination = {
+        "page": page,
+        "current_page": current_page,
+        "next_page": next_page,
+        "pre_page": pre_page,
+        "pre_post": pre_pos,
+        "next":next_post
+    }
+    return render_template("orderList_merchant.html", order_list=orders,pagination=pagination)
+
+
+# 后台页面显示商品列表
+@ch.route('/productList')
+def productList():
+    products = product.getAllProduct()
+    lst = []
+    for i in products:
+        lst += [[product.getCategoryByProduct(i.id), i]]
+    return render_template("staff_chat_CN.html", lst=lst)
