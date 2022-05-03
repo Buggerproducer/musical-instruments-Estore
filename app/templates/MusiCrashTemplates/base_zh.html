@@ -109,16 +109,16 @@
         <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">主页</span><span class="dsn-meta-menu">01</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">首页</span></li>
-            <li><a href="{{ url_for('main.index_zh') }}"><span class="dsn-title-menu">索引</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a href="{{ url_for('ch.index') }}"><span class="dsn-title-menu">索引</span><span class="dsn-meta-menu">01</span></a></li>
           </ul>
         </li>
         <!-- li 2: Sliders -->
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">商品</span><span class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">商品</span></li>
-            <li><a href="{{ url_for('main.category_zh') }}"><span class="dsn-title-menu">品牌</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a href="{{ url_for('ch.category') }}"><span class="dsn-title-menu">品牌</span><span class="dsn-meta-menu">01</span></a></li>
 <!--            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>-->
-            <li><a href="{{ url_for('main.productInfo_zh', product_id = '622972726ca8d92534b035b9') }}"><span class="dsn-title-menu">商品详情</span><span class="dsn-meta-menu">03</span></a></li>
+            <li><a href="{{ url_for('ch.productInfo', product_id = '622972726ca8d92534b035b9') }}"><span class="dsn-title-menu">商品详情</span><span class="dsn-meta-menu">03</span></a></li>
 <!--            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>-->
           </ul>
         </li>
@@ -137,9 +137,9 @@
             {% if authenticated %}
             <li><a id="logouta" href="javascript:logout();"><span id="logout" class="dsn-title-menu">登出</span><span class="dsn-meta-menu">02</span></a></li>
             {% else %}
-            <li><a id="logina" href="{{ url_for('main.signUp_zh') }}"><span id="login" class="dsn-title-menu" >登录 & 注册</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a id="logina" href="{{ url_for('ch.signUp') }}"><span id="login" class="dsn-title-menu" >登录 & 注册</span><span class="dsn-meta-menu">01</span></a></li>
             {% endif %}
-            <li><a href="{{ url_for('main.testbase_zh') }}"><span class="dsn-title-menu">用户信息</span><span class="dsn-meta-menu">02</span></a></li>
+            <li><a href="{{ url_for('ch.testbase') }}"><span class="dsn-title-menu">用户信息</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
         </li>
       </ul>
@@ -270,7 +270,7 @@
         <div class="text-center">
           <p>© 2022 缪斯克拉斯</p>
           <div class="copright-text over-hidden">设计<a class="link-hover"
-                                                                          data-hover-text="缪斯克拉斯" href="{{ url_for('main.index_zh') }}"
+                                                                          data-hover-text="缪斯克拉斯" href="{{ url_for('ch.index') }}"
                                                                           target="_blank">缪斯克拉斯</a> </div>
         </div>
       </div>
