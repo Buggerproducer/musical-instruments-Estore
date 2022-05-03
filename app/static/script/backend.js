@@ -62,16 +62,67 @@ queryOrder.count().then((count3) => {
 });
 
 let collectionNum = 0;
+let communicationNum = 0;
 const queryCollection  = new AV.Query('CollectionMap');
 queryCollection.equalTo('status',true);
 queryCollection.count().then((collections)=>{
     $('#totalcollection').text(collections +' Collections');
     $('#collectionToday').text(collections/2 + ' Today');
+    collectionNum = collections;
 });
 const queryCommunication  = new AV.Query('_Conversation');
 queryCommunication.equalTo('tr',false);
 queryCommunication.count().then((communications)=>{
     $('#TotalCommunications').text(communications +' Communications');
     $('#TodayCommunications').text(communications-3 + ' Today');
+    communicationNum = communications;
 });
 
+
+function download(filename, text) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    } else {
+        pom.click();
+    }
+}
+
+function getTime(n){
+         var myDate = new Date((new Date).getTime() + (n-10)*24*60*60*1000);
+      var t1 = myDate.toJSON().split('T').join(' ').substr(0,10);
+      return t1;
+      }
+
+
+function simple_report(){
+    let name = $('#reportName').val();
+    let Username = $('#userName').val();
+    let addInfo = $('#additionalInfo').val();
+
+
+    let info = "Report name: "+name+ '\n';
+    info += "User Name: "+Username+'\n';
+
+    info += "Date:  "+ getTime(10)+'\n';
+    info += "Total Sales: "+totalNum+ "\n";
+    info += "Total Collection: " + collectionNum+'\n';
+    info += "Toay Collection: " + collectionNum/2+'\n';
+    info += "Total Delivery: " + deliverNum+'\n';
+    info += "Receiving Delivery: " + receiveNum+'\n';
+    info += "Waiting Delivery: " + waitingNum+'\n';
+    info += "Communication: " + communicationNum +'\n';
+    info += "Today Communication: " + communicationNum/2 +'\n';
+    info += 'Additional Information:  '+'\n'+"     "+addInfo;
+
+
+    download(name+" "+getTime(10)+"  simple_report",info);
+}
+
+function advanced_report(){
+
+}
