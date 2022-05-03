@@ -1,4 +1,4 @@
-{% extends 'MusiCrashTemplates/base.html'%}
+{% extends 'MusiCrashTemplates/base_en.html'%}
 
 {% block title %}
 MusiCrash - Steinway
@@ -153,20 +153,24 @@ MusiCrash - Steinway
 <!-- 下面是出现问题的div -->
         <header data-dsn-header="project">
       <div class="header-project p-relative h-100-v over-hidden" data-dsn-header="parallax">
-        <div id="dsn-hero-parallax-img" data-dsn-ajax="img" class="p-absolute w-100 h-100 over-hidden" data-overlay="6"><img class="cover-bg-img" src="assets/img/project/project3/1.jpg" alt=""></div>
+        <div id="dsn-hero-parallax-img" data-dsn-ajax="img" class="p-absolute w-100 h-100 over-hidden" data-overlay="6"><img class="cover-bg-img" src="{{ kind.get('img').url }}" alt=""></div>
         <div class="margin-lr-100 h-100">
           <div class="row align-items-center h-100">
             <div class="content p-relative w-100">
               <div class="intro-project">
                 <div id="dsn-hero-title" class="intro-title">
-                  <div class="metas d-inline-block"><span>Architecture</span></div>
-                  <h1 class="title" data-dsn-ajax="title">Black Apartment </h1>
+                  <div class="metas d-inline-block"><span>CLASSIC GRAND PIANO</span></div>
+                  <h1 class="title" data-dsn-ajax="title">{{ kind.get('title').get('english') }}</h1>
                 </div>
-                <p id="dsn-hero-description" class="description">Used softwares:3ds max,corona render,quixel mixer and Photoshop Overall lighting HDRI,corona skylight and materials created by megascans & quixel Mixer. landscape environment trees and plants vegetation created by corona scatter. </p>
+                <p id="dsn-hero-description" class="description">In 1853, German immigrant Henry Engelhard Steinway founded Steinway & Sons in a small loft on Varick Street in Manhattan, New York.
+                    Over the next 30 years, Henry and his sons write a new chapter in modern piano manufacturing.
+                    They built pianos using handcrafted techniques passed down from master to apprentice.
+                    Today Steinway pianos are the preferred choice of more than 97% of pianists worldwide and are the dream piano and collector's item that everyone wants to own.
+</p>
                 <div id="dsn-hero-desc-items" class="intro-project-details d-flex">
                   <div class="descrption-item">
-                    <h5>By</h5>
-                    <p>Georgiy Traksel</p>
+                    <h5>MICHEL LEGRAND</h5>
+                    <p style="max-width: 570px">“I insist on a Steinway for my recordings, my concerts and my home. It is the only piano I want to hear my music played on.”</p>
                   </div>
                   <div class="descrption-item">
                     <h5>ROLE</h5>
