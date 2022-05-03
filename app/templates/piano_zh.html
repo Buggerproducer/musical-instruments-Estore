@@ -443,16 +443,16 @@
         <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">主页</span><span class="dsn-meta-menu">01</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">首页</span></li>
-            <li><a href="{{ url_for('main.index_zh') }}"><span class="dsn-title-menu">索引</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a href="{{ url_for('ch.index') }}"><span class="dsn-title-menu">索引</span><span class="dsn-meta-menu">01</span></a></li>
           </ul>
         </li>
         <!-- li 2: Sliders -->
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">商品</span><span class="dsn-meta-menu">02</span><span class="dsn-bg-arrow"></span></a>
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">商品</span></li>
-            <li><a href="{{ url_for('main.category_zh') }}"><span class="dsn-title-menu">品牌</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a href="{{ url_for('ch.category') }}"><span class="dsn-title-menu">品牌</span><span class="dsn-meta-menu">01</span></a></li>
 <!--            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>-->
-            <li><a href="{{ url_for('main.productInfo_zh', product_id = '622972726ca8d92534b035b9') }}"><span class="dsn-title-menu">商品详情</span><span class="dsn-meta-menu">03</span></a></li>
+            <li><a href="{{ url_for('ch.productInfo', product_id = '622972726ca8d92534b035b9') }}"><span class="dsn-title-menu">商品详情</span><span class="dsn-meta-menu">03</span></a></li>
 <!--            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>-->
           </ul>
         </li>
@@ -471,9 +471,9 @@
             {% if authenticated %}
             <li><a id="logouta" href="javascript:logout();"><span id="logout" class="dsn-title-menu">登出</span><span class="dsn-meta-menu">02</span></a></li>
             {% else %}
-            <li><a id="logina" href="{{ url_for('main.signUp') }}"><span id="login" class="dsn-title-menu" >登录 & 注册</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a id="logina" href="{{ url_for('ch.signUp') }}"><span id="login" class="dsn-title-menu" >登录 & 注册</span><span class="dsn-meta-menu">01</span></a></li>
             {% endif %}
-            <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">用户信息</span><span class="dsn-meta-menu">02</span></a></li>
+            <li><a href="{{ url_for('ch.testbase') }}"><span class="dsn-title-menu">用户信息</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
         </li>
       </ul>
@@ -539,7 +539,7 @@
             <div class="navbar-row">
                 <div class="navbar-logo">
                     <a class="brand" href="https://www.lyonhealy.com/">
-                        <a href="{{ url_for('main.index_zh') }}"><img src="../static/img/logo.png" style="height: 50px"></a>
+                        <a href="{{ url_for('ch.index') }}"><img src="../static/img/logo.png" style="height: 50px"></a>
 <!--                        <img class="logo logo-mobile"-->
 <!--                             srcset="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-1x.png 1x,  https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-2x.png 2x"-->
 <!--                             src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-1x.png"-->
@@ -554,7 +554,7 @@
                     <section id="custom_post_widget-4" class="widget widget_custom_post_widget">
                         <div class="inner-section">
                             <div class="inside-header">
-                                <a style="display: inline" class="header-el factory-el" href="{{ url_for('main.index_zh') }}">
+                                <a style="display: inline" class="header-el factory-el" href="{{ url_for('ch.index') }}">
                                     欢迎来到缪斯克拉斯！
 <!--                                    <img class="header-img"-->
 <!--                                         src="https://www.lyonhealy.com/wp-content/uploads/2017/04/factory-1x.png"-->
@@ -621,7 +621,7 @@
                                     <span class="brand hidden">Lyon &amp; Healy</span>
                                 </header>
                                 <h2 class="entry-title" style="color:white;font-family: 'Roboto';">{{
-                                    commodity.get('title').get('Chinese') }}</h2><br><br>
+                                    commodity.get('title').get('chinese') }}</h2><br><br>
                                 <div class="entry-content">
                                     <p>已经是现代经典，新的里昂&amp;希利风格4是一个高级仪器被引入我们的标准目录。它的优雅之处仪器增强
                                         了一个23+克拉金箔镀金的柱，基础和响板又是;一个经典的设计，结合到现代的环境和会受到世界各大舞台
@@ -1160,7 +1160,7 @@ query.get(pid).then((p) => {
         <div class="text-center">
           <p>© 2022 缪斯克拉斯</p>
           <div class="copright-text over-hidden">设计<a class="link-hover"
-                                                                          data-hover-text="缪斯克拉斯" href="{{ url_for('main.index_zh') }}"
+                                                                          data-hover-text="缪斯克拉斯" href="{{ url_for('ch.index') }}"
                                                                           target="_blank">缪斯克拉斯</a> </div>
         </div>
       </div>
