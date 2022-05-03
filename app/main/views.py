@@ -135,30 +135,22 @@ def productInfo(product_id):
     return render_template("piano_en.html", commodity=commodity, async_mode=socketio.async_mode)
 
 
-# 后台页面数据展示
-@main.route('/backend_data_en')
-def backend_data_en():
-    return render_template("backend_en.html")
-
-@main.route('/backend_data_zh')
-def backend_data_zh():
-    return render_template("backend_zh.html")
-
-
 # 后台页面index
-@main.route('/staff_index_en')
-def staff_index_en():
+@main.route('/staff_index')
+def staff_index():
     return render_template("staff_index.html")
 
-@main.route('/staff_index_zh')
-def staff_index_zh():
-    return render_template("staff_index_CN.html")
+
+# 后台页面数据展示
+@main.route('/backend_data')
+def backend_data():
+    return render_template("backend_en.html")
 
 
 # 个人中心展示商品订单
-@main.route('/orderList_en/<user_id>')
+@main.route('/orderList/<user_id>')
 @login_required
-def userOrderList_en(user_id):
+def userOrderList(user_id):
     orders = user.getOrderByUser(user_id)
     page_size = 1
     if len(orders) % page_size != 0:
@@ -167,35 +159,6 @@ def userOrderList_en(user_id):
         page = len(orders) // page_size
 
     current_page = 18
-    next_page = current_page + 1
-    pre_page = current_page - 1
-    pre_pos = current_page // 5 * 5 - 1
-    next_post = current_page // 5 * 5 + 5
-    if current_page >= page:
-        next_page = None
-    if current_page == 1:
-        pre_page = None
-    pagination = {
-        "page": page,
-        "current_page": current_page,
-        "next_page": next_page,
-        "pre_page": pre_page,
-        "pre_post": pre_pos,
-        "next": next_post
-    }
-    return render_template("MusiCrashTemplates/orderList.html", order_list=orders,pagination=pagination)
-
-@main.route('/orderList/<user_id>')
-@login_required
-def userOrderList_zh(user_id):
-    orders = user.getOrderByUser(user_id)
-    page_size = 1
-    if len(orders) % page_size != 0:
-        page = len(orders) // page_size + 1
-    else:
-        page = len(orders) // page_size
-
-    current_page = 1
     next_page = current_page + 1
     pre_page = current_page - 1
     pre_pos = current_page // 5 * 5 - 1
@@ -216,8 +179,8 @@ def userOrderList_zh(user_id):
 
 
 # 后台展示商品订单
-@main.route('/allOrderList_en')
-def allOrderList_en():
+@main.route('/allOrderList')
+def allOrderList():
     orders = user.getAllOrder()
     page_size = 1
     if len(orders) % page_size != 0:
@@ -244,52 +207,18 @@ def allOrderList_en():
     }
     return render_template("orderList_merchant.html", order_list=orders,pagination=pagination)
 
-@main.route('/allOrderList_zh')
-def allOrderList_zh():
-    orders = user.getAllOrder()
-    print(len(orders))
-    page_size = 1
-    if len(orders) % page_size != 0:
-        page = len(orders) // page_size +1
-    else:
-        page = len(orders) // page_size
-
-    current_page = 18
-    next_page = current_page + 1
-    pre_page = current_page - 1
-    pre_pos  = current_page//5 * 5 - 1
-    next_post = current_page // 5 *5 + 5
-    if current_page >= page:
-        next_page = None
-    if current_page == 1:
-        pre_page = None
-    pagination = {
-        "page": page,
-        "current_page": current_page,
-        "next_page": next_page,
-        "pre_page": pre_page,
-        "pre_post": pre_pos,
-        "next":next_post
-    }
-    return render_template("orderList_merchant.html", order_list=orders,pagination=pagination)
-
 
 # 后台页面显示商品列表
-@main.route('/productList_en')
-def productList_en():
+@main.route('/productList')
+def productList():
     products = product.getAllProduct()
     lst = []
     for i in products:
+        print(i.id)
+        print(1)
         lst += [[product.getCategoryByProduct(i.id), i]]
-    return render_template("staff_chat.html", lst=lst)
 
-@main.route('/productList_zh')
-def productList_zh():
-    products = product.getAllProduct()
-    lst = []
-    for i in products:
-        lst += [[product.getCategoryByProduct(i.id), i]]
-    return render_template("staff_chat_CN.html", lst=lst)
+    return render_template("staff_chat.html", lst=lst)
 
 
 # 顾客聊天页面弹窗
