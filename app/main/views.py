@@ -39,11 +39,12 @@ def join():
 # 索引页面index_zh
 @main.route('/')
 def index():
+    kinds = product.getAllCategory(0, 50)
     if session.get('authenticated') is None or session.get('authenticated') is False:
         authenticated = False
     else:
         authenticated = True
-    return render_template("index_en.html", authenticated=authenticated, async_mode=socketio.async_mode)
+    return render_template("index_en.html", kinds=kinds, authenticated=authenticated, async_mode=socketio.async_mode)
 
 
 # 登录注册页面
