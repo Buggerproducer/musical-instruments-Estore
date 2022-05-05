@@ -32,10 +32,22 @@ editor.config.customUploadVideo = function (resultFiles, insertVideoFn) {
 
     // 上传视频，返回结果，将视频地址插入到编辑器中
         const file = new AV.File(resultFiles[0].name, resultFiles[0]);
-    file.save().then((file) => {
-        insertImgFn(file.get("url"))
+    console.log("start upload")
+        file.save({
+  onprogress: (progress) => {
+    console.log(progress);
+    // {
+    //   loaded:  1024,
+    //   total:   2048,
+    //   percent: 50
+    // }
+      }
+    }).then((file) => {
+      // 保存后的操作
+                insertVideoFn(file.get("url"))
     }, (error) => {
-        // 保存失败，可能是文件无法被读取，或者上传过程中出现问题
+            console.log("video error")
+            // 保存失败，可能是文件无法被读取，或者上传过程中出现问题
     });
 }
 
