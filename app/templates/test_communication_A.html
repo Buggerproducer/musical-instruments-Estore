@@ -232,7 +232,7 @@ function sendMessage(){
             return conversation.send(new TextMessage(mes));
             }).then(function(message) {
                 time = message._timestamp;
-                console.log(message, '发送成功！', time);
+                console.log(message, 'successful send！', time);
                 $('#ta').html("");
                 let n;
                 if(c_user.id!='622431dd6f77474716d8351c'){

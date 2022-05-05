@@ -7290,7 +7290,6 @@ a:active, a:hover {
 
 .dsn-effect-scroll:not(.dsn-mobile) #dsn-scrollbar, .dsn-work-scrollbar, .sidebar-single {
     overflow: hidden;
-    height: 100vh
 }
 
 .dsn-effect-scroll:not(.dsn-mobile) #dsn-scrollbar .scrollbar-track, .dsn-work-scrollbar .scrollbar-track, .sidebar-single .scrollbar-track {
