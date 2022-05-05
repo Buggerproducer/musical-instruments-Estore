@@ -93,7 +93,7 @@ function download(filename, text) {
 }
 
 function getTime(n){
-         var myDate = new Date((new Date).getTime() + (n-10)*24*60*60*1000);
+    var myDate = new Date((new Date).getTime() + (n-10)*24*60*60*1000);
       var t1 = myDate.toJSON().split('T').join(' ').substr(0,10);
       return t1;
       }
