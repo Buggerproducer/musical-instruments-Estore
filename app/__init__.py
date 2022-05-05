@@ -3,9 +3,9 @@ from flask import Flask, config
 from flask_socketio import SocketIO, emit
 from flask_sqlalchemy import SQLAlchemy
 from config import config
-
 async_mode = None
 socketio = SocketIO()
+
 
 db = SQLAlchemy()
 # from models import *

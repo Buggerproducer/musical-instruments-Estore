@@ -4,8 +4,13 @@ from flask_socketio import SocketIO, emit
 from flask_script import Manager, Shell
 import leancloud
 
+
+
+
 async_mode = None
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+
+
 manager = Manager(app)
 
 

@@ -1,8 +1,10 @@
 import leancloud
 
+import app
 from app import socketio
 from flask_socketio import SocketIO, emit
 from flask import render_template, request, session, jsonify, redirect, url_for
+
 from . import main
 from .forms import LoginForm
 from threading import Lock
@@ -10,8 +12,16 @@ from functools import wraps
 from leancloud import cloud
 from ..utils import product, user
 
-# leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
+from flask import Flask
+app=Flask(__name__)
+from werkzeug.utils import import_string
+import werkzeug
+werkzeug.import_string = import_string
+from flask_cache import Cache
+cache = Cache(app, config={'CACHE_TYPE':'simple'})
 
+
+# leancloud.init("pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI", "pShwYQQ4JVfSStc56MvkHNrr")
 thread = None
 thread_lock = Lock()
 
@@ -38,6 +48,7 @@ def join():
 
 # 索引页面index_zh
 @main.route('/')
+@cache.cached(timeout=300)
 def index():
     if session.get('authenticated') is None or session.get('authenticated') is False:
         authenticated = False
