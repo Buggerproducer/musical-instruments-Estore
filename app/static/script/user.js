@@ -65,6 +65,8 @@ $(document).ready(
                 li1.appendChild(a1);
                 a1.appendChild(span2);
                 a1.appendChild(span3);
+                document.getElementById('logoutb').innerText="";
+                $('#logoutb').append('<img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">')
             }
             else{
                 var oplist = document.getElementById('user-operation');
@@ -204,7 +206,6 @@ async function logout() {
               li = document.getElementById('user-operation');
               li.removeChild(li.childNodes[2]);
               li.removeChild(li.childNodes[2]);
-              document.getElementById('ad').innerText = ""
           });
         // document.getElementById('result').innerText='logout successfully';
     }
