@@ -51,6 +51,7 @@ def join():
 @cache.cached(timeout=300)
 def index():
     kinds = product.getAllCategory(0, 50)
+    print(1)
     if session.get('authenticated') is None or session.get('authenticated') is False:
         authenticated = False
     else:
@@ -68,6 +69,7 @@ def signUp():
 @main.route('/checkLogin', methods=['POST'])
 def checkLogin():
     user = request.form['user']
+    print(user)
     if user:
         session['authenticated'] = True
         return jsonify({'response': 1})
