@@ -66,7 +66,7 @@
             <!-- sign in button -->
             <button onclick="
                 signInWithUsername($('#username2').val(),$('#password2').val(),function(user) {
-                    alert('login success!');
+                    alert('成功登录!');
                     window.location.href = document.referrer;
                     document.getElementById('result').innerText='login success!'
                     console.log(user);
@@ -86,7 +86,7 @@
                 <!-- jump to login part -->
                 <button class="ghost" id="signInPage">Log In</button>
                 <!-- link to index page -->
-                <p><a href="{{ url_for('main.index_zh') }}">返回到首页</a></p>
+                <p><a href="{{ url_for('ch.index') }}">返回到首页</a></p>
             </div>
             <div class="overlay-panel overlay-right">
                 <h1>还没有账户?</h1>
@@ -94,7 +94,7 @@
                 <!-- jump to sign up page -->
                 <button class="ghost" id="signUpPage">注册</button>
                 <!-- link to index page -->
-                <p><a href="{{ url_for('main.index_zh') }}">返回到首页</a></p>
+                <p><a href="{{ url_for('ch.index') }}">返回到首页</a></p>
             </div>
         </div>
     </div>
