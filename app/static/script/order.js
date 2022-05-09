@@ -1,12 +1,12 @@
-function MakeOrder(obj){
+function Order(obj){
     const Order = AV.Object.extend('Order');
     const order  = new Order();
         if(checkLoginState()){
             let id = obj.getAttribute("id");
             const query = new AV.Query('Product');
             query.get(id).then((product) => {
-                const titleid     = product.get('title').getObjectId();
-                const priceid     = product.get('price').getObjectId();
+               // const titleid     = product.get('title').getObjectId();
+                //const priceid     = product.get('price').getObjectId();
                 const currentUser = AV.User.current();
                 const title     = product.get('title');
                 const price     = product.get('price');
@@ -16,6 +16,41 @@ function MakeOrder(obj){
                 order.set('status',status);
                 order.set('product',product);
                 order.set('user',currentUser);
+                order.save().then((order) => {
+                    console.log('保存成功。objectId：'+order.getObjectId());
+                }, (error) => {
+                    console.log("error");
+    // 异常处理
+                });
+            });
+        }
+        else{
+            document.getElementById('result').innerText='not already login';
+        }
+}
+
+
+function MakeOrder(id,name,address,email,offline,town){
+    const Order = AV.Object.extend('Order');
+    const order  = new Order();
+        if(checkLoginState()){
+            const query = new AV.Query('Product');
+            query.get(id).then((product) => {
+
+                const currentUser = AV.User.current();
+                const title     = product.get('title');
+                const price     = product.get('price');
+                console.log(title, 1);
+                let status = "waiting to be delivered";
+                order.set('price',price);
+                order.set('status',status);
+                order.set('product',product);
+                order.set('user',currentUser);
+                order.set('name',name);
+                order.set('email',email);
+                order.set('address',address);
+                order.set('town',town);
+                order.set('offline',offline);
                 order.save().then((order) => {
                     console.log('保存成功。objectId：'+order.getObjectId());
                 }, (error) => {

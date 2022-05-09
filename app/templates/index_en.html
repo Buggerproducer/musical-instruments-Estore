@@ -78,7 +78,7 @@
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Products</span></li>
             <li><a href="{{ url_for('main.category') }}"><span class="dsn-title-menu">Category</span><span class="dsn-meta-menu">01</span></a></li>
 <!--            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>-->
-            <li><a href="{{ url_for('main.productInfo', product_id = '622972726ca8d92534b035b9') }}"><span class="dsn-title-menu">ProductInfo</span><span class="dsn-meta-menu">03</span></a></li>
+<!--            <li><a href="{{ url_for('main.productInfo', product_id = '622972726ca8d92534b035b9') }}"><span class="dsn-title-menu">ProductInfo</span><span class="dsn-meta-menu">03</span></a></li>-->
 <!--            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>-->
           </ul>
         </li>
@@ -89,17 +89,18 @@
           {% else %}
           Setting
           {% endif %}
+          <!--            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>-->
+<!--            &lt;!&ndash; <a href="javascript:void(0);" onclick="window.open()"> &ndash;&gt;-->
+<!--            {% if authenticated %}-->
+<!--            <li><a id="logouta" href="javascript:logout();"><span id="logout" class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>-->
+<!--            <li><a href="{{ url_for('main.testbase') }}"><span id="userinfo" class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a></li>-->
+<!--            {% else %}-->
+<!--            <li><a id="logina" href="{{ url_for('main.signUp') }}"><span id="login" class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>-->
+<!--            {% endif %}-->
         </span>
             <span class="dsn-meta-menu">07</span><span class="dsn-bg-arrow"></span></a>
           <ul id="user-operation">
-            <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">Setting</span></li>
-            <!-- <a href="javascript:void(0);" onclick="window.open()"> -->
-            {% if authenticated %}
-            <li><a id="logouta" href="javascript:logout();"><span id="logout" class="dsn-title-menu">Logout</span><span class="dsn-meta-menu">02</span></a></li>
-            {% else %}
-            <li><a id="logina" href="{{ url_for('main.signUp') }}"><span id="login" class="dsn-title-menu" >Login & Sign Up</span><span class="dsn-meta-menu">01</span></a></li>
-            {% endif %}
-            <li><a href="{{ url_for('main.testbase') }}"><span class="dsn-title-menu">User Info</span><span class="dsn-meta-menu">02</span></a></li>
+
           </ul>
         </li>
         <a href="{{ url_for('ch.index') }}" class="button button--winona button--border-thin button--text-thick button--inverted" data-text="CH"><span>CH</span></a>
@@ -794,7 +795,7 @@
                                         <div class="item-border p-absolute"></div>
                                         <div class="item-info p-absolute">
                                             <!-- link页面跳转到产品页面在下面 -->
-                                            <a href="{{ url_for('main.category') }}" class="effect-ajax" data-dsn-ajax="work">
+                                            <a href="{{ url_for('main.kinds', kind_id=kind.id) }}" class="effect-ajax">
                                                 <!--                    class="effect-ajax" data-dsn-ajax="work">-->
                                                 <h5 class="cat"></h5>
                                                 <h4>{{ kind.get('title').get('english') }}</h4>

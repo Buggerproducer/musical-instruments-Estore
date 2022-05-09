@@ -26,8 +26,60 @@ $(document).ready(
                 var span1 = document.createElement("span");
                 a.href = '/staff_index';
                 span.className = "sn-title-menu";
+                span.id = "ad";
                 span1.className = "dsn-meta-menu";
                 span.innerText = "Administrator";
+                oplist.appendChild(li);
+                li.appendChild(a);
+                a.appendChild(span);
+                a.appendChild(span1);
+            }
+        })
+        checkLoginState().then(s=>{
+            if(s){
+                var oplist = document.getElementById('user-operation');
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                var span = document.createElement("span");
+                var span1 = document.createElement("span");
+                a.href = 'javascript: logout()';
+                a.id = 'logouta';
+                span.className = "sn-title-menu";
+                span.id = "logout";
+                span1.className = "dsn-meta-menu";
+                span.innerText = "Log out";
+                oplist.appendChild(li);
+                li.appendChild(a);
+                a.appendChild(span);
+                a.appendChild(span1);
+                var li1 = document.createElement("li");
+                var a1 = document.createElement("a");
+                var span2 = document.createElement("span");
+                var span3 = document.createElement("span");
+                a1.href = '/testbase';
+                span2.className = "sn-title-menu";
+                span2.id = "userinfo";
+                span3.className = "dsn-meta-menu";
+                span2.innerText = "User Info";
+                oplist.appendChild(li1);
+                li1.appendChild(a1);
+                a1.appendChild(span2);
+                a1.appendChild(span3);
+                document.getElementById('logoutb').innerText="";
+                $('#logoutb').append('<img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">')
+            }
+            else{
+                var oplist = document.getElementById('user-operation');
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+                var span = document.createElement("span");
+                var span1 = document.createElement("span");
+                a.href = '/signUp';
+                a.id = 'logouta';
+                span.className = "sn-title-menu";
+                span.id = "ad";
+                span1.className = "dsn-meta-menu";
+                span.innerText = "Login & Sign Up";
                 oplist.appendChild(li);
                 li.appendChild(a);
                 a.appendChild(span);
@@ -143,12 +195,17 @@ async function logout() {
         }
         $.post('/checkLogin',
           {
-              'user': username
+              'user': null
           }).done(
           function(response){
               $("a#logouta").attr("href", "/signUp")
               document.getElementById('logout').innerText = "Login & Sign Up"
+              a = document.getElementById('logouta');
+              a.href = "/signUp";
               document.getElementById('logoutb').innerText = "Setting"
+              li = document.getElementById('user-operation');
+              li.removeChild(li.childNodes[2]);
+              li.removeChild(li.childNodes[2]);
           });
         // document.getElementById('result').innerText='logout successfully';
     }
@@ -163,9 +220,10 @@ function getLoginState(){
   return AV.User.current()
 }
 
-function checkLoginState(){
+async function checkLoginState(){
   return !!AV.User.current();
 }
+
 
 
 function changeInfo(username,phone,email){
