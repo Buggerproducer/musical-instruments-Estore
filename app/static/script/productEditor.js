@@ -112,6 +112,7 @@ async function submit() {
             setProductCover(currentProduct.id, document.getElementById('fileField').files)
         }
         alert('Successfully submit the change!');
+        window.location.href+="/"+currentProduct.id
     }
     }
 }
