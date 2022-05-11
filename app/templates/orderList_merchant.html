@@ -39,7 +39,7 @@
           <!-- MENU BUTTON RESPONSIVE -->
           <div class="menu-toggle"> <i class="fa fa-bars"> </i> </div>
           <ul class="ownmenu">
-           <li class="shop-cart"><a href="#." class="btn btn-small btn-dark">COVID-ALARM</a>
+           <li class="shop-cart" ><a class="btn btn-small btn-dark" onclick="Cov19()" id = "covid"></a>
             </li>
 
             <!--======= SEARCH ICON =========-->
@@ -310,5 +310,8 @@
 <script src="../../static/js/sebian_js/bootstrap.min.js"></script>
 <script src="../../static/js/sebian_js/own-menu.js"></script>
 <script src="../../static/js/sebian_js/main.js"></script>
+        <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+<script src="../../static/script/orderlist.js"></script>
 
 </html>
