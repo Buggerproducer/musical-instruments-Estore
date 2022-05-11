@@ -39,7 +39,7 @@ function MakeOrder(){
     const name = document.getElementById('name').value
     const address = document.getElementById('address').value
     const email = document.getElementById('email').value
-    const off = document.getElementById('offline').value;
+    const off = document.getElementById('selectEx').value;
     let offline;
     if(off == "online")
     {
