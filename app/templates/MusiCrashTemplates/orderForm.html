@@ -53,7 +53,7 @@
                             <!-- Name -->
                             <li class="col-md-6">
                               <label> *FIRST NAME
-                                <input type="text" name="first-name" value="" placeholder="">
+                                <input id="name" type="text" name="first-name" value="" placeholder="">
                               </label>
                             </li>
                             <!-- LAST NAME -->
@@ -66,13 +66,13 @@
                             <li class="col-md-12">
                               <!-- ADDRESS -->
                               <label>*ADDRESS
-                                <input type="text" name="address" value="" placeholder="">
+                                <input id="address" type="text" name="address" value="" placeholder="">
                               </label>
                             </li>
                             <!-- TOWN/CITY -->
                             <li class="col-md-12">
                               <label>*TOWN/CITY
-                                <input type="text" name="town" value="" placeholder="">
+                                <input id="town" type="text" name="town" value="" placeholder="">
                               </label>
                             </li>
 
@@ -81,20 +81,20 @@
                             <!-- EMAIL ADDRESS -->
                             <li class="col-md-12">
                               <label> *EMAIL ADDRESS
-                                <input type="text" name="contry-state" value="" placeholder="">
+                                <input id="email" type="text" name="contry-state" value="" placeholder="">
                               </label>
                             </li>
                             <!-- PHONE -->
                             <li class="col-md-12">
                               <label> *PHONE
-                                <input type="text" name="postal-code" value="" placeholder="">
+                                <input id="phone" type="text" name="postal-code" value="" placeholder="">
                               </label>
                             </li>
                             <li class="col-md-12">
                       <label> *EXPERIENCE
-                        <select class="selectpicker">
-                          <option>ONLNE</option>
-                          <option>OFFLINE</option>
+                        <select id="offline" class="selectpicker">
+                          <option value="online">ONLINE</option>
+                          <option value="offline">OFFLINE</option>
                         </select>
                       </label>
                     </li>
@@ -145,7 +145,7 @@
                                 </div>
                               </li>
                             </ul>
-                            <a href="#." class="btn btn-small btn-dark pull-right">PLACE ORDER</a> </div>
+                            <a onclick="MakeOrder()" class="btn btn-small btn-dark pull-right">PLACE ORDER</a> </div>
 
                         </div>
                       </div>
@@ -162,5 +162,9 @@
 <script src="../../static/js/sebian_js/bootstrap.min.js"></script>
 <script src="../../static/js/sebian_js/own-menu.js"></script>
 <script src="../../static/js/sebian_js/main.js"></script>
-
+<script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+<script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+<script src="{{ url_for('static',filename='script/user.js') }}"></script>
+<script src="{{ url_for('static',filename='script/order.js') }}"></script>
 </html>

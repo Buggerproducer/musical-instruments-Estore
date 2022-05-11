@@ -19,7 +19,7 @@ function Order(obj){
                 order.save().then((order) => {
                     console.log('保存成功。objectId：'+order.getObjectId());
                 }, (error) => {
-                    console.log("error");
+                    console.log(error);
     // 异常处理
                 });
             });
@@ -30,14 +30,28 @@ function Order(obj){
 }
 
 
-function MakeOrder(id,name,address,email,offline,town){
+function MakeOrder(){
+    const currentUser = AV.User.current();
     const Order = AV.Object.extend('Order');
     const order  = new Order();
-        if(checkLoginState()){
+    const idArray = window.location.href.split("/");
+    const id = idArray[idArray.length-1];
+    const name = document.getElementById('name').value
+    const address = document.getElementById('address').value
+    const email = document.getElementById('email').value
+    const off = document.getElementById('offline').value;
+    let offline;
+    if(off == "online")
+    {
+        offline = false
+    }
+    else{
+        offline = true
+    }
+    const town = document.getElementById('town').value;
+        if(!checkLoginState()){
             const query = new AV.Query('Product');
             query.get(id).then((product) => {
-
-                const currentUser = AV.User.current();
                 const title     = product.get('title');
                 const price     = product.get('price');
                 console.log(title, 1);
@@ -53,8 +67,10 @@ function MakeOrder(id,name,address,email,offline,town){
                 order.set('offline',offline);
                 order.save().then((order) => {
                     console.log('保存成功。objectId：'+order.getObjectId());
+                    alert("Place Order Successfully")
+                    window.location.href = '/history_order/'+currentUser.id;
                 }, (error) => {
-                    console.log("error");
+                    console.log(error);
     // 异常处理
                 });
             });

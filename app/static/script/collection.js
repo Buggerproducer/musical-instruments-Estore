@@ -23,7 +23,7 @@ async function setCollect(){
     //             // 异常处理
     //         });
     // });
-        var idArray = window.location.href.split("/");
+    var idArray = window.location.href.split("/");
     var id = idArray[idArray.length-1];
     AV.Cloud.run('makeCollection', {'product_id':id}).then(function (data) {
       // 处理结果

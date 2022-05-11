@@ -189,7 +189,7 @@ def userOrderList(user_id):
         "pre_post": pre_pos,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/orderList.html", order_list=orders,pagination=pagination)
+    return render_template("MusiCrashTemplates/orderList.html", order_list=orders, pagination=pagination)
 
 
 # 后台展示商品订单
@@ -253,6 +253,7 @@ def fillBillInfo(product_id):
     piano = product.getProductById(product_id)
     labels = product.getAllCategory()
     return render_template("MusiCrashTemplates/orderForm.html", piano=piano, labels=labels)
+
 
 @main.route('/about_us')
 def aboutus():
