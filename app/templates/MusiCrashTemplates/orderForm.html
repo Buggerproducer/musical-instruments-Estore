@@ -22,6 +22,7 @@
   <link href="../../static/style/sebian_css/custom.css" rel="stylesheet" type="text/css">
   <script src="../../static/js/sebian_js/jquery-1.11.3.js"></script>
 
+
 </head>
 <body>
 <div id="wrap">
@@ -92,9 +93,9 @@
                             </li>
                             <li class="col-md-12">
                       <label> *EXPERIENCE
-                        <select class="selectpicker">
-                          <option>ONLNE</option>
-                          <option>OFFLINE</option>
+                        <select class="selectpicker" style = "font-weight: bold" id = "selectEx">
+                          <option style = "font-weight: bold">ONLINE</option>
+                          <option id = "offline">OFFLINE</option>
                         </select>
                       </label>
                     </li>
@@ -162,5 +163,12 @@
 <script src="../../static/js/sebian_js/bootstrap.min.js"></script>
 <script src="../../static/js/sebian_js/own-menu.js"></script>
 <script src="../../static/js/sebian_js/main.js"></script>
+  <script src="../../static/script/jquery-3.1.1.min.js"></script>
+  <script src="../../static/js/jquery.min.js"></script>
+<script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+<script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+<script src="../../static/script/orderform.js"></script>
+
+
 
 </html>
