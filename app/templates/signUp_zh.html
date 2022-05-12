@@ -38,7 +38,7 @@
             <button onclick="
                 signUp($('#username').val(),null,null,$('#password').val(),function(user) {
                     alert('Register Successfully!');
-                    window.location.href = 'http://127.0.0.1:5000/';
+                    window.location.href = document.referrer;
                 document.getElementById('result').innerText='register success!';
                 console.log(user)
                 },function(error) {
