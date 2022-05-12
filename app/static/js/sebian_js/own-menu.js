@@ -50,7 +50,7 @@ function MenuExpander () {
 $( document ).ready(function() {
   MenuExpander();
   $('nav li:has(ul)').addClass('sub-menu'); 
-  $( '.sub-menu > a' ).doubleTapToGo();
+  // $( '.sub-menu > a' ).doubleTapToGo();
 });
 
 /*!
