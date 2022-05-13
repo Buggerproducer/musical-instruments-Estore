@@ -247,12 +247,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 26px;
 }
 
-#hero .icon-box h3 a {
+#yellow {
   color: #fff;
   transition: ease-in-out 0.3s;
 }
 
-#hero .icon-box h3 a:hover {
+#yellow:hover {
   color: #ffc451;
 }
 
