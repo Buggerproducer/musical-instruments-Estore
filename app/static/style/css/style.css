@@ -1,4 +1,3 @@
-@charset "UTF-8";
 [data-dsn=rStories].work-masonry .story-item:before, [data-overlay]:before {
     content: '';
     position: absolute;
@@ -2905,7 +2904,7 @@ a:active, a:hover {
 
 .site-header .extend-container .main-navigation ul.extend-container li.dsn-drop-down > a:after {
     content: "";
-    background-image: url("../../../../img/right.svg");
+    background-image: url("../../../static/img/right.svg");
     background-size: 17px;
     height: 17px;
     width: 17px;
@@ -10370,4 +10369,3 @@ label {
 .black.active {
     background-color: #333;
 }
-/*# sourceMappingURL=style.css.map */

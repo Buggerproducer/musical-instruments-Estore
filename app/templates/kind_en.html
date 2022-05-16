@@ -23,7 +23,7 @@ MusiCrash - Steinway
 <!--<link href="../../static/style/css/plugins.css" rel="stylesheet" />-->
 <!--<link href="../../static/style/css/style.css" rel="stylesheet" />-->
 {% block css %}
-    <link rel="stylesheet" href="../../static/style/main_css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/style/main_css/fontawesome-all.min.css">
     <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
 {% endblock %}
 <!--</head>-->
@@ -193,7 +193,7 @@ MusiCrash - Steinway
           </svg>
         </div>
         </a>
-        <div class="scroll-d p-absolute"><img src="assets/img/scroll_down.svg" alt=""></div>
+        <div class="scroll-d p-absolute"><img src="../static/assets/img/scroll_down.svg" alt=""></div>
       </div>
     </header>
 <!--    <header data-dsn-header="project">-->
@@ -435,18 +435,7 @@ MusiCrash - Steinway
       <div class="container">
           <div class="myPagination" style="margin-left: 25%"></div>
       </div>
-      <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-      <script src="../../static/js/Pagination.js"></script>
-      <script>
-          $(".myPagination").Pagination({
-              page:1,
-              count:1000,
-              groups: 10,
-              onPageChange:function (page) {
-                  console.log("当前是:" + page);
-              }
-          });
-      </script>
+
 {#    <div class="container section-margin">#}
 {#        <div class="row">#}
 {#          <div class="col-lg-12">#}
