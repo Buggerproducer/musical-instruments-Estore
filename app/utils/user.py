@@ -38,7 +38,7 @@ def getCollectionByUser(user_id, limit=10, skip=0):
     return result
 
 
-def getAllOrder(skip=0, limit=50):
+def getAllOrder(skip, limit):
     query = leancloud.Query('Order')
     query.limit(limit)
     query.skip(skip)
