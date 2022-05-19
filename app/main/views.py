@@ -209,7 +209,7 @@ def allOrderList():
     next_post = current_page // 5 * 5 + 5
     has_next = True
     has_pre = True
-    page_orders = user.getAllOrder(current_page, page_size)
+    page_orders = user.getAllOrder((current_page-1)*page_size, page_size)
     if current_page >= page:
         next_page = None
         has_next = False

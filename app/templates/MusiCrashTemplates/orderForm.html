@@ -33,7 +33,7 @@
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
                 {# 问题2 #}
-              <li><a href="#">Back</a></li>
+              <li><a href="javascript:history.back()">Back</a></li>
             </ol>
           </div>
         </section>
@@ -148,7 +148,7 @@
                               </li>
                             </ul>
                               {# 问题6 #}
-                            <a href="#." class="btn btn-small btn-dark pull-right">PLACE ORDER</a> </div>
+                            <a onclick="MakeOrder()" class="btn btn-small btn-dark pull-right">PLACE ORDER</a> </div>
 
                         </div>
                       </div>
@@ -165,5 +165,11 @@
 <script src="../../static/js/sebian_js/bootstrap.min.js"></script>
 <script src="../../static/js/sebian_js/own-menu.js"></script>
 <script src="../../static/js/sebian_js/main.js"></script>
+<script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+<script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+<script src="{{ url_for('static',filename='script/user.js') }}"></script>
+<script src="{{ url_for('static',filename='script/order.js') }}"></script>
+
 
 </html>
