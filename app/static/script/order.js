@@ -1,3 +1,8 @@
+
+
+
+
+
 function Order(obj){
     const Order = AV.Object.extend('Order');
     const order  = new Order();
@@ -31,9 +36,37 @@ function Order(obj){
 
 
 function MakeOrder(){
-    const currentUser = AV.User.current();
-    const Order = AV.Object.extend('Order');
-    const order  = new Order();
+    // const currentUser = AV.User.current();
+    // const Order = AV.Object.extend('Order');
+    // const order  = new Order();
+
+    //     if(!checkLoginState()){
+    //         const query = new AV.Query('Product');
+    //         query.get(id).then((product) => {
+    //             const title     = product.get('title');
+    //             const price     = product.get('price');
+    //             console.log(title, 1);
+    //             let status = "waiting to be delivered";
+    //             order.set('price',price);
+    //             order.set('status',status);
+    //             order.set('product',product);
+    //             order.set('user',currentUser);
+    //             order.set('name',name);
+    //             order.set('email',email);
+    //             order.set('address',address);
+    //             order.set('town',town);
+    //             order.set('offline',offline);
+    //             order.save().then((order) => {
+
+    //             }, (error) => {
+    //                 console.log(error);
+    // // 异常处理
+    //             });
+    //         });
+    //     }
+    //     else{
+    //         document.getElementById('result').innerText='not already login';
+    //     }
     const idArray = window.location.href.split("/");
     const id = idArray[idArray.length-1];
     const name = document.getElementById('name').value
@@ -49,33 +82,17 @@ function MakeOrder(){
         offline = true
     }
     const town = document.getElementById('town').value;
-        if(!checkLoginState()){
-            const query = new AV.Query('Product');
-            query.get(id).then((product) => {
-                const title     = product.get('title');
-                const price     = product.get('price');
-                console.log(title, 1);
-                let status = "waiting to be delivered";
-                order.set('price',price);
-                order.set('status',status);
-                order.set('product',product);
-                order.set('user',currentUser);
-                order.set('name',name);
-                order.set('email',email);
-                order.set('address',address);
-                order.set('town',town);
-                order.set('offline',offline);
-                order.save().then((order) => {
-                    console.log('保存成功。objectId：'+order.getObjectId());
+    AV.Cloud.run('makeOrder', {'product_id':id,'name':name,'address':address,'email:':email,"offline":offline,"town":town}).then(function (data) {
+      // 处理结果
+        console.log(data)
+        if(data){
+                                console.log('保存成功。objectId：'+order.getObjectId());
                     alert("Place Order Successfully")
                     window.location.href = '/history_order/'+currentUser.id;
-                }, (error) => {
-                    console.log(error);
-    // 异常处理
-                });
-            });
+        }else {
+            console.log(error);
         }
-        else{
-            document.getElementById('result').innerText='not already login';
-        }
+    }, function (err) {
+      // 处理报错
+    });
 }
