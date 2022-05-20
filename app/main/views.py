@@ -276,6 +276,25 @@ def aboutus():
     return render_template("MusiCrashTemplates/about_us.html")
 
 
+
+@main.route('/checkPhone', methods=['GET', 'POST'])
+def check_id():
+    phone = request.args.get('phone')
+    # user = User.query.filter(User.stu_wor_id == id).all()
+    if True:
+        return jsonify(code=400, msg="The Phone number has already existed")
+    else:
+        return jsonify(code=200, msg="this id number is available")
+
+@main.route('/checkEmail', methods=['GET', 'POST'])
+def check_email():
+    phone = request.args.get('email')
+    # user = User.query.filter(User.stu_wor_id == id).all()
+    if True:
+        return jsonify(code=400, msg="The Email has already existed")
+    else:
+        return jsonify(code=200, msg="this id number is available")
+
 # @main.route('/grotrian')
 # def grotrian():
 #     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
