@@ -11,7 +11,8 @@
 <div class="bg-gray-100 dark:bg-gray-900 dark:text-white text-gray-600 h-screen flex overflow-hidden text-sm">
   <div class="flex-grow overflow-hidden h-full flex flex-col">
     <div class="h-16 lg:flex w-full border-b border-gray-200 dark:border-gray-800 hidden px-10">
-
+{#        <input type="button" class="btn" value="back" onclick="javascript:history.back(-1);";/>#}
+        <a href="{{ url_for('main.staff_index') }}"><img src="../static/image/back.png" style="height: 50px"></a>
       <div class="ml-auto flex items-center space-x-7">
         <button class="flex items-center">
           <span class="relative flex-shrink-0">
