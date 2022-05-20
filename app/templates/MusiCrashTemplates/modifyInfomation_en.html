@@ -8,6 +8,9 @@ Modify Information
 {% block sebian_css %}
 {{ super() }}
 {% endblock %}
+{% block extra_head_script %}
+
+{% endblock %}
 
 {% block content %}
 <div class="container section-margin b">
@@ -36,7 +39,7 @@ Modify Information
                       <div class="form-group">
                         <div class="entry">
                           <label>E-Mail</label>
-                          <input id="email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required.">
+                          <input id="email" type="email" name="email" placeholder="Type your Email Address" required="required" data-error="Valid email is required."><span></span>
                         </div>
                         <div class="help-block with-errors"></div>
                       </div>
@@ -45,7 +48,7 @@ Modify Information
                       <div class="form-group">
                         <div class="entry">
                           <label>Phone</label>
-                          <input id="form_email" type="email" name="email" placeholder="Type your Phone Number" required="required" data-error="Valid email is required.">
+                          <input id="phone" type="number" name="phone" placeholder="Type your Phone Number" required="required" data-error="Valid email is required."><span></span>
                         </div>
                         <div class="help-block with-errors"></div>
                       </div>
@@ -54,7 +57,7 @@ Modify Information
                       <div class="form-group">
                         <div class="entry">
                           <label>Address</label>
-                          <input id="form_email" type="email" name="email" placeholder="Type your Address" required="required" data-error="Valid email is required.">
+                          <input id="address" type="text" name="address" placeholder="Type your Address" required="required" data-error="Valid email is required.">
                         </div>
                         <div class="help-block with-errors"></div>
                       </div>
@@ -77,4 +80,6 @@ Modify Information
 {% endblock %}
 {% block sebian_script %}
 {{ super() }}
+<script src="{{ url_for('static',filename='script/examine.js') }}"></script>
+
 {% endblock %}

@@ -90,7 +90,7 @@
 
                             <div class="col-sm-9">
                                  <h2><span>P</span>roduct
-                                <span>U</span>pload <span id="transLangBtn" class="transferBtn" onclick="changeLang()">CH</span></h2>
+                                <span>U</span>pload <span id="transLangBtn" class="transferBtn" onclick="changeLang()">english</span></h2>
                             </div>
                         </div>
 
@@ -189,16 +189,27 @@
                 getProductById(id, function (product) {
                     loadProduct(product)
                 })
+            }else{
+                const Product=AV.Object.extend('Product');
+                const Strings=AV.Object.extend('Strings');
+                const Price=AV.Object.extend('Price');
+                const HTMLs=AV.Object.extend('HTMLs');
+                currentProduct=new Product()
+                currentProduct.set('title',new Strings)
+                currentProduct.set('price',new Price)
+                currentProduct.set('description',new Strings)
+                currentProduct.set('detail',new HTMLs)
             }
             function changeLang(){
                 var transLangBtn = document.getElementById("transLangBtn");
                 console.log(transLangBtn.innerHTML)
-                if(transLangBtn.innerHTML==="CH")    {
-                    transLangBtn.innerHTML="EN";
+                if(transLangBtn.innerHTML==="chinese")    {
+                    transLangBtn.innerHTML="english";
+                    changeLanguage("english")
                 }
                 else{
-                    transLangBtn.innerHTML="CH";
-
+                    transLangBtn.innerHTML="chinese";
+                    changeLanguage("chinese")
                 }
             }
 

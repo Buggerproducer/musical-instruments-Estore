@@ -1,5 +1,27 @@
 let collection_id;
 
+
+async function emmm(){
+        const idArray = window.location.href.split("/");
+     const proid = idArray[idArray.length-1];
+     setCollect();
+     setCollect();
+const Product = AV.Object.extend('Product');
+    const product = Product.createWithoutData("Product",proid);
+    const q= new AV.Query('CollectionMap');
+    q.equalTo('user', AV.User.current());
+    q.equalTo('product', product);
+    console.log("search")
+    collections= await q.find()
+if (collections.length !== 0) {
+    document.getElementById('collection').innerText = "cancel collect";
+}else{
+    document.getElementById('collection').innerText = "Add to your wish list";
+}
+
+}
+
+
 async function setCollect(){
     // var idArray = window.location.href.split("/");
     // var id = idArray[idArray.length-1];
