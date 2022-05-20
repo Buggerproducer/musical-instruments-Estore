@@ -176,7 +176,7 @@ def backend_data():
 @main.route('/orderList/<user_id>')
 @login_required
 def userOrderList(user_id):
-    orders = user.getOrderByUser(user_id)
+    orders = user.getOrderByUser(user_id, 0, 100)
     page_size = 5
     if len(orders) % page_size != 0:
         page = len(orders) // page_size + 1
@@ -190,13 +190,13 @@ def userOrderList(user_id):
     next_post = current_page // 5 * 5 + 5
     has_next = True
     has_pre = True
-    page_orders = user.getAllOrder((current_page - 1) * page_size, page_size)
+    page_orders = user.getOrderByUser(user_id, (current_page - 1) * page_size, page_size)
     if current_page >= page:
         next_page = None
         has_next = False
     if current_page == 1:
         pre_page = None
-        has_pre = True
+        has_pre = False
     pagination = {
         "page": page,
         "current_page": current_page,
@@ -207,7 +207,7 @@ def userOrderList(user_id):
         "has_pre": has_pre,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/orderList.html", order_list=page_orders, pagination=pagination)
+    return render_template("MusiCrashTemplates/orderList.html", user_id=user_id, order_list=page_orders, pagination=pagination)
 
 
 # 后台展示商品订单
@@ -286,6 +286,25 @@ def fillBillInfo(product_id):
 def aboutus():
     return render_template("MusiCrashTemplates/about_us.html")
 
+
+
+@main.route('/checkPhone', methods=['GET', 'POST'])
+def check_id():
+    phone = request.args.get('phone')
+    # user = User.query.filter(User.stu_wor_id == id).all()
+    if True:
+        return jsonify(code=400, msg="The Phone number has already existed")
+    else:
+        return jsonify(code=200, msg="this id number is available")
+
+@main.route('/checkEmail', methods=['GET', 'POST'])
+def check_email():
+    phone = request.args.get('email')
+    # user = User.query.filter(User.stu_wor_id == id).all()
+    if True:
+        return jsonify(code=400, msg="The Email has already existed")
+    else:
+        return jsonify(code=200, msg="this id number is available")
 
 # @main.route('/grotrian')
 # def grotrian():
