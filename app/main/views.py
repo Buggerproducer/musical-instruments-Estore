@@ -166,30 +166,37 @@ def backend_data():
 @login_required
 def userOrderList(user_id):
     orders = user.getOrderByUser(user_id)
-    page_size = 1
+    page_size = 5
     if len(orders) % page_size != 0:
         page = len(orders) // page_size + 1
     else:
         page = len(orders) // page_size
 
-    current_page = 18
+    current_page = request.args.get('page', 1, type=int)
     next_page = current_page + 1
     pre_page = current_page - 1
     pre_pos = current_page // 5 * 5 - 1
     next_post = current_page // 5 * 5 + 5
+    has_next = True
+    has_pre = True
+    page_orders = user.getAllOrder((current_page - 1) * page_size, page_size)
     if current_page >= page:
         next_page = None
+        has_next = False
     if current_page == 1:
         pre_page = None
+        has_pre = True
     pagination = {
         "page": page,
         "current_page": current_page,
         "next_page": next_page,
         "pre_page": pre_page,
         "pre_post": pre_pos,
+        "has_next": has_next,
+        "has_pre": has_pre,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/orderList.html", order_list=orders, pagination=pagination)
+    return render_template("MusiCrashTemplates/orderList.html", order_list=page_orders, pagination=pagination)
 
 
 # 后台展示商品订单
@@ -257,6 +264,7 @@ def conversation(conversation_id):
 
 #订单填写页面
 @main.route('/fillBillInfo/<product_id>')
+@login_required
 def fillBillInfo(product_id):
     piano = product.getProductById(product_id)
     labels = product.getAllCategory()
