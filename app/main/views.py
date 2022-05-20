@@ -35,6 +35,15 @@ def login_required(f):
     return decorated_function
 
 
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get('is_operation') is None or session.get('is_operation') is False:
+            return redirect(url_for("main.index"))
+        return f(*args, **kwargs)
+    return decorated_function
+
+
 @socketio.event
 def my_ping():
     emit('my_pong')
@@ -69,7 +78,11 @@ def signUp():
 @main.route('/checkLogin', methods=['POST'])
 def checkLogin():
     user = request.form['user']
-    print(user)
+    is_operation = request.form['operation']
+    if is_operation == 'false':
+        session['is_operation'] = False
+    else:
+        session['is_operation'] = True
     if user:
         session['authenticated'] = True
         return jsonify({'response': 1})
@@ -151,6 +164,7 @@ def productInfo(product_id):
 
 # 后台页面index
 @main.route('/staff_index')
+@admin_required
 def staff_index():
     return render_template("staff_index.html")
 

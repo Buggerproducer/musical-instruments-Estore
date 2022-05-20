@@ -143,21 +143,26 @@ async function signInWithUsername(username,password, onSuccess, onFail){
 ////
       const current_user = AV.User.current();
       //const roles = AV.User.current().getRoles();
-      $.post('/checkLogin',
-          {
-              'user': current_user.get('username')
-          }).done(
-          function(response){
-                console.log(response);
-                console.log(sessionStorage.getItem('authenticated'));
-          });
-updateLocation()
+      checkIsOperation().then(res => {
+            $.post('/checkLogin',
+                {
+                    'user': current_user.get('username'),
+                    'operation': res
+                }).done(
+                    function(response){
+                    console.log(response);
+                    console.log(sessionStorage.getItem('authenticated'));
+                });
+            updateLocation()
       onSuccess(user);
-  }, (error) => {
+        }, (error) => {
       // 登录失败（可能是密码错误）
 
       onFail(error)
   });
+      })
+
+
 }
 
 async function signInWithEmail(email,password, onSuccess, onFail){
@@ -187,7 +192,8 @@ async function logout() {
         }
         $.post('/checkLogin',
           {
-              'user': null
+              'user': null,
+              'operation': false
           }).done(
           function(response){
               $("a#logouta").attr("href", "/signUp")
