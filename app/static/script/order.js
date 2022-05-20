@@ -82,7 +82,7 @@ function MakeOrder(){
         offline = true
     }
     const town = document.getElementById('town').value;
-    AV.Cloud.run('makeOrder', {'product_id':id,'name':name,'address':address,'email:':email,"offline":offline,"town":town}).then(function (data) {
+    AV.Cloud.run('makeOrder', {'product_id':id,'name':name,'address':address,'email':email,"offline":offline,"town":town}).then(function (data) {
       // 处理结果
         console.log(data)
         if(data){
