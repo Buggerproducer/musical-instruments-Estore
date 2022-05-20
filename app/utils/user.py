@@ -1,7 +1,7 @@
 import leancloud
 
 
-def getOrderByUser(user_id, limit=10, skip=0):
+def getOrderByUser(user_id, skip, limit):
     User = leancloud.Object.extend('_User')
     user = User.create_without_data(user_id)
     query = leancloud.Query('Order')
