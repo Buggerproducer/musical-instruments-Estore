@@ -101,15 +101,6 @@ function updateLocation(){
 }
 }
 
-function testConnect() {
-  const TestObject = AV.Object.extend('TestObject');
-  const testObject = new TestObject();
-  testObject.set('words', 'Hello world!');
-  testObject.save().then((testObject) => {
-    console.log('保存成功。')
-  })
-}
-
 async function signUp(username, email, phone, password, onSuccess, onFail){
     // 创建实例
     const user = new AV.User();
