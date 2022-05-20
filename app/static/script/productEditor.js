@@ -15,6 +15,13 @@ editor.config.lang = 'en';
 editor.i18next = window.i18next;
 
 
+
+var title={ch:"",en:""}
+var description={ch:"",en:""}
+var detail={ch:"",en:""}
+var price={ch:0,en:0}
+
+
 editor.config.customUploadImg = function (resultFiles, insertImgFn) {
     // resultFiles 是 input 中选中的文件列表
     // insertImgFn 是获取图片 url 后，插入到编辑器的方法
@@ -68,10 +75,36 @@ function loadProduct(product){
     })
 }
 
+
+
+function changeLanguage(lang){
+    if (currentProduct!==null){
+        let _lang;
+        if (lang==="chinese"){
+            _lang="english"
+        }else{
+            _lang="chinese"
+        }
+        currentProduct.get('title').set(_lang,document.getElementById('title').value)
+        currentProduct.get('description').set(_lang,document.getElementById('description').value)
+        currentProduct.get('detail').set(_lang+'HTML',editor.txt.html())
+
+
+        document.getElementById('title').value=currentProduct.get('title').get(lang)
+        document.getElementById('description').value=currentProduct.get('description').get(lang)
+        if (!currentProduct.get('detail').get(lang+'HTML')){
+            currentProduct.get('detail').set(lang+'HTML',"")
+        }
+        editor.txt.html(currentProduct.get('detail').get(lang+'HTML'))
+    }
+}
+
+
 async function submit() {
     //2022年3月24号14:20金深远开始玩原神
     if (currentProduct) {
-        updateEnglishProduct(currentProduct, $('#title').val(), $('#description').val(), editor.txt.html());
+        // updateEnglishProduct(currentProduct, $('#title').val(), $('#description').val(), editor.txt.html());
+        currentProduct.save()
         const buttons = $('.cLabel.choose');
         // console.log($('.cLabel.choose').size())
         // for(i in buttons){
@@ -88,9 +121,10 @@ async function submit() {
         if (document.getElementById('fileField').files.length !== 0) {
             setProductCover(currentProduct.id, document.getElementById('fileField').files)
         }
+
         alert('Successfully submit the change!');
     } else {
-        currentProduct=await createProduct( editor.txt.html(),$('#title').val(),$('#description').val(),0)
+        currentProduct=await currentProduct.save()
         console.log(currentProduct)
 
         if (currentProduct) {

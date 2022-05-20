@@ -29,11 +29,21 @@ thread_lock = Lock()
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if session.get('authenticated') is None or session.get('authenticated') is False:
-            return redirect(url_for("main.signUp"))
-        return f(*args, **kwargs)
+
+            if session.get('authenticated') is None or session.get('authenticated') is False:
+                return redirect(url_for("main.signUp"))
+            return f(*args, **kwargs)
+        # else:
+        #     roles = leancloud.User.get_current().get_roles()
+        #     print(roles)
     return decorated_function
 
+
+
+    # else:
+    #     roles = leancloud.User.get_current().get_roles()
+    #     print(roles)
+    return decorated_function
 
 @socketio.event
 def my_ping():
@@ -132,6 +142,7 @@ def products():
 def kinds(kind_id):
     products = product.getProductByCategory(kind_id)
     kind = product.getCategoryById(kind_id)
+    print(products)
     return render_template("kind_en.html", products=products, kind=kind, async_mode=socketio.async_mode)
 
 
