@@ -165,7 +165,7 @@ def backend_data():
 @main.route('/orderList/<user_id>')
 @login_required
 def userOrderList(user_id):
-    orders = user.getOrderByUser(user_id)
+    orders = user.getOrderByUser(user_id, 0, 100)
     page_size = 5
     if len(orders) % page_size != 0:
         page = len(orders) // page_size + 1
@@ -179,13 +179,13 @@ def userOrderList(user_id):
     next_post = current_page // 5 * 5 + 5
     has_next = True
     has_pre = True
-    page_orders = user.getAllOrder((current_page - 1) * page_size, page_size)
+    page_orders = user.getOrderByUser(user_id, (current_page - 1) * page_size, page_size)
     if current_page >= page:
         next_page = None
         has_next = False
     if current_page == 1:
         pre_page = None
-        has_pre = True
+        has_pre = False
     pagination = {
         "page": page,
         "current_page": current_page,
@@ -196,7 +196,7 @@ def userOrderList(user_id):
         "has_pre": has_pre,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/orderList.html", order_list=page_orders, pagination=pagination)
+    return render_template("MusiCrashTemplates/orderList.html", user_id=user_id, order_list=page_orders, pagination=pagination)
 
 
 # 后台展示商品订单
