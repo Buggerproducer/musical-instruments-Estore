@@ -86,7 +86,6 @@ function MakeOrder(){
       // 处理结果
         console.log(data)
         if(data){
-                                console.log('保存成功。objectId：'+order.getObjectId());
                     alert("Place Order Successfully")
                     window.location.href = '/history_order/'+currentUser.id;
         }else {
