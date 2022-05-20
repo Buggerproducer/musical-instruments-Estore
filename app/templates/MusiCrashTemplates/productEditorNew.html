@@ -60,6 +60,21 @@
             .cLabel:after {
                 border: transparent;
             }
+            .transferBtn {
+                font-size: 20px; !important;
+                margin: 15px; !important;
+                padding: 4px 10px; !important;
+                background: rgba(255, 255, 255, 0);!important;
+                border-radius: 50px;!important;
+                border: whitesmoke 2.5px solid;!important;
+                transition: 0.2s; !important;
+                font-weight: 20 !important;
+            }
+            .transferBtn:hover{
+                background: whitesmoke;
+                color: darkred;
+                box-shadow: 0 13px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
     </style>
     </head>
     <body>
@@ -67,9 +82,19 @@
             <div style="height:20px;"></div>
             <div class="aui-content-up">
                 <form action="" name="form1" method="post">
+                <div class="row">
+
+                </div>
                     <div class="aui-content-up-form">
-                        <h2><span>P</span>roduct
-                            <span>U</span>pload</h2>
+                        <div class="row">
+
+                            <div class="col-sm-9">
+                                 <h2><span>P</span>roduct
+                                <span>U</span>pload <span id="transLangBtn" class="transferBtn" onclick="changeLang()">CH</span></h2>
+                            </div>
+                        </div>
+
+
                     </div>
                     <div class="aui-form-group clear">
                         <label class="aui-label-control">
@@ -78,6 +103,15 @@
                         <div class="aui-form-input">
                             <input type="text" class="aui-form-control-two" name="yourname" onBlur="checkna()" required id="title" placeholder="Enter the title">
                             <span class="tips" id="divname"></span>
+                        </div>
+                    </div>
+                    <div class="aui-form-group clear">
+                        <label class="aui-label-control">
+                           PRICE<em>*</em>
+                        </label>
+                        <div class="aui-form-input">
+                            <input type="number" class="aui-form-control-two" name="yourname" onBlur="checkna()" required id="title" placeholder="Enter the price">
+                            <span class="tips" id="price"></span>
                         </div>
                     </div>
                     <div class="aui-form-group clear">
@@ -131,6 +165,7 @@
             </div>
             <div class="aui-btn-default">
                 <button class="aui-btn aui-btn-account" onclick="submit()">Submit</button>
+
             </div>
         </section>
         <!-- mask begin -->
@@ -155,6 +190,18 @@
                     loadProduct(product)
                 })
             }
+            function changeLang(){
+                var transLangBtn = document.getElementById("transLangBtn");
+                console.log(transLangBtn.innerHTML)
+                if(transLangBtn.innerHTML==="CH")    {
+                    transLangBtn.innerHTML="EN";
+                }
+                else{
+                    transLangBtn.innerHTML="CH";
+
+                }
+            }
+
 
         </script>
     </body>
