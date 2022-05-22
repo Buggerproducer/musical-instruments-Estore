@@ -29,21 +29,20 @@ thread_lock = Lock()
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-
-            if session.get('authenticated') is None or session.get('authenticated') is False:
-                return redirect(url_for("main.signUp"))
-            return f(*args, **kwargs)
-        # else:
-        #     roles = leancloud.User.get_current().get_roles()
-        #     print(roles)
+        if session.get('authenticated') is None or session.get('authenticated') is False:
+            return redirect(url_for("main.signUp"))
+        return f(*args, **kwargs)
     return decorated_function
 
 
-
-    # else:
-    #     roles = leancloud.User.get_current().get_roles()
-    #     print(roles)
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get('is_operation') is None or session.get('is_operation') is False:
+            return redirect(url_for("main.index"))
+        return f(*args, **kwargs)
     return decorated_function
+
 
 @socketio.event
 def my_ping():
@@ -79,7 +78,11 @@ def signUp():
 @main.route('/checkLogin', methods=['POST'])
 def checkLogin():
     user = request.form['user']
-    print(user)
+    is_operation = request.form['operation']
+    if is_operation == 'false':
+        session['is_operation'] = False
+    else:
+        session['is_operation'] = True
     if user:
         session['authenticated'] = True
         return jsonify({'response': 1})
@@ -142,7 +145,6 @@ def products():
 def kinds(kind_id):
     products = product.getProductByCategory(kind_id)
     kind = product.getCategoryById(kind_id)
-    print(products)
     return render_template("kind_en.html", products=products, kind=kind, async_mode=socketio.async_mode)
 
 
@@ -162,6 +164,7 @@ def productInfo(product_id):
 
 # 后台页面index
 @main.route('/staff_index')
+@admin_required
 def staff_index():
     return render_template("staff_index.html")
 
@@ -286,25 +289,6 @@ def fillBillInfo(product_id):
 def aboutus():
     return render_template("MusiCrashTemplates/about_us.html")
 
-
-
-@main.route('/checkPhone', methods=['GET', 'POST'])
-def check_id():
-    phone = request.args.get('phone')
-    # user = User.query.filter(User.stu_wor_id == id).all()
-    if True:
-        return jsonify(code=400, msg="The Phone number has already existed")
-    else:
-        return jsonify(code=200, msg="this id number is available")
-
-@main.route('/checkEmail', methods=['GET', 'POST'])
-def check_email():
-    phone = request.args.get('email')
-    # user = User.query.filter(User.stu_wor_id == id).all()
-    if True:
-        return jsonify(code=400, msg="The Email has already existed")
-    else:
-        return jsonify(code=200, msg="this id number is available")
 
 # @main.route('/grotrian')
 # def grotrian():

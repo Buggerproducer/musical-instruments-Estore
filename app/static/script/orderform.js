@@ -1,6 +1,7 @@
 AV.init({
   appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
+
 });
 const query = new AV.Query('Cov19');
             query.equalTo('kind','cov19');
