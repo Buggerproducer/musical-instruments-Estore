@@ -1,4 +1,5 @@
 import leancloud
+import config
 
 
 def getOrderByUser(user_id, skip, limit):
@@ -47,5 +48,18 @@ def getAllOrder(skip, limit):
     query.include('price')
     query.include('product.title')
     query.include('product.description')
+    result = query.find()
+    return result
+
+
+def getLogs(skip=0, limit=5):
+    leancloud.User.set_current(config.CURRENT_USER)
+    query = leancloud.Query('Log')
+    query.limit(limit)
+    query.skip(skip)
+    query.include('product')
+    query.include('user')
+    query.include('content')
+    query.include('product.title')
     result = query.find()
     return result

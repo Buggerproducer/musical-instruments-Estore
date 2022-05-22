@@ -172,7 +172,9 @@ def staff_index():
 # 后台页面数据展示
 @main.route('/backend_data')
 def backend_data():
-    return render_template("backend_en.html")
+    logs = user.getLogs()
+    print(logs)
+    return render_template("backend_en.html", logs=logs)
 
 
 # 个人中心展示商品订单

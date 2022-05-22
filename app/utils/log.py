@@ -4,6 +4,8 @@ import os.path
 from datetime import time
 from functools import wraps
 
+import leancloud
+
 INFO = 0
 WARNING = 1
 ERROR = 2
@@ -14,6 +16,7 @@ dir = './logs/'
 
 def slice(str,len):
     return str[:min(len,str.__len__())]
+
 
 def logging(timeout=None,cout=False,max_len=100):
     def decorator(func):
@@ -73,5 +76,3 @@ def record(record_time=None,
         os.makedirs(dir)
     with open(path,'a') as f:
         f.writelines(s)
-
-
