@@ -145,7 +145,7 @@ def products():
 def kinds(kind_id):
     products = product.getProductByCategory(kind_id)
     kind = product.getCategoryById(kind_id)
-    return render_template("kind_en.html", products=products, kind=kind, async_mode=socketio.async_mode)
+    return render_template("kind_en.html", kind_id = kind_id, products=products, kind=kind, async_mode=socketio.async_mode)
 
 
 @main.route('/kind')
@@ -154,12 +154,13 @@ def kinds_edit():
 
 
 # 商品具体信息页面
-@main.route('/productInfo/<product_id>')
-def productInfo(product_id):
+@main.route('/productInfo/<kind_id>-<product_id>')
+def productInfo(kind_id, product_id):
+    products = product.getProductByCategory(kind_id)
     commodity = product.getProductById(product_id, record=True)
     # print(product_id)
     # commodity_title = commodity.get('title').get('english')
-    return render_template("piano_en.html", commodity=commodity, async_mode=socketio.async_mode)
+    return render_template("piano_en.html", kind_id=kind_id, products=products, commodity=commodity, async_mode=socketio.async_mode)
 
 
 # 后台页面index
