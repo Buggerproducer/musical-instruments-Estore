@@ -12,7 +12,7 @@ $('#phone').blur(function () {
         })
     }else {
         span_ele.css({"color":"#ff0011","font-size":"12px"});
-        span_ele.text('The Phone should contains 11 numbers \n 电话号码必须包含十一位数字');
+        span_ele.text('电话号码要包含十一位数字');
     }
 });
 
@@ -32,6 +32,6 @@ $('#email').blur(function () {
         })
     }else {
         span_ele.css({"color":"#ff0011","font-size":"12px"});
-        span_ele.text('The Email format is invalid \n 邮箱格式不正确');
+        span_ele.text('邮箱格式不正确');
     }
 });

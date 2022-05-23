@@ -27,12 +27,16 @@
                 <input type="password" id="password">
             </label>
             <label>
+                confirm password:
+                <input type="password" id="repassword">
+            </label>
+            <label>
                 email:
-                <input type="email" id="email">
+                <input type="email" id="email"><span></span>
             </label>
             <label>
                 phone:
-                <input type="text" id="phone">
+                <input type="text" id="phone"><span></span>
             </label>
             <!-- sign up -->
             <button onclick="
@@ -99,5 +103,7 @@
         </div>
     </div>
 </div>
+<script src="{{ url_for('static',filename='script/examine_en.js') }}"></script>
+
 </body>
 </html>
