@@ -27,12 +27,16 @@
                 <input type="password" id="password">
             </label>
             <label>
+                确认密码:
+                <input type="password" id="repassword"><span></span>
+            </label>
+            <label>
                 电子邮箱:
-                <input type="email" id="email">
+                <input type="email" id="email"><span></span>
             </label>
             <label>
                 电话:
-                <input type="text" id="phone">
+                <input type="text" id="phone"><span></span>
             </label>
             <!-- sign up -->
             <button onclick="
@@ -99,5 +103,7 @@
         </div>
     </div>
 </div>
+<script src="{{ url_for('static',filename='script/examine_en.js') }}"></script>
+
 </body>
 </html>

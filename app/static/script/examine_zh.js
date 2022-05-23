@@ -35,3 +35,16 @@ $('#email').blur(function () {
         span_ele.text('邮箱格式不正确');
     }
 });
+
+$('#repassword').blur(function () {
+    let repassword = $(this).val();
+    let password = $('#password').val();
+    let span_ele = $(this).next('span');
+
+    if(repassword === password) {
+
+    }else {
+        span_ele.css({"color":"#ff0011","font-size":"12px"});
+        span_ele.text('两次输入的密码不同');
+    }
+});
