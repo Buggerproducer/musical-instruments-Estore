@@ -9,14 +9,21 @@ const user_name = AV.User.current().get('username');
 var idArray = window.location.href.split("/");
 var conversation_id = idArray[4];
 console.log(conversation_id);
-
+        let ungroup = {};
 $(document).ready(
+
     function () {
+
     var list = document.getElementById('communication');
     realtime.createIMClient(c_user).then(async function (user) {
         var query = user.getQuery();
         //query.containedIn('m', [c_user.id]);
-        query.find().then(function (conversations) {
+        user.on(Event.UNREAD_MESSAGES_COUNT_UPDATE, function(Conversations) {
+              for(let conv of Conversations) {
+                  ungroup[conv.id] = conv.unreadMessagesCount;
+  }
+});
+             query.find().then(function (conversations) {
             for (conversation in conversations) {
                 console.log(conversations[conversation].id);
                 var li = document.createElement("li");
@@ -31,6 +38,12 @@ $(document).ready(
                 div2.className = "name"
                 div3.className = "status"
                 i.className = "fa fa-circle online"
+                    if(ungroup[conversations[conversation].id.toString()] >=1 ) {
+                        console.log(1233);
+                        i.style.color = 'red';
+                        i.innerText = ungroup[conversations[conversation].id];
+                    };
+
                 a.href = "/conversation/" + conversations[conversation].id
                 img.src = "../static/chat-widget/img/t1.png"
                 img.height=50
@@ -43,8 +56,10 @@ $(document).ready(
                 div1.appendChild(div2);
                 div1.appendChild(div3);
                 div3.appendChild(i);
+
             }
         }).catch(console.error.bind(console));
+
         if(conversation_id!='1'){
             console.log(conversation_id);
             var chat = document.getElementById("chat");
