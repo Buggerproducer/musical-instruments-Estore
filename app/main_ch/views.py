@@ -151,6 +151,15 @@ def allOrderList():
     return render_template("orderList_merchant.html", order_list=orders,pagination=pagination)
 
 
+#订单填写页面
+@ch.route('/fillBillInfo/<product_id>')
+@login_required
+def fillBillInfo(product_id):
+    piano = product.getProductById(product_id)
+    labels = product.getAllCategory()
+    return render_template("MusiCrashTemplates/orderForm_zh.html", piano=piano, labels=labels)
+
+
 # 后台页面显示商品列表
 @ch.route('/productList')
 def productList():
