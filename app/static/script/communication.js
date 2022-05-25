@@ -21,9 +21,9 @@ $(document).ready(
         user.on(Event.UNREAD_MESSAGES_COUNT_UPDATE, function(Conversations) {
               for(let conv of Conversations) {
                   ungroup[conv.id] = conv.unreadMessagesCount;
+                  console.log('emmm')
   }
-});
-             query.find().then(function (conversations) {
+              query.find().then(function (conversations) {
             for (conversation in conversations) {
                 console.log(conversations[conversation].id);
                 var li = document.createElement("li");
@@ -59,8 +59,10 @@ $(document).ready(
 
             }
         }).catch(console.error.bind(console));
+});
 
-        if(conversation_id!='1'){
+
+        if(conversation_id!=='1'){
             console.log(conversation_id);
             var chat = document.getElementById("chat");
             //var { MessageQueryDirection } = require('leancloud-realtime');
