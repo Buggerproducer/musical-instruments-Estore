@@ -1,5 +1,5 @@
 import leancloud
-
+import random
 import app
 from app import socketio
 from flask_socketio import SocketIO, emit
@@ -157,9 +157,10 @@ def kinds_edit():
 @main.route('/productInfo/<kind_id>-<product_id>')
 def productInfo(kind_id, product_id):
     products = product.getProductByCategory(kind_id)
+    if len(products) > 4:
+        # 随机取4个商品作为最底下的推荐商品
+        products = random.sample(products, 4)
     commodity = product.getProductById(product_id, record=True)
-    # print(product_id)
-    # commodity_title = commodity.get('title').get('english')
     return render_template("piano_en.html", kind_id=kind_id, products=products, commodity=commodity, async_mode=socketio.async_mode)
 
 
