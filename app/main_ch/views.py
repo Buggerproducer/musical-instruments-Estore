@@ -15,7 +15,7 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get('authenticated') is None or session.get('authenticated') is False:
-            return redirect(url_for("main.signUp"))
+            return redirect(url_for("ch.signUp"))
         return f(*args, **kwargs)
     return decorated_function
 
