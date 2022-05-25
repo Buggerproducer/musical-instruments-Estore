@@ -285,76 +285,9 @@ def conversation(conversation_id):
 def fillBillInfo(product_id):
     piano = product.getProductById(product_id)
     labels = product.getAllCategory()
-    return render_template("MusiCrashTemplates/orderForm.html", piano=piano, labels=labels)
+    return render_template("MusiCrashTemplates/orderForm_en.html", piano=piano, labels=labels)
 
 
 @main.route('/about_us')
 def aboutus():
-    return render_template("MusiCrashTemplates/about_us.html")
-
-
-# @main.route('/grotrian')
-# def grotrian():
-#     return render_template("category/grotrian.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/steinmeyer')
-# def steinmeyer():
-#     return render_template("category/steinmeyer.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/petrof')
-# def petrof():
-#     return render_template("category/petrof.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/yamaha')
-# def yamaha():
-#     return render_template("category/yamaha.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/Bösendorfer')
-# def Bösendorfer():
-#     return render_template("category/Bösendorfer.html", async_mode=socketio.async_mode)
-
-
-
-# @main.route('/testio')
-# def testio():
-#     return render_template("test_io.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/testlogin')
-# def testlogin():
-#     return render_template("test_login.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/testorder')
-# def testorder():
-#     products = product.getAllProduct(0, 50)
-#     return render_template("test_order.html", products=products, async_mode=socketio.async_mode)
-#
-#
-# @main.route('/testfuwenben')
-# def testfuwenben():
-#     return render_template("MusiCrashTemplates/fuwenben.html")
-#
-#
-# @main.route('/testCollection')
-# def testCollection():
-#     return render_template("MusiCrashTemplates/collectionLists.html")
-#
-#
-# @main.route('/testCommunication')
-# def testCommunication():
-#     return render_template("test_communication.html")
-#
-#
-# @main.route('/testmodifypw')
-# def testmodifypw():
-#     return render_template("MusiCrashTemplates/re.html", async_mode=socketio.async_mode)
-#
-#
-# @main.route('/test')
-# def test():
-#     return render_template("MusiCrashTemplates/test.html", async_mode=socketio.async_mode)
+    return render_template("MusiCrashTemplates/about_us_en.html")
