@@ -14,8 +14,6 @@ const query = new AV.Query('Cov19');
 
 
 
-
-
 function Cov19(){
     const COV = AV.Object.extend('Cov19');
     const cov  = new COV();

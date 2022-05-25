@@ -23,7 +23,9 @@
   <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
   <link href="../../static/style/sebian_css/custom.css" rel="stylesheet" type="text/css">
   <script src="../../static/js/sebian_js/jquery-1.11.3.js"></script>
-
+    <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+    <script type="text/ecmascript-6" src="../static/script/orderlist.js"></script>
 </head>
 <body>
     <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s">
@@ -65,20 +67,38 @@
                             <!-- Rating Stars -->
                             <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
 <!--                              这部分是商品名称-->
-                            <p>{{ order.get('product').get('title').english }}</p>
+                            <p class="details-sec col-sm-6 font-playfair" style = "font-size:20px;font-weight: bold">{{ order.get('product').get('title').english }}</p>
                             <div class="row">
                                 <div class="details-sec col-sm-6"></div>
-                                <div class="details-sec col-sm-6 font-playfair"> Status: {{ order.status }}</div>
+                                <div class="details-sec col-sm-6 font-playfair"> Status: <span id ="{{order.id}}">{{ order.status }}</span></div>
                             </div>
-                            <div class="row">
+                            <div class="row" id = "button">
                                 <a href="#." class="btn btn-small btn-dark">More</a>
                                 <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>
+                                {% if order.get('status') == 'delivering' %}
+                                <a href="#." id  = '{{order.id}}1' class="btn btn-small btn-dark margin-left-4" onclick = "Receive('{{order.id}}')">Receive</a>
+                                {% endif %}
                             </div>
                         </div>
                       </div>
                       </div>
                     </li>
                   {% endfor %}
+                  <script>
+    AV.init({
+  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
+  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
+});
+    function Receive(id){
+    console.log(1);
+    const Order = AV.Object.extend('Order');
+const order = Order.createWithoutData("Order",id);
+order.set('status','received');
+order.save();
+document.getElementById(id).innerText = "received";
+document.getElementById(id+'1').style.display = 'none';
+}
+</script>
 <!--                &lt;!&ndash;以下li标签仅作展示作用，对接完成后删除&ndash;&gt;-->
 <!--                &lt;!&ndash; Products List &ndash;&gt;-->
 <!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->

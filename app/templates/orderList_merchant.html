@@ -27,6 +27,9 @@
   <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
   <link href="../static/style/sebian_css/custom.css" rel="stylesheet" type="text/css">
   <script src="../static/js/sebian_js/jquery-1.11.3.js"></script>
+    <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+    <script type="text/ecmascript-6" src="../static/script/orderlist.js"></script>
 
 </head>
 <body>
@@ -107,7 +110,7 @@
                                 <div class="details-sec col-sm-6"> {{ order.get('createdAt') }}<br><br>order-id: {{ order.id }} </div>
 
                             </div>
-
+                              <div id = "orderuser" style = "display:none">{{order.get('user')}}</div>
                             <!-- Rating Stars -->
                             <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
 <!--                              这部分是商品名称-->
@@ -116,18 +119,35 @@
 
                             <div class="row">
                                 <div class="details-sec col-sm-6"></div>
-                                <div class="details-sec col-sm-6 font-playfair"> Status: <span>{{ order.status }}</span></div>
+                                <div class="details-sec col-sm-6 font-playfair" > Status: <span id ="{{order.id}}">{{ order.status }}</span></div>
                             </div>
                             <div class="row">
                                 <a href="#." class="btn btn-small btn-dark">More</a>
                                 <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>
+                                {% if order.get('status') == 'waiting to be delivered' %}
+                                <a href="#." id  = '{{order.id}}1' class="btn btn-small btn-dark margin-left-4" onclick = "Deliver('{{order.id}}')">Deliver</a>
+                                {% endif %}
                             </div>
                         </div>
                       </div>
                       </div>
                     </li>
                   {% endfor %}
-
+<script>
+    AV.init({
+  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
+  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
+});
+    function Deliver(id){
+    console.log(1);
+    const Order = AV.Object.extend('Order');
+const order = Order.createWithoutData("Order",id);
+order.set('status','delivering');
+order.save();
+document.getElementById(id).innerText = "delivering";
+document.getElementById(id+'1').style.display = 'none';
+}
+</script>
 <!--                &lt;!&ndash;以下li标签仅作展示作用，对接完成后删除&ndash;&gt;-->
 <!--                &lt;!&ndash; Products List &ndash;&gt;-->
 <!--                <li class="animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">-->
@@ -324,8 +344,7 @@
 <script src="../static/js/sebian_js/bootstrap.min.js"></script>
 <script src="../static/js/sebian_js/own-menu.js"></script>
 <script src="../static/js/sebian_js/main.js"></script>
-        <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
-    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
-<script src="../static/script/orderlist.js"></script>
+
+
 
 </html>
