@@ -73,6 +73,7 @@ class Product(leancloud.Object):
         # 同样可以给对象的 content 增加 setter
         self.set('cover', value)
 
+
 class Order(leancloud.Object):
     @property
     def title(self):
@@ -105,6 +106,30 @@ class Order(leancloud.Object):
     @user.setter
     def user(self, value):
         self.set('user', value)
+
+    @property
+    def email(self):
+        return self.get('email')
+
+    @email.setter
+    def email(self, value):
+        self.set('email', value)
+
+    @property
+    def phone(self):
+        return self.get('phone')
+
+    @phone.setter
+    def phone(self, value):
+        self.set('user', value)
+
+    @property
+    def address(self):
+        return self.get('address')
+
+    @address.setter
+    def address(self, value):
+        self.set('address', value)
 
 
 if __name__ == '__main__':
