@@ -1,6 +1,7 @@
+function DeleteProduct(){
+    const currentUser = AV.User.current();
 
-
-
+}
 
 
 function Order(obj){
