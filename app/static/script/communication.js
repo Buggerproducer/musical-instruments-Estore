@@ -41,7 +41,7 @@ $(document).ready(
                     if(ungroup[conversations[conversation].id.toString()] >=1 ) {
                         console.log(1233);
                         i.style.color = 'red';
-                        i.innerText = ungroup[conversations[conversation].id];
+                        i.innerText = ' '+ungroup[conversations[conversation].id]+' Unread';
                     };
 
                 a.href = "/conversation/" + conversations[conversation].id

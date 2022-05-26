@@ -318,6 +318,20 @@ def fillBillInfo(product_id):
     piano = product.getProductById(product_id)
     labels = product.getAllCategory()
     return render_template("MusiCrashTemplates/orderForm_en.html", piano=piano, labels=labels)
+#订单填写页面
+@main.route('/ModifyBillInfo/<order_id>')
+@login_required
+def ModifyBillInfo(order_id):
+    order = product.getOrderById(order_id)
+    return render_template("MusiCrashTemplates/orderModifyForm_en.html", order= order)
+
+#订单填写页面
+@main.route('/ViewBillInfo/<order_id>')
+@login_required
+def ViewBillInfo(order_id):
+    order = product.getOrderById(order_id)
+    return render_template("MusiCrashTemplates/orderMerchant_en.html", order= order)
+
 
 
 @main.route('/about_us')
