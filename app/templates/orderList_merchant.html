@@ -112,18 +112,24 @@
                             </div>
                               <div id = "orderuser" style = "display:none">{{order.get('user')}}</div>
                             <!-- Rating Stars -->
-                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+<!--                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>-->
 <!--                              这部分是商品名称-->
-{#                            <div class="details-sec col-sm-6 font-playfair">{{ order.get('product').get('title').get('english') }}</div>#}
+{#                            <div class="details-sec col-sm-6 ">{{ order.get('product').get('title').get('english') }}</div>#}
                             <div class="details-sec col-sm-6"> <a href="#">Price</a><span class="font-montserrat">{{ order.get('price').get('dollar') }} USD</span> </div>
 
                             <div class="row">
                                 <div class="details-sec col-sm-6"></div>
                                 <div class="details-sec col-sm-6 font-playfair" > Status: <span id ="{{order.id}}">{{ order.status }}</span></div>
                             </div>
+
+                            <div class="row">
+                                <div class="details-sec col-sm-6"></div>
+                                <div class="details-sec col-sm-6 font-playfair" > Priority: <span>{{ order.get('priority') }}</span></div>
+                            </div>
+
                             <div class="row">
                                 {% if order.get('status') != 'closed' %}
-                                <a href="#." class="btn btn-small btn-dark">More</a>
+                                <a href="{{ url_for('main.ViewBillInfo', order_id = order.id) }}" class="btn btn-small btn-dark">More</a>
                                                     {% endif %}
 <!--                                <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>-->
                                 {% if order.get('status') == 'waiting to be delivered' %}

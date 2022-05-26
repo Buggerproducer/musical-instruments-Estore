@@ -228,6 +228,9 @@ function sendMessage(){
     if(c_user.id=='622431dd6f77474716d8351c'){
         realtime.createIMClient('622431dd6f77474716d8351c').then(function(user) {
             user.getConversation(conversation_id).then(function(conversation) {
+                        conversation.read();
+                                                console.log(1233);
+                        //console.log(conversation.unreadMessageCount);
             console.log(conversation.id);
             return conversation.send(new TextMessage(mes));
             }).then(function(message) {
@@ -273,6 +276,7 @@ function sendMessage(){
 				unique: true
             });
         }).then(function(conversation) {
+
 			  // 发送消息
             return conversation.send(new TextMessage(mes));
         }).then(function(message) {
@@ -304,8 +308,10 @@ function sendMessage(){
 
 realtime.createIMClient(c_user).then(function(user) {
     let n;
+
     user.on(Event.MESSAGE, function(message, conversation) {
         console.log('Message received: ' + message.text);
+        conversation.read();
         /*let el = $('<p>'+username+' : '+message.text+'</p>');
         $('#talk').append(el);*/
         if(c_user.id!='622431dd6f77474716d8351c'){
