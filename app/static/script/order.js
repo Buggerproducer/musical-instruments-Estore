@@ -86,7 +86,7 @@ function MakeOrder(){
         console.log(data)
         if(data){
                     alert("Place Order Successfully")
-                    window.location.href = '/history_order/'+currentUser.id;
+window.location.href = '/orderList/'+currentUser.id;
         }else {
             console.log(error);
         }
