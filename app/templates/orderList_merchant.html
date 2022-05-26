@@ -50,8 +50,8 @@
 
             <!--======= SEARCH ICON =========-->
 {#            <li class="search-nav"><a href="#."><i class="bi bi-search darkgary-font search-font-size"></i></a>#}
-              <ul class="ownmenu">
-                  <li class="row">
+
+                  <li>
                       <label> State
                           <select id="state">
                             <option value="waiting to be delivered">waiting to be delivered</option>
@@ -60,18 +60,20 @@
                             <option value="closed">closed</option>
                           </select>
                       </label>
+
                   </li>
-                  <li class="row">
-                      <label> Product id
-                          <input id="name" type="text" name="first-name" value="" placeholder="">
-                      </label>
-                  </li>
-                  <li class="row">
-                      <label> *FIRST NAME
-                          <input id="name" type="text" name="first-name" value="" placeholder="">
-                      </label>
-                  </li>
+{#                  <li class="row">#}
+{#                      <label> Product id#}
+{#                          <input id="name" type="text" name="first-name" value="" placeholder="">#}
+{#                      </label>#}
+{#                  </li>#}
+{#                  <li class="row">#}
+{#                      <label> *FIRST NAME#}
+{#                          <input id="name" type="text" name="first-name" value="" placeholder="">#}
+{#                      </label>#}
+{#                  </li>#}
                 <li class="row">
+
                   <div class="col-sm-8 no-padding">
                     <input type="search" class="form-control" placeholder="Search Here">
                     <button onclick="search('{{ pagination['current_page'] }}')"> <i class="bi bi-search"></i> </button>
@@ -90,8 +92,11 @@
         <h4>Your Orders</h4>
         <!-- Breadcrumb -->
         <ol class="breadcrumb">
-          <li><a href=>User Center</a></li>
-          <li class="active">Historic Order</li>
+{#          <li><a href=>User Center</a></li>#}
+{#          <li class="active">Historic Order</li>#}
+
+                    <!-- *COUNTRY -->
+
         </ol>
       </div>
     </section>
