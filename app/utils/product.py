@@ -158,7 +158,7 @@ def getAllCategory(skip=0, limit=50):
     return result
 
 
-def getAllProduct(skip=0, limit=50):
+def getAllProduct(skip, limit):
     """
     get all product
     return: a list of products

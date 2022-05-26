@@ -258,14 +258,42 @@ def allOrderList():
 # 后台页面显示商品列表
 @main.route('/productList')
 def productList():
-    products = product.getAllProduct()
-    lst = []
-    for i in products:
-        print(i.id)
-        print(1)
-        lst += [[product.getCategoryByProduct(i.id), i]]
+    products = product.getAllProduct(0, 100)
+    page_size = 15
+    if len(products) % page_size != 0:
+        page = len(products) // page_size + 1
+    else:
+        page = len(products) // page_size
 
-    return render_template("staff_chat.html", lst=lst)
+    current_page = request.args.get('page', 1, type=int)
+    next_page = current_page + 1
+    pre_page = current_page - 1
+    pre_pos = current_page // 5 * 5 - 1
+    next_post = current_page // 5 * 5 + 5
+    has_next = True
+    has_pre = True
+    page_products = product.getAllProduct((current_page - 1) * page_size, page_size)
+    if current_page >= page:
+        next_page = None
+        has_next = False
+    if current_page == 1:
+        pre_page = None
+        has_pre = False
+    pagination = {
+        "page": page,
+        "current_page": current_page,
+        "next_page": next_page,
+        "pre_page": pre_page,
+        "has_next": has_next,
+        "has_pre": has_pre,
+        "pre_post": pre_pos,
+        "next": next_post
+    }
+
+    lst = []
+    for i in page_products:
+        lst += [[product.getCategoryByProduct(i.id), i]]
+    return render_template("staff_chat.html", lst=lst, pagination=pagination)
 
 
 # 顾客聊天页面弹窗

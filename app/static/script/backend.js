@@ -101,6 +101,7 @@ function getTime(n){
 
 function simple_report(){
     let name = $('#reportName').val();
+    lklll
     let Username = $('#userName').val();
     let addInfo = $('#additionalInfo').val();
 
