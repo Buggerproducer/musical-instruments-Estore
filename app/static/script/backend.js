@@ -45,7 +45,7 @@ queryOrder.count().then((count2) => {
   console.log(`${count2} 个 receive 已完成。`);
 
 
-    queryOrder.equalTo('status','waiting to be paid');
+    queryOrder.equalTo('status','waiting to be delivered');
 queryOrder.count().then((count3) => {
     waitingNum = count3;
   console.log(`${count3} 个 wait 已完成。`);
@@ -67,14 +67,14 @@ const queryCollection  = new AV.Query('CollectionMap');
 queryCollection.equalTo('status',true);
 queryCollection.count().then((collections)=>{
     $('#totalcollection').text(collections +' Collections');
-    $('#collectionToday').text(collections/2 + ' Today');
+    $('#collectionToday').text(collections-5 + ' Today');
     collectionNum = collections;
 });
 const queryCommunication  = new AV.Query('_Conversation');
 queryCommunication.equalTo('tr',false);
 queryCommunication.count().then((communications)=>{
     $('#TotalCommunications').text(communications +' Communications');
-    $('#TodayCommunications').text(communications-3 + ' Today');
+    $('#TodayCommunications').text(communications-5 + ' Today');
     communicationNum = communications;
 });
 
