@@ -74,7 +74,7 @@
                                 <div class="details-sec col-sm-6 font-playfair"> Status: <span id ="{{order.id}}">{{ order.status }}</span></div>
                             </div>
                             <div class="row" id = "button">
-                                {% if order.get('status') != 'closed' %}
+                                {% if order.get('status') != 'closed' and order.get('status') != 'received' %}
                                 <a href="{{ url_for('main.ModifyBillInfo', order_id = order.id) }}" class="btn btn-small btn-dark" >Modify</a>
                                                     {% endif %}
                                 {% if order.get('status') == 'delivering' %}
