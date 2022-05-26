@@ -63,3 +63,19 @@ def getLogs(skip=0, limit=5):
     query.include('product.title')
     result = query.find()
     return result
+
+def getOrderFilter(state, skip, limit):
+    query = leancloud.Query('Order')
+    if state is not None:
+        query.equal_to('status', state)
+        print(type(state))
+
+    query.limit(limit)
+    query.skip(skip)
+    query.include('product')
+    query.include('user')
+    query.include('price')
+    query.include('product.title')
+    query.include('product.description')
+    result = query.find()
+    return result

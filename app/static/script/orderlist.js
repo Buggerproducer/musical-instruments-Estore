@@ -36,3 +36,8 @@ function Cov19(){
                 });
             });
 }
+
+function search(page){
+    const state = document.getElementById('state').value;
+    window.location.href = '/allOrderList?page='+ page + '&state=' + state;
+}

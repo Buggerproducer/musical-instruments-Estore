@@ -29,7 +29,7 @@
   <script src="../static/js/sebian_js/jquery-1.11.3.js"></script>
     <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
     <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
-    <script type="text/ecmascript-6" src="../static/script/orderlist.js"></script>
+    <script src="{{ url_for('static',filename='script/orderlist.js') }}"></script>
 
 </head>
 <body>
@@ -49,8 +49,28 @@
             </li>
 
             <!--======= SEARCH ICON =========-->
-            <li class="search-nav"><a href="#."><i class="bi bi-search darkgary-font search-font-size"></i></a>
-              <ul class="dropdown">
+{#            <li class="search-nav"><a href="#."><i class="bi bi-search darkgary-font search-font-size"></i></a>#}
+              <ul class="ownmenu">
+                  <li class="row">
+                      <label> State
+                          <select id="state">
+                            <option value="waiting to be delivered">waiting to be delivered</option>
+                            <option value="received">received</option>
+                            <option value="delivering">delivering</option>
+                            <option value="closed">closed</option>
+                          </select>
+                      </label>
+                  </li>
+                  <li class="row">
+                      <label> Product id
+                          <input id="name" type="text" name="first-name" value="" placeholder="">
+                      </label>
+                  </li>
+                  <li class="row">
+                      <label> *FIRST NAME
+                          <input id="name" type="text" name="first-name" value="" placeholder="">
+                      </label>
+                  </li>
                 <li class="row">
                   <div class="col-sm-4 no-padding">
                     <select class="selectpicker">
@@ -64,7 +84,7 @@
                   </div>
                   <div class="col-sm-8 no-padding">
                     <input type="search" class="form-control" placeholder="Search Here">
-                    <button type="submit"> <i class="bi bi-search"></i> </button>
+                    <button onclick="search('{{ pagination['current_page'] }}')"> <i class="bi bi-search"></i> </button>
                   </div>
                 </li>
               </ul>
@@ -263,13 +283,13 @@ document.getElementById(id+'1').style.display = 'none';
             <ul class="pagination animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
                 {% if pagination["has_pre"] %}
                 <li>
-                    <a href="{{ url_for('main.allOrderList', page=pagination['pre_page']) }}"><</a>
+                    <a href="{{ url_for('main.allOrderList', state=status, page=pagination['pre_page']) }}"><</a>
                 </li>
                 {% endif %}
                 {% if pagination["page"]//8 > 0 %}
                     {% if pagination["current_page"] > pagination["page"] - 4 %}
                         <li>
-                            <a href="{{ url_for('main.allOrderList', page=1) }}">1</a>
+                            <a href="{{ url_for('main.allOrderList', state=status, page=1) }}">1</a>
                         </li>
                         <li>
                             <a href="">...</a>
@@ -278,12 +298,12 @@ document.getElementById(id+'1').style.display = 'none';
                         <li><a {% if pagenum  == pagination["current_page"] %}
                                 class="page_item_active"
                                 {% endif %}
-                                href="{{ url_for('main.allOrderList', page=pagenum) }}">{{ pagenum }}</a></li>
+                                href="{{ url_for('main.allOrderList', state=status, page=pagenum) }}">{{ pagenum }}</a></li>
                         {% endfor %}
 
                     {% elif pagination["current_page"] > 4 %}
                         <li>
-                            <a href="{{ url_for('main.allOrderList', page=1) }}">1</a>
+                            <a href="{{ url_for('main.allOrderList', state=status, page=1) }}">1</a>
                         </li>
                         <li>
                             <a href="#.">...</a>
@@ -292,26 +312,26 @@ document.getElementById(id+'1').style.display = 'none';
                         <li><a {% if pagenum  == pagination["current_page"] %}
                                 class="page_item_active"
                                 {% endif %}
-                                href="{{ url_for('main.allOrderList', page=pagenum) }}">{{ pagenum }}</a></li>
+                                href="{{ url_for('main.allOrderList', state=status, page=pagenum) }}">{{ pagenum }}</a></li>
                         {% endfor %}
                         <li>
                             <a href="#.">...</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('main.allOrderList', page=pagination['page']) }}">{{ pagination["page"] }}</a>
+                            <a href="{{ url_for('main.allOrderList', state=status, page=pagination['page']) }}">{{ pagination["page"] }}</a>
                         </li>
                     {% else %}
                     {% for pagenum in range(0,5) %}
                         <li><a {% if pagenum + 1 == pagination["current_page"] %}
                                 class="page_item_active"
                                 {% endif %}
-                                href="{{ url_for('main.allOrderList', page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
+                                href="{{ url_for('main.allOrderList', state=status, page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
                     {% endfor %}
                     <li>
                             <a href="#.">...</a>
                     </li>
                     <li>
-                            <a href="{{ url_for('main.allOrderList', page=pagination['page']) }}">{{ pagination["page"] }}</a>
+                            <a href="{{ url_for('main.allOrderList', state=status, page=pagination['page']) }}">{{ pagination["page"] }}</a>
                     </li>
                     {% endif %}
                 {% else %}
@@ -319,12 +339,12 @@ document.getElementById(id+'1').style.display = 'none';
                     <li><a {% if pagenum + 1 == pagination["current_page"] %}
                             class="page_item_active"
                             {% endif %}
-                            href="{{ url_for('main.allOrderList', page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
+                            href="{{ url_for('main.allOrderList', state=status, page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
                 {% endfor %}
                 {% endif %}
                 {% if pagination["has_next"] %}
                 <li>
-                    <a href="{{ url_for('main.allOrderList', page=pagination['next_page']) }}">></a>
+                    <a href="{{ url_for('main.allOrderList', state=status, page=pagination['next_page']) }}">></a>
                 </li>
                 {% endif %}
 
