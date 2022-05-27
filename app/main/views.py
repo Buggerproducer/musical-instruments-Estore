@@ -55,7 +55,7 @@ def join():
     emit("notify", {'data':"someone join"}, broadcast=True)
 
 
-# 索引页面index_zh
+# 索引页面index
 @main.route('/')
 @cache.cached(timeout=300)
 def index():

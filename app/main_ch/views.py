@@ -169,6 +169,11 @@ def productList():
         lst += [[product.getCategoryByProduct(i.id), i]]
     return render_template("staff_chat_CN.html", lst=lst)
 
+
+@ch.route('/about_us')
+def aboutus():
+    return render_template("MusiCrashTemplates/about_us_zh.html")
+
 @ch.route('/communicate/1')
 @login_required
 def communicate():
