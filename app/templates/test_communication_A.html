@@ -229,7 +229,7 @@ function sendMessage(){
     if(c_user.id=='622431dd6f77474716d8351c'){
         realtime.createIMClient('622431dd6f77474716d8351c').then(function(user) {
             user.getConversation(conversation_id).then(function(conversation) {
-//                        conversation.read();
+                  conversation.read();
                                                 console.log(12252533);
                         //console.log(conversation.unreadMessageCount);
             console.log(conversation.id);
