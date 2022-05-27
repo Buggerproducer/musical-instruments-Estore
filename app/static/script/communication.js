@@ -15,15 +15,14 @@ $(document).ready(
     function () {
 
     var list = document.getElementById('communication');
+
+
     realtime.createIMClient(c_user).then(async function (user) {
         var query = user.getQuery();
         //query.containedIn('m', [c_user.id]);
-        user.on(Event.UNREAD_MESSAGES_COUNT_UPDATE, function(Conversations) {
-              for(let conv of Conversations) {
-                  ungroup[conv.id] = conv.unreadMessagesCount;
-                  console.log('emmm')
-  }
-              query.find().then(function (conversations) {
+
+        function test(){
+             query.find().then(function (conversations) {
             for (conversation in conversations) {
                 console.log(conversations[conversation].id);
                 var li = document.createElement("li");
@@ -38,11 +37,12 @@ $(document).ready(
                 div2.className = "name"
                 div3.className = "status"
                 i.className = "fa fa-circle online"
-                    if(ungroup[conversations[conversation].id.toString()] >=1 ) {
-                        console.log(1233);
-                        i.style.color = 'red';
-                        i.innerText = ungroup[conversations[conversation].id];
-                    };
+                    // if(ungroup[conversations[conversation].id.toString()] >=1 ) {
+                    //     console.log(1233);
+                    //     i.style.color = 'red';
+                    //     i.innerText = ungroup[conversations[conversation].id];
+                    // }
+                ungroup[conversations[conversation].id.toString()]=i
 
                 a.href = "/conversation/" + conversations[conversation].id
                 img.src = "../static/chat-widget/img/t1.png"
@@ -59,6 +59,21 @@ $(document).ready(
 
             }
         }).catch(console.error.bind(console));
+        }
+
+        test()
+
+        user.on(Event.UNREAD_MESSAGES_COUNT_UPDATE, function(Conversations) {
+              for(let conv of Conversations) {
+                  // ungroup[conv.id] = conv.unreadMessagesCount;
+                  console.log('emmm')
+                  let i=ungroup[conv.id]
+                  console.log(1233);
+                  i.style.color = 'red';
+                  i.innerText = conv.unreadMessagesCount;
+
+                 }
+
 });
 
 
