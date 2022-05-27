@@ -225,11 +225,12 @@ function sendMessage(){
     //let username = $('#people').val();
     let mes = $('#input').val();
     let time;
+    console.log("emmmmmmmmmmmmmm")
     if(c_user.id=='622431dd6f77474716d8351c'){
         realtime.createIMClient('622431dd6f77474716d8351c').then(function(user) {
             user.getConversation(conversation_id).then(function(conversation) {
 //                        conversation.read();
-                                                console.log(1233);
+                                                console.log(12252533);
                         //console.log(conversation.unreadMessageCount);
             console.log(conversation.id);
             return conversation.send(new TextMessage(mes));
