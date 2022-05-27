@@ -175,7 +175,6 @@ def staff_index():
 @main.route('/backend_data')
 def backend_data():
     logs = user.getLogs()
-    print(logs)
     return render_template("backend_en.html", logs=logs)
 
 
