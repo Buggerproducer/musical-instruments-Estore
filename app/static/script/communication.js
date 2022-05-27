@@ -66,9 +66,8 @@ $(document).ready(
         user.on(Event.UNREAD_MESSAGES_COUNT_UPDATE, function(Conversations) {
               for(let conv of Conversations) {
                   // ungroup[conv.id] = conv.unreadMessagesCount;
-                  console.log('emmm')
                   let i=ungroup[conv.id]
-                  console.log(1233);
+                  console.log(conv.unreadMessagesCount)
                   if (conv.unreadMessagesCount>0){
                       i.style.color = 'red';
                       i.innerText = conv.unreadMessagesCount;
