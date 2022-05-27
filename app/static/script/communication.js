@@ -69,8 +69,13 @@ $(document).ready(
                   console.log('emmm')
                   let i=ungroup[conv.id]
                   console.log(1233);
-                  i.style.color = 'red';
-                  i.innerText = conv.unreadMessagesCount;
+                  if (conv.unreadMessagesCount>0){
+                      i.style.color = 'red';
+                      i.innerText = conv.unreadMessagesCount;
+                  }else{
+                      i.style.color = '';
+                      i.innerText = '';
+                  }
 
                  }
 
