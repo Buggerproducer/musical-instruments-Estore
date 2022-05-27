@@ -27,9 +27,9 @@
 <body>
 <div id="wrap">
     <div class="content">
-        <section class="sub-banner">
+        <section class=" section-p-30px sub-banner chart-page">
           <div class="container">
-            <h4>Fill Billing Details</h4>
+            <h4>Modify your Order Details</h4>
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
                 {# 问题2 #}
@@ -55,20 +55,20 @@
                             <!-- Name -->
                             <li class="col-md-6">
                               <label> *NAME
-                                <input id="name" type="text" name="first-name" value="" placeholder="">
+                                <input id="name" type="text" name="first-name" value="{{order.get('name')}}" placeholder="">
                               </label>
                             </li>
 
                             <li class="col-md-12">
                               <!-- ADDRESS -->
                               <label>*ADDRESS
-                                <input id="address" type="text" name="address" value="" placeholder="">
+                                <input id="address" type="text" name="address" value="{{order.get('address')}}" placeholder="">
                               </label>
                             </li>
                             <!-- TOWN/CITY -->
                             <li class="col-md-12">
                               <label>*TOWN/CITY
-                                <input id="town" type="text" name="town" value="" placeholder="">
+                                <input id="town" type="text" name="town" value="{{order.get('town')}}" placeholder="">
                               </label>
                             </li>
 
@@ -77,13 +77,13 @@
                             <!-- EMAIL ADDRESS -->
                             <li class="col-md-12">
                               <label> *EMAIL ADDRESS
-                                <input id="email" type="text" name="contry-state" value="" placeholder="">
+                                <input id="email" type="text" name="contry-state" value="{{order.get('email')}}" placeholder="">
                               </label>
                             </li>
                             <!-- PHONE -->
                             <li class="col-md-12">
                               <label> *PHONE
-                                <input id="phone" type="text" name="postal-code" value="" placeholder="">
+                                <input id="phone" type="text" name="postal-code" value="{{order.get('phone')}}" placeholder="">
                               </label>
                             </li>
                             <li class="col-md-12" id = "selectEx1">
@@ -105,12 +105,12 @@
                           <div class="order-detail">
                             <p>PRODUCT <span>TOTAL</span></p>
                             <div class="item-order">
-                              <p>{{ piano.get('title').get('english') }} <span class="color"> x1 </span></p>
+                              <p>{{ order.get('product').get('title').get('english') }} <span class="color"> x1 </span></p>
 <!--                              <p>COLOR: BLACK </p>-->
-                              <p class="text-right">{{ piano.get('price').get('dollar') }}</p>
+                              <p class="text-right">{{ order.get('price').get('dollar') }}</p>
                             </div>
                             <p>SHIPPING AND HANDLING <span>FREE SHIPPING</span></p>
-                            <p>ORDER TOTAL <span>{{ piano.get('price').get('dollar') }}</span></p>
+                            <p>ORDER TOTAL <span>{{ order.get('price').get('dollar') }}</span></p>
                           </div>
                           <div class="pay-meth">
                             <h5>PAYMENT METHODS</h5>
@@ -142,7 +142,7 @@
                               </li>
                             </ul>
                               {# 问题6 #}
-                            <a onclick="MakeOrder()" class="btn btn-small btn-dark pull-right">PLACE ORDER</a> </div>
+                            <a onclick="ModifyOrder('{{order.id}}')" class="btn btn-small btn-dark pull-right">PLACE ORDER</a> </div>
 
                         </div>
                       </div>
@@ -165,5 +165,12 @@
 <script src="{{ url_for('static',filename='script/user.js') }}"></script>
 <script src="{{ url_for('static',filename='script/order.js') }}"></script>
 <script src="{{ url_for('static',filename='script/orderform.js') }}"></script>
+
+<script>
+
+
+
+</script>
+
 
 </html>

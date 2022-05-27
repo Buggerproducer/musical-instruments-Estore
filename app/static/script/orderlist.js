@@ -1,4 +1,4 @@
-AV.init({
+    AV.init({
   appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
@@ -35,4 +35,9 @@ function Cov19(){
     // 异常处理
                 });
             });
+}
+
+function search(page){
+    const state = document.getElementById('state').value;
+    window.location.href = '/allOrderList?page='+ page + '&state=' + state;
 }

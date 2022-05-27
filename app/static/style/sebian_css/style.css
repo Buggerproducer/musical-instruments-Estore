@@ -1370,11 +1370,10 @@ header .ownmenu .look-book .media-body a {
     Rating Stars 
 ===========================================*/
 .stars {
-	display: inline-block;
 	width: 100%;
 	color: #ebc52d;
 	font-size: 12px;
-	margin-top: 20px;
+	margin-top:-20px;
 }
 /*===========================================
     ABOUT

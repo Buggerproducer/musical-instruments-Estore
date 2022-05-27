@@ -41,6 +41,46 @@ def getProductById(product_id: string, record=False):
     return product
 
 
+def getOrderById(order_id: string, record=False):
+    """
+    use product_id to get product
+    return:  a product av object
+    example operation: get the product's information
+    product.get('title').get('english') 获取产品英文名
+    product.get('title').get('chinese') 获取产品中文名
+    product.get('description').get('english') 获取产品英文描述
+    product.get('description').get('chinese') 获取产品中文描述
+    product.get('price').get('dollar') 获取美元价格
+    product.get('price').get('CNY') 获取人民币价格
+    product.get('cover').url 获取封面图片链接
+    """
+    Order = models.Order
+    query = Order.query
+    query.include('address')
+    query.include('email')
+    query.include('name')
+    query.include('price')
+    query.include('product')
+    query.include('town')
+    query.include('product.title')
+    query.include('product.user')
+    order = query.get(order_id)
+    # if record:
+    #     product.set('visit_count', product.get('visit_count') + 1)
+    #     # print(leancloud.User.get_current())
+    #     leancloud.User.set_current(config.CURRENT_USER)
+    #     # if leancloud.User.get_current()==None:
+    #     #     print('emmmmmmmmmmmmmmmmmmmmm')
+    #     #     username = 'webserver2'
+    #     #     password = '12345678'
+    #     #     user = leancloud.User()
+    #     #     user.login(username=username, password=password)
+    #     product.save()
+    return order
+
+
+
+
 def getProductByCategory(category_id: string, skip=0, limit=10):
     """
     use category_id to get products
@@ -118,7 +158,7 @@ def getAllCategory(skip=0, limit=50):
     return result
 
 
-def getAllProduct(skip=0, limit=50):
+def getAllProduct(skip, limit):
     """
     get all product
     return: a list of products

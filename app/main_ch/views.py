@@ -168,3 +168,18 @@ def productList():
     for i in products:
         lst += [[product.getCategoryByProduct(i.id), i]]
     return render_template("staff_chat_CN.html", lst=lst)
+
+
+@ch.route('/about_us')
+def aboutus():
+    return render_template("MusiCrashTemplates/about_us_zh.html")
+
+@ch.route('/communicate/1')
+@login_required
+def communicate():
+    return render_template("test_communication_A_CN.html")
+
+
+@ch.route('/conversation/<conversation_id>')
+def conversation(conversation_id):
+    return render_template("test_communication_A_CN.html", conversation_id=conversation_id)

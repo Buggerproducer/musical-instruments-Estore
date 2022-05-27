@@ -66,6 +66,7 @@
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">首页</span></li>
             <li><a href="{{ url_for('ch.index') }}"><span class="dsn-title-menu">索引</span><span class="dsn-meta-menu">01</span></a></li>
+            <li><a href="{{ url_for('ch.aboutus') }}"><span class="dsn-title-menu">关于我们</span><span class="dsn-meta-menu">02</span></a></li>
           </ul>
         </li>
         <!-- li 2: Sliders -->
@@ -73,12 +74,9 @@
           <ul>
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">商品</span></li>
             <li><a href="{{ url_for('ch.category') }}"><span class="dsn-title-menu">品牌</span><span class="dsn-meta-menu">01</span></a></li>
-<!--            <li><a href="slider-horizontal.html"><span class="dsn-title-menu">Slider Horizontal</span><span class="dsn-meta-menu">02</span></a></li>-->
-<!--            <li><a href="{{ url_for('ch.productInfo', product_id = '622972726ca8d92534b035b9') }}"><span class="dsn-title-menu">商品详情</span><span class="dsn-meta-menu">03</span></a></li>-->
-<!--            <li><a href="slider.html"><span class="dsn-title-menu">Slider slice</span><span class="dsn-meta-menu">04</span></a></li>-->
           </ul>
         </li>
-        <!-- li 7: Setting -->
+        <!-- li 3: Setting -->
         <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span id="logoutb" class="dsn-title-menu">
           {% if authenticated %}
           <img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">

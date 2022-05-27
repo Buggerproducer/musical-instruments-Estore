@@ -5,23 +5,23 @@
     <title>缪斯克拉斯-客服聊天</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="../static/chat-widget/style.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='chat-widget/style.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../static/style/emoji.css" rel="stylesheet">
+    <link href="{{ url_for('static',filename='style/emoji.css') }}" rel="stylesheet">
 
-    <script src="../static/script/jquery.min.js"></script>
-    <script src="../static/script/socket.io.js"></script>
-    <script src="../static/script/av-min.js"></script>
-    <script src="../static/script/communication.js"></script>
-    <script src="../static/script/im-browser.min.js"></script>
-    <script src="../static/script/typed-messages.min.js"></script>
+    <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/communication.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/im-browser.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='script/typed-messages.min.js') }}"></script>
 
-    <script src="../static/script/user.js"></script>
+    <script src="{{ url_for('static',filename='script/user.js') }}"></script>
 
     <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-    <script src='../static/chat-widget/handlebars.min.js'></script>
-    <script src='../static/chat-widget/list.min.js'></script>
-    <script src="../static/chat-widget/script.js"></script>
+    <script src="{{ url_for('static',filename='chat-widget/handlebars.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='chat-widget/list.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='chat-widget/script.js') }}"></script>
     <style>
         .name{
             color: white;
@@ -39,7 +39,7 @@
       <ul id="communication" class="list">
         <li class="clearfix">
             <a href="{{ url_for('main.testbase') }}">
-          <img src="../static/img/login-user.png" alt="avatar" style="height: 50PX;" />
+          <img src="{{ url_for('static',filename='img/login-user.png') }}" alt="avatar" style="height: 50PX;" />
           <div class="about">
             <div class="name">文森特-波特</div>
             <div class="status">
@@ -53,7 +53,7 @@
     <div class="chat">
       <!-- 聊天框头部 -->
       <div class="chat-header clearfix">
-        <img src="../static/img/login-user.png" alt="avatar" style="height: 50PX;" />
+        <img src="{{ url_for('static',filename='img/login-user.png') }}" style="height: 50PX;" />
 
         <div class="chat-about">
           <div class="chat-with" style="color:black">与缪斯克拉斯的工作人员联系...</div>
@@ -124,7 +124,7 @@
 
       <div class="chat-message clearfix">
           <p class="lead emoji-picker-container">
-              <textarea id = "input" class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>
+              <textarea id = "input" class="form-control textarea-control" rows="3" placeholder="请输入内容..." data-emojiable="true"></textarea>
           </p>
 
 

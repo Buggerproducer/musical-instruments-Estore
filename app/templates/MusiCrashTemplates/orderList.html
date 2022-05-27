@@ -30,10 +30,11 @@
 <body>
     <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s">
       <div class="container">
+
         <h4>Your Orders</h4>
         <!-- Breadcrumb -->
         <ol class="breadcrumb">
-          <li><a href=>User Center</a></li>
+          <li><a href= >User Center</a></li>
           <li class="active">Historic Order</li>
         </ol>
       </div>
@@ -73,10 +74,17 @@
                                 <div class="details-sec col-sm-6 font-playfair"> Status: <span id ="{{order.id}}">{{ order.status }}</span></div>
                             </div>
                             <div class="row" id = "button">
-                                <a href="#." class="btn btn-small btn-dark">More</a>
-                                <a href="#." class="btn btn-small btn-dark margin-left-4">Delete</a>
+                                {% if order.get('status') != 'closed' and order.get('status') != 'received' %}
+                                <a href="{{ url_for('main.ModifyBillInfo', order_id = order.id) }}" class="btn btn-small btn-dark" >Modify</a>
+                                                    {% endif %}
                                 {% if order.get('status') == 'delivering' %}
                                 <a href="#." id  = '{{order.id}}1' class="btn btn-small btn-dark margin-left-4" onclick = "Receive('{{order.id}}')">Receive</a>
+                                {% endif %}
+                                {% if order.get('status') == 'waiting to be delivered' %}
+                                <a href="#." id  = '{{order.id}}2' class="btn btn-small btn-dark margin-left-4" onclick = "Refund('{{order.id}}')">Refund</a>
+                                {% endif %}
+                                {% if order.get('status') == 'processing refund' %}
+                                <a href="#." id  = '{{order.id}}3' class="btn btn-small btn-dark margin-left-4" onclick = "CancelRefund('{{order.id}}')">Cancel Refund</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -90,13 +98,28 @@
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
     function Receive(id){
-    console.log(1);
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','received');
 order.save();
 document.getElementById(id).innerText = "received";
 document.getElementById(id+'1').style.display = 'none';
+}
+    function Refund(id){
+    const Order = AV.Object.extend('Order');
+const order = Order.createWithoutData("Order",id);
+order.set('status','processing refund');
+order.save();
+document.getElementById(id).innerText = "processing refund";
+document.getElementById(id+'2').style.display = 'none';
+}
+    function CancelRefund(id){
+    const Order = AV.Object.extend('Order');
+const order = Order.createWithoutData("Order",id);
+order.set('status','waiting to be delivered');
+order.save();
+document.getElementById(id).innerText = "waiting to be delivered";
+document.getElementById(id+'3').style.display = 'none';
 }
 </script>
 <!--                &lt;!&ndash;以下li标签仅作展示作用，对接完成后删除&ndash;&gt;-->

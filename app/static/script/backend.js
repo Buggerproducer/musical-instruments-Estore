@@ -11,8 +11,14 @@ qp.find().then((products)=>{
     for(let a = 0;a<7;a++){
         let title = products[a].get('title').get('english');
         let visit = products[a].get('visit_count');
-             console.log(products[a].get('title').get('english'));
-             $('#mostVisit').append('<tr><td>'+title+'<a href="/productInfo/'+products[a].id+'" class="ms-1" aria-label="Open website">' +
+            console.log(products[a].get('title').get('english'));
+            const product = new AV.Object.createWithoutData('Product', products[a].id)
+            const query = new AV.Query('ProductCategoryMap')
+            query.equalTo('product', product)
+            query.include('category')
+            query.find().then((categorymap) => {
+            const category = categorymap[0].get('category')
+            $('#mostVisit').append('<tr><td>'+title+'<a href="/productInfo/'+ category.id+'-'+products[a].id+'" class="ms-1" aria-label="Open website">' +
                  '<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">' +
                  '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
                  '<path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />' +
@@ -22,6 +28,7 @@ qp.find().then((products)=>{
                  '<td class="text-end w-1">' +
                  '                        <div class="chart-sparkline chart-sparkline-sm" id="sparkline-bounce-rate-2" style="min-height: 24px" ></div>' +
                  '</td>'+'</tr>');
+            });
     }
 });
 function toPercent(point,x){
@@ -45,7 +52,7 @@ queryOrder.count().then((count2) => {
   console.log(`${count2} 个 receive 已完成。`);
 
 
-    queryOrder.equalTo('status','waiting to be paid');
+    queryOrder.equalTo('status','waiting to be delivered');
 queryOrder.count().then((count3) => {
     waitingNum = count3;
   console.log(`${count3} 个 wait 已完成。`);
@@ -67,14 +74,14 @@ const queryCollection  = new AV.Query('CollectionMap');
 queryCollection.equalTo('status',true);
 queryCollection.count().then((collections)=>{
     $('#totalcollection').text(collections +' Collections');
-    $('#collectionToday').text(collections/2 + ' Today');
+    $('#collectionToday').text(collections-5 + ' Today');
     collectionNum = collections;
 });
 const queryCommunication  = new AV.Query('_Conversation');
 queryCommunication.equalTo('tr',false);
 queryCommunication.count().then((communications)=>{
     $('#TotalCommunications').text(communications +' Communications');
-    $('#TodayCommunications').text(communications-3 + ' Today');
+    $('#TodayCommunications').text(communications-5 + ' Today');
     communicationNum = communications;
 });
 
@@ -101,6 +108,7 @@ function getTime(n){
 
 function simple_report(){
     let name = $('#reportName').val();
+    lklll
     let Username = $('#userName').val();
     let addInfo = $('#additionalInfo').val();
 
