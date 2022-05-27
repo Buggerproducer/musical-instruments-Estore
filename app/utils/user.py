@@ -52,7 +52,7 @@ def getAllOrder(skip, limit):
     return result
 
 
-def getLogs(skip=0, limit=5):
+def getLogs(skip=0, limit=1000):
     leancloud.User.set_current(config.CURRENT_USER)
     query = leancloud.Query('Log')
     query.limit(limit)
@@ -63,6 +63,7 @@ def getLogs(skip=0, limit=5):
     query.include('product.title')
     result = query.find()
     return result
+
 
 def getOrderFilter(state, skip, limit):
     query = leancloud.Query('Order')
