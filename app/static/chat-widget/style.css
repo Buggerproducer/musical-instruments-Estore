@@ -39,7 +39,8 @@ body {
 }
 .people-list ul {
   padding: 20px;
-  height: 550px;
+  height: 594px;
+  overflow-y: scroll;
 }
 .people-list ul li {
   padding-bottom: 20px;
@@ -91,20 +92,20 @@ body {
   font-size: 20px;
   margin-top: 12px;
 }
-.chat .chat-history {
+.chat #chat-history {
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
   overflow-y: scroll;
   height: 420px;
 }
-.chat .chat-history .message-data {
+.chat #chat-history .message-data {
   margin-bottom: 15px;
 }
-.chat .chat-history .message-data-time {
+.chat #chat-history .message-data-time {
   color: #a8aab1;
   padding-left: 6px;
 }
-.chat .chat-history .message {
+.chat #chat-history .message {
   color: white;
   padding: 18px 20px;
   line-height: 26px;
@@ -114,7 +115,7 @@ body {
   width: 90%;
   position: relative;
 }
-.chat .chat-history .message:after {
+.chat #chat-history .message:after {
   bottom: 100%;
   left: 7%;
   border: solid transparent;
@@ -127,13 +128,13 @@ body {
   border-width: 10px;
   margin-left: -10px;
 }
-.chat .chat-history .my-message {
+.chat #chat-history .my-message {
   background: #86BB71;
 }
-.chat .chat-history .other-message {
+.chat #chat-history .other-message {
   background: #94C2ED;
 }
-.chat .chat-history .other-message:after {
+.chat #chat-history .other-message:after {
   border-bottom-color: #94C2ED;
   left: 93%;
 }
