@@ -81,7 +81,15 @@
           </ul>
         </li>
         <!-- li 3: Setting -->
-        <li class="dsn-drop-down"><a href="#" class="user-no-selection"><span id="logoutb" class="dsn-title-menu">设置</span><span class="dsn-meta-menu">03</span><span class="dsn-bg-arrow"></span></a>
+        <li class="dsn-drop-down"><a href="#" class="user-no-selection">
+            <span id="logoutb" class="dsn-title-menu">
+          {% if authenticated %}
+          <img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">
+          {% else %}
+          Setting
+          {% endif %}
+        </span>
+            <span class="dsn-meta-menu">03</span><span class="dsn-bg-arrow"></span></a>
           <ul id="user-operation">
             <li class="dsn-back-menu"><img src="{{ url_for('static', filename='img/left-chevron.svg') }}" alt=""><span class="dsn-title-menu">设置</span></li>
           </ul>

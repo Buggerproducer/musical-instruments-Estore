@@ -20,7 +20,7 @@ $(document).ready(
                     var span1 = document.createElement("span");
                     a.href = '/staff_index';
                     span.className = "sn-title-menu";
-                    span.id = "ad";
+                    li.id = "ad";
                     span1.className = "dsn-meta-menu";
                     span.innerText = "Administrator";
                     oplist.appendChild(li);
@@ -39,6 +39,7 @@ $(document).ready(
                     a.id = 'logouta';
                     span.className = "sn-title-menu";
                     span.id = "logout";
+                    li.id = "logoutc";
                     span1.className = "dsn-meta-menu";
                     span.innerText = "Log out";
                     oplist.appendChild(li);
@@ -51,7 +52,7 @@ $(document).ready(
                     var span3 = document.createElement("span");
                     a1.href = '/testbase';
                     span2.className = "sn-title-menu";
-                    span2.id = "userinfo";
+                    li1.id = "userinfo";
                     span3.className = "dsn-meta-menu";
                     span2.innerText = "User Info";
                     oplist.appendChild(li1);
@@ -68,7 +69,7 @@ $(document).ready(
                     a.href = '/signUp';
                     a.id = 'logouta';
                     span.className = "sn-title-menu";
-                    span.id = "ad";
+                    li.id = "ad";
                     span1.className = "dsn-meta-menu";
                     span.innerText = "Login & Sign Up";
                     oplist.appendChild(li);
@@ -193,8 +194,14 @@ async function logout() {
               a.href = "/signUp";
               document.getElementById('logoutb').innerText = "Setting"
               li = document.getElementById('user-operation');
-              li.removeChild(li.childNodes[2]);
-              li.removeChild(li.childNodes[2]);
+              var length = li.childNodes.length
+              if(document.getElementById('ad')){
+                  li.removeChild(li.childNodes[length-1]);
+              }
+
+              li1 = document.getElementById('userinfo')
+              li1.remove()
+
           });
         // document.getElementById('result').innerText='logout successfully';
     }
