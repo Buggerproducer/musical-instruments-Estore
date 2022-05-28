@@ -32,93 +32,92 @@
 <input type="button" style="color:white;line-height:25px;border:1px solid white;margin-left: 15px;background: none" class="btn" value="back" onclick="javascript:history.back(-1);";/>
 <div class="container clearfix">
     <div class="people-list" id="people-list">
-<!--      <div class="search">-->
-<!--        <input type="text" placeholder="search" />-->
-<!--        <i class="fa fa-search"></i>-->
-<!--      </div>-->
+        <!--      <div class="search">-->
+        <!--        <input type="text" placeholder="search" />-->
+        <!--        <i class="fa fa-search"></i>-->
+        <!--      </div>-->
         <br>
         <br>
-                <br>
+        <br>
         <br>
 
-      <ul id="communication" class="list">
-        <li class="clearfix">
-            <a href="{{ url_for('main.testbase') }}">
-          <img src="../static/img/login-user.png" alt="avatar" style="height: 50PX;" />
-          <div class="about">
-            <div class="name">Staff</div>
-            <div class="status">
-              <i class="fa fa-circle online"></i> online
-            </div>
-          </div>
-            </a>
-        </li>
-      </ul>
+        <ul id="communication" class="list">
+            <li class="clearfix">
+                <a href="{{ url_for('main.testbase') }}">
+                    <img src="../static/img/login-user.png" alt="avatar" style="height: 50PX;" />
+                    <div class="about">
+                        <div class="name">Staff</div>
+                        <div class="status">
+                            <i class="fa fa-circle online"></i> online
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="chat">
-      <!-- 聊天框头部 -->
-      <div class="chat-header clearfix">
-        <img src="../static/img/login-user.png" alt="avatar" style="height: 50PX;" />
+        <!-- 聊天框头部 -->
+        <div class="chat-header clearfix">
+            <img src="../static/img/login-user.png" alt="avatar" style="height: 50PX;" />
 
-        <div class="chat-about">
-          <div class="chat-with" style="color:black">Chat with MusiCrash's Staff</div>
-          <div class="chat-num-messages">already 1 902 messages</div>
-        </div>
-<!--        <i class="fa fa-star"></i>-->
-      </div> <!-- end chat-header -->
+            <div class="chat-about">
+                <div class="chat-with" style="color:black">Chat with MusiCrash's Staff</div>
+                <div class="chat-num-messages">already 1 902 messages</div>
+            </div>
+            <!--        <i class="fa fa-star"></i>-->
+        </div> <!-- end chat-header -->
 
 
 
-      <div id="chat-history">
-              <ul id = 'chat'>
-              </ul>
-      </div> <!-- end chat-history -->
+        <div id="chat-history">
+            <ul id = 'chat'>
+            </ul>
+        </div> <!-- end chat-history -->
 
         <script>
-            var chat =  document.getElementById('chat-history')
-            var chat1 =  document.getElementById('chat')
             $(document).ready(function (){
                 {#chat.scrollTop=chat1.style.height;#}
-                chat.scrollTop = chat.scrollHeight;
+                {#chat.scrollTop = chat.scrollHeight;#}
+                scrollToBottom()
             });
         </script>
-      <div class="chat-message clearfix">
-          <p class="lead emoji-picker-container">
-              <textarea id = "input" class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>
-          </p>
+        <div class="chat-message clearfix">
+            <p class="lead emoji-picker-container">
+                <textarea id = "input" class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>
+            </p>
 
 
-<!--        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;-->
-<!--        <i class="fa fa-file-image-o"></i>-->
+            <!--        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;-->
+            <!--        <i class="fa fa-file-image-o"></i>-->
 
-        <button onclick="sendMessage()">Send</button>
-      </div> <!-- end chat-message -->
+            <button onclick="sendMessage()">Send</button>
+        </div> <!-- end chat-message -->
 
     </div> <!-- end chat -->
 </div> <!-- end container -->
 
 <script id="message-template" type="text/x-handlebars-template">
-  <li class="clearfix">
-    <div class="message-data align-right">
-      <span class="message-data-time" >{{time}}, Today</span> &nbsp; &nbsp;
-      <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
-    </div>
-    <div class="message other-message float-right">
-      {{messageOutput}}
-    </div>
-  </li>
+    <li class="clearfix">
+        <div class="message-data align-right">
+            <span class="message-data-time" >{{time}}, Today</span> &nbsp; &nbsp;
+            <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+        </div>
+        <div class="message other-message float-right">
+            {{messageOutput}}
+        </div>
+    </li>
 </script>
 
 <script id="message-response-template" type="text/x-handlebars-template">
-  <li>
-    <div class="message-data">
-      <span class="message-data-name"><i class="fa fa-circle online"></i> Staff</span>
-      <span class="message-data-time">{{time}}, Today</span>
-    </div>
-    <div class="message my-message">
-      {{response}}
-    </div>
-  </li>
+    <li>
+        <div class="message-data">
+            <span class="message-data-name"><i class="fa fa-circle online"></i> Staff</span>
+            <span class="message-data-time">{{time}}, Today</span>
+        </div>
+        <div class="message my-message">
+            {{response}}
+        </div>
+    </li>
 </script>
 <!-- partial -->
 
@@ -172,47 +171,74 @@
 
     console.log(user_name);
     var { Realtime, TextMessage,Event } = AV;
-const realtime = new Realtime({
-  appId: 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI',
-  appKey: 'pShwYQQ4JVfSStc56MvkHNrr',
-});
-AV.init({
-  appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
-  appKey: "pShwYQQ4JVfSStc56MvkHNrr",
-});
-function sendMessage(){
-    //let username = $('#people').val();
-    let mes = $('#input').val();
-    let time;
-    console.log("emmmmmmmmmmmmmm")
-    if(c_user.id=='622431dd6f77474716d8351c'){
-        realtime.createIMClient('622431dd6f77474716d8351c').then(function(user) {
-            user.getConversation(conversation_id).then(function(conversation) {
-                  conversation.read();
-                                                console.log(12252533);
-            console.log(conversation.id);
-            return conversation.send(new TextMessage(mes));
-            }).then(function(message) {
-                time = message._timestamp;
-                console.log(message, 'successful send！', time);
-                $('#ta').html("");
-                let n;
-                if(c_user.id!='622431dd6f77474716d8351c'){
-                    n = user_name;
-                }
-                else{
-                    n = 'Staff';
-                }
-                addbox_self(mes,n,time);
+    const realtime = new Realtime({
+        appId: 'pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI',
+        appKey: 'pShwYQQ4JVfSStc56MvkHNrr',
+    });
+    AV.init({
+        appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
+        appKey: "pShwYQQ4JVfSStc56MvkHNrr",
+    });
+    function sendMessage(){
+        //let username = $('#people').val();
+        let mes = $('#input').val();
+        let time;
+        console.log("emmmmmmmmmmmmmm")
+        if(c_user.id=='622431dd6f77474716d8351c'){
+            realtime.createIMClient('622431dd6f77474716d8351c').then(function(user) {
+                user.getConversation(conversation_id).then(function(conversation) {
+                    conversation.read();
+                    console.log(12252533);
+                    console.log(conversation.id);
+                    return conversation.send(new TextMessage(mes));
+                }).then(function(message) {
+                    time = message._timestamp;
+                    console.log(message, 'successful send！', time);
+                    $('#ta').html("");
+                    let n;
+                    if(c_user.id!='622431dd6f77474716d8351c'){
+                        n = user_name;
+                    }
+                    else{
+                        n = 'Staff';
+                    }
+                    addbox_self(mes,n,time);
+                }).catch(console.error.bind(console));
             }).catch(console.error.bind(console));
-        }).catch(console.error.bind(console));
-    }
-    else if(conversation_id!='1'){
-        realtime.createIMClient(c_user).then(function(user) {
-            user.getConversation(conversation_id).then(function(conversation) {
+        }
+        else if(conversation_id!='1'){
+            realtime.createIMClient(c_user).then(function(user) {
+                user.getConversation(conversation_id).then(function(conversation) {
+                    conversation.read()
+                    console.log(conversation.id);
+                    return conversation.send(new TextMessage(mes));
+                }).then(function(message) {
+                    time = message._timestamp;
+                    console.log(message, '发送成功！', time);
+                    $('#ta').html("");
+                    let n;
+                    if(c_user.id!='622431dd6f77474716d8351c'){
+                        n = user_name;
+                    }
+                    else{
+                        n = 'Staff';
+                    }
+                    addbox_self(mes,n,time);
+                }).catch(console.error.bind(console));
+            }).catch(console.error.bind(console));
+        }
+        else{
+            realtime.createIMClient(c_user).then(function(user) {
+                return user.createConversation({
+                    members: ['622431dd6f77474716d8351c'],
+                    name: user_name,
+                    unique: true
+                });
+            }).then(function(conversation) {
+
+                // 发送消息
                 conversation.read()
-            console.log(conversation.id);
-            return conversation.send(new TextMessage(mes));
+                return conversation.send(new TextMessage(mes));
             }).then(function(message) {
                 time = message._timestamp;
                 console.log(message, '发送成功！', time);
@@ -224,95 +250,94 @@ function sendMessage(){
                 else{
                     n = 'Staff';
                 }
+                console.log(time);
                 addbox_self(mes,n,time);
-            }).catch(console.error.bind(console));
-        }).catch(console.error.bind(console));
-    }
-    else{
-        realtime.createIMClient(c_user).then(function(user) {
-            return user.createConversation({
-				members: ['622431dd6f77474716d8351c'],
-				name: user_name,
-				unique: true
-            });
-        }).then(function(conversation) {
-
-			  // 发送消息
-            conversation.read()
-            return conversation.send(new TextMessage(mes));
+            }).catch(console.error);
+        }
+        /*}).then(function(conversation) {
+         // 发送消息
+         return conversation.send(new TextMessage(message));
         }).then(function(message) {
-            time = message._timestamp;
-            console.log(message, '发送成功！', time);
-            $('#ta').html("");
-            let n;
+         console.log(message.text, '发送成功！');
+        }).catch(console.error);*/
+
+        /*  let el = $('<p>'+user_name+' : '+message+'</p>');
+
+          $('#talk').append(el);*/
+    }
+
+    realtime.createIMClient(c_user).then(function(user) {
+        let n;
+        user.on(Event.MESSAGE, function(message, conversation) {
+            console.log('Message received: ' + message.text);
+            {#conversation.read();#}
+            /*let el = $('<p>'+username+' : '+message.text+'</p>');
+            $('#talk').append(el);*/
             if(c_user.id!='622431dd6f77474716d8351c'){
-                    n = user_name;
+                n = 'Staff'
             }
             else{
-                n = 'Staff';
+                n = conversation.name;
             }
-            console.log(time);
-            addbox_self(mes,n,time);
-        }).catch(console.error);
+            addbox_other(message.text,n,message._timestamp);
+        });
+
+    }).catch(console.error);
+
+    function addbox_other(message,person,time){
+        $('#chat').append("          <li>\n" +
+            "            <div class=\"message-data\">\n" +
+            "              <span class=\"message-data-name\" id = 'username'><i class=\"fa fa-circle online\"></i>"+person+"</span>\n" +
+            "              <span class=\"message-data-time\">" +
+            time +
+            "</span>\n" +
+            "            </div>\n" +
+            "            <div class=\"message my-message\">\n" +
+            message +
+            "            </div>\n" +
+            "          </li>");
     }
-			/*}).then(function(conversation) {
-			 // 发送消息
-			 return conversation.send(new TextMessage(message));
-			}).then(function(message) {
-			 console.log(message.text, '发送成功！');
-			}).catch(console.error);*/
+    function addbox_self(message,person,time){
+        $('#chat').append("          <li class='clearfix'>\n" +
+            "            <div class=\"message-data align-right\">\n" +
+            "              <span class=\"message-data-time\">" +
+            time +
+            "</span>\n" +
+            "              <span class=\"message-data-name\" id = 'username'>"+person+" <i class=\"fa fa-circle me\"></i></span>\n" +
+            "            </div>\n" +
+            "            <div class=\"message other-message float-right\">\n" +
+            message +
+            "            </div>\n" +
+            "          </li>");
+    }
 
-  /*  let el = $('<p>'+user_name+' : '+message+'</p>');
 
-    $('#talk').append(el);*/
-}
+</script>
+<script>
+    // 定义函数
+    function scrollToBottom() {
+        var i = 1
+        var element = document.getElementById('chat-history')
+        element.scrollTop = 0
+        element.scrollTop = element.scrollHeight
 
-realtime.createIMClient(c_user).then(function(user) {
-    let n;
-    user.on(Event.MESSAGE, function(message, conversation) {
-        console.log('Message received: ' + message.text);
-        {#conversation.read();#}
-        /*let el = $('<p>'+username+' : '+message.text+'</p>');
-        $('#talk').append(el);*/
-        if(c_user.id!='622431dd6f77474716d8351c'){
-            n = 'Staff'
+        function main() {
+            if (element.scrollTop + element.clientHeight === element.scrollHeight) {
+                clearInterval(interval)
+            } else {
+                element.scrollTop += 300
+                console.log(i)
+                i += 1
+            }
         }
-        else{
-            n = conversation.name;
-        }
-        addbox_other(message.text,n,message._timestamp);
-    });
 
-}).catch(console.error);
+        // 定时器ID 时间
+        interval = setInterval(main, 0)
+    }
 
-function addbox_other(message,person,time){
-    $('#chat').append("          <li>\n" +
-        "            <div class=\"message-data\">\n" +
-        "              <span class=\"message-data-name\" id = 'username'><i class=\"fa fa-circle online\"></i>"+person+"</span>\n" +
-        "              <span class=\"message-data-time\">" +
-        time +
-        "</span>\n" +
-        "            </div>\n" +
-        "            <div class=\"message my-message\">\n" +
-        message +
-        "            </div>\n" +
-        "          </li>");
-}
-function addbox_self(message,person,time){
-    $('#chat').append("          <li class='clearfix'>\n" +
-        "            <div class=\"message-data align-right\">\n" +
-        "              <span class=\"message-data-time\">" +
-        time +
-        "</span>\n" +
-        "              <span class=\"message-data-name\" id = 'username'>"+person+" <i class=\"fa fa-circle me\"></i></span>\n" +
-        "            </div>\n" +
-        "            <div class=\"message other-message float-right\">\n" +
-        message +
-        "            </div>\n" +
-        "          </li>");
-}
-
-
+    setTimeout(() => {
+        scrollToBottom()
+    }, 0)
 </script>
 </body>
 
