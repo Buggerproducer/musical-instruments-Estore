@@ -76,8 +76,10 @@
 
         <script>
             var chat =  document.getElementById('chat-history')
+            var chat1 =  document.getElementById('chat')
             $(document).ready(function (){
-                chat.scrollTop=chat.scrollHeight;
+                {#chat.scrollTop=chat1.style.height;#}
+                chat.scrollTop = chat.scrollHeight;
             });
         </script>
       <div class="chat-message clearfix">
