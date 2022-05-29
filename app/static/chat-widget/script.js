@@ -16,7 +16,7 @@
       this.render();
     },
     cacheDOM: function() {
-      this.$chatHistory = $('.chat-history');
+      this.$chatHistory = $('#chat-history');
       this.$button = $('button');
       this.$textarea = $('#message-to-send');
       this.$chatHistoryList =  this.$chatHistory.find('ul');
@@ -65,7 +65,7 @@
         }
     },
     scrollToBottom: function() {
-       this.$chatHistory.scrollTop(this.$chatHistory[0].scrollHeight);
+       this.$chatHistory.scrollTop(this.$chatHistory.scrollHeight);
     },
     getCurrentTime: function() {
       return new Date().toLocaleTimeString().
