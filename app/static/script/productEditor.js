@@ -64,6 +64,7 @@ function loadProduct(product){
     document.getElementById('title').value=product.get('title').get('english')
     document.getElementById('description').value=product.get('description').get('english')
     document.getElementById('cover').src=product.get('cover').url()
+    document.getElementById('price').value=product.get('price').get('dollar')
     editor.txt.html(product.get('detail').get('englishHTML'))
     currentProduct=product
     getCategoryByProduct(product.id,function (maps) {
@@ -76,22 +77,41 @@ function loadProduct(product){
 }
 
 
+function saveCurrent(lang){
+    if (currentProduct!==null) {
+        let _lang;
+        let _price;
+        if (lang === "chinese") {
+            _lang = "english"
+            _price = "dollar"
+        } else {
+            _lang = "chinese"
+            _price = "CNY"
+        }
+        currentProduct.get('title').set(_lang, document.getElementById('title').value)
+        currentProduct.get('description').set(_lang, document.getElementById('description').value)
+        currentProduct.get('detail').set(_lang + 'HTML', editor.txt.html())
+        currentProduct.get('price').set(_price, Number(document.getElementById('price').value))
+    }
+}
 
 function changeLanguage(lang){
     if (currentProduct!==null){
-        let _lang;
-        if (lang==="chinese"){
-            _lang="english"
-        }else{
-            _lang="chinese"
-        }
-        currentProduct.get('title').set(_lang,document.getElementById('title').value)
-        currentProduct.get('description').set(_lang,document.getElementById('description').value)
-        currentProduct.get('detail').set(_lang+'HTML',editor.txt.html())
+                let _lang;
+        let _price;
+        if (lang === "chinese") {
+            _price = "CNY"
 
+        } else {
+                        _price = "dollar"
+            _lang = "chinese"
+
+        }
+        saveCurrent(lang)
 
         document.getElementById('title').value=currentProduct.get('title').get(lang)
         document.getElementById('description').value=currentProduct.get('description').get(lang)
+        document.getElementById('price').value=currentProduct.get('price').get(_price)
         if (!currentProduct.get('detail').get(lang+'HTML')){
             currentProduct.get('detail').set(lang+'HTML',"")
         }
@@ -102,9 +122,19 @@ function changeLanguage(lang){
 
 async function submit() {
     //2022年3月24号14:20金深远开始玩原神
+
+    var transLangBtn = document.getElementById("transLangBtn");
+                console.log(transLangBtn.innerHTML)
+                if(transLangBtn.innerHTML==="chinese")    {
+                    saveCurrent("english")
+                }
+                else{
+                    saveCurrent("chinese")
+                }
+
     if (currentProduct) {
         // updateEnglishProduct(currentProduct, $('#title').val(), $('#description').val(), editor.txt.html());
-        currentProduct.save()
+        await currentProduct.save()
         const buttons = $('.cLabel.choose');
         // console.log($('.cLabel.choose').size())
         // for(i in buttons){
@@ -117,7 +147,7 @@ async function submit() {
             l.push(b.id);
 
         });
-        setProductCategory(currentProduct.id, l);
+        await setProductCategory(currentProduct.id, l);
         if (document.getElementById('fileField').files.length !== 0) {
             setProductCover(currentProduct.id, document.getElementById('fileField').files)
         }
