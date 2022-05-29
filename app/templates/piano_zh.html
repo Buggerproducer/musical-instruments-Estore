@@ -863,18 +863,19 @@
                     </div>
                 </section><!-- /.entry-gallery -->
                                 <div id="proid" style = 'display:none'>{{commodity.get('objectId')}}</div>
-<script>
-let pid = $('#proid').text();
-    const query = new AV.Query('Product');
-query.get(pid).then((p) => {
-    //console.log(p.get('detail'));
-    const q = new AV.Query('HTMLs');
-    q.get(p.get('detail').id).then((h) => {
-        $('.entry-new-add').append(h.get('englishHTML'));
-    });
-});
-</script>
+{#<script>#}
+{#let pid = $('#proid').text();#}
+{#    const query = new AV.Query('Product');#}
+{#query.get(pid).then((p) => {#}
+{#    //console.log(p.get('detail'));#}
+{#    const q = new AV.Query('HTMLs');#}
+{#    q.get(p.get('detail').id).then((h) => {#}
+{#        $('.entry-new-add').append(h.get('englishHTML'));#}
+{#    });#}
+{# });#}
+{#</script>#}
                 <section class="entry-new-add">
+                    {{ commodity.get('detail').get('chineseHTML')|safe }}
                 </section>
 
                 <hr>
