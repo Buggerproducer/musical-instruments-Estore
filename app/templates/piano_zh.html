@@ -2,17 +2,6 @@
 <html lang="en-US">
 
 <head>
-<script src="../static/js/jquery-3.1.1.min.js"></script>
-<script src="../static/js/sebian_js/jquery-1.11.3.js"></script>
-<script src="../static/js/sebian_js/wow.min.js"></script>
-<script src="../static/js/sebian_js/bootstrap.min.js"></script>
-<script src="../static/js/sebian_js/own-menu.js"></script>
-<script src="../static/js/sebian_js/main.js"></script>
-<script src="../static/js/plugins.js"></script>
-<script src="../static/js/dsn-grid.js"></script>
-<script src="../static/js/custom.js"></script>
-
-    <script src="../static/script/piano.js" defer></script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
@@ -381,11 +370,11 @@
     <!-- Font Google -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/favicon.ico') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ url_for('static',filename='img/favicon.ico') }}" type="image/x-icon"/>
     <!-- custom styles(optional) -->
-    <link href="../static/style/css/plugins.css" rel="stylesheet"/>
-    <link href="../static/style/css/style.css" rel="stylesheet"/>
+    <link href="{{ url_for('static',filename='style/css/plugins.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static',filename='style/css/style.css') }}" rel="stylesheet"/>
 
     <!-- FONTS ONLINE -->
     <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic'
@@ -393,13 +382,13 @@
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <!--MAIN STYLE-->
-    <link href="../static/style/main_css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../static/style/sebian_css/main.css" rel="stylesheet" type="text/css">
-    <link href="../static/style/sebian_css/style.css" rel="stylesheet" type="text/css">
-    <link href="../static/style/sebian_css/responsive.css" rel="stylesheet" type="text/css">
-    <link href="../static/style/sebian_css/animate.css" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='style/main_css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='style/sebian_css/main.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='style/sebian_css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='style/sebian_css/responsive.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='style/sebian_css/animate.css') }}" rel="stylesheet" type="text/css">
     <!-- ADD YOUR OWN STYLING HERE. AVOID TO USE STYLE.CSS AND MAIN.CSS. IT WILL BE HELPFUL FOR YOU IN FUTURE UPDATES -->
-    <link href="../static/style/sebian_css/custom.css" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static',filename='style/sebian_css/custom.css') }}" rel="stylesheet" type="text/css">
     <script src="{{ url_for('static',filename='script/jquery.min.js') }}"></script>
     <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
     <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
@@ -407,6 +396,18 @@
     <script src="{{ url_for('static',filename='script/order.js') }}"></script>
     <script src="{{ url_for('static',filename='script/collection.js') }}"></script>
     <script src="{{ url_for('static',filename='script/producttraffic.js') }}"></script>
+
+    <script src="{{ url_for('static',filename='script/piano.js') }}" defer></script>
+
+<script src="{{ url_for('static',filename='js/jquery-3.1.1.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/sebian_js/jquery-1.11.3.js') }}"></script>
+<script src="{{ url_for('static',filename='js/sebian_js/wow.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/sebian_js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/sebian_js/own-menu.js') }}"></script>
+<script src="{{ url_for('static',filename='js/sebian_js/main.js') }}"></script>
+<script src="{{ url_for('static',filename='js/plugins.js') }}"></script>
+<script src="{{ url_for('static',filename='js/dsn-grid.js') }}"></script>
+<script src="{{ url_for('static',filename='js/custom.js') }}"></script>
 </head>
 
 <body class="product-template-default single single-product postid-5398 style-4-gold lang-en dsn-effect-scroll dsn-cursor-effect dsn-ajax">
@@ -525,7 +526,7 @@
             <div class="navbar-row">
                 <div class="navbar-logo">
                     <a class="brand" href="https://www.lyonhealy.com/">
-                        <a href="{{ url_for('ch.index') }}"><img src="../static/img/logo.png" style="height: 50px"></a>
+                        <a href="{{ url_for('ch.index') }}"><img src="{{ url_for('static',filename='img/logo.png') }}" style="height: 50px"></a>
 <!--                        <img class="logo logo-mobile"-->
 <!--                             srcset="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-1x.png 1x,  https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-2x.png 2x"-->
 <!--                             src="https://www.lyonhealy.com/wp-content/themes/lyonhealy2017/dist/images/logo/logo-lyon-healy-mobile-1x.png"-->
@@ -624,18 +625,8 @@
                                 </div>
                                 </div>
                                 <a href="javascript:window.open(document.referrer.split('/')[0]+'/communicate/1', '_blank', 'height=700, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')">
-                                    <img src="../static/img/kefu.png" width="50px" style="background-color: white; border-radius: 30px; padding: 5px">
+                                    <img src="{{ url_for('static',filename='img/kefu.png') }}" width="50px" style="background-color: white; border-radius: 30px; padding: 5px">
                                 </a>
-
-<!--{#                                <input type="button" value="communicate" style="background-image: url(../static/img/kefu.png); border-style: none; background: white" onclick="window.open('http://127.0.0.1:5000/communicateA', '_blank', 'height=700, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')">#}-->
-<!--                                <a href="javascript:void(0)" type="button" οnclick=javascript:jump()>-->
-<!--                                    <script>-->
-<!--                                        function jump() {-->
-<!--                                            window.open('test_communication_A.html', '_blank', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')-->
-<!--                                        };-->
-<!--                                    </script>-->
-<!--                                    <img src="../static/img/kefu.png" width="50px" style="background-color: white; border-radius: 30px; padding: 5px">-->
-<!--                                </a>-->
                                 <div class="entry-buttons">
                                 </div>
                                 <div class="entry-finishes">
@@ -863,19 +854,18 @@
                     </div>
                 </section><!-- /.entry-gallery -->
                                 <div id="proid" style = 'display:none'>{{commodity.get('objectId')}}</div>
-{#<script>#}
-{#let pid = $('#proid').text();#}
-{#    const query = new AV.Query('Product');#}
-{#query.get(pid).then((p) => {#}
-{#    //console.log(p.get('detail'));#}
-{#    const q = new AV.Query('HTMLs');#}
-{#    q.get(p.get('detail').id).then((h) => {#}
-{#        $('.entry-new-add').append(h.get('englishHTML'));#}
-{#    });#}
-{# });#}
-{#</script>#}
+<script>
+let pid = $('#proid').text();
+    const query = new AV.Query('Product');
+query.get(pid).then((p) => {
+    //console.log(p.get('detail'));
+    const q = new AV.Query('HTMLs');
+    q.get(p.get('detail').id).then((h) => {
+        $('.entry-new-add').append(h.get('englishHTML'));
+    });
+});
+</script>
                 <section class="entry-new-add">
-                    {{ commodity.get('detail').get('chineseHTML')|safe }}
                 </section>
 
                 <hr>
@@ -896,22 +886,22 @@
                             <div data-note="B" class="key white"></div>
                         </div>
 
-                        <audio id="C" src="../static/notes/C.mp3"></audio>
-                        <audio id="Db" src="../static/notes/Db.mp3"></audio>
-                        <audio id="D" src="../static/notes/D.mp3"></audio>
-                        <audio id="Eb" src="../static/notes/Eb.mp3"></audio>
-                        <audio id="E" src="../static/notes/E.mp3"></audio>
-                        <audio id="F" src="../static/notes/F.mp3"></audio>
-                        <audio id="Gb" src="../static/notes/Gb.mp3"></audio>
-                        <audio id="G" src="../static/notes/G.mp3"></audio>
-                        <audio id="Ab" src="../static/notes/Ab.mp3"></audio>
-                        <audio id="A" src="../static/notes/A.mp3"></audio>
-                        <audio id="Bb" src="../static/notes/Bb.mp3"></audio>
-                        <audio id="B" src="../static/notes/B.mp3"></audio>
+                        <audio id="C" src="{{ url_for('static',filename='notes/C.mp3') }}"></audio>
+                        <audio id="Db" src="{{ url_for('static',filename='notes/Db.mp3') }}"></audio>
+                        <audio id="D" src="{{ url_for('static',filename='notes/D.mp3') }}"></audio>
+                        <audio id="Eb" src="{{ url_for('static',filename='notes/Eb.mp3') }}"></audio>
+                        <audio id="E" src="{{ url_for('static',filename='notes/E.mp3') }}"></audio>
+                        <audio id="F" src="{{ url_for('static',filename='notes/F.mp3') }}"></audio>
+                        <audio id="Gb" src="{{ url_for('static',filename='notes/Gb.mp3') }}"></audio>
+                        <audio id="G" src="{{ url_for('static',filename='notes/G.mp3') }}"></audio>
+                        <audio id="Ab" src="{{ url_for('static',filename='notes/Ab.mp3') }}"></audio>
+                        <audio id="A" src="{{ url_for('static',filename='notes/A.mp3') }}"></audio>
+                        <audio id="Bb" src="{{ url_for('static',filename='notes/Bb.mp3') }}"></audio>
+                        <audio id="B" src="{{ url_for('static',filename='notes/B.mp3') }}"></audio>
 
 
 
-                <script src="../static/script/piano.js" defer></script>
+                <script src="{{ url_for('static',filename='script/piano.js') }}" defer></script>
                 <!-- section5 -->
                 <section class="entry-related">
                     <div class="container">
@@ -1356,7 +1346,7 @@
 
 </div>
 
-<div class="scroll-to-top"><img src="../static/img/scroll_top.svg" alt="">
+<div class="scroll-to-top"><img src="{{ url_for('static',filename='img/scroll_top.svg') }}" alt="">
     <div class="box-numper"><span>0%</span></div>
 </div>
 
