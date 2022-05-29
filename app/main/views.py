@@ -331,7 +331,9 @@ def ViewBillInfo(order_id):
     order = product.getOrderById(order_id)
     return render_template("MusiCrashTemplates/orderMerchant_en.html", order= order)
 
-
+@main.route('/resetPassword')
+def resetPassword():
+    return render_template("MusiCrashTemplates/resetPassword.html")
 
 @main.route('/about_us')
 def aboutus():
