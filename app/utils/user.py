@@ -80,3 +80,21 @@ def getOrderFilter(state, skip, limit):
     query.include('product.description')
     result = query.find()
     return result
+
+
+def getUserByPhonenumber(phone, skip, limit):
+    query = leancloud.Query('_User')
+    query.limit(limit)
+    query.skip(skip)
+    query.equal_to('mobilePhoneNumber', phone)
+    result = query.find()
+    return result
+
+
+def getUserByEmail(email, skip, limit):
+    query = leancloud.Query('_User')
+    query.limit(limit)
+    query.skip(skip)
+    query.equal_to('email', email)
+    result = query.find()
+    return result
