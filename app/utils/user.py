@@ -82,7 +82,7 @@ def getOrderFilter(state, skip, limit):
     return result
 
 
-def getUserByPhonenumber(phone, skip, limit):
+def getUserByPhonenumber(phone, skip=0, limit=50):
     query = leancloud.Query('_User')
     query.limit(limit)
     query.skip(skip)
@@ -91,7 +91,7 @@ def getUserByPhonenumber(phone, skip, limit):
     return result
 
 
-def getUserByEmail(email, skip, limit):
+def getUserByEmail(email, skip=0, limit=50):
     query = leancloud.Query('_User')
     query.limit(limit)
     query.skip(skip)
