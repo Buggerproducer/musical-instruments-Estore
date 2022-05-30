@@ -184,23 +184,26 @@ def communicate():
 def conversation(conversation_id):
     return render_template("test_communication_A_CN.html", conversation_id=conversation_id)
 
+
 @ch.route('checkEmail', methods=['GET', 'POST'])
 def check_email():
     email = request.args.get('email')
-    user =[]
-    if len(user) > 0:
+    user_lst = user.getUserByEmail(email)
+    if len(user_lst) > 0:
         return jsonify(code=400, msg='邮箱已存在')
     else:
-        return jsonify(code=200, msg="this phone number is available")
+        return jsonify(code=200, msg="邮箱可用")
+
 
 @ch.route('checkPhone', methods=['GET', 'POST'])
 def check_phone():
     phone = request.args.get('phone')
-    user =[]
-    if len(user) > 0:
+    user_lst = user.getUserByPhonenumber(phone)
+    if len(user_lst) > 0:
         return jsonify(code=400, msg="电话号码已存在")
     else:
-        return jsonify(code=200, msg="this phone number is available")
+        return jsonify(code=200, msg="电话号码可用")
+
 
 @ch.route('checkPassword', methods=['GET', 'POST'])
 def check_password():
@@ -209,4 +212,4 @@ def check_password():
     if password != cpassword:
         return jsonify(code=400, msg="两次输入的密码不一样")
     else:
-        return jsonify(code=200, msg="this phone number is available")
+        return jsonify(code=200, msg="成功")
