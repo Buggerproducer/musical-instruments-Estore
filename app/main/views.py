@@ -338,3 +338,30 @@ def resetPassword():
 @main.route('/about_us')
 def aboutus():
     return render_template("MusiCrashTemplates/about_us_en.html")
+
+@main.route('checkEmail', methods=['GET', 'POST'])
+def check_email():
+    email = request.args.get('email')
+    user =[]
+    if len(user) > 0:
+        return jsonify(code=400, msg='邮箱已存在')
+    else:
+        return jsonify(code=200, msg="this phone number is available")
+
+@main.route('checkPhone', methods=['GET', 'POST'])
+def check_phone():
+    phone = request.args.get('phone')
+    user =[]
+    if len(user) > 0:
+        return jsonify(code=400, msg="电话号码已存在")
+    else:
+        return jsonify(code=200, msg="this phone number is available")
+
+@main.route('checkPassword', methods=['GET', 'POST'])
+def check_password():
+    password = request.args.get('password')
+    cpassword = request.args.get('cpassword')
+    if password != cpassword:
+        return jsonify(code=400, msg="两次输入的密码不一样")
+    else:
+        return jsonify(code=200, msg="this phone number is available")
