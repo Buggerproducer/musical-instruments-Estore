@@ -85,9 +85,11 @@ def checkLogin():
         session['is_operation'] = True
     if user:
         session['authenticated'] = True
+        print(session['authenticated'])
         return jsonify({'response': 1})
     else:
         session['authenticated'] = False
+        print(session['authenticated'])
         return jsonify({'response': 2})
 
 # @main.route('/handle-login', methods=['POST'])
@@ -317,12 +319,15 @@ def fillBillInfo(product_id):
     piano = product.getProductById(product_id)
     labels = product.getAllCategory()
     return render_template("MusiCrashTemplates/orderForm_en.html", piano=piano, labels=labels)
+
+
 #订单填写页面
 @main.route('/ModifyBillInfo/<order_id>')
 @login_required
 def ModifyBillInfo(order_id):
     order = product.getOrderById(order_id)
     return render_template("MusiCrashTemplates/orderModifyForm_en.html", order= order)
+
 
 #订单填写页面
 @main.route('/ViewBillInfo/<order_id>')
@@ -331,37 +336,42 @@ def ViewBillInfo(order_id):
     order = product.getOrderById(order_id)
     return render_template("MusiCrashTemplates/orderMerchant_en.html", order= order)
 
+
 @main.route('/resetPassword')
 def resetPassword():
     return render_template("MusiCrashTemplates/resetPassword.html")
+
 
 @main.route('/about_us')
 def aboutus():
     return render_template("MusiCrashTemplates/about_us_en.html")
 
+
 @main.route('checkEmail', methods=['GET', 'POST'])
 def check_email():
     email = request.args.get('email')
-    user =[]
-    if len(user) > 0:
-        return jsonify(code=400, msg='邮箱已存在')
+    user_lst = user.getUserByEmail(email)
+    if len(user_lst) > 0:
+        return jsonify(code=400, msg='this email exists')
     else:
         return jsonify(code=200, msg="this phone number is available")
+
 
 @main.route('checkPhone', methods=['GET', 'POST'])
 def check_phone():
     phone = request.args.get('phone')
-    user =[]
-    if len(user) > 0:
-        return jsonify(code=400, msg="电话号码已存在")
+    user_lst = user.getUserByPhonenumber(phone)
+    if len(user_lst) > 0:
+        return jsonify(code=400, msg="this phone number exists")
     else:
         return jsonify(code=200, msg="this phone number is available")
+
 
 @main.route('checkPassword', methods=['GET', 'POST'])
 def check_password():
     password = request.args.get('password')
     cpassword = request.args.get('cpassword')
     if password != cpassword:
-        return jsonify(code=400, msg="两次输入的密码不一样")
+        return jsonify(code=400, msg="The password you typed is different")
     else:
-        return jsonify(code=200, msg="this phone number is available")
+        return jsonify(code=200, msg="Success")
