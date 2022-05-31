@@ -904,23 +904,23 @@
                         </h4>
                         <div class="thumbnail-list">
 
-{#                            {% for product in products %}#}
-{#                                <article#}
-{#                                    class="entry-product post-159 product type-product status-publish has-post-thumbnail product-collection-premium-harps">#}
-{#                                    <div class="inside-product equal-el" style="width: 275px;background-color: black; display: block">#}
-{#                                        <a href="{{ url_for('main.productInfo', kind_id=kind_id, product_id=product.id) }}">#}
-{#                                            <div class="entry-text" style="color:white; text-align: center">{{ product.get('title').get('english') }}</div>#}
-{#                                            <div class="entry-image" data-mh="entry-image" style="width: 275px;">#}
-{#                                                <img#}
-{#                                                    src="{{ product.get('cover').url }}"#}
-{#                                                    class="attachment-prodotti_thumb size-prodotti_thumb wp-post-image"#}
-{#                                                    alt="Style 26 Gold" loading="lazy" title="Style 26 Gold"#}
-{#                                                    sizes="(max-width: 375px) 100vw, 375px">#}
-{#                                            </div>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                </article>#}
-{#                            {% endfor %}#}
+                            {% for product in products %}
+                                <article
+                                    class="entry-product post-159 product type-product status-publish has-post-thumbnail product-collection-premium-harps">
+                                    <div class="inside-product equal-el" style="width: 275px;background-color: black; display: block">
+                                        <a href="{{ url_for('main.productInfo', kind_id=kind_id, product_id=product.id) }}">
+                                            <div class="entry-text" style="color:white; text-align: center">{{ product.get('title').get('english') }}</div>
+                                            <div class="entry-image" data-mh="entry-image" style="width: 275px;">
+                                                <img
+                                                    src="{{ product.get('cover').url }}"
+                                                    class="attachment-prodotti_thumb size-prodotti_thumb wp-post-image"
+                                                    alt="Style 26 Gold" loading="lazy" title="Style 26 Gold"
+                                                    sizes="(max-width: 375px) 100vw, 375px">
+                                            </div>
+                                        </a>
+                                    </div>
+                                </article>
+                            {% endfor %}
 
                         </div>
                     </div>
