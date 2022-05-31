@@ -251,8 +251,8 @@ def userOrderList(user_id):
 @main.route('/allOrderList')
 def allOrderList():
     state = request.args.get('state', None, type=str)
-    print(state)
-    orders = user.getOrderFilter(state, 0, 1000)
+    order = request.args.get('order', 'createdAt', type=str)
+    orders = user.getOrderFilter(order, state, 0, 1000)
     page_size = 5
     if len(orders) % page_size != 0:
         page = len(orders) // page_size + 1
@@ -266,7 +266,7 @@ def allOrderList():
     next_post = current_page // 5 * 5 + 5
     has_next = True
     has_pre = True
-    page_orders = user.getOrderFilter(state, (current_page-1)*page_size, page_size)
+    page_orders = user.getOrderFilter(order, state, (current_page-1)*page_size, page_size)
     print(page_orders)
     if current_page >= page:
         next_page = None
@@ -284,8 +284,8 @@ def allOrderList():
         "pre_post": pre_pos,
         "next": next_post
     }
-
-    return render_template("orderList_merchant.html", order_list=page_orders, pagination=pagination, status=state)
+    print(order)
+    return render_template("orderList_merchant.html", order_list=page_orders, pagination=pagination, status=state, filter=order)
 
 
 # 后台页面显示商品列表

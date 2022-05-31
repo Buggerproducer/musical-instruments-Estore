@@ -133,6 +133,19 @@
                     </button>
 
             </li>
+            <li>
+                    {% if filter == 'createdAt' %}
+                    <button id="changeSort" onclick="changeSort('priority')">
+                        权重 <i class="bi bi-search"></i>
+                    </button>
+                    {% else %}
+                    <button id="changeSort" onclick="changeSort('createdAt')">
+                        时间 <i class="bi bi-search"></i>
+                    </button>
+                    {% endif %}
+
+
+            </li>
 
 
             <li >

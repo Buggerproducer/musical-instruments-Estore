@@ -65,7 +65,7 @@ def getLogs(skip=0, limit=1000):
     return result
 
 
-def getOrderFilter(state, skip, limit):
+def getOrderFilter(order, state, skip, limit):
     query = leancloud.Query('Order')
     if state is not None:
         query.equal_to('status', state)
@@ -73,6 +73,7 @@ def getOrderFilter(state, skip, limit):
 
     query.limit(limit)
     query.skip(skip)
+    query.descending(order)
     query.include('product')
     query.include('user')
     query.include('price')

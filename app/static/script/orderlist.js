@@ -54,3 +54,24 @@ function clear(){
 function clear_ch(){
     window.location.href = '/ch/allOrderList';
 }
+
+function changeSort(sort){
+    const str = window.location.href;
+    const reg = RegExp(/'?'/)
+    const reg2 = RegExp(/order/)
+    console.log(str.match(reg))
+    console.log(str.match("order")!=null)
+    if (str.includes('?')){
+        if(str.match("order")!=null){
+            const ar = str.split("order")
+            window.location.href = ar[0] + 'order=' + sort
+        }
+        else{
+            window.location.href = str + '&order=' + sort
+        }
+    }
+    else{
+        window.location.href = str + '?order=' + sort
+    }
+
+}
