@@ -255,11 +255,11 @@ function reset(email) {
 }
 
 function orderlist() {
-    window.location.href = '/orderList/'+AV.User.current().id
+    window.location.href = '/ch/orderList/'+AV.User.current().id
 }
 
 function collectionlist() {
-    window.location.href = '/collection/'+AV.User.current().id
+    window.location.href = '/ch/collection/'+AV.User.current().id
 }
 
 async function checkIsOperation() {
