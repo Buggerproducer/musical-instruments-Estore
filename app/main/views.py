@@ -123,8 +123,6 @@ def testinfo():
     return render_template("MusiCrashTemplates/userInformation_en.html", async_mode=socketio.async_mode)
 
 
-
-
 @main.route('/testmodify')
 def testmodify():
     return render_template("MusiCrashTemplates/modifyInfomation_en.html", async_mode=socketio.async_mode)

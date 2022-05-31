@@ -96,21 +96,43 @@
             </li>
           <li><label> State
                           <select id="state">
-                            <option value="waiting to be delivered">waiting to be delivered</option>
-                            <option value="received">received</option>
-                            <option value="delivering">delivering</option>
-                            <option value="closed">closed</option>
+                              {% if status == 'waiting to be delivered' %}
+                                    <option value="waiting to be delivered" selected>waiting to be delivered</option>
+                              {% else %}
+                                  <option value="waiting to be delivered">waiting to be delivered</option>
+                              {% endif %}
+                              {% if status == 'received' %}
+                                    <option value="received" selected>received</option>
+                              {% else %}
+                                  <option value="received">received</option>
+                              {% endif %}
+                              {% if status == 'delivering' %}
+                                    <option value="delivering" selected>delivering</option>
+                              {% else %}
+                                  <option value="delivering">delivering</option>
+                              {% endif %}
+                              {% if status == 'closed' %}
+                                    <option value="closed" selected>closed</option>
+                              {% else %}
+                                  <option value="closed">closed</option>
+                              {% endif %}
                           </select>
                       </label>
           </li>
 
 
+            <li>
 
+                    <button onclick="window.location.href = '/allOrderList'">
+                        Clear <i class="bi bi-search"></i>
+                    </button>
+
+            </li>
 
 
             <li >
 
-                    <input type="search" placeholder="Search Here"><span>
+
                      <button  onclick="search('{{ pagination['current_page'] }}')"> <i class="bi bi-search"></i> </button>
 
             </span>

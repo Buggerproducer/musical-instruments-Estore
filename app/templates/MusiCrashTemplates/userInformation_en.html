@@ -32,9 +32,9 @@ Information of Your
               <h6>Phone</h6>
               <p id="phone">18811687595</p>
               <h6>Email</h6>
-              <p id="email">weijiong.you@ucdconnect.ie</p>
+              <p id="mail">weijiong.you@ucdconnect.ie</p>
               <h6>Address</h6>
-              <p id="address">Beijiing, Chao yang district，Nan Mo Fang town, Pingleyuan No.100</p>
+              <p>Beijiing, Chao yang district，Nan Mo Fang town, Pingleyuan No.100</p>
               <p><u>
                  <a href="{{ url_for('main.testmodify') }}" class="effect-ajax antiquewhite-font " ><u><span class="text-decoration-underline">Manage Your Personal Information</span></u></a>
               </u></p>
@@ -45,16 +45,21 @@ Information of Your
         </div>
       </div>
     </section>
+
+{% endblock %}
+{% block end %}
     <script>
 
     console.log("eeee")
     document.getElementById('username').innerText = "HELLO, " + getLoginState().getUsername();
     document.getElementById('username2').innerText = getLoginState().getUsername();
+    document.getElementById('mail').innerText = getLoginState().get('email')
+    document.getElementById('phone').innerText = getLoginState().get('mobilePhoneNumber')
+
 
 </script>
-
-
 {% endblock %}
+
 
 {% block sebian_script %}
 {{ super() }}
