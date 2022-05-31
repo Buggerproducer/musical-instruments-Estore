@@ -101,7 +101,7 @@ Modify Information
         user.set('email',$("#email").val())
         user.set('mobilePhoneNumber',$("#phone").val())
         user.set('address',$("#address").val())
-        user.save()
+        await user.save()
         window.location.href = '/testinfo'
     }
 
