@@ -60,7 +60,7 @@ $(document).ready(
                     a1.appendChild(span2);
                     a1.appendChild(span3);
                     document.getElementById('logoutb').innerText = "";
-                    $('#logoutb').append('<img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">')
+                    $('#logoutb').append('<img src="../../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">')
                 } else {
                     var li = document.createElement("li");
                     var a = document.createElement("a");
