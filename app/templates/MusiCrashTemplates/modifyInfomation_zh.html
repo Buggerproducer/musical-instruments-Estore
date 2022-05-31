@@ -96,10 +96,14 @@ Modify Information
         user.set('email',$("#email").val())
         user.set('mobilePhoneNumber',$("#phone").val())
         user.set('address',$("#address").val())
-        await user.save()
-        window.location.href = '/ch/testinfo'
+        user.save().then((todo) => {
+          // 成功保存之后，执行其他逻辑
+            window.location.href = '/testinfo'
+        }, (error) => {
+          // 异常处理
+            alert(error)
+        });
     }
-
 
     </script>
 {% endblock %}
