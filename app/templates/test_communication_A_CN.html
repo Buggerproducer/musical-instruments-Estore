@@ -74,15 +74,15 @@
             </ul>
         </div> <!-- end chat-history -->
 
-        <script>
-            $(document).load(function (){
+{#        <script>#}
+{#            $(document).ready(function (){#}
                 {#chat.scrollTop=chat1.style.height;#}
                 {#chat.scrollTop = chat.scrollHeight;#}
-                scrollToBottom()
-            });
-        </script>
+{#                scrollToBottom()#}
+{#            });#}
+{#        </script>#}
         <div class="chat-message clearfix">
-            <p class="lead emoji-picker-container">
+            <p class="lead emoji-picker-container" onclick="scrollToBottom()">
                 <textarea id = "input" class="form-control textarea-control" rows="3" placeholder="请输入内容" data-emojiable="true"></textarea>
             </p>
 

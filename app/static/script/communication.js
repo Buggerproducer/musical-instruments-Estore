@@ -45,7 +45,7 @@ $(document).ready(
                 ungroup[conversations[conversation].id.toString()]=i
 
                 a.href = "/conversation/" + conversations[conversation].id
-                img.src = "{{ url_for('static',filename='chat-widget/img/t1.png') }}"
+                img.src = "../static/chat-widget/img/t1.png"
                 img.height=50
                 img.alt = "avatar"
                 div2.innerText = conversations[conversation].name
