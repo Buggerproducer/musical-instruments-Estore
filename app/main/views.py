@@ -146,7 +146,7 @@ def collection(user_id):
         "has_pre": has_pre,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/collectionLists.html", collections=page_orders, async_mode=socketio.async_mode,pagination=pagination)
+    return render_template("MusiCrashTemplates/collectionLists.html", user_id=user_id, collections=page_orders, async_mode=socketio.async_mode,pagination=pagination)
 
 
 @main.route('/testinfo')
