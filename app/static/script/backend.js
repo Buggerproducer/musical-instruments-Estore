@@ -2,6 +2,13 @@ AV.init({
   appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
+    const idArray = window.location.href.split("/");
+    const tf = idArray[idArray.length-2];
+let ch = false;
+if(tf=="ch"){
+    ch = true;
+}
+
 const queryP = new AV.Query('Product');
 let qp = queryP.greaterThan('visit_count',5);
 qp.include('title');
@@ -60,10 +67,18 @@ queryOrder.count().then((count3) => {
   let orderrate = toPercent(receiveNum/totalNum,0);
   $('#orderRate').text(orderrate);
   $('#rateoderBar').css('width',orderrate);
-  $('#totalSales').text(totalNum-waitingNum+' Sales');
+  if(ch){
+              $('#totalSales').text(totalNum-waitingNum+' 完成订单数');
+  $('#waitingSales').text(waitingNum+' 等待传送订单');
+  $('#totalOrders').text(totalNum +' 总订单');
+  $('#deliverOrders').text(deliverNum+' 正在运送');
+  }else{
+        $('#totalSales').text(totalNum-waitingNum+' Sales');
   $('#waitingSales').text(waitingNum+' waiting payments');
   $('#totalOrders').text(totalNum +' Orders');
   $('#deliverOrders').text(deliverNum+' Delivering');
+  }
+
 });
 });
 });
@@ -73,15 +88,27 @@ let communicationNum = 0;
 const queryCollection  = new AV.Query('CollectionMap');
 queryCollection.equalTo('status',true);
 queryCollection.count().then((collections)=>{
-    $('#totalcollection').text(collections +' Collections');
+    if(ch){
+         $('#totalcollection').text(collections +' 收藏');
+    $('#collectionToday').text(collections-5 + ' 今日收藏');
+    }else{
+        $('#totalcollection').text(collections +' Collections');
     $('#collectionToday').text(collections-5 + ' Today');
+    }
+
     collectionNum = collections;
 });
 const queryCommunication  = new AV.Query('_Conversation');
 queryCommunication.equalTo('tr',false);
 queryCommunication.count().then((communications)=>{
+        if(ch){
+    $('#TotalCommunications').text(communications +' 对话总数');
+    $('#TodayCommunications').text(communications-5 + ' 今日会话');
+    }else{
     $('#TotalCommunications').text(communications +' Communications');
     $('#TodayCommunications').text(communications-5 + ' Today');
+    }
+
     communicationNum = communications;
 });
 
@@ -108,7 +135,6 @@ function getTime(n){
 
 function simple_report(){
     let name = $('#reportName').val();
-    lklll
     let Username = $('#userName').val();
     let addInfo = $('#additionalInfo').val();
 
@@ -124,7 +150,7 @@ function simple_report(){
     info += "Receiving Delivery: " + receiveNum+'\n';
     info += "Waiting Delivery: " + waitingNum+'\n';
     info += "Communication: " + communicationNum +'\n';
-    info += "Today Communication: " + communicationNum/2 +'\n';
+    info += "Today Communication: " + communicationNum-5 +'\n';
     info += 'Additional Information:  '+'\n'+"     "+addInfo;
 
 
