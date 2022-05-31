@@ -23,10 +23,10 @@ function Cov19(){
             query.find().then((status) => {
                 if(status[0].get('status')){
                  status[0].set('status',false);
-                document.getElementById('covid').innerText = "COVID-ALARM-OFF";
+                document.getElementById('covid').innerText = "疫情状态关闭";
                 }else{
                     status[0].set('status',true);
-                     document.getElementById('covid').innerText = "COVID-ALARM-ON";
+                     document.getElementById('covid').innerText = "疫情状态开启";
                 }
                status[0].save().then((order) => {
                     console.log('保存成功。objectId：'+order.getObjectId());

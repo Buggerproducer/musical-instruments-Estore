@@ -19,10 +19,10 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="../../static/img/favicon.ico" type="image/x-icon"/>
-  <link rel="icon" href="../../static/img/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon"/>
     <!-- custom styles(optional) -->
-    <link href="../../static/style/css/plugins.css" rel="stylesheet"/>
-    <link href="../../static/style/css/style.css" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='style/css/plugins.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='style/css/style.css') }}" rel="stylesheet"/>
 
   <!-- FONTS ONLINE -->
   <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
@@ -41,10 +41,6 @@
 
   {% endblock %}
 
-  <script src="{{ url_for('static',filename='js/jquery-3.1.1.min.js') }}"></script>
-  <script src="{{ url_for('static',filename='script/socket.io.js') }}"></script>
-  <script src="{{ url_for('static',filename='script/av-min.js') }}"></script>
-  <script src="{{ url_for('static',filename='script/user.js') }}"></script>
 
   {% block css %}
   {% endblock %}
@@ -53,20 +49,11 @@
   {% endblock %}
 
 {% block sebian_script %}
-<script src="../../static/js/sebian_js/wow.min.js"></script>
-<script src="../../static/js/sebian_js/bootstrap.min.js"></script>
-<script src="../../static/js/sebian_js/own-menu.js"></script>
-<script src="../../static/js/sebian_js/main.js"></script>
+<script src="{{ url_for('static', filename='js/sebian_js/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/sebian_js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/sebian_js/own-menu.js') }}"></script>
+<script src="{{ url_for('static', filename='js/sebian_js/main.js') }}"></script>
 {% endblock %}
-<script src="../../static/js/jquery.min.js"></script>
-<script src="../../static/js/plugins.js"></script>
-<script src="../../static/js/dsn-grid.js"></script>
-<script src="../../static/js/custom.js"></script>
-<script src="../../static/js/jquery-3.1.1.min.js"></script>
-<script src="../../static/script/socket.io.js"></script>
-<script src="../../static/script/av-min.js"></script>
-<script src="../../static/script/user.js"></script>
-<script src="../../static/script/traffic.js"></script>
 {% block scirpt %}
 {% endblock %}
   <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
@@ -204,61 +191,12 @@
 <main class="main-root">
   {% block content1 %}
   {% endblock %}
-    <div id="dsn-scrollbar">
+    <div id="dsn-scrollbar" style="height: 100vh">
     {% block content %}
     {% endblock %}
-
+    <footer class="footer-1 p-relative background-section">
       {% block footer_inside %}
       {% endblock %}
-    <footer class="footer-1 p-relative background-section">
-      <div class="container">
-        <div class="footer-links p-relative">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 footer-block-inner">
-              <div class="footer-block">
-                <div class="footer-logo"> <a href="#"> <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="logo-dark"> <img src="{{ url_for('static', filename='img/logo-dark.png') }}" alt="" class="logo-light"> </a> </div>
-                <div class="textwidget">
-                  <p>我们支持为员工创造晋升机会的项目。</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-block-inner">
-              <div class="footer-block col-menu">
-                <h4 class="footer-title">关注我们</h4>
-                <div class="footer-social p-relative">
-                  <ul>
-                    <li class="over-hidden"> <a href="#" data-dsn="parallax" target="_blank"
-                                               rel="nofollow">Dribbble.</a> </li>
-                    <li class="over-hidden"> <a href="#" data-dsn="parallax" target="_blank"
-                                               rel="nofollow">Behance.</a> </li>
-                    <li class="over-hidden"> <a href="#" data-dsn="parallax" target="_blank"
-                                               rel="nofollow">Twitter.</a> </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-block-inner">
-              <div class="footer-block col-contact">
-                <h4 class="footer-title">Contact</h4>
-                <p><strong>T</strong> <span>:</span> +001 225 3351</p>
-                <p><strong>F</strong> <span>:</span>+001 225 3351</p>
-                <p class="over-hidden"><strong>E</strong> <span>:</span><a class="link-hover"
-                                                                                           data-hover-text="缪斯克拉斯1974@gmail.com"
-                                                                                           href="#">缪斯克拉斯1974@gmail.com</a> </p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-block-inner">
-              <div class="col-address">
-                <h4 class="footer-title">地址</h4>
-                <p>El-Mahalla El-Kubra 37<br>
-                  1776 Damietta<br>
-                  Egypt</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 上面是新加的footer头部 -->
       <div class="footer-nav">
         <div class="container">
           <ul>
@@ -285,6 +223,14 @@
 <div class="scroll-to-top"> <img src="../../static/img/scroll_top.svg" alt="">
   <div class="box-numper"> <span>0%</span> </div>
 </div>
+
+<!--客服-->
+<div style="position: fixed; right: 140px; top: 25px;">
+    <a href="javascript:window.open(document.referrer.split('/')[0]+'/communicate/1', '_blank', 'height=700, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')">
+    <img src="../static/img/kefu.png" width="40px" style="background-color: white; border-radius: 30px; padding: 5px; border: solid">
+    </a>
+</div>
+
 <div class="day-night">
   <div class="night active" data-dsn-theme="dark">
     <svg width="48" height="48" viewBox="0 0 48 48">
@@ -315,8 +261,17 @@
 <!--客服-->
 <div style="position: fixed; right: 140px; top: 25px;">
     <a href="javascript:window.open(document.referrer.split('/')[0]+'/communicate/1', '_blank', 'height=700, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')">
-    <img src="../static/img/kefu.png" width="40px" style="background-color: white; border-radius: 30px; padding: 5px; border: solid">
+    <img src="{{ url_for('static', filename='img/kefu.png') }}" width="40px" style="background-color: white; border-radius: 30px; padding: 5px; border: solid">
     </a>
 </div>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/plugins.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dsn-grid.js') }}"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='script/socket.io.js') }}"></script>
+<script src="{{ url_for('static', filename='script/av-min.js') }}"></script>
+<script src="{{ url_for('static', filename='script/user.js') }}"></script>
+<script src="{{ url_for('static', filename='script/traffic.js') }}"></script>
 </body>
 </html>
