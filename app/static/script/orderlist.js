@@ -41,3 +41,7 @@ function search(page){
     const state = document.getElementById('state').value;
     window.location.href = '/allOrderList?page='+ page + '&state=' + state;
 }
+
+function clear(){
+    window.location.href = '/allOrderList';
+}
