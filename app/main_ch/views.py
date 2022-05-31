@@ -229,7 +229,7 @@ def productList():
 
 @ch.route('/resetPassword')
 def resetPassword():
-    return render_template("MusiCrashTemplates/resetPassword.html")
+    return render_template("MusiCrashTemplates/resetPassword_zh.html")
 
 
 @ch.route('/about_us')
@@ -275,3 +275,43 @@ def check_password():
         return jsonify(code=400, msg="两次输入的密码不一样")
     else:
         return jsonify(code=200, msg="成功")
+
+
+
+@ch.route('/collection/<user_id>')
+def collection(user_id):
+    collections = user.getCollectionByUser(user_id, 1000, 0)
+
+    page_size = 5
+    if len(collections) % page_size != 0:
+        page = len(collections) // page_size + 1
+    else:
+        page = len(collections) // page_size
+
+    current_page = request.args.get('page', 1, type=int)
+    next_page = current_page + 1
+    pre_page = current_page - 1
+    pre_pos = current_page // 5 * 5 - 1
+    next_post = current_page // 5 * 5 + 5
+    has_next = True
+    has_pre = True
+    page_orders = user.getCollectionByUser(user_id, page_size, (current_page - 1) * page_size)
+    if current_page >= page:
+        next_page = None
+        has_next = False
+    if current_page == 1:
+        pre_page = None
+        has_pre = False
+    pagination = {
+        "page": page,
+        "current_page": current_page,
+        "next_page": next_page,
+        "pre_page": pre_page,
+        "pre_post": pre_pos,
+        "has_next": has_next,
+        "has_pre": has_pre,
+        "next": next_post
+    }
+    return render_template("MusiCrashTemplates/collectionLists_zh.html", collections=page_orders, async_mode=socketio.async_mode,pagination=pagination)
+
+

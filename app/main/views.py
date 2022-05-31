@@ -146,7 +146,7 @@ def collection(user_id):
         "has_pre": has_pre,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/collectionLists.html", collections=page_orders, async_mode=socketio.async_mode,pagination=pagination)
+    return render_template("MusiCrashTemplates/collectionLists.html", user_id=user_id, collections=page_orders, async_mode=socketio.async_mode,pagination=pagination)
 
 
 @main.route('/testinfo')
@@ -187,12 +187,12 @@ def kinds_edit():
 # 商品具体信息页面
 @main.route('/productInfo/<product_id>')
 def productInfo(product_id):
-    # products = product.getProductByCategory(kind_id)
-    # if len(products) > 4:
-    #     # 随机取4个商品作为最底下的推荐商品
-    #     products = random.sample(products, 4)
+    products = product.getAllProduct(0, 100)
+    if len(products) > 4:
+        # 随机取4个商品作为最底下的推荐商品
+        products = random.sample(products, 4)
     commodity = product.getProductById(product_id, record=True)
-    return render_template("piano_en.html", commodity=commodity, async_mode=socketio.async_mode)
+    return render_template("piano_en.html", products=products, commodity=commodity, async_mode=socketio.async_mode)
 
 
 # 后台页面index

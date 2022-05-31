@@ -2,13 +2,30 @@
   appId: "pPObpvTV7pQB9poQHO1NJoMP-MdYXbMMI",
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
+
+    const idArray = window.location.href.split("/");
+    const tf = idArray[idArray.length-2];
+let ch = false;
+if(tf=="ch"){
+    ch = true;
+}
 const query = new AV.Query('Cov19');
             query.equalTo('kind','cov19');
             query.find().then((status) => {
                 if(status[0].get('status')){
-                 document.getElementById('covid').innerText = "COVID-ALARM-ON";
+                    if(tf){
+                                         document.getElementById('covid').innerText = "疫情状态开启";
+                    }else{
+                                         document.getElementById('covid').innerText = "COVID-ALARM-ON";
+                    }
+
                 }else{
-                    document.getElementById('covid').innerText = "COVID-ALARM-OFF";
+                                        if(tf){
+                                         document.getElementById('covid').innerText = "疫情状态关闭";
+                    }else{
+                                            document.getElementById('covid').innerText = "COVID-ALARM-OFF";
+                    }
+
                 }
             });
 
