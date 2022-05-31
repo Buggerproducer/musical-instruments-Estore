@@ -123,32 +123,42 @@ def userOrderList(user_id):
 # 后台展示商品订单
 @ch.route('/allOrderList')
 def allOrderList():
-    orders = user.getAllOrder()
-    print(len(orders))
-    page_size = 1
+    state = request.args.get('state', None, type=str)
+    print(state)
+    orders = user.getOrderFilter(state, 0, 1000)
+    page_size = 5
     if len(orders) % page_size != 0:
-        page = len(orders) // page_size +1
+        page = len(orders) // page_size + 1
     else:
         page = len(orders) // page_size
 
-    current_page = 18
+    current_page = request.args.get('page', 1, type=int)
     next_page = current_page + 1
     pre_page = current_page - 1
-    pre_pos  = current_page//5 * 5 - 1
-    next_post = current_page // 5 *5 + 5
+    pre_pos = current_page // 5 * 5 - 1
+    next_post = current_page // 5 * 5 + 5
+    has_next = True
+    has_pre = True
+    page_orders = user.getOrderFilter(state, (current_page-1)*page_size, page_size)
+    print(page_orders)
     if current_page >= page:
         next_page = None
+        has_next = False
     if current_page == 1:
         pre_page = None
+        has_pre = False
     pagination = {
         "page": page,
         "current_page": current_page,
         "next_page": next_page,
         "pre_page": pre_page,
+        "has_next": has_next,
+        "has_pre": has_pre,
         "pre_post": pre_pos,
-        "next":next_post
+        "next": next_post
     }
-    return render_template("orderList_merchant.html", order_list=orders,pagination=pagination)
+
+    return render_template("orderList_merchant_zh.html", order_list=page_orders, pagination=pagination, status=state)
 
 
 #订单填写页面
