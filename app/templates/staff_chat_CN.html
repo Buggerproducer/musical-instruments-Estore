@@ -86,12 +86,12 @@
                         <div class="ml-auto text-gray-500 text-xs sm:inline-flex hidden items-center">
                             <span class="mr-3">页数 {{ pagination["current_page"] }} /总计 {{ pagination["page"] }}</span>
                             {% if pagination["has_pre"] %}
-                                <a href="{{ url_for('main.productList', user_id = user_id, page=pagination['pre_page']) }}">
+                                <a href="{{ url_for('ch.productList', user_id = user_id, page=pagination['pre_page']) }}">
                                     <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none"><</button>
                                 </a>
                             {% endif %}
                             {% if pagination["has_next"] %}
-                                <a href="{{ url_for('main.productList', user_id = user_id, page=pagination['next_page']) }}">
+                                <a href="{{ url_for('ch.productList', user_id = user_id, page=pagination['next_page']) }}">
                                     <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none">></button>
                                 </a>
                             {% endif %}
@@ -200,13 +200,13 @@
                     {#          </div>#}
                     <div class="flex w-full mt-5 space-x-2 justify-end">
                         {% if pagination["has_pre"] %}
-                            <a href="{{ url_for('main.productList', user_id = user_id, page=pagination['pre_page']) }}">
+                            <a href="{{ url_for('ch.productList', user_id = user_id, page=pagination['pre_page']) }}">
                                 <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none"><</button>
                             </a>
                         {% endif %}
                         {% if pagination["page"]//8 > 0 %}
                             {% if pagination["current_page"] > pagination["page"] - 4 %}
-                                <a href="{{ url_for('main.productList', user_id = user_id, page=1) }}">
+                                <a href="{{ url_for('ch.productList', user_id = user_id, page=1) }}">
                                     <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none">1</button>
                                 </a>
                                 <a href="">
@@ -214,7 +214,7 @@
                                 </a>
                                 {% for pagenum in range(pagination["page"]-4,pagination["page"]+1) %}
                                     <a
-                                            href="{{ url_for('main.productList', user_id = user_id, page=pagenum) }}">
+                                            href="{{ url_for('ch.productList', user_id = user_id, page=pagenum) }}">
                                         <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none
                                 {% if pagenum  == pagination["current_page"] %}
                                 bg-gray-100 dark:bg-gray-800 dark:text-white
@@ -224,14 +224,14 @@
                                 {% endfor %}
 
                             {% elif pagination["current_page"] > 4 %}
-                                <a href="{{ url_for('main.productList', user_id = user_id, page=1) }}">
+                                <a href="{{ url_for('ch.productList', user_id = user_id, page=1) }}">
                                     <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none">1</button>
                                 </a>
 
                                 <a href="#.">...</a>
                                 {% for pagenum in range(pagination["current_page"]-2,pagination["current_page"]+3) %}
                                     <a
-                                            href="{{ url_for('main.productList', user_id = user_id, page=pagenum) }}">
+                                            href="{{ url_for('ch.productList', user_id = user_id, page=pagenum) }}">
                                         <button class="{% if pagenum  == pagination["current_page"] %}
                                 bg-gray-100 dark:bg-gray-800 dark:text-white
                                 {% endif %}
@@ -244,14 +244,14 @@
                                 </a>
 
 
-                                <a href="{{ url_for('main.productList', user_id = user_id, page=pagination['page']) }}">
+                                <a href="{{ url_for('ch.productList', user_id = user_id, page=pagination['page']) }}">
                                     <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none">{{ pagination["page"] }}</button>
                                 </a>
 
                             {% else %}
                                 {% for pagenum in range(0,5) %}
                                     <a
-                                            href="{{ url_for('main.productList', user_id = user_id, page=pagenum+1) }}">
+                                            href="{{ url_for('ch.productList', user_id = user_id, page=pagenum+1) }}">
                                         <button class="{% if pagenum + 1 == pagination["current_page"] %}
                                 bg-gray-100 dark:bg-gray-800 dark:text-white
                                 {% endif %}
@@ -263,14 +263,14 @@
                                     <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none">...</button>
                                 </a>
 
-                                <a href="{{ url_for('main.productList', user_id = user_id, page=pagination['page']) }}">
+                                <a href="{{ url_for('ch.productList', user_id = user_id, page=pagination['page']) }}">
                                     <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none">{{ pagination["page"] }}</button>
                                 </a>
                             {% endif %}
                         {% else %}
                             {% for pagenum in range(0, pagination["page"]) %}
                                 <a
-                                        href="{{ url_for('main.productList', user_id = user_id, page=pagenum+1) }}">
+                                        href="{{ url_for('ch.productList', user_id = user_id, page=pagenum+1) }}">
                                     <button class="{% if pagenum + 1 == pagination["current_page"] %}
                             bg-gray-100 dark:bg-gray-800 dark:text-white
                             {% endif %}
@@ -279,7 +279,7 @@
                             {% endfor %}
                         {% endif %}
                         {% if pagination["has_next"] %}
-                            <a href="{{ url_for('main.productList', user_id = user_id, page=pagination['next_page']) }}">
+                            <a href="{{ url_for('ch.productList', user_id = user_id, page=pagination['next_page']) }}">
                                 <button class="inline-flex items-center h-8 w-8 justify-center text-gray-500 rounded-md shadow border border-gray-200 dark:border-gray-800 leading-none">></button>
                             </a>
                         {% endif %}
