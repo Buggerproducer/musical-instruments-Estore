@@ -116,6 +116,11 @@
                               {% else %}
                                   <option value="closed">closed</option>
                               {% endif %}
+                              {% if status == 'processing refund' %}
+                                    <option value="processing refund" selected>processing refund</option>
+                              {% else %}
+                                  <option value="processing refund">processing refund</option>
+                              {% endif %}
                           </select>
                       </label>
           </li>
@@ -213,6 +218,7 @@
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','delivering');
+order.set('status','订单派送中')
 order.save();
 document.getElementById(id).innerText = "delivering";
 document.getElementById(id+'1').style.display = 'none';
@@ -221,6 +227,7 @@ document.getElementById(id+'1').style.display = 'none';
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','closed');
+order.set('status_ch','订单已关闭')
 order.save();
 document.getElementById(id).innerText = "Closed";
 document.getElementById(id+'2').style.display = 'none';

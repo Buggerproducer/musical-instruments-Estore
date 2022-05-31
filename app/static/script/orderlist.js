@@ -42,6 +42,15 @@ function search(page){
     window.location.href = '/allOrderList?page='+ page + '&state=' + state;
 }
 
+function search_ch(page){
+    const state = document.getElementById('state').value;
+    window.location.href = '/ch/allOrderList?page='+ page + '&state=' + state;
+}
+
 function clear(){
     window.location.href = '/allOrderList';
+}
+
+function clear_ch(){
+    window.location.href = '/ch/allOrderList';
 }

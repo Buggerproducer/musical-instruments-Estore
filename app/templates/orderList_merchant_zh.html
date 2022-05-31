@@ -97,24 +97,29 @@
           <li><label> 订单状态
                           <select id="state">
                               {% if status == 'waiting to be delivered' %}
-                                    <option value="waiting to be delivered" selected>等待运输</option>
+                                    <option value="waiting to be delivered" selected>等待派送中</option>
                               {% else %}
-                                  <option value="waiting to be delivered">等待运输</option>
+                                  <option value="waiting to be delivered">等待派送中</option>
                               {% endif %}
                               {% if status == 'received' %}
-                                    <option value="received" selected>已收货</option>
+                                    <option value="received" selected>订单已完成</option>
                               {% else %}
-                                  <option value="received">已收货</option>
+                                  <option value="received">订单已完成</option>
                               {% endif %}
                               {% if status == 'delivering' %}
-                                    <option value="delivering" selected>运送中</option>
+                                    <option value="delivering" selected>商品派送中</option>
                               {% else %}
-                                  <option value="delivering">运送中</option>
+                                  <option value="delivering">商品派送中</option>
                               {% endif %}
                               {% if status == 'closed' %}
-                                    <option value="closed" selected>关闭</option>
+                                    <option value="closed" selected>订单已关闭</option>
                               {% else %}
-                                  <option value="closed">关闭</option>
+                                  <option value="closed">订单已关闭</option>
+                              {% endif %}
+                              {% if status == 'processing refund' %}
+                                    <option value="processing refund" selected>退款处理中</option>
+                              {% else %}
+                                  <option value="processing refund">退款处理中</option>
                               {% endif %}
                           </select>
                       </label>
@@ -123,8 +128,8 @@
 
             <li>
 
-                    <button onclick="window.location.href = '/allOrderList'">
-                        Clear <i class="bi bi-search"></i>
+                    <button onclick="window.location.href = '/ch/allOrderList'">
+                        清空条件 <i class="bi bi-search"></i>
                     </button>
 
             </li>
@@ -133,7 +138,7 @@
             <li >
 
 
-                     <button  onclick="search('{{ pagination['current_page'] }}')"> <i class="bi bi-search"></i> </button>
+                     <button  onclick="search_ch('{{ pagination['current_page'] }}')"> <i class="bi bi-search"></i> </button>
 
             </span>
 
@@ -178,7 +183,7 @@
 
                             <div class="row">
                                 <div class="details-sec col-sm-6"></div>
-                                <div class="details-sec col-sm-6 font-playfair" > 订单状态: <span id ="{{order.id}}">{{ order.status }}</span></div>
+                                <div class="details-sec col-sm-6 font-playfair" > 订单状态: <span id ="{{order.id}}">{{ order.get('status_ch') }}</span></div>
                             </div>
 
                             <div class="row">
@@ -213,6 +218,7 @@
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','delivering');
+order.set('status','订单派送中')
 order.save();
 document.getElementById(id).innerText = "delivering";
 document.getElementById(id+'1').style.display = 'none';
@@ -221,6 +227,7 @@ document.getElementById(id+'1').style.display = 'none';
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','closed');
+order.set('status','订单已关闭')
 order.save();
 document.getElementById(id).innerText = "Closed";
 document.getElementById(id+'2').style.display = 'none';
