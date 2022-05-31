@@ -21,7 +21,7 @@ def getOrderByUser(user_id, skip, limit):
     return result
 
 
-def getCollectionByUser(user_id, limit=10, skip=0):
+def getCollectionByUser(user_id, limit, skip):
     User = leancloud.Object.extend('_User')
     user = User.create_without_data(user_id)
     query = leancloud.Query('CollectionMap')

@@ -114,7 +114,8 @@ def history_order():
 
 @main.route('/collection/<user_id>')
 def collection(user_id):
-    collections = user.getCollectionByUser(user_id)
+    collections = user.getCollectionByUser(user_id, 1000, 0)
+
     page_size = 5
     if len(collections) % page_size != 0:
         page = len(collections) // page_size + 1
@@ -128,7 +129,7 @@ def collection(user_id):
     next_post = current_page // 5 * 5 + 5
     has_next = True
     has_pre = True
-    page_orders = user.getCollectionByUser(user_id, (current_page - 1) * page_size, page_size)
+    page_orders = user.getCollectionByUser(user_id, page_size, (current_page - 1) * page_size)
     if current_page >= page:
         next_page = None
         has_next = False
