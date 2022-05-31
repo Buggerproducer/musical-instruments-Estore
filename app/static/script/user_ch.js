@@ -3,89 +3,82 @@ AV.init({
   appKey: "pShwYQQ4JVfSStc56MvkHNrr",
 });
 
-$(document).ready(
-    function change_profile(){
-        const current_user = AV.User.current();
-        document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
-        console.log(sessionStorage.getItem('authenticated'))
-      //document.getElementById('username2').innerText=current_user.getUsername();
-});
-
 
 $(document).ready(
     function change_index(){
         const current_user = AV.User.current();
         //document.getElementById('username').innerText="HELLO, " + current_user.getUsername();
         console.log(sessionStorage.getItem('authenticated'));
-        checkIsOperation().then(res=>{
-            if(res){
-                var oplist = document.getElementById('user-operation');
-                var li = document.createElement("li");
-                var a = document.createElement("a");
-                var span = document.createElement("span");
-                var span1 = document.createElement("span");
-                a.href = '/ch/staff_index';
-                span.className = "sn-title-menu";
-                span.id = "ad";
-                span1.className = "dsn-meta-menu";
-                span.innerText = "管理后台";
-                oplist.appendChild(li);
-                li.appendChild(a);
-                a.appendChild(span);
-                a.appendChild(span1);
-            }
-        })
-        checkLoginState().then(s=>{
-            if(s){
-                var oplist = document.getElementById('user-operation');
-                var li = document.createElement("li");
-                var a = document.createElement("a");
-                var span = document.createElement("span");
-                var span1 = document.createElement("span");
-                a.href = 'javascript: logout()';
-                a.id = 'logouta';
-                span.className = "sn-title-menu";
-                span.id = "logout";
-                span1.className = "dsn-meta-menu";
-                span.innerText = "登出";
-                oplist.appendChild(li);
-                li.appendChild(a);
-                a.appendChild(span);
-                a.appendChild(span1);
-                var li1 = document.createElement("li");
-                var a1 = document.createElement("a");
-                var span2 = document.createElement("span");
-                var span3 = document.createElement("span");
-                a1.href = '/ch/testbase';
-                span2.className = "sn-title-menu";
-                span2.id = "userinfo";
-                span3.className = "dsn-meta-menu";
-                span2.innerText = "信息";
-                oplist.appendChild(li1);
-                li1.appendChild(a1);
-                a1.appendChild(span2);
-                a1.appendChild(span3);
-                document.getElementById('logoutb').innerText="";
-                $('#logoutb').append('<img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">')
-            }
-            else{
-                var oplist = document.getElementById('user-operation');
-                var li = document.createElement("li");
-                var a = document.createElement("a");
-                var span = document.createElement("span");
-                var span1 = document.createElement("span");
-                a.href = '/ch/signUp';
-                a.id = 'logouta';
-                span.className = "sn-title-menu";
-                span.id = "ad";
-                span1.className = "dsn-meta-menu";
-                span.innerText = "登录 & 注册";
-                oplist.appendChild(li);
-                li.appendChild(a);
-                a.appendChild(span);
-                a.appendChild(span1);
-            }
-        })
+        var oplist = document.getElementById('user-operation');
+        if(oplist!=null) {
+
+            checkIsOperation().then(res => {
+                if (res) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    var span = document.createElement("span");
+                    var span1 = document.createElement("span");
+                    a.href = '/ch/staff_index';
+                    span.className = "sn-title-menu";
+                    li.id = "ad";
+                    span1.className = "dsn-meta-menu";
+                    span.innerText = "管理后台";
+                    oplist.appendChild(li);
+                    li.appendChild(a);
+                    a.appendChild(span);
+                    a.appendChild(span1);
+                }
+            })
+            checkLoginState().then(s => {
+                if (s) {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    var span = document.createElement("span");
+                    var span1 = document.createElement("span");
+                    a.href = 'javascript: logout()';
+                    a.id = 'logouta';
+                    span.className = "sn-title-menu";
+                    span.id = "logout";
+                    li.id = "logoutc";
+                    span1.className = "dsn-meta-menu";
+                    span.innerText = "登出";
+                    oplist.appendChild(li);
+                    li.appendChild(a);
+                    a.appendChild(span);
+                    a.appendChild(span1);
+                    var li1 = document.createElement("li");
+                    var a1 = document.createElement("a");
+                    var span2 = document.createElement("span");
+                    var span3 = document.createElement("span");
+                    a1.href = '/ch/testbase';
+                    span2.className = "sn-title-menu";
+                    li1.id = "userinfo";
+                    span3.className = "dsn-meta-menu";
+                    span2.innerText = "信息";
+                    oplist.appendChild(li1);
+                    li1.appendChild(a1);
+                    a1.appendChild(span2);
+                    a1.appendChild(span3);
+                    document.getElementById('logoutb').innerText = "";
+                    $('#logoutb').append('<img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">')
+                } else {
+                    var li = document.createElement("li");
+                    var a = document.createElement("a");
+                    var span = document.createElement("span");
+                    var span1 = document.createElement("span");
+                    a.href = '/ch/signUp';
+                    a.id = 'logouta';
+                    span.className = "sn-title-menu";
+                    li.id = "ad";
+                    span1.className = "dsn-meta-menu";
+                    span.innerText = "登录 & 注册";
+                    oplist.appendChild(li);
+                    li.appendChild(a);
+                    a.appendChild(span);
+                    a.appendChild(span1);
+                }
+            })
+        }
       //document.getElementById('username2').innerText=current_user.getUsername();
 });
 
@@ -107,15 +100,6 @@ function updateLocation(){
         }
     )
 }
-}
-
-function testConnect() {
-  const TestObject = AV.Object.extend('TestObject');
-  const testObject = new TestObject();
-  testObject.set('words', 'Hello world!');
-  testObject.save().then((testObject) => {
-    console.log('保存成功。')
-  })
 }
 
 async function signUp(username, email, phone, password, onSuccess, onFail){
@@ -151,21 +135,26 @@ async function signInWithUsername(username,password, onSuccess, onFail){
 ////
       const current_user = AV.User.current();
       //const roles = AV.User.current().getRoles();
-      $.post('/checkLogin',
-          {
-              'user': current_user.get('username')
-          }).done(
-          function(response){
-                console.log(response);
-                console.log(sessionStorage.getItem('authenticated'));
-          });
-updateLocation()
+      checkIsOperation().then(res => {
+            $.post('/checkLogin',
+                {
+                    'user': current_user.get('username'),
+                    'operation': res
+                }).done(
+                    function(response){
+                    console.log(response);
+                    console.log(sessionStorage.getItem('authenticated'));
+                });
+            updateLocation()
       onSuccess(user);
-  }, (error) => {
+        }, (error) => {
       // 登录失败（可能是密码错误）
 
       onFail(error)
   });
+      })
+
+
 }
 
 async function signInWithEmail(email,password, onSuccess, onFail){
@@ -195,17 +184,24 @@ async function logout() {
         }
         $.post('/checkLogin',
           {
-              'user': null
+              'user': null,
+              'operation': false
           }).done(
           function(response){
-              $("a#logouta").attr("href", "/ch/signUp")
+              $("a#logouta").attr("href", "/signUp")
               document.getElementById('logout').innerText = "登录 & 注册"
               a = document.getElementById('logouta');
               a.href = "/ch/signUp";
               document.getElementById('logoutb').innerText = "设置"
               li = document.getElementById('user-operation');
-              li.removeChild(li.childNodes[2]);
-              li.removeChild(li.childNodes[2]);
+              var length = li.childNodes.length
+              if(document.getElementById('ad')){
+                  li.removeChild(li.childNodes[length-1]);
+              }
+
+              li1 = document.getElementById('userinfo')
+              li1.remove()
+
           });
         // document.getElementById('result').innerText='logout successfully';
     }
@@ -267,11 +263,14 @@ function collectionlist() {
 }
 
 async function checkIsOperation() {
-    roles=await AV.User.current().getRoles()
+    if(AV.User.current() != null){
+        roles=await AV.User.current().getRoles()
     for(role in roles){
         if (roles[role].getName()==='operation'){
             return true
         }
+    }
+    return false
     }
     return false
 }
