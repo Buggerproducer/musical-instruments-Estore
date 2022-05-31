@@ -12,21 +12,12 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../static/img/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../static/style/main_css/fontawesome-all.min.css">
+<link rel="icon" href="{{ url_for('static', filename='img/favicon.ico" type="image/x-icon') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/main_css/fontawesome-all.min.css') }}">
 <!-- custom styles(optional) -->
-<link href="../static/style/css/plugins.css" rel="stylesheet" />
-<link href="../static/style/css/style.css" rel="stylesheet" />
+<link href="{{ url_for('static', filename='style/css/plugins.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='style/css/style.css') }}" rel="stylesheet" />
 
-<!-- Optional JavaScript -->
-<script src="../static/js/jquery-3.1.1.min.js"></script>
-<script src="../static/js/plugins.js"></script>
-<script src="../static/js/dsn-grid.js"></script>
-<script src="../static/js/custom.js"></script>
-<script src="../static/script/socket.io.js"></script>
-<script src="../static/script/av-min.js"></script>
-<script src="../static/script/user.js"></script>
-<script src="../static/script/traffic.js"></script>
 </head>
 <body class="dsn-effect-scroll dsn-cursor-effect dsn-ajax v-light">
 <div class="preloader">
@@ -44,7 +35,6 @@
       <div class="main-logo"><a href="#" data-dsn="parallax"><img class="dark-logo" src="{{ url_for('static', filename='img/logo-dark.png') }}" alt=""/><img class="light-logo" src="{{ url_for('static', filename='img/logo.png') }}" alt=""/></a></div>
     </div>
     <!-- 导航栏左边的logo结束 -->
-
 
     <!-- 导航栏在其他页面 非当前页面 的效果 -->
     <div class="menu-icon d-flex align-items-baseline">
@@ -64,7 +54,6 @@
 
       <!-- 导航栏右边的内容的ul -->
       <ul class="extend-container p-relative d-flex flex-column justify-content-center h-100">
-
         <!-- li 1: Home -->
         <li class="dsn-active dsn-drop-down"><a href="#" class="user-no-selection"><span class="dsn-title-menu">主页</span><span class="dsn-meta-menu">01</span><span class="dsn-bg-arrow"></span></a>
           <ul>
@@ -84,9 +73,9 @@
         <li class="dsn-drop-down"><a href="#" class="user-no-selection">
             <span id="logoutb" class="dsn-title-menu">
           {% if authenticated %}
-          <img src="../static/img/login-user.png" style="width: 20px; border-radius: 20px; background-color: white">
+          <img src="{{ url_for('static', filename='img/login-user.png') }}" style="width: 20px; border-radius: 20px; background-color: white">
           {% else %}
-          Setting
+          设置
           {% endif %}
         </span>
             <span class="dsn-meta-menu">03</span><span class="dsn-bg-arrow"></span></a>
@@ -211,7 +200,7 @@
           <div class="row">
             <div class="col-lg-3 col-md-6 footer-block-inner">
               <div class="footer-block">
-                <div class="footer-logo"> <a href="#"> <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="logo-dark"> <img src="{{ url_for('static', filename='img/logo-dark.png') }}" alt="" class="logo-light"> </a> </div>
+                <div class="footer-logo"> <a href="{{ url_for('ch.index') }}"> <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="logo-dark"> <img src="{{ url_for('static', filename='img/logo-dark.png') }}" alt="" class="logo-light"> </a> </div>
                 <div class="textwidget">
                   <p>我们支持为员工创造晋升机会的项目。</p>
                 </div>
@@ -222,12 +211,9 @@
                 <h4 class="footer-title">关注我们</h4>
                 <div class="footer-social p-relative">
                   <ul>
-                    <li class="over-hidden"> <a href="#" data-dsn="parallax" target="_blank"
-                                               rel="nofollow">Dribbble.</a> </li>
-                    <li class="over-hidden"> <a href="#" data-dsn="parallax" target="_blank"
-                                               rel="nofollow">Behance.</a> </li>
-                    <li class="over-hidden"> <a href="#" data-dsn="parallax" target="_blank"
-                                               rel="nofollow">Twitter.</a> </li>
+                    <li class="over-hidden"><a href="#" data-dsn="parallax" target="_blank" rel="nofollow">追波</a></li>
+                    <li class="over-hidden"><a href="#" data-dsn="parallax" target="_blank" rel="nofollow">彼航司</a></li>
+                    <li class="over-hidden"><a href="#" data-dsn="parallax" target="_blank" rel="nofollow">推特</a></li>
                   </ul>
                 </div>
               </div>
@@ -237,9 +223,8 @@
                 <h4 class="footer-title">Contact</h4>
                 <p><strong>T</strong> <span>:</span> +001 225 3351</p>
                 <p><strong>F</strong> <span>:</span>+001 225 3351</p>
-                <p class="over-hidden"><strong>E</strong> <span>:</span><a class="link-hover"
-                                                                                           data-hover-text="缪斯克拉斯1974@gmail.com"
-                                                                                           href="#">缪斯克拉斯1974@gmail.com</a> </p>
+                <p class="over-hidden"><strong>E</strong> <span>:</span><a class="link-hover data-hover-text="缪斯克拉斯1974@gmail.com"
+                    href="#">musicrash1974@gmail.com</a> </p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 footer-block-inner">
@@ -253,7 +238,6 @@
           </div>
         </div>
       </div>
-      <!-- 上面是新加的footer头部 -->
       <div class="footer-nav">
         <div class="container">
           <ul>
@@ -268,15 +252,13 @@
       <div class="copyright">
         <div class="text-center">
           <p>© 2022 缪斯克拉斯</p>
-          <div class="copright-text over-hidden">设计<a class="link-hover"
-                                                                          data-hover-text="缪斯克拉斯" href="{{ url_for('ch.index') }}"
-                                                                          target="_blank">缪斯克拉斯</a> </div>
+          <div class="copright-text over-hidden">设计<a class="link-hover"                                                       target="_blank">缪斯克拉斯</a> </div>
         </div>
       </div>
     </footer>
   </div>
 </main>
-<div class="scroll-to-top"><img src="../static/img/scroll_top.svg" alt="">
+<div class="scroll-to-top"><img src="{{ url_for('static', filename='img/scroll_top.svg') }}" alt="">
   <div class="box-numper"><span>10%</span></div>
 </div>
 <div class="cursor">
@@ -302,6 +284,16 @@
     </svg>
   </div>
 </div>
-<!-- Optional JavaScript --><script src="../static/js/jquery-3.1.1.min.js"></script><script src="../static/js/plugins.js"></script><script src="../static/js/dsn-grid.js"></script><script src="../static/js/custom.js"></script>
+<!-- Optional JavaScript -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.1.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/plugins.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/dsn-grid.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script/custom.js') }}"></script>
+<!-- test_login -->
+<script src="{{ url_for('static', filename='script/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='script/socket.io.js') }}"></script>
+<script src="{{ url_for('static', filename='script/av-min.js') }}"></script>
+<script src="{{ url_for('static', filename='script/user_ch.js') }}"></script>
+<script src="{{ url_for('static', filename='script/traffic.js') }}"></script>
 </body>
 </html>

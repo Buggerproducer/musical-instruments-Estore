@@ -80,3 +80,26 @@ Modify Information
 <script src="{{ url_for('static',filename='script/examine_zh.js') }}"></script>
 
 {% endblock %}
+
+{% block end %}
+    <script>
+
+    let user=getLoginState()
+    $("#form_name").val(user.get('username'))
+    $("#email").val(user.get('email'))
+    $("#phone").val(user.get('mobilePhoneNumber'))
+    $("#address").val(user.get('address'))
+
+    async function submit() {
+        console.log("ok")
+        user.set('username',$("#form_name").val())
+        user.set('email',$("#email").val())
+        user.set('mobilePhoneNumber',$("#phone").val())
+        user.set('address',$("#address").val())
+        user.save()
+        window.location.href = '/ch/testinfo'
+    }
+
+
+    </script>
+{% endblock %}

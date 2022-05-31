@@ -31,11 +31,11 @@
     <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s">
       <div class="container">
 
-        <h4>Your Orders</h4>
+        <h4>你的订单</h4>
         <!-- Breadcrumb -->
         <ol class="breadcrumb">
-          <li><a href= >User Center</a></li>
-          <li class="active">Historic Order</li>
+          <li><a href= >用户中心</a></li>
+          <li class="active">历史订单</li>
         </ol>
       </div>
     </section>
@@ -60,31 +60,31 @@
                           </div>
                           <div class="col-sm-8">
                             <div class="row">
-                                <div class="details-sec col-sm-6"> <a href="#">Price</a><span class="font-montserrat">{{ order.get('price').get('dollar') }} USD</span> </div>
-                                <div class="details-sec col-sm-6"> {{ order.get('createdAt') }}<br><br>order-id: {{ order.id }} </div>
+                                <div class="details-sec col-sm-6"> <a href="#">价格</a><span class="font-montserrat">{{ order.get('price').get('dollar') }} 美元</span> </div>
+                                <div class="details-sec col-sm-6"> {{ order.get('createdAt') }}<br><br>订单编号: {{ order.id }} </div>
 
                             </div>
 
                             <!-- Rating Stars -->
                             <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
 <!--                              这部分是商品名称-->
-                            <p class="details-sec col-sm-6 font-playfair" style = "font-size:20px;font-weight: bold">{{ order.get('product').get('title').english }}</p>
+                            <p class="details-sec col-sm-6 font-playfair" style = "font-size:20px;font-weight: bold">{{ order.get('product').get('title').chinese }}</p>
                             <div class="row">
                                 <div class="details-sec col-sm-6"></div>
                                 <div class="details-sec col-sm-6 font-playfair"> Status: <span id ="{{order.id}}">{{ order.status }}</span></div>
                             </div>
                             <div class="row" id = "button">
                                 {% if order.get('status') != 'closed' and order.get('status') != 'received' %}
-                                <a href="{{ url_for('main.ModifyBillInfo', order_id = order.id) }}" class="btn btn-small btn-dark" >Modify</a>
+                                <a href="{{ url_for('main.ModifyBillInfo', order_id = order.id) }}" class="btn btn-small btn-dark" >编辑</a>
                                                     {% endif %}
                                 {% if order.get('status') == 'delivering' %}
-                                <a href="#." id  = '{{order.id}}1' class="btn btn-small btn-dark margin-left-4" onclick = "Receive('{{order.id}}')">Receive</a>
+                                <a href="#." id  = '{{order.id}}1' class="btn btn-small btn-dark margin-left-4" onclick = "Receive('{{order.id}}')">确认收货</a>
                                 {% endif %}
                                 {% if order.get('status') == 'waiting to be delivered' %}
-                                <a href="#." id  = '{{order.id}}2' class="btn btn-small btn-dark margin-left-4" onclick = "Refund('{{order.id}}')">Refund</a>
+                                <a href="#." id  = '{{order.id}}2' class="btn btn-small btn-dark margin-left-4" onclick = "Refund('{{order.id}}')">退款</a>
                                 {% endif %}
                                 {% if order.get('status') == 'processing refund' %}
-                                <a href="#." id  = '{{order.id}}3' class="btn btn-small btn-dark margin-left-4" onclick = "CancelRefund('{{order.id}}')">Cancel Refund</a>
+                                <a href="#." id  = '{{order.id}}3' class="btn btn-small btn-dark margin-left-4" onclick = "CancelRefund('{{order.id}}')">取消退款</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -101,7 +101,6 @@
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','received');
-order.set('status','订单已完成')
 order.save();
 document.getElementById(id).innerText = "received";
 document.getElementById(id+'1').style.display = 'none';
@@ -110,7 +109,6 @@ document.getElementById(id+'1').style.display = 'none';
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','processing refund');
-order.set('status','退款处理中')
 order.save();
 document.getElementById(id).innerText = "processing refund";
 document.getElementById(id+'2').style.display = 'none';
@@ -119,7 +117,6 @@ document.getElementById(id+'2').style.display = 'none';
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','waiting to be delivered');
-order.set('status','等待派送中')
 order.save();
 document.getElementById(id).innerText = "waiting to be delivered";
 document.getElementById(id+'3').style.display = 'none';

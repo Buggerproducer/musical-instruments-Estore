@@ -91,7 +91,7 @@
         </li>
           <a href="{{ url_for('main.index') }}" class="button button--winona button--border-thin button--text-thick button--inverted" data-text="EN"><span>EN</span></a>
           {# 客服 #}
-        <a href="javascript:window.open(document.referrer.split('/')[0]+'/communicate/1', '_blank', 'height=700, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')"
+        <a href="javascript:window.open(document.referrer.split('/')[0]+'/ch/communicate/1', '_blank', 'height=700, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no')"
         class="button button--winona button--text-thick button--inverted">
             <img src="../static/img/kefu.png" width="40px" style="background-color: white; border-radius: 30px; padding: 5px">
         </a>
@@ -804,10 +804,10 @@
                                         <div class="item-border p-absolute"></div>
                                         <div class="item-info p-absolute">
                                             <!-- link页面跳转到产品页面在下面 -->
-                                            <a href="{{ url_for('main.kinds', kind_id=kind.id) }}" class="effect-ajax" data-dsn-ajax="work">
+                                            <a href="{{ url_for('ch.kinds', kind_id=kind.id) }}" class="effect-ajax" data-dsn-ajax="work">
                                                 <!--                    class="effect-ajax" data-dsn-ajax="work">-->
                                                 <h5 class="cat"></h5>
-                                                <h4>{{ kind.get('title').get('english') }}</h4>
+                                                <h4>{{ kind.get('title').get('chinese') }}</h4>
                                                 <span><span>查看所有</span></span>
                                             </a>
                                         </div>
