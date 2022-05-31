@@ -101,6 +101,7 @@
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','received');
+order.set('status','订单已完成')
 order.save();
 document.getElementById(id).innerText = "received";
 document.getElementById(id+'1').style.display = 'none';
@@ -109,6 +110,7 @@ document.getElementById(id+'1').style.display = 'none';
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','processing refund');
+order.set('status','退款处理中')
 order.save();
 document.getElementById(id).innerText = "processing refund";
 document.getElementById(id+'2').style.display = 'none';
@@ -117,6 +119,7 @@ document.getElementById(id+'2').style.display = 'none';
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','waiting to be delivered');
+order.set('status','等待派送中')
 order.save();
 document.getElementById(id).innerText = "waiting to be delivered";
 document.getElementById(id+'3').style.display = 'none';
