@@ -227,6 +227,11 @@ def productList():
     return render_template("staff_chat_CN.html", lst=lst, pagination=pagination)
 
 
+@ch.route('/resetPassword')
+def resetPassword():
+    return render_template("MusiCrashTemplates/resetPassword.html")
+
+
 @ch.route('/about_us')
 def aboutus():
     return render_template("MusiCrashTemplates/about_us_zh.html")
