@@ -115,7 +115,37 @@ def history_order():
 @main.route('/collection/<user_id>')
 def collection(user_id):
     collections = user.getCollectionByUser(user_id)
-    return render_template("MusiCrashTemplates/collectionLists.html", collections=collections, async_mode=socketio.async_mode)
+    page_size = 5
+    if len(collection) % page_size != 0:
+        page = len(collection) // page_size + 1
+    else:
+        page = len(collection) // page_size
+
+    current_page = request.args.get('page', 1, type=int)
+    next_page = current_page + 1
+    pre_page = current_page - 1
+    pre_pos = current_page // 5 * 5 - 1
+    next_post = current_page // 5 * 5 + 5
+    has_next = True
+    has_pre = True
+    page_orders = user.getCollectionByUser(user_id, (current_page - 1) * page_size, page_size)
+    if current_page >= page:
+        next_page = None
+        has_next = False
+    if current_page == 1:
+        pre_page = None
+        has_pre = False
+    pagination = {
+        "page": page,
+        "current_page": current_page,
+        "next_page": next_page,
+        "pre_page": pre_page,
+        "pre_post": pre_pos,
+        "has_next": has_next,
+        "has_pre": has_pre,
+        "next": next_post
+    }
+    return render_template("MusiCrashTemplates/collectionLists.html", collections=page_orders, async_mode=socketio.async_mode,pagination=pagination)
 
 
 @main.route('/testinfo')
@@ -154,14 +184,14 @@ def kinds_edit():
 
 
 # 商品具体信息页面
-@main.route('/productInfo/<kind_id>-<product_id>')
-def productInfo(kind_id, product_id):
-    products = product.getProductByCategory(kind_id)
-    if len(products) > 4:
-        # 随机取4个商品作为最底下的推荐商品
-        products = random.sample(products, 4)
+@main.route('/productInfo/<product_id>')
+def productInfo(product_id):
+    # products = product.getProductByCategory(kind_id)
+    # if len(products) > 4:
+    #     # 随机取4个商品作为最底下的推荐商品
+    #     products = random.sample(products, 4)
     commodity = product.getProductById(product_id, record=True)
-    return render_template("piano_en.html", kind_id=kind_id, products=products, commodity=commodity, async_mode=socketio.async_mode)
+    return render_template("piano_en.html", commodity=commodity, async_mode=socketio.async_mode)
 
 
 # 后台页面index

@@ -9,10 +9,6 @@ MusiCrash - Steinway
     <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
 {% endblock %}
 
-
-<!--&lt;!&ndash; 类别描述 &ndash;&gt;-->
-<!--<main class="main-root">-->
-<!--  <div id="dsn-scrollbar">-->
     {% block content %}
 <!-- 下面是出现问题的div -->
         <header data-dsn-header="project">
@@ -63,7 +59,7 @@ MusiCrash - Steinway
           <div class="row align-items-center h-100">
             <div class="col-lg-6 dsn-z-index-2">
               <div class="box-im" data-dsn-grid="move-up">
-                <a href="{{ url_for('main.productInfo', kind_id=kind_id, product_id=product.id) }}">
+                <a href="{{ url_for('main.productInfo', product_id=product.id) }}">
                   <img class="has-top-bottom" src="{{ product.get('cover').url }}" alt="" data-dsn-move="20%">
                 </a>
               </div>
@@ -72,7 +68,7 @@ MusiCrash - Steinway
               <div class="box-info">
                 <div class="title-cover theme-color" data-dsn-grid="move-section" data-dsn-opacity="0.03" data-dsn-duration="170%" data-dsn-move="0%">Droow </div>
                 <div>
-                  <a href="{{ url_for('main.productInfo', kind_id=kind_id, product_id=product.id) }}">View More</a>
+                  <a href="{{ url_for('main.productInfo', product_id=product.id) }}">View More</a>
                 </div>
                 <br>
                 <div class="bg-mask-content ">

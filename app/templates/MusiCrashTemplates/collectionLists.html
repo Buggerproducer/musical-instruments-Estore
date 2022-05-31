@@ -175,13 +175,80 @@
 
             <!--======= PAGINATION =========-->
             <ul class="pagination animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-              <li><a href="#.">1</a></li>
-              <li><a href="#.">2</a></li>
-              <li><a href="#.">3</a></li>
-              <li><a href="#.">4</a></li>
-              <li><a href="#.">5</a></li>
-              <li><a href="#."><i class="fa fa-angle-right"></i></a></li>
+                {% if pagination["has_pre"] %}
+                <li>
+                    <a href="{{ url_for('main.userOrderList', user_id = user_id, page=pagination['pre_page']) }}"><</a>
+                </li>
+                {% endif %}
+                {% if pagination["page"]//8 > 0 %}
+                    {% if pagination["current_page"] > pagination["page"] - 4 %}
+                        <li>
+                            <a href="{{ url_for('main.userOrderList', user_id = user_id, page=1) }}">1</a>
+                        </li>
+                        <li>
+                            <a href="">...</a>
+                        </li>
+                        {% for pagenum in range(pagination["page"]-4,pagination["page"]+1) %}
+                        <li><a {% if pagenum  == pagination["current_page"] %}
+                                class="page_item_active"
+                                {% endif %}
+                                href="{{ url_for('main.userOrderList', user_id = user_id, page=pagenum) }}">{{ pagenum }}</a></li>
+                        {% endfor %}
+
+                    {% elif pagination["current_page"] > 4 %}
+                        <li>
+                            <a href="{{ url_for('main.userOrderList', user_id = user_id, page=1) }}">1</a>
+                        </li>
+                        <li>
+                            <a href="#.">...</a>
+                        </li>
+                        {% for pagenum in range(pagination["current_page"] - 2,pagination["current_page"]+3) %}
+                        <li><a {% if pagenum  == pagination["current_page"] %}
+                                class="page_item_active"
+                                {% endif %}
+                                href="{{ url_for('main.userOrderList', user_id = user_id, page=pagenum) }}">{{ pagenum }}</a></li>
+                        {% endfor %}
+                        <li>
+                            <a href="#.">...</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('main.userOrderList', user_id = user_id, page=pagination['page']) }}">{{ pagination["page"] }}</a>
+                        </li>
+                    {% else %}
+                    {% for pagenum in range(0,5) %}
+                        <li><a {% if pagenum + 1 == pagination["current_page"] %}
+                                class="page_item_active"
+                                {% endif %}
+                                href="{{ url_for('main.userOrderList', user_id = user_id, page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
+                    {% endfor %}
+                    <li>
+                            <a href="#.">...</a>
+                    </li>
+                    <li>
+                            <a href="{{ url_for('main.userOrderList', user_id = user_id, page=pagination['page']) }}">{{ pagination["page"] }}</a>
+                    </li>
+                    {% endif %}
+                {% else %}
+                    {% for pagenum in range(0, pagination["page"]) %}
+                    <li><a {% if pagenum + 1 == pagination["current_page"] %}
+                            class="page_item_active"
+                            {% endif %}
+                            href="{{ url_for('main.userOrderList', user_id = user_id, page=pagenum + 1 ) }}">{{ pagenum + 1 }}</a></li>
+                {% endfor %}
+                {% endif %}
+                {% if pagination["has_next"] %}
+                <li>
+                    <a href="{{ url_for('main.userOrderList', user_id = user_id, page=pagination['next_page']) }}">></a>
+                </li>
+                {% endif %}
+<!--{#              <li><a href="#.">1</a></li>#}-->
+<!--{#              <li><a href="#.">2</a></li>#}-->
+<!--{#              <li><a href="#.">3</a></li>#}-->
+<!--{#              <li><a href="#.">4</a></li>#}-->
+<!--{#              <li><a href="#.">5</a></li>#}-->
+<!--{#              <li><a href="#."><i class="fa fa-angle-right"></i></a></li>#}-->
             </ul>
+              </ul>
           </div>
     </div>
 </body>

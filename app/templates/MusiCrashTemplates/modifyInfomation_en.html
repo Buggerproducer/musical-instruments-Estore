@@ -9,6 +9,7 @@ Modify Information
 {{ super() }}
 {% endblock %}
 {% block extra_head_script %}
+<script src="../../static/js/jquery-3.1.1.min.js"></script>
 
 {% endblock %}
 
@@ -78,7 +79,7 @@ Modify Information
         </div>
 </div>
 {% endblock %}
-{% block sebian_script %}
+{% block other_js %}
 {{ super() }}
 <script src="{{ url_for('static',filename='script/examine_en.js') }}"></script>
 
