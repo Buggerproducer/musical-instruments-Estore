@@ -194,15 +194,21 @@ User Center
 {#          </div>#}
 {#        </div>#}
       </section>
-<script>
+
+{% endblock %}
+{% block end %}
+    <script>
 
     console.log("eeee")
+
     document.getElementById('username').innerText = "HELLO, " + getLoginState().getUsername();
 
-</script>
 
+</script>
 {% endblock %}
 
 {% block sebian_script %}
 {{ super() }}
+
+
 {% endblock %}

@@ -347,7 +347,7 @@ def aboutus():
     return render_template("MusiCrashTemplates/about_us_en.html")
 
 
-@main.route('checkEmail', methods=['GET', 'POST'])
+@main.route('/checkEmail', methods=['GET', 'POST'])
 def check_email():
     email = request.args.get('email')
     user_lst = user.getUserByEmail(email)
@@ -357,7 +357,7 @@ def check_email():
         return jsonify(code=200, msg="this phone number is available")
 
 
-@main.route('checkPhone', methods=['GET', 'POST'])
+@main.route('/checkPhone', methods=['GET', 'POST'])
 def check_phone():
     phone = request.args.get('phone')
     user_lst = user.getUserByPhonenumber(phone)
@@ -367,7 +367,7 @@ def check_phone():
         return jsonify(code=200, msg="this phone number is available")
 
 
-@main.route('checkPassword', methods=['GET', 'POST'])
+@main.route('/checkPassword', methods=['GET', 'POST'])
 def check_password():
     password = request.args.get('password')
     cpassword = request.args.get('cpassword')

@@ -45,17 +45,22 @@
         </div>
       </div>
     </section>
-    <script>
 
-    console.log("eeee")
-    document.getElementById('username').innerText = "HELLO, " + getLoginState().getUsername();
-    document.getElementById('username2').innerText = getLoginState().getUsername();
-
-</script>
 
 
 {% endblock %}
+{% block end %}
+    <script>
 
+    console.log("eeee")
+    document.getElementById('username').innerText = "你好, " + getLoginState().getUsername();
+    document.getElementById('username2').innerText = getLoginState().getUsername();
+    document.getElementById('mail').innerText = getLoginState().get('email')
+    document.getElementById('phone').innerText = getLoginState().get('mobilePhoneNumber')
+
+
+</script>
+{% endblock %}
 {% block sebian_script %}
 {{ super() }}
 {% endblock %}

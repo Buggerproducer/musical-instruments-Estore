@@ -185,7 +185,7 @@ def conversation(conversation_id):
     return render_template("test_communication_A_CN.html", conversation_id=conversation_id)
 
 
-@ch.route('checkEmail', methods=['GET', 'POST'])
+@ch.route('/checkEmail', methods=['GET', 'POST'])
 def check_email():
     email = request.args.get('email')
     user_lst = user.getUserByEmail(email)
@@ -195,7 +195,7 @@ def check_email():
         return jsonify(code=200, msg="邮箱可用")
 
 
-@ch.route('checkPhone', methods=['GET', 'POST'])
+@ch.route('/checkPhone', methods=['GET', 'POST'])
 def check_phone():
     phone = request.args.get('phone')
     user_lst = user.getUserByPhonenumber(phone)
@@ -205,7 +205,7 @@ def check_phone():
         return jsonify(code=200, msg="电话号码可用")
 
 
-@ch.route('checkPassword', methods=['GET', 'POST'])
+@ch.route('/checkPassword', methods=['GET', 'POST'])
 def check_password():
     password = request.args.get('password')
     cpassword = request.args.get('cpassword')

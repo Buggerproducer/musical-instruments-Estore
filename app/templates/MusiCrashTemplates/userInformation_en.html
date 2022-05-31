@@ -30,9 +30,9 @@ Information of Your
               <h6>User Name</h6>
               <p id="username2"></p>
               <h6>Phone</h6>
-              <p>18811687595</p>
+              <p id="phone">18811687595</p>
               <h6>Email</h6>
-              <p>weijiong.you@ucdconnect.ie</p>
+              <p id="mail">weijiong.you@ucdconnect.ie</p>
               <h6>Address</h6>
               <p>Beijiing, Chao yang district，Nan Mo Fang town, Pingleyuan No.100</p>
               <p><u>
@@ -45,16 +45,21 @@ Information of Your
         </div>
       </div>
     </section>
+
+{% endblock %}
+{% block end %}
     <script>
 
     console.log("eeee")
     document.getElementById('username').innerText = "HELLO, " + getLoginState().getUsername();
     document.getElementById('username2').innerText = getLoginState().getUsername();
+    document.getElementById('mail').innerText = getLoginState().get('email')
+    document.getElementById('phone').innerText = getLoginState().get('mobilePhoneNumber')
+
 
 </script>
-
-
 {% endblock %}
+
 
 {% block sebian_script %}
 {{ super() }}
