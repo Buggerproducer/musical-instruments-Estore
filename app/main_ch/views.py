@@ -95,7 +95,8 @@ def staff_index():
 # 后台页面数据展示
 @ch.route('/backend_data')
 def backend_data():
-    return render_template("backend_zh.html")
+    logs = user.getLogs()
+    return render_template("backend_zh.html",logs=logs)
 
 
 # 个人中心展示商品订单
