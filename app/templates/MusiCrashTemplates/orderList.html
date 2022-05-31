@@ -265,7 +265,7 @@ document.getElementById(id+'3').style.display = 'none';
                         <li>
                             <a href="#.">...</a>
                         </li>
-                        {% for pagenum in range(pagination["current_page"]-2,pagination["current_page"]+3) %}
+                        {% for pagenum in range(pagination["current_page"] - 2,pagination["current_page"]+3) %}
                         <li><a {% if pagenum  == pagination["current_page"] %}
                                 class="page_item_active"
                                 {% endif %}
