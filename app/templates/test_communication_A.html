@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onload="scrollToBottom()">
 <head>
     <meta charset="UTF-8">
     <title>MusiCrash - Chat</title>
@@ -74,15 +74,16 @@
             </ul>
         </div> <!-- end chat-history -->
 
-{#        <script>#}
-{#            $(document).load(function (){#}
+        <script>
+            $(document).ready(function (){
                 {#chat.scrollTop=chat1.style.height;#}
                 {#chat.scrollTop = chat.scrollHeight;#}
-{#                scrollToBottom()#}
-{#            });#}
-{#        </script>#}
+
+                scrollToBottom()
+            });
+        </script>
         <div class="chat-message clearfix">
-            <p class="lead emoji-picker-container" onclick="scrollToBottom()">
+            <p class="lead emoji-picker-container">
                 <textarea id = "input" class="form-control textarea-control" rows="3" placeholder="Textarea with emoji image input" data-emojiable="true"></textarea>
             </p>
 
@@ -317,6 +318,7 @@
     // 定义函数
     function scrollToBottom() {
         var i = 1
+        var st = true
         var element = document.getElementById('chat-history')
         element.scrollTop = 0
         element.scrollTop = element.scrollHeight
@@ -325,9 +327,11 @@
             if (element.scrollTop + element.clientHeight === element.scrollHeight) {
                 clearInterval(interval)
             } else {
-                element.scrollTop += 300
+                if (st){
+                element.scrollTop += 20000
                 console.log(i)
-                i += 1
+                    st = false
+                }
             }
         }
 
