@@ -225,9 +225,7 @@ def productList():
     for i in page_products:
         lst += [[product.getCategoryByProduct(i.id), i]]
     return render_template("staff_chat_CN.html", lst=lst, pagination=pagination)
-@ch.route('/resetPassword')
-def resetPassword():
-    return render_template("MusiCrashTemplates/resetPassword_zh.html")
+
 
 @ch.route('/resetPassword')
 def resetPassword():
