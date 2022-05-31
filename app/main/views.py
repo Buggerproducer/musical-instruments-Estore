@@ -116,10 +116,10 @@ def history_order():
 def collection(user_id):
     collections = user.getCollectionByUser(user_id)
     page_size = 5
-    if len(collection) % page_size != 0:
-        page = len(collection) // page_size + 1
+    if len(collections) % page_size != 0:
+        page = len(collections) // page_size + 1
     else:
-        page = len(collection) // page_size
+        page = len(collections) // page_size
 
     current_page = request.args.get('page', 1, type=int)
     next_page = current_page + 1
@@ -145,7 +145,7 @@ def collection(user_id):
         "has_pre": has_pre,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/collectionLists.html", collections=page_orders, async_mode=socketio.async_mode,pagination=pagination)
+    return render_template("MusiCrashTemplates/collectionLists.html", collections=collections, async_mode=socketio.async_mode,pagination=pagination)
 
 
 @main.route('/testinfo')
