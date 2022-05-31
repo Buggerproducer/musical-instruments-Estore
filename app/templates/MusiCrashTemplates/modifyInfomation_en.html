@@ -66,7 +66,7 @@ Modify Information
                     <div class="col-12">
                       <div class="text-center">
                         <div class="image-zoom w-auto d-inline-block" data-dsn="parallax">
-                          <button class="btn-form darkgary-font"><span class="label">Send Message</span><span class="icon-c"></span></button>
+                          <button class="btn-form darkgary-font" id="submit_1" onclick="submit()"><span class="label">Submit</span><span class="icon-c"></span></button>
                         </div>
                       </div>
                     </div>
@@ -82,4 +82,27 @@ Modify Information
 {{ super() }}
 <script src="{{ url_for('static',filename='script/examine_en.js') }}"></script>
 
+
+{% endblock %}
+
+{% block end %}
+    <script>
+
+    let user=getLoginState()
+    $("#form_name").val(user.get('username'))
+    $("#email").val(user.get('email'))
+    $("#phone").val(user.get('mobilePhoneNumber'))
+    $("#address").val(user.get('address'))
+
+    async function submit() {
+        console.log("ok")
+        user.set('username',$("#form_name").val())
+        user.set('email',$("#email").val())
+        user.set('mobilePhoneNumber',$("#phone").val())
+        user.set('address',$("#address").val())
+        user.save()
+    }
+
+
+    </script>
 {% endblock %}

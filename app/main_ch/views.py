@@ -52,6 +52,15 @@ def testinfo():
 def testmodify():
     return render_template("MusiCrashTemplates/modifyInfomation_zh.html", async_mode=socketio.async_mode)
 
+# @ch.route('/history_order')
+# def history_order():
+#     return render_template("MusiCrashTemplates/orderList_zh.html", async_mode=socketio.async_mode)
+#订单填写页面
+@ch.route('/ViewBillInfo/<order_id>')
+@login_required
+def ViewBillInfo(order_id):
+    order = product.getOrderById(order_id)
+    return render_template("MusiCrashTemplates/orderMerchant_zh.html", order= order)
 
 # 商品品牌分类页面
 @ch.route('/category')
@@ -93,32 +102,38 @@ def backend_data():
 @ch.route('/orderList/<user_id>')
 @login_required
 def userOrderList(user_id):
-    orders = user.getOrderByUser(user_id)
-    page_size = 1
+    orders = user.getOrderByUser(user_id, 0, 100)
+    page_size = 5
     if len(orders) % page_size != 0:
         page = len(orders) // page_size + 1
     else:
         page = len(orders) // page_size
 
-    current_page = 1
+    current_page = request.args.get('page', 1, type=int)
     next_page = current_page + 1
     pre_page = current_page - 1
     pre_pos = current_page // 5 * 5 - 1
     next_post = current_page // 5 * 5 + 5
+    has_next = True
+    has_pre = True
+    page_orders = user.getOrderByUser(user_id, (current_page - 1) * page_size, page_size)
     if current_page >= page:
         next_page = None
+        has_next = False
     if current_page == 1:
         pre_page = None
+        has_pre = False
     pagination = {
         "page": page,
         "current_page": current_page,
         "next_page": next_page,
         "pre_page": pre_page,
         "pre_post": pre_pos,
+        "has_next": has_next,
+        "has_pre": has_pre,
         "next": next_post
     }
-    return render_template("MusiCrashTemplates/orderList.html", order_list=orders, pagination=pagination)
-
+    return render_template("MusiCrashTemplates/orderList_zh.html", user_id=user_id, order_list=page_orders, pagination=pagination)
 
 # 后台展示商品订单
 @ch.route('/allOrderList')
