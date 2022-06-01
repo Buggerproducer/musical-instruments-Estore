@@ -46,7 +46,7 @@ $(document).ready(
 
                 a.href = "/conversation/" + conversations[conversation].id
                 // img.src = "../../static/chat-widget/img/t1.png"
-                img.src="{{ url_for('static',filename='chat-widget/img/login-user.png') }}"
+                img.src="../static/img/login-user.png"
                 img.height=50
                 img.alt = "avatar"
                 div2.innerText = conversations[conversation].name
