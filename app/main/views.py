@@ -214,9 +214,6 @@ def backend_data():
 @login_required
 def userOrderList(user_id):
     orders = user.getOrderByUser(user_id, 0, 1000)
-    print(user_id)
-    for o in orders:
-        print(o.id)
     page_size = 5
     if len(orders) % page_size != 0:
         page = len(orders) // page_size + 1

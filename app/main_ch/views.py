@@ -20,6 +20,15 @@ def login_required(f):
     return decorated_function
 
 
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get('is_operation') is None or session.get('is_operation') is False:
+            return redirect(url_for("ch.index"))
+        return f(*args, **kwargs)
+    return decorated_function
+
+
 # 索引页面index
 @ch.route('/')
 def index():
@@ -52,6 +61,7 @@ def testinfo():
 def testmodify():
     return render_template("MusiCrashTemplates/modifyInfomation_zh.html", async_mode=socketio.async_mode)
 
+
 # @ch.route('/history_order')
 # def history_order():
 #     return render_template("MusiCrashTemplates/orderList_zh.html", async_mode=socketio.async_mode)
@@ -61,6 +71,7 @@ def testmodify():
 def ViewBillInfo(order_id):
     order = product.getOrderById(order_id)
     return render_template("MusiCrashTemplates/orderMerchant_zh.html", order= order)
+
 
 # 商品品牌分类页面
 @ch.route('/category')
@@ -88,6 +99,7 @@ def productInfo(product_id):
 
 # 后台页面index
 @ch.route('/staff_index')
+@admin_required
 def staff_index():
     return render_template("staff_index_CN.html")
 
