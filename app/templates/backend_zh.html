@@ -692,7 +692,7 @@
                                 <div class="text-truncate">
                                   <strong>{{ log.get('user').get('username') }}</strong> {{ log.get('content') }} about product<strong> {{ log.get('product').get('title').get('english') }} </strong> .
                                 </div>
-                                <div class="text-muted">一天前</div>
+                                <div class="text-muted">{{ log.get('createdAt') }}</div>
                               </div>
                               <div class="col-auto align-self-center">
                                 <div class="badge bg-primary"></div>
