@@ -152,8 +152,8 @@ def userOrderList(user_id):
 @ch.route('/allOrderList')
 def allOrderList():
     state = request.args.get('state', None, type=str)
-    print(state)
-    orders = user.getOrderFilter(state, 0, 1000)
+    order = request.args.get('order', 'createdAt', type=str)
+    orders = user.getOrderFilter(order, state, 0, 1000)
     page_size = 5
     if len(orders) % page_size != 0:
         page = len(orders) // page_size + 1
@@ -167,7 +167,7 @@ def allOrderList():
     next_post = current_page // 5 * 5 + 5
     has_next = True
     has_pre = True
-    page_orders = user.getOrderFilter(state, (current_page-1)*page_size, page_size)
+    page_orders = user.getOrderFilter(order, state, (current_page-1)*page_size, page_size)
     print(page_orders)
     if current_page >= page:
         next_page = None
@@ -186,7 +186,7 @@ def allOrderList():
         "next": next_post
     }
 
-    return render_template("orderList_merchant_zh.html", order_list=page_orders, pagination=pagination, status=state)
+    return render_template("orderList_merchant_zh.html", order_list=page_orders, pagination=pagination, status=state, filter=order)
 
 
 #订单填写页面

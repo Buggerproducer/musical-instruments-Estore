@@ -231,18 +231,18 @@
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','delivering');
-order.set('status','订单派送中')
+order.set('status_ch','订单派送中')
 order.save();
-document.getElementById(id).innerText = "delivering";
+document.getElementById(id).innerText = "订单派送中";
 document.getElementById(id+'1').style.display = 'none';
 }
     function Refund(id){
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','closed');
-order.set('status','订单已关闭')
+order.set('status_ch','订单已关闭')
 order.save();
-document.getElementById(id).innerText = "Closed";
+document.getElementById(id).innerText = "订单已关闭";
 document.getElementById(id+'2').style.display = 'none';
 }
 </script>

@@ -103,7 +103,7 @@ const order = Order.createWithoutData("Order",id);
 order.set('status','received');
 order.set('status_ch','订单已完成')
 order.save();
-document.getElementById(id).innerText = "received";
+document.getElementById(id).innerText = "订单已完成";
 document.getElementById(id+'1').style.display = 'none';
 }
     function Refund(id){
@@ -112,7 +112,7 @@ const order = Order.createWithoutData("Order",id);
 order.set('status','processing refund');
 order.set('status_ch','退款处理中')
 order.save();
-document.getElementById(id).innerText = "processing refund";
+document.getElementById(id).innerText = "退款处理中";
 document.getElementById(id+'2').style.display = 'none';
 }
     function CancelRefund(id){
@@ -121,7 +121,7 @@ const order = Order.createWithoutData("Order",id);
 order.set('status','waiting to be delivered');
 order.set('status_ch','等待派送中')
 order.save();
-document.getElementById(id).innerText = "waiting to be delivered";
+document.getElementById(id).innerText = "等待派送中";
 document.getElementById(id+'3').style.display = 'none';
 }
 </script>
@@ -240,13 +240,13 @@ document.getElementById(id+'3').style.display = 'none';
             <ul class="pagination animate fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
                 {% if pagination["has_pre"] %}
                 <li>
-                    <a href="{{ url_for('main.userOrderList', user_id = user_id, page=pagination['pre_page']) }}"><</a>
+                    <a href="{{ url_for('ch.userOrderList', user_id = user_id, page=pagination['pre_page']) }}"><</a>
                 </li>
                 {% endif %}
                 {% if pagination["page"]//8 > 0 %}
                     {% if pagination["current_page"] > pagination["page"] - 4 %}
                         <li>
-                            <a href="{{ url_for('main.userOrderList', user_id = user_id, page=1) }}">1</a>
+                            <a href="{{ url_for('ch.userOrderList', user_id = user_id, page=1) }}">1</a>
                         </li>
                         <li>
                             <a href="">...</a>
@@ -255,12 +255,12 @@ document.getElementById(id+'3').style.display = 'none';
                         <li><a {% if pagenum  == pagination["current_page"] %}
                                 class="page_item_active"
                                 {% endif %}
-                                href="{{ url_for('main.userOrderList', user_id = user_id, page=pagenum) }}">{{ pagenum }}</a></li>
+                                href="{{ url_for('ch.userOrderList', user_id = user_id, page=pagenum) }}">{{ pagenum }}</a></li>
                         {% endfor %}
 
                     {% elif pagination["current_page"] > 4 %}
                         <li>
-                            <a href="{{ url_for('main.userOrderList', user_id = user_id, page=1) }}">1</a>
+                            <a href="{{ url_for('ch.userOrderList', user_id = user_id, page=1) }}">1</a>
                         </li>
                         <li>
                             <a href="#.">...</a>
@@ -269,26 +269,26 @@ document.getElementById(id+'3').style.display = 'none';
                         <li><a {% if pagenum  == pagination["current_page"] %}
                                 class="page_item_active"
                                 {% endif %}
-                                href="{{ url_for('main.userOrderList', user_id = user_id, page=pagenum) }}">{{ pagenum }}</a></li>
+                                href="{{ url_for('ch.userOrderList', user_id = user_id, page=pagenum) }}">{{ pagenum }}</a></li>
                         {% endfor %}
                         <li>
                             <a href="#.">...</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('main.userOrderList', user_id = user_id, page=pagination['page']) }}">{{ pagination["page"] }}</a>
+                            <a href="{{ url_for('ch.userOrderList', user_id = user_id, page=pagination['page']) }}">{{ pagination["page"] }}</a>
                         </li>
                     {% else %}
                     {% for pagenum in range(0,5) %}
                         <li><a {% if pagenum + 1 == pagination["current_page"] %}
                                 class="page_item_active"
                                 {% endif %}
-                                href="{{ url_for('main.userOrderList', user_id = user_id, page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
+                                href="{{ url_for('ch.userOrderList', user_id = user_id, page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
                     {% endfor %}
                     <li>
                             <a href="#.">...</a>
                     </li>
                     <li>
-                            <a href="{{ url_for('main.userOrderList', user_id = user_id, page=pagination['page']) }}">{{ pagination["page"] }}</a>
+                            <a href="{{ url_for('ch.userOrderList', user_id = user_id, page=pagination['page']) }}">{{ pagination["page"] }}</a>
                     </li>
                     {% endif %}
                 {% else %}
@@ -296,12 +296,12 @@ document.getElementById(id+'3').style.display = 'none';
                     <li><a {% if pagenum + 1 == pagination["current_page"] %}
                             class="page_item_active"
                             {% endif %}
-                            href="{{ url_for('main.userOrderList', user_id = user_id, page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
+                            href="{{ url_for('ch.userOrderList', user_id = user_id, page=pagenum+1) }}">{{ pagenum + 1 }}</a></li>
                 {% endfor %}
                 {% endif %}
                 {% if pagination["has_next"] %}
                 <li>
-                    <a href="{{ url_for('main.userOrderList', user_id = user_id, page=pagination['next_page']) }}">></a>
+                    <a href="{{ url_for('ch.userOrderList', user_id = user_id, page=pagination['next_page']) }}">></a>
                 </li>
                 {% endif %}
 <!--{#              <li><a href="#.">1</a></li>#}-->

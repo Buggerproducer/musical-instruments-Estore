@@ -89,7 +89,7 @@
 
     <section class="sub-banner animate fadeInUp" data-wow-delay="0.4s">
       <div class="container">
-        <h4>Your Orders</h4>
+        <h4>All Orders</h4>
         <!-- Breadcrumb -->
         <ol class="breadcrumb">
           <li class="shop-cart" ><label><a class="" onclick="Cov19()" id = "covid"></a></label>
@@ -232,7 +232,7 @@
     const Order = AV.Object.extend('Order');
 const order = Order.createWithoutData("Order",id);
 order.set('status','delivering');
-order.set('status','订单派送中')
+order.set('status_ch','订单派送中')
 order.save();
 document.getElementById(id).innerText = "delivering";
 document.getElementById(id+'1').style.display = 'none';

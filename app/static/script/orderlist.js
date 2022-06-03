@@ -13,14 +13,14 @@ const query = new AV.Query('Cov19');
             query.equalTo('kind','cov19');
             query.find().then((status) => {
                 if(status[0].get('status')){
-                    if(tf){
+                    if(ch){
                                          document.getElementById('covid').innerText = "疫情状态开启";
                     }else{
                                          document.getElementById('covid').innerText = "COVID-ALARM-ON";
                     }
 
                 }else{
-                                        if(tf){
+                                        if(ch){
                                          document.getElementById('covid').innerText = "疫情状态关闭";
                     }else{
                                             document.getElementById('covid').innerText = "COVID-ALARM-OFF";
@@ -40,10 +40,18 @@ function Cov19(){
             query.find().then((status) => {
                 if(status[0].get('status')){
                  status[0].set('status',false);
-                document.getElementById('covid').innerText = "疫情状态关闭";
+                    if(ch){
+                                         document.getElementById('covid').innerText = "疫情状态关闭";
+                    }else{
+                                            document.getElementById('covid').innerText = "COVID-ALARM-OFF";
+                    }
                 }else{
                     status[0].set('status',true);
-                     document.getElementById('covid').innerText = "疫情状态开启";
+                     if(ch){
+                                         document.getElementById('covid').innerText = "疫情状态开启";
+                    }else{
+                                         document.getElementById('covid').innerText = "COVID-ALARM-ON";
+                    }
                 }
                status[0].save().then((order) => {
                     console.log('保存成功。objectId：'+order.getObjectId());
