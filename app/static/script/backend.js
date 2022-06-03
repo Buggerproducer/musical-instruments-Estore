@@ -20,8 +20,6 @@ qp.find().then((products)=>{
         let visit = products[a].get('visit_count');
             console.log(products[a].get('title').get('english'));
             const product = new AV.Object.createWithoutData('Product', products[a].id)
-            query.equalTo('product', product)
-            query.include('category')
             $('#mostVisit').append('<tr><td>'+title+'<a href="/productInfo/'+ products[a].id+'" class="ms-1" aria-label="Open website">' +
                  '<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="32" height="32" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">' +
                  '<path stroke="none" d="M0 0h24v24H0z" fill="none"/>' +
