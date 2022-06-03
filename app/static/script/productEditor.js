@@ -63,7 +63,11 @@ editor.create();
 function loadProduct(product){
     document.getElementById('title').value=product.get('title').get('english')
     document.getElementById('description').value=product.get('description').get('english')
+    try{
     document.getElementById('cover').src=product.get('cover').url()
+    }catch (e) {
+        
+    }
     document.getElementById('price').value=product.get('price').get('dollar')
     editor.txt.html(product.get('detail').get('englishHTML'))
     currentProduct=product
@@ -92,6 +96,7 @@ function saveCurrent(lang){
         currentProduct.get('description').set(_lang, document.getElementById('description').value)
         currentProduct.get('detail').set(_lang + 'HTML', editor.txt.html())
         currentProduct.get('price').set(_price, Number(document.getElementById('price').value))
+        setProductCover(currentProduct)
     }
 }
 
@@ -148,17 +153,19 @@ async function submit() {
 
         });
         await setProductCategory(currentProduct.id, l);
-        if (document.getElementById('fileField').files.length !== 0) {
-            setProductCover(currentProduct.id, document.getElementById('fileField').files)
-        }
+        // if (document.getElementById('fileField').files.length !== 0) {
+        //     setProductCover(currentProduct, document.getElementById('fileField').files)
+        // }
 
         alert('Successfully submit the change!');
     } else {
+        const Product=AV.Object.extend('Product');
+        currentProduct=new Product()
         currentProduct=await currentProduct.save()
         console.log(currentProduct)
 
         if (currentProduct) {
-        updateEnglishProduct(currentProduct, $('#title').val(), $('#description').val(), editor.txt.html());
+        // updateEnglishProduct(currentProduct, $('#title').val(), $('#description').val(), editor.txt.html());
         const buttons = $('.cLabel.choose');
         // console.log($('.cLabel.choose').size())
         // for(i in buttons){
@@ -172,9 +179,9 @@ async function submit() {
 
         });
         setProductCategory(currentProduct.id, l);
-        if (document.getElementById('fileField').files.length !== 0) {
-            setProductCover(currentProduct.id, document.getElementById('fileField').files)
-        }
+        // if (document.getElementById('fileField').files.length !== 0) {
+        //     setProductCover(currentProduct, document.getElementById('fileField').files)
+        // }
         alert('Successfully submit the change!');
         window.location.href+="/"+currentProduct.id
     }

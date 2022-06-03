@@ -104,19 +104,22 @@ function updateChineseProduct(product,title,description,detail){
     product.save();
 }
 
-function setProductCover(product_id,resultFiles){
-    const file = new AV.File(resultFiles[0].name, resultFiles[0]);
-    file.save().then((file) => {
-        // insertImgFn(file.get("url"))
-        const product=new AV.Object.createWithoutData('Product',product_id)
-        console.log('emmmm')
-        product.set('cover',file)
-        product.save().then(()=>{
-            console.log('success!!!')
-        })
-    }, (error) => {
-        // 保存失败，可能是文件无法被读取，或者上传过程中出现问题
-    });
+function setProductCover(product){
+    if (document.getElementById('fileField').files.length !== 0) {
+        const file = new AV.File(document.getElementById('fileField').files[0].name, document.getElementById('fileField').files[0]);
+        product.set('cover', file)
+    }
+    // file.save().then((file) => {
+    //     // insertImgFn(file.get("url"))
+    //     const product=new AV.Object.createWithoutData('Product',product_id)
+    //     console.log('emmmm')
+    //     product.set('cover',file)
+    //     product.save().then(()=>{
+    //         console.log('success!!!')
+    //     })
+    // }, (error) => {
+    //     // 保存失败，可能是文件无法被读取，或者上传过程中出现问题
+    // });
 }
 
 function setProductCategory(product_id,categories){

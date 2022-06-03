@@ -157,7 +157,16 @@
                     <div id="category" class="aui-form-group clear">
                      <h4>Labels </h4>
                         {% for label in labels %}
-                              <button id="{{ label.id }}" class="cLabel" onclick="if(this.classList.contains('choose')){this.classList.remove('choose')}else{this.classList.add('choose')}return false">{{ label.get('title').get('english') }}</button>
+                              <button id="{{ label.id }}" class="cLabel" onclick="if(this.classList.contains('choose')){
+                                  {#this.classList.remove('choose')#}
+                              }else{
+                                              const buttons = $('.cLabel.choose');
+                                    buttons.each(function (a, b) {
+                                      // console.log(b)
+                                      b.classList.remove('choose')
+                                      })
+                                  this.classList.add('choose')
+                              }return false">{{ label.get('title').get('english') }}</button>
                         {% endfor %}
 
                     </div>
@@ -185,6 +194,8 @@
         <script type="text/javascript" src="{{ url_for('static',filename='js/up.js') }}"></script>
         <script src="{{ url_for('static',filename='script/productEditor.js') }}"></script>
         <script>
+             const buttons = $('.cLabel');
+             buttons[0].classList.add('choose')
             let id=document.getElementsByTagName('meta')['product_id'].content;
             if(id!=='') {
                 getProductById(id, function (product) {
@@ -213,7 +224,10 @@
                     changeLanguage("chinese")
                 }
             }
-
+            document.getElementById("fileField").onchange=function () {
+                const imgUrl = window.URL.createObjectURL(document.getElementById("fileField").files[0])
+                document.getElementById('cover').src=imgUrl
+            }
 
         </script>
     </body>

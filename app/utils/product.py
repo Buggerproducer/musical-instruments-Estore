@@ -20,6 +20,7 @@ def getProductById(product_id: string, record=False):
     product.get('price').get('CNY') 获取人民币价格
     product.get('cover').url 获取封面图片链接
     """
+    leancloud.User.set_current(config.CURRENT_USER)
     Product = models.Product
     query = Product.query
     query.include('title')
@@ -54,6 +55,7 @@ def getOrderById(order_id: string, record=False):
     product.get('price').get('CNY') 获取人民币价格
     product.get('cover').url 获取封面图片链接
     """
+    leancloud.User.set_current(config.CURRENT_USER)
     Order = models.Order
     query = Order.query
     query.include('address')
@@ -95,6 +97,7 @@ def getProductByCategory(category_id: string, skip=0, limit=10):
     result[0].get('price').get('CNY') 获取人民币价格
     result[0].get('cover').url 获取封面图片链接
     """
+    leancloud.User.set_current(config.CURRENT_USER)
     Category = leancloud.Object.extend('ProductCategory')
     category = Category.create_without_data(category_id)
     query = leancloud.Query('ProductCategoryMap')
@@ -128,6 +131,7 @@ def getProductByVisitCount( skip=0, limit=10):
     """
     # Category = leancloud.Object.extend('ProductCategory')
     # category = Category.create_without_data(category_id)
+    leancloud.User.set_current(config.CURRENT_USER)
     query = leancloud.Query('Product')
     # query.equal_to('category', category)
     query.descending('visit_count')
@@ -149,6 +153,7 @@ def getAllCategory(skip=0, limit=50):
     result[0].get('title').get('chinese') 获取类别中文名
     result[0].get('cover').url 获取封面图片链接
     """
+    leancloud.User.set_current(config.CURRENT_USER)
     query = leancloud.Query('ProductCategory')
     query.limit(limit)
     query.skip(skip)
